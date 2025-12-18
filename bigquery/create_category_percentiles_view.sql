@@ -85,7 +85,11 @@ category_sums AS (
     COALESCE(p.f19_weekly_assists_delta, 0) AS trending_sum
 
   FROM `prodigy-ranking.algorithm_core.player_cumulative_points` p
-  LEFT JOIN league_tiers lt ON LOWER(p.current_league) = lt.league_name
+  LEFT JOIN league_tiers lt ON
+    -- Normalize league name: lowercase, replace spaces with hyphens, remove parentheses
+    REGEXP_REPLACE(REGEXP_REPLACE(LOWER(p.current_league), r'[() ]', '-'), r'-+', '-') = lt.league_name
+    OR LOWER(p.current_league) = lt.league_name
+    OR REGEXP_REPLACE(LOWER(p.current_league), r' ', '-') = lt.league_name
   WHERE p.birth_year IS NOT NULL AND p.position IS NOT NULL
 ),
 
