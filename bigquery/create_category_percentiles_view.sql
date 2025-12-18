@@ -1,8 +1,9 @@
 -- ============================================================================
--- CREATE CATEGORY PERCENTILES VIEW - v2.0
+-- CREATE CATEGORY PERCENTILES VIEW - v2.1
 -- ============================================================================
--- Updated 2025-12-18: Level now uses DIRECT TIER MAPPING from DL_league_category_points
--- instead of percentile-based calculation. This ensures NHL=99, CHL/NL=95, etc.
+-- Updated 2025-12-18:
+--   - Level uses DIRECT TIER MAPPING from DL_league_category_points (NHL=99, CHL/NL=95, etc.)
+--   - Visibility uses DIRECT F01 SCALING (1-99 based on EP views, not percentile)
 --
 -- Adds percentile rankings (0-100) for each category within peer groups
 -- Peer group = same birth_year + position
@@ -12,7 +13,7 @@
 -- |--------------|-----------------------------------|------------------------------------------------|
 -- | Performance  | F03-F12                           | PERCENT_RANK of f03+...+f12                    |
 -- | Level        | Direct from league tier           | DL_league_category_points.level_category_points|
--- | Visibility   | F01, F23, F24, F25                | PERCENT_RANK of f01+f23+f24+f25               |
+-- | Visibility   | F01 (EP Views)                    | Direct scale: 1 + (F01/2000) * 98 → 1-99       |
 -- | Achievements | F15-F17, F21, F22                 | PERCENT_RANK of f15+f16+f17+f21+f22           |
 -- | Physical     | F02, F26, F27                     | PERCENT_RANK of f02+f26+f27                   |
 -- | Trending     | F18, F19                          | PERCENT_RANK of f18+f19                       |
@@ -63,7 +64,10 @@ category_sums AS (
     COALESCE(p.f13_league_points, 0) +
     COALESCE(p.f14_team_points, 0) AS level_sum,
 
-    -- Visibility: F01 + F23 + F24 (views + prodigy likes + card sales)
+    -- Visibility: F01 (EP Views) - raw value for direct scaling
+    COALESCE(p.f01_views, 0) AS f01_views_raw,
+
+    -- Visibility sum (F01 + F23 + F24) for reference
     COALESCE(p.f01_views, 0) +
     COALESCE(p.f23_prodigylikes_points, 0) +
     COALESCE(p.f24_card_sales_points, 0) AS visibility_sum,
@@ -107,11 +111,10 @@ percentile_calculations AS (
     -- This ensures NHL=99, CHL/NL=95, etc. regardless of peer group
     level_tier_rating AS level_percentile,
 
-    -- Visibility percentile
-    ROUND(PERCENT_RANK() OVER (
-      PARTITION BY birth_year, position
-      ORDER BY visibility_sum
-    ) * 100) AS visibility_percentile,
+    -- Visibility: USE DIRECT F01 SCALING (1-99 based on EP views)
+    -- F01 max is 2000, scale to 1-99 range
+    -- Formula: 1 + (F01 / 2000) * 98
+    CAST(GREATEST(1, LEAST(99, ROUND(1 + (f01_views_raw / 2000.0) * 98))) AS INT64) AS visibility_percentile,
 
     -- Achievements percentile
     ROUND(PERCENT_RANK() OVER (
@@ -154,6 +157,7 @@ SELECT
   -- Category sums (raw values)
   ROUND(performance_sum, 2) AS performance_sum,
   ROUND(level_sum, 2) AS level_sum,
+  ROUND(f01_views_raw, 2) AS f01_views,
   ROUND(visibility_sum, 2) AS visibility_sum,
   ROUND(achievements_sum, 2) AS achievements_sum,
   ROUND(physical_sum, 2) AS physical_sum,
