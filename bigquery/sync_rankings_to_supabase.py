@@ -63,6 +63,7 @@ BASE_COLUMNS = [
     "f22_manual_points",
     "f23_prodigylikes_points",
     "f24_card_sales_points",
+    "f25_weekly_views",
     "f26_weight_points",
     "f27_bmi_points",
     "calculated_at",
