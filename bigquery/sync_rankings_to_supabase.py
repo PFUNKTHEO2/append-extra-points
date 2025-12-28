@@ -25,8 +25,8 @@ BQ_PROJECT_ID = "prodigy-ranking"
 BQ_DATASET_ID = "algorithm_core"
 BQ_TABLE_ID = "player_cumulative_points"
 
-# Columns to sync (all fields for complete player data)
-SYNC_COLUMNS = [
+# Columns from player_cumulative_points (base table)
+BASE_COLUMNS = [
     "player_id",
     "player_name",
     "position",
@@ -69,6 +69,34 @@ SYNC_COLUMNS = [
     "algorithm_version"
 ]
 
+# EA-style rating columns (from player_card_ratings view)
+RATING_COLUMNS = [
+    "overall_rating",
+    "performance_rating",
+    "level_rating",
+    "visibility_rating",
+    "achievements_rating",
+    "trending_rating",
+    "physical_rating",
+    "perf",
+    "lvl",
+    "vis",
+    "ach",
+    "trd",
+    "phy"
+]
+
+# Percentile columns for radar charts (from player_category_percentiles view)
+PERCENTILE_COLUMNS = [
+    "performance_percentile",
+    "level_percentile",
+    "visibility_percentile",
+    "achievements_percentile",
+    "physical_percentile",
+    "trending_percentile",
+    "overall_percentile"
+]
+
 
 def setup_connections():
     """Set up Supabase and BigQuery connections"""
@@ -84,25 +112,35 @@ def setup_connections():
 
 
 def get_bigquery_data(bq_client, limit=None):
-    """Extract player data from BigQuery"""
+    """Extract player data from BigQuery with ratings and percentiles"""
     print(f"\nExtracting data from BigQuery...")
 
-    # Build column SQL with proper rounding and null handling
-    columns_sql_parts = []
-    for col in SYNC_COLUMNS:
+    # Build column SQL for base table
+    base_sql_parts = []
+    for col in BASE_COLUMNS:
         if col in ["total_points", "performance_total", "direct_load_total"]:
-            columns_sql_parts.append(f"ROUND({col}, 2) as {col}")
+            base_sql_parts.append(f"ROUND(p.{col}, 2) as {col}")
         elif col.startswith("f") and col[1:3].isdigit():
-            # All factor columns: COALESCE to 0, then ROUND
-            columns_sql_parts.append(f"ROUND(COALESCE({col}, 0), 2) as {col}")
+            base_sql_parts.append(f"ROUND(COALESCE(p.{col}, 0), 2) as {col}")
         else:
-            columns_sql_parts.append(col)
-    columns_sql = ", ".join(columns_sql_parts)
+            base_sql_parts.append(f"p.{col}")
+
+    # Add rating columns from card_ratings view
+    rating_sql_parts = [f"COALESCE(r.{col}, 0) as {col}" for col in RATING_COLUMNS]
+
+    # Add percentile columns from category_percentiles view
+    percentile_sql_parts = [f"COALESCE(pct.{col}, 0) as {col}" for col in PERCENTILE_COLUMNS]
+
+    all_columns = ", ".join(base_sql_parts + rating_sql_parts + percentile_sql_parts)
 
     query = f"""
-        SELECT {columns_sql}
-        FROM `{BQ_PROJECT_ID}.{BQ_DATASET_ID}.{BQ_TABLE_ID}`
-        ORDER BY total_points DESC
+        SELECT {all_columns}
+        FROM `{BQ_PROJECT_ID}.{BQ_DATASET_ID}.{BQ_TABLE_ID}` p
+        LEFT JOIN `{BQ_PROJECT_ID}.{BQ_DATASET_ID}.player_card_ratings` r
+            ON p.player_id = r.player_id
+        LEFT JOIN `{BQ_PROJECT_ID}.{BQ_DATASET_ID}.player_category_percentiles` pct
+            ON p.player_id = pct.player_id
+        ORDER BY p.total_points DESC
         {"LIMIT " + str(limit) if limit else ""}
     """
 
