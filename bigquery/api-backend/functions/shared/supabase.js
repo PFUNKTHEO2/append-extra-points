@@ -444,8 +444,9 @@ async function getPlayerById(playerId) {
   if (!supabase) return null;
 
   try {
+    // Use the view which includes world_rank and country_rank
     const { data, error } = await supabase
-      .from('player_rankings')
+      .from('vw_player_rankings')
       .select('*')
       .eq('player_id', playerId)
       .single();
