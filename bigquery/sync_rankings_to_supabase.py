@@ -25,7 +25,7 @@ BQ_PROJECT_ID = "prodigy-ranking"
 BQ_DATASET_ID = "algorithm_core"
 BQ_TABLE_ID = "player_cumulative_points"
 
-# Columns to sync (core fields needed for fast lookups)
+# Columns to sync (all fields for complete player data)
 SYNC_COLUMNS = [
     "player_id",
     "player_name",
@@ -35,17 +35,36 @@ SYNC_COLUMNS = [
     "current_team",
     "current_league",
     "team_country",
+    "current_season",
     "total_points",
     "performance_total",
     "direct_load_total",
     "f01_views",
     "f02_height",
+    "f03_current_goals_f",
+    "f04_current_goals_d",
+    "f05_current_assists",
+    "f06_current_gaa",
+    "f07_current_svp",
+    "f08_last_goals_f",
+    "f09_last_goals_d",
+    "f10_last_assists",
+    "f11_last_gaa",
+    "f12_last_svp",
     "f13_league_points",
     "f14_team_points",
     "f15_international_points",
     "f16_commitment_points",
     "f17_draft_points",
+    "f18_weekly_points_delta",
+    "f19_weekly_assists_delta",
+    "f20_playing_up_points",
+    "f21_tournament_points",
     "f22_manual_points",
+    "f23_prodigylikes_points",
+    "f24_card_sales_points",
+    "f26_weight_points",
+    "f27_bmi_points",
     "calculated_at",
     "algorithm_version"
 ]
@@ -68,13 +87,17 @@ def get_bigquery_data(bq_client, limit=None):
     """Extract player data from BigQuery"""
     print(f"\nExtracting data from BigQuery...")
 
-    columns_sql = ", ".join([
-        f"ROUND({col}, 2) as {col}" if col in ["total_points", "performance_total", "direct_load_total",
-                                                  "f01_views", "f02_height", "f15_international_points"]
-        else f"COALESCE({col}, 0) as {col}" if col.startswith("f") and col not in ["f01_views", "f02_height", "f15_international_points"]
-        else col
-        for col in SYNC_COLUMNS
-    ])
+    # Build column SQL with proper rounding and null handling
+    columns_sql_parts = []
+    for col in SYNC_COLUMNS:
+        if col in ["total_points", "performance_total", "direct_load_total"]:
+            columns_sql_parts.append(f"ROUND({col}, 2) as {col}")
+        elif col.startswith("f") and col[1:3].isdigit():
+            # All factor columns: COALESCE to 0, then ROUND
+            columns_sql_parts.append(f"ROUND(COALESCE({col}, 0), 2) as {col}")
+        else:
+            columns_sql_parts.append(col)
+    columns_sql = ", ".join(columns_sql_parts)
 
     query = f"""
         SELECT {columns_sql}
@@ -99,9 +122,17 @@ def prepare_data_for_supabase(df):
     if 'calculated_at' in df.columns:
         df['calculated_at'] = pd.to_datetime(df['calculated_at']).dt.strftime('%Y-%m-%dT%H:%M:%S')
 
-    # Convert NaN/None to appropriate defaults
+    # Convert all numeric columns to float (handles Decimal types from BigQuery)
     for col in df.columns:
-        if df[col].dtype == 'float64':
+        if df[col].dtype == 'object':
+            # Check if it's a Decimal column by looking at first non-null value
+            first_val = df[col].dropna().iloc[0] if len(df[col].dropna()) > 0 else None
+            if first_val is not None and hasattr(first_val, 'as_tuple'):
+                # It's a Decimal, convert to float
+                df[col] = df[col].apply(lambda x: float(x) if x is not None and hasattr(x, 'as_tuple') else x)
+
+        # Now handle NaN/None
+        if df[col].dtype == 'float64' or str(df[col].dtype).startswith('float'):
             df[col] = df[col].fillna(0).round(2)
         elif df[col].dtype == 'object':
             df[col] = df[col].fillna('')
