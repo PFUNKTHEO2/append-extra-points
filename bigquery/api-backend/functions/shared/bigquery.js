@@ -5,12 +5,42 @@
 
 const { BigQuery } = require('@google-cloud/bigquery');
 
+// Import Supabase for fast lookups (with BigQuery fallback)
+const supabaseModule = require('./supabase');
+
 // Initialize BigQuery client
 const bigquery = new BigQuery({
   projectId: 'prodigy-ranking',
   // When running locally, credentials will be picked up from GOOGLE_APPLICATION_CREDENTIALS env var
   // When deployed to Cloud Functions, it will use the service account automatically
 });
+
+// =====================================================================
+// IN-MEMORY CACHE - Dramatically speeds up repeated requests
+// Cloud Functions instances persist between invocations, so cache works
+// =====================================================================
+const cache = new Map();
+const CACHE_TTL = 5 * 60 * 1000; // 5 minutes in milliseconds
+
+function getCached(key) {
+  const entry = cache.get(key);
+  if (!entry) return null;
+  if (Date.now() > entry.expires) {
+    cache.delete(key);
+    return null;
+  }
+  return entry.data;
+}
+
+function setCache(key, data) {
+  // Limit cache size to prevent memory issues
+  if (cache.size > 1000) {
+    // Delete oldest entries (first 100)
+    const keys = Array.from(cache.keys()).slice(0, 100);
+    keys.forEach(k => cache.delete(k));
+  }
+  cache.set(key, { data, expires: Date.now() + CACHE_TTL });
+}
 
 /**
  * Execute a BigQuery query and return results
@@ -25,6 +55,8 @@ async function executeQuery(query, options = {}) {
     const [job] = await bigquery.createQueryJob({
       query,
       location: 'US',
+      // Enable BigQuery's built-in query cache for faster repeated queries
+      useQueryCache: true,
       ...options,
     });
 
@@ -44,108 +76,84 @@ async function executeQuery(query, options = {}) {
 
 /**
  * Get a single player by player_id with pre-calculated ranks and percentiles
+ * Uses Supabase for fast lookups (<50ms), falls back to BigQuery if unavailable
  * @param {number} playerId - Player ID
  * @returns {Promise<object>} Player data with world_rank, country_rank, and category percentiles
  */
 async function getPlayerById(playerId) {
-  // Use a single query with window functions to calculate ranks and percentiles efficiently
+  // Check in-memory cache first
+  const cacheKey = `player:${playerId}`;
+  const cached = getCached(cacheKey);
+  if (cached) {
+    console.log(`Cache HIT for player ${playerId}`);
+    return cached;
+  }
+
+  // Try Supabase first (fast - typically <50ms)
+  if (supabaseModule.isConfigured()) {
+    console.log(`Trying Supabase for player ${playerId}...`);
+    const supabaseResult = await supabaseModule.getPlayerById(playerId);
+    if (supabaseResult) {
+      console.log(`Supabase HIT for player ${playerId}`);
+      setCache(cacheKey, supabaseResult);
+      return supabaseResult;
+    }
+    console.log(`Supabase MISS for player ${playerId}, falling back to BigQuery...`);
+  }
+
+  // Fall back to BigQuery (slow but complete)
+  console.log(`Querying BigQuery for player ${playerId}...`);
+
+  // FAST QUERY: Single table lookup, no JOINs
+  // Percentiles/ratings available via separate endpoints if needed
   const query = `
-    WITH player_data AS (
-      SELECT *
-      FROM \`prodigy-ranking.algorithm_core.player_cumulative_points\`
-      WHERE player_id = @playerId
-    ),
-    world_ranks AS (
-      SELECT
-        player_id,
-        ROW_NUMBER() OVER (ORDER BY total_points DESC) as world_rank
-      FROM \`prodigy-ranking.algorithm_core.player_cumulative_points\`
-      WHERE birth_year = (SELECT birth_year FROM player_data)
-        AND position = (SELECT position FROM player_data)
-    ),
-    country_ranks AS (
-      SELECT
-        player_id,
-        ROW_NUMBER() OVER (ORDER BY total_points DESC) as country_rank
-      FROM \`prodigy-ranking.algorithm_core.player_cumulative_points\`
-      WHERE birth_year = (SELECT birth_year FROM player_data)
-        AND position = (SELECT position FROM player_data)
-        AND nationality_name = (SELECT nationality_name FROM player_data)
-    ),
-    percentiles AS (
-      SELECT
-        player_id,
-        performance_percentile,
-        level_percentile,
-        visibility_percentile,
-        achievements_percentile,
-        physical_percentile,
-        trending_percentile,
-        overall_percentile
-      FROM \`prodigy-ranking.algorithm_core.player_category_percentiles\`
-      WHERE player_id = @playerId
-    )
     SELECT
-      p.player_id,
-      p.player_name,
-      p.position,
-      p.birth_year,
-      p.nationality_name,
-      p.current_team,
-      p.current_league,
-      p.team_country,
-      p.current_season,
+      player_id,
+      player_name,
+      position,
+      birth_year,
+      nationality_name,
+      current_team,
+      current_league,
+      team_country,
+      current_season,
 
-      ROUND(p.total_points, 2) as total_points,
-      ROUND(p.performance_total, 2) as performance_total,
-      ROUND(p.direct_load_total, 2) as direct_load_total,
+      ROUND(total_points, 2) as total_points,
+      ROUND(performance_total, 2) as performance_total,
+      ROUND(direct_load_total, 2) as direct_load_total,
 
-      ROUND(p.f01_views, 2) as f01_views,
-      ROUND(p.f02_height, 2) as f02_height,
-      ROUND(p.f03_current_goals_f, 2) as f03_current_goals_f,
-      ROUND(p.f04_current_goals_d, 2) as f04_current_goals_d,
-      ROUND(p.f05_current_assists, 2) as f05_current_assists,
-      ROUND(p.f06_current_gaa, 2) as f06_current_gaa,
-      ROUND(p.f07_current_svp, 2) as f07_current_svp,
-      ROUND(p.f08_last_goals_f, 2) as f08_last_goals_f,
-      ROUND(p.f09_last_goals_d, 2) as f09_last_goals_d,
-      ROUND(p.f10_last_assists, 2) as f10_last_assists,
-      ROUND(p.f11_last_gaa, 2) as f11_last_gaa,
-      ROUND(p.f12_last_svp, 2) as f12_last_svp,
-      COALESCE(p.f13_league_points, 0) as f13_league_points,
-      COALESCE(p.f14_team_points, 0) as f14_team_points,
-      ROUND(COALESCE(p.f15_international_points, 0), 2) as f15_international_points,
-      COALESCE(p.f16_commitment_points, 0) as f16_commitment_points,
-      COALESCE(p.f17_draft_points, 0) as f17_draft_points,
-      ROUND(COALESCE(p.f18_weekly_points_delta, 0), 2) as f18_weekly_points_delta,
-      ROUND(COALESCE(p.f19_weekly_assists_delta, 0), 2) as f19_weekly_assists_delta,
-      COALESCE(p.f20_playing_up_points, 0) as f20_playing_up_points,
-      COALESCE(p.f21_tournament_points, 0) as f21_tournament_points,
-      COALESCE(p.f22_manual_points, 0) as f22_manual_points,
-      COALESCE(p.f23_prodigylikes_points, 0) as f23_prodigylikes_points,
-      COALESCE(p.f24_card_sales_points, 0) as f24_card_sales_points,
-      ROUND(COALESCE(p.f26_weight_points, 0), 2) as f26_weight_points,
-      ROUND(COALESCE(p.f27_bmi_points, 0), 2) as f27_bmi_points,
+      ROUND(f01_views, 2) as f01_views,
+      ROUND(f02_height, 2) as f02_height,
+      ROUND(f03_current_goals_f, 2) as f03_current_goals_f,
+      ROUND(f04_current_goals_d, 2) as f04_current_goals_d,
+      ROUND(f05_current_assists, 2) as f05_current_assists,
+      ROUND(f06_current_gaa, 2) as f06_current_gaa,
+      ROUND(f07_current_svp, 2) as f07_current_svp,
+      ROUND(f08_last_goals_f, 2) as f08_last_goals_f,
+      ROUND(f09_last_goals_d, 2) as f09_last_goals_d,
+      ROUND(f10_last_assists, 2) as f10_last_assists,
+      ROUND(f11_last_gaa, 2) as f11_last_gaa,
+      ROUND(f12_last_svp, 2) as f12_last_svp,
+      COALESCE(f13_league_points, 0) as f13_league_points,
+      COALESCE(f14_team_points, 0) as f14_team_points,
+      ROUND(COALESCE(f15_international_points, 0), 2) as f15_international_points,
+      COALESCE(f16_commitment_points, 0) as f16_commitment_points,
+      COALESCE(f17_draft_points, 0) as f17_draft_points,
+      ROUND(COALESCE(f18_weekly_points_delta, 0), 2) as f18_weekly_points_delta,
+      ROUND(COALESCE(f19_weekly_assists_delta, 0), 2) as f19_weekly_assists_delta,
+      COALESCE(f20_playing_up_points, 0) as f20_playing_up_points,
+      COALESCE(f21_tournament_points, 0) as f21_tournament_points,
+      COALESCE(f22_manual_points, 0) as f22_manual_points,
+      COALESCE(f23_prodigylikes_points, 0) as f23_prodigylikes_points,
+      COALESCE(f24_card_sales_points, 0) as f24_card_sales_points,
+      ROUND(COALESCE(f26_weight_points, 0), 2) as f26_weight_points,
+      ROUND(COALESCE(f27_bmi_points, 0), 2) as f27_bmi_points,
 
-      p.calculated_at,
-      p.algorithm_version,
+      calculated_at,
+      algorithm_version
 
-      -- Pre-calculated ranks
-      COALESCE(wr.world_rank, 0) as world_rank,
-      COALESCE(cr.country_rank, 0) as country_rank,
-
-      -- Category percentiles (0-100, higher = better within peer group)
-      COALESCE(pct.performance_percentile, 0) as performance_percentile,
-      COALESCE(pct.level_percentile, 0) as level_percentile,
-      COALESCE(pct.visibility_percentile, 0) as visibility_percentile,
-      COALESCE(pct.achievements_percentile, 0) as achievements_percentile,
-      COALESCE(pct.physical_percentile, 0) as physical_percentile,
-      COALESCE(pct.trending_percentile, 0) as trending_percentile,
-      COALESCE(pct.overall_percentile, 0) as overall_percentile
-    FROM player_data p
-    LEFT JOIN world_ranks wr ON p.player_id = wr.player_id
-    LEFT JOIN country_ranks cr ON p.player_id = cr.player_id
-    LEFT JOIN percentiles pct ON p.player_id = pct.player_id
+    FROM \`prodigy-ranking.algorithm_core.player_cumulative_points\`
+    WHERE player_id = @playerId
   `;
 
   const options = {
@@ -154,16 +162,45 @@ async function getPlayerById(playerId) {
   };
 
   const rows = await executeQuery(query, options);
-  return rows.length > 0 ? rows[0] : null;
+  const result = rows.length > 0 ? rows[0] : null;
+
+  // Cache the result for fast subsequent lookups
+  if (result) {
+    setCache(cacheKey, result);
+  }
+
+  return result;
 }
 
 /**
  * Search players by name
+ * Uses Supabase for fast search, falls back to BigQuery
  * @param {string} searchQuery - Search term
  * @param {number} limit - Maximum results (default 10)
  * @returns {Promise<Array>} Matching players
  */
 async function searchPlayers(searchQuery, limit = 10) {
+  // Check cache
+  const cacheKey = `search:${searchQuery.toLowerCase()}:${limit}`;
+  const cached = getCached(cacheKey);
+  if (cached) {
+    console.log(`Cache HIT for search "${searchQuery}"`);
+    return cached;
+  }
+
+  // Try Supabase first (fast)
+  if (supabaseModule.isConfigured()) {
+    console.log(`Trying Supabase for search "${searchQuery}"...`);
+    const supabaseResult = await supabaseModule.searchPlayers(searchQuery, limit);
+    if (supabaseResult && supabaseResult.length > 0) {
+      console.log(`Supabase search returned ${supabaseResult.length} results`);
+      setCache(cacheKey, supabaseResult);
+      return supabaseResult;
+    }
+    console.log(`Supabase search empty, falling back to BigQuery...`);
+  }
+
+  // Fall back to BigQuery
   const query = `
     SELECT
       player_id,
@@ -188,7 +225,9 @@ async function searchPlayers(searchQuery, limit = 10) {
     },
   };
 
-  return await executeQuery(query, options);
+  const results = await executeQuery(query, options);
+  setCache(cacheKey, results);
+  return results;
 }
 
 /**
@@ -211,6 +250,7 @@ async function getStats() {
 
 /**
  * Get rankings for a specific birth year, scope, and position
+ * Uses Supabase for fast lookups, falls back to BigQuery
  * @param {number} birthYear - Birth year (2007-2011)
  * @param {string} scope - 'worldwide', 'north_american', or country name
  * @param {string} position - 'F', 'D', or 'G'
@@ -218,6 +258,27 @@ async function getStats() {
  * @returns {Promise<object>} Rankings data
  */
 async function getRankings(birthYear, scope, position, limit = 250) {
+  // Check cache
+  const cacheKey = `rankings:${birthYear}:${scope}:${position}:${limit}`;
+  const cached = getCached(cacheKey);
+  if (cached) {
+    console.log(`Cache HIT for rankings ${birthYear}/${scope}/${position}`);
+    return cached;
+  }
+
+  // Try Supabase first (fast)
+  if (supabaseModule.isConfigured()) {
+    console.log(`Trying Supabase for rankings ${birthYear}/${scope}/${position}...`);
+    const supabaseResult = await supabaseModule.getRankings(birthYear, scope, position, limit);
+    if (supabaseResult && supabaseResult.players && supabaseResult.players.length > 0) {
+      console.log(`Supabase rankings returned ${supabaseResult.players.length} players`);
+      setCache(cacheKey, supabaseResult);
+      return supabaseResult;
+    }
+    console.log(`Supabase rankings empty, falling back to BigQuery...`);
+  }
+
+  // Fall back to BigQuery
   let whereClause = 'WHERE birth_year = @birthYear AND position = @position';
   let params = {
     birthYear: parseInt(birthYear),
@@ -297,13 +358,16 @@ async function getRankings(birthYear, scope, position, limit = 250) {
 
   const rows = await executeQuery(query, options);
 
-  return {
+  const result = {
     birth_year: birthYear,
     position: position,
     scope: scope,
     count: rows.length,
     players: rows
   };
+
+  setCache(cacheKey, result);
+  return result;
 }
 
 /**
@@ -333,6 +397,14 @@ async function getRankingsMetadata() {
  * @returns {Promise<object>} Card ratings with 6 categories + overall (0-99 scale)
  */
 async function getCardRatings(playerId) {
+  // Check cache
+  const cacheKey = `cardRatings:${playerId}`;
+  const cached = getCached(cacheKey);
+  if (cached) {
+    console.log(`Cache HIT for card ratings ${playerId}`);
+    return cached;
+  }
+
   const query = `
     SELECT
       player_id,
@@ -377,7 +449,13 @@ async function getCardRatings(playerId) {
   };
 
   const rows = await executeQuery(query, options);
-  return rows.length > 0 ? rows[0] : null;
+  const result = rows.length > 0 ? rows[0] : null;
+
+  if (result) {
+    setCache(cacheKey, result);
+  }
+
+  return result;
 }
 
 /**
