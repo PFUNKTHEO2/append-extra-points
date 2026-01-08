@@ -1,8 +1,11 @@
 -- ============================================================================
 -- REBUILD player_cumulative_points WITH FULLY DEDUPLICATED JOINS
 -- ============================================================================
--- VERSION: v2.9 (F15 Capped at 1000)
--- CHANGE: Added LEAST(total_international_points, 1000) cap to F15
+-- VERSION: v3.1 (F13 uses DL_all_leagues)
+-- CHANGE: F13 now uses algorithm.DL_all_leagues instead of DL_F13_league_points
+--         Scale changed from 0-4500 to 0-1000 points
+-- PREVIOUS: v2.9 (F15 Capped at 1000)
+-- PREVIOUS: Added LEAST(total_international_points, 1000) cap to F15
 -- PREVIOUS: v2.8 Added F25 Weekly Views
 -- PREVIOUS: v2.7 Added F26 Weight Points (max 150) and F27 BMI Points (max 250)
 -- PREVIOUS: F14 Team Points DISABLED as of 2025-12-16 (returns 0 for all players)
@@ -95,21 +98,21 @@ f12_data AS (
 ),
 
 -- ============================================================================
--- F13: League Points - FIXED WITH MAX() + GROUP BY TO PREVENT DUPLICATES
+-- F13: League Points - UPDATED 2026-01-02 TO USE DL_all_leagues
 -- ============================================================================
--- ISSUE: DL_F13 has case-variant duplicates (e.g., 'OHL' = 1000, 'ohl' = 150)
---        The normalized JOIN matches both, creating duplicate player rows.
--- FIX: Use MAX(points) with GROUP BY to pick highest value when duplicates match
--- IMPACT: 332 players will no longer be duplicated
+-- SOURCE: algorithm.DL_all_leagues (per David's email)
+-- SCALE: 0-1000 points (was 0-4500 with old DL_F13_league_points)
+-- LOGIC: Match by league_name OR league_slug, pick highest value
+-- COVERAGE: 148,680 players (more than previous 139,829)
 -- ============================================================================
 f13_data AS (
   SELECT
     ps.id AS player_id,
-    MAX(COALESCE(lp.points, 0)) AS f13_league_points
+    MAX(COALESCE(al.league_points, 0)) AS f13_league_points
   FROM `prodigy-ranking.algorithm_core.player_stats` ps
-  LEFT JOIN `prodigy-ranking.algorithm_core.DL_F13_league_points` lp
+  LEFT JOIN `prodigy-ranking.algorithm.DL_all_leagues` al
     ON LOWER(TRIM(REPLACE(REPLACE(ps.latestStats_team_league_name, ' ', '-'), '_', '-'))) =
-       LOWER(TRIM(REPLACE(REPLACE(lp.league_name, ' ', '-'), '_', '-')))
+       LOWER(TRIM(REPLACE(REPLACE(al.league_name, ' ', '-'), '_', '-')))
   GROUP BY ps.id
 ),
 
@@ -140,11 +143,13 @@ f14_data AS (
 ),
 
 -- F15: International Points (CAPPED AT 1000 per config)
+-- FIX 2026-01-08: Added GROUP BY to prevent duplicates for players with multiple tournament entries
 f15_data AS (
   SELECT
     matched_player_id AS player_id,
-    LEAST(total_international_points, 1000) AS f15_international_points
+    MAX(LEAST(total_international_points, 1000)) AS f15_international_points
   FROM `prodigy-ranking.algorithm_core.DL_F15_international_points_final`
+  GROUP BY matched_player_id
 ),
 
 -- F16: College Commitment Points
@@ -164,19 +169,23 @@ f17_data AS (
 ),
 
 -- F18: Weekly Points Delta
+-- FIX 2026-01-08: Added GROUP BY to prevent duplicates
 f18_data AS (
   SELECT
     player_id,
-    factor_18_points AS f18_weekly_points_delta
+    MAX(factor_18_points) AS f18_weekly_points_delta
   FROM `prodigy-ranking.algorithm_core.PT_F18_weekly_points_delta`
+  GROUP BY player_id
 ),
 
 -- F19: Weekly Assists Delta
+-- FIX 2026-01-08: Added GROUP BY to prevent duplicates
 f19_data AS (
   SELECT
     player_id,
-    factor_19_points AS f19_weekly_assists_delta
+    MAX(factor_19_points) AS f19_weekly_assists_delta
   FROM `prodigy-ranking.algorithm_core.PT_F19_weekly_assists_delta`
+  GROUP BY player_id
 ),
 
 -- F20: Playing Up Points
@@ -236,11 +245,13 @@ f27_data AS (
 ),
 
 -- F25: Weekly EP Views Points (Trending/Visibility Factor)
+-- FIX 2026-01-08: Added GROUP BY to prevent duplicates
 f25_data AS (
   SELECT
     player_id,
-    factor_25_points AS f25_weekly_views
+    MAX(factor_25_points) AS f25_weekly_views
   FROM `prodigy-ranking.algorithm_core.PT_F25_weekly_views_delta`
+  GROUP BY player_id
 )
 
 -- Combine everything with proper JOINs to the fixed source tables
@@ -355,7 +366,7 @@ SELECT
   ) AS total_points,
 
   CURRENT_TIMESTAMP() AS calculated_at,
-  'v2.9-f15-capped' AS algorithm_version
+  'v3.3-main-league-file' AS algorithm_version
 
 FROM base_players bp
 LEFT JOIN f01_data f01 ON bp.player_id = f01.player_id
