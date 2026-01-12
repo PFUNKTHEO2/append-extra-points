@@ -134,14 +134,19 @@ def get_bigquery_data(bq_client, limit=None):
 
     all_columns = ", ".join(base_sql_parts + rating_sql_parts + percentile_sql_parts)
 
+    # Use ROW_NUMBER to deduplicate (take first row per player_id)
     query = f"""
-        SELECT {all_columns}
-        FROM `{BQ_PROJECT_ID}.{BQ_DATASET_ID}.{BQ_TABLE_ID}` p
-        LEFT JOIN `{BQ_PROJECT_ID}.{BQ_DATASET_ID}.player_card_ratings` r
-            ON p.player_id = r.player_id
-        LEFT JOIN `{BQ_PROJECT_ID}.{BQ_DATASET_ID}.player_category_percentiles` pct
-            ON p.player_id = pct.player_id
-        ORDER BY p.total_points DESC
+        WITH ranked AS (
+            SELECT {all_columns},
+                ROW_NUMBER() OVER (PARTITION BY p.player_id ORDER BY p.total_points DESC) as rn
+            FROM `{BQ_PROJECT_ID}.{BQ_DATASET_ID}.{BQ_TABLE_ID}` p
+            LEFT JOIN `{BQ_PROJECT_ID}.{BQ_DATASET_ID}.player_card_ratings` r
+                ON p.player_id = r.player_id
+            LEFT JOIN `{BQ_PROJECT_ID}.{BQ_DATASET_ID}.player_category_percentiles` pct
+                ON p.player_id = pct.player_id
+        )
+        SELECT * EXCEPT(rn) FROM ranked WHERE rn = 1
+        ORDER BY total_points DESC
         {"LIMIT " + str(limit) if limit else ""}
     """
 
