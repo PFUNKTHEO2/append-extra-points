@@ -1,7 +1,7 @@
 -- ============================================================================
 -- REBUILD player_cumulative_points WITH FULLY DEDUPLICATED JOINS
 -- ============================================================================
--- VERSION: v2.7-league-fix
+-- VERSION: v2.8-f25-f27
 --
 -- CRITICAL FIX (Dec 2025): Added GROUP BY + MAX() to ALL factor CTEs to prevent
 -- duplicate rows when source tables have duplicate player_ids.
@@ -225,6 +225,33 @@ f24_data AS (
     MAX(points) AS f24_card_sales_points
   FROM `prodigy-ranking.algorithm_core.DL_F24_card_sales_points`
   GROUP BY player_id
+),
+
+-- F25: Weekly Views Delta - with GROUP BY for safety
+f25_data AS (
+  SELECT
+    player_id,
+    MAX(factor_25_points) AS f25_weekly_views
+  FROM `prodigy-ranking.algorithm_core.PT_F25_weekly_views_delta`
+  GROUP BY player_id
+),
+
+-- F26: Weight Points - with GROUP BY for safety
+f26_data AS (
+  SELECT
+    player_id,
+    MAX(factor_26_weight_points) AS f26_weight_points
+  FROM `prodigy-ranking.algorithm_core.PT_F26_weight`
+  GROUP BY player_id
+),
+
+-- F27: BMI Points - with GROUP BY for safety
+f27_data AS (
+  SELECT
+    player_id,
+    MAX(factor_27_bmi_points) AS f27_bmi_points
+  FROM `prodigy-ranking.algorithm_core.PT_F27_bmi`
+  GROUP BY player_id
 )
 
 -- Combine everything with proper JOINs to the fixed source tables
@@ -266,6 +293,9 @@ SELECT
   COALESCE(f22.f22_manual_points, 0) AS f22_manual_points,
   COALESCE(f23.f23_prodigylikes_points, 0) AS f23_prodigylikes_points,
   COALESCE(f24.f24_card_sales_points, 0) AS f24_card_sales_points,
+  COALESCE(f25.f25_weekly_views, 0.0) AS f25_weekly_views,
+  COALESCE(f26.f26_weight_points, 0.0) AS f26_weight_points,
+  COALESCE(f27.f27_bmi_points, 0.0) AS f27_bmi_points,
 
   -- Calculate performance total (F01-F12)
   (
@@ -283,7 +313,7 @@ SELECT
     COALESCE(f12.f12_last_svp, 0.0)
   ) AS performance_total,
 
-  -- Calculate direct load total (F13-F24)
+  -- Calculate direct load total (F13-F24 + F26-F27)
   (
     COALESCE(f13.f13_league_points, 0) +
     COALESCE(f14.f14_team_points, 0) +
@@ -296,7 +326,10 @@ SELECT
     COALESCE(f21.f21_tournament_points, 0) +
     COALESCE(f22.f22_manual_points, 0) +
     COALESCE(f23.f23_prodigylikes_points, 0) +
-    COALESCE(f24.f24_card_sales_points, 0)
+    COALESCE(f24.f24_card_sales_points, 0) +
+    COALESCE(f25.f25_weekly_views, 0.0) +
+    COALESCE(f26.f26_weight_points, 0.0) +
+    COALESCE(f27.f27_bmi_points, 0.0)
   ) AS direct_load_total,
 
   -- Calculate total points
@@ -326,11 +359,14 @@ SELECT
     COALESCE(f21.f21_tournament_points, 0) +
     COALESCE(f22.f22_manual_points, 0) +
     COALESCE(f23.f23_prodigylikes_points, 0) +
-    COALESCE(f24.f24_card_sales_points, 0)
+    COALESCE(f24.f24_card_sales_points, 0) +
+    COALESCE(f25.f25_weekly_views, 0.0) +
+    COALESCE(f26.f26_weight_points, 0.0) +
+    COALESCE(f27.f27_bmi_points, 0.0)
   ) AS total_points,
 
   CURRENT_TIMESTAMP() AS calculated_at,
-  'v2.7-league-fix' AS algorithm_version
+  'v2.8-f25-f27' AS algorithm_version
 
 FROM base_players bp
 LEFT JOIN f01_data f01 ON bp.player_id = f01.player_id
@@ -356,4 +392,7 @@ LEFT JOIN f20_data f20 ON bp.player_id = f20.player_id
 LEFT JOIN f21_data f21 ON bp.player_id = f21.player_id
 LEFT JOIN f22_data f22 ON bp.player_id = f22.player_id
 LEFT JOIN f23_data f23 ON bp.player_id = f23.player_id
-LEFT JOIN f24_data f24 ON bp.player_id = f24.player_id;
+LEFT JOIN f24_data f24 ON bp.player_id = f24.player_id
+LEFT JOIN f25_data f25 ON bp.player_id = f25.player_id
+LEFT JOIN f26_data f26 ON bp.player_id = f26.player_id
+LEFT JOIN f27_data f27 ON bp.player_id = f27.player_id;
