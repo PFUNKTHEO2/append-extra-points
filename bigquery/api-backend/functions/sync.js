@@ -87,7 +87,7 @@ exports.syncRankings = async (req, res) => {
             PARTITION BY p.birth_year, p.position, p.nationality_name
             ORDER BY p.total_points DESC
           ) as country_rank
-        FROM \`prodigy-ranking.algorithm_core.player_cumulative_points\` p
+        FROM \`prodigy-ranking.algorithm_core.player_rankings\` p
         LEFT JOIN \`prodigy-ranking.algorithm_core.player_card_ratings\` r ON p.player_id = r.player_id
         LEFT JOIN \`prodigy-ranking.algorithm_core.player_category_percentiles\` pct ON p.player_id = pct.player_id
       )

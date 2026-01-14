@@ -38,8 +38,8 @@ functions.http('adminGetHealth', withCors(async (req, res) => {
     const query = `
       SELECT
         (SELECT COUNT(*) FROM \`prodigy-ranking.algorithm_core.player_stats\`) as total_players,
-        (SELECT COUNT(*) FROM \`prodigy-ranking.algorithm_core.player_cumulative_points\`) as ranked_players,
-        (SELECT MAX(calculated_at) FROM \`prodigy-ranking.algorithm_core.player_cumulative_points\`) as last_algorithm_run,
+        (SELECT COUNT(*) FROM \`prodigy-ranking.algorithm_core.player_rankings\`) as ranked_players,
+        (SELECT MAX(calculated_at) FROM \`prodigy-ranking.algorithm_core.player_rankings\`) as last_algorithm_run,
         (SELECT MAX(loadts) FROM \`prodigy-ranking.algorithm_core.player_stats\`) as last_data_load,
         'v2.4' as algorithm_version
     `;
@@ -302,7 +302,7 @@ functions.http('adminGetFactors', withCors(async (req, res) => {
     const rows = await executeQuery(query);
 
     // Get total players for coverage calculation
-    const countQuery = `SELECT COUNT(*) as total FROM \`prodigy-ranking.algorithm_core.player_cumulative_points\``;
+    const countQuery = `SELECT COUNT(*) as total FROM \`prodigy-ranking.algorithm_core.player_rankings\``;
     const countRows = await executeQuery(countQuery);
     const totalPlayers = parseInt(countRows[0].total) || 1;
 
@@ -347,7 +347,7 @@ functions.http('adminGetCoverage', withCors(async (req, res) => {
         COUNTIF(f14_team_points > 0) as has_team_points,
         COUNTIF(f15_international_points > 0) as has_international_points,
         COUNTIF(f17_draft_points > 0) as has_draft_points
-      FROM \`prodigy-ranking.algorithm_core.player_cumulative_points\`
+      FROM \`prodigy-ranking.algorithm_core.player_rankings\`
     `;
 
     const rows = await executeQuery(query);
@@ -394,9 +394,9 @@ functions.http('adminGetPipeline', withCors(async (req, res) => {
         NULL,
         'Historical season statistics'
       UNION ALL
-      SELECT 'Cumulative Points', 'player_cumulative_points', 'algorithm_core',
-        (SELECT COUNT(*) FROM \`prodigy-ranking.algorithm_core.player_cumulative_points\`),
-        (SELECT MAX(calculated_at) FROM \`prodigy-ranking.algorithm_core.player_cumulative_points\`),
+      SELECT 'Cumulative Points', 'player_rankings', 'algorithm_core',
+        (SELECT COUNT(*) FROM \`prodigy-ranking.algorithm_core.player_rankings\`),
+        (SELECT MAX(calculated_at) FROM \`prodigy-ranking.algorithm_core.player_rankings\`),
         'Aggregated player rankings'
     `;
 
@@ -458,7 +458,7 @@ functions.http('adminGetAlerts', withCors(async (req, res) => {
     // Check for players with stats but 0 performance points
     const zeroPointsQuery = `
       SELECT COUNT(*) as count
-      FROM \`prodigy-ranking.algorithm_core.player_cumulative_points\` pcp
+      FROM \`prodigy-ranking.algorithm_core.player_rankings\` pcp
       WHERE pcp.performance_total = 0
         AND pcp.f01_views > 0
     `;
@@ -572,7 +572,7 @@ functions.http('adminGetPlayers', withCors(async (req, res) => {
         END AS INT64) as visibilityRating,
         pcp.calculated_at as calculatedAt,
         pcp.algorithm_version as algorithmVersion
-      FROM \`prodigy-ranking.algorithm_core.player_cumulative_points\` pcp
+      FROM \`prodigy-ranking.algorithm_core.player_rankings\` pcp
       LEFT JOIN \`prodigy-ranking.algorithm_core.PT_F02_H\` f02 ON pcp.player_id = f02.player_id
       LEFT JOIN \`prodigy-ranking.algorithm_core.PT_F26_weight\` f26 ON pcp.player_id = f26.player_id
       LEFT JOIN \`prodigy-ranking.algorithm_core.PT_F27_bmi\` f27 ON pcp.player_id = f27.player_id
@@ -584,7 +584,7 @@ functions.http('adminGetPlayers', withCors(async (req, res) => {
 
     const countQuery = `
       SELECT COUNT(*) as total
-      FROM \`prodigy-ranking.algorithm_core.player_cumulative_points\`
+      FROM \`prodigy-ranking.algorithm_core.player_rankings\`
       ${whereClauseCount}
     `;
 

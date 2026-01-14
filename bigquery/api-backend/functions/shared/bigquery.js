@@ -152,7 +152,7 @@ async function getPlayerById(playerId) {
       calculated_at,
       algorithm_version
 
-    FROM \`prodigy-ranking.algorithm_core.player_cumulative_points\`
+    FROM \`prodigy-ranking.algorithm_core.player_rankings\`
     WHERE player_id = @playerId
   `;
 
@@ -211,7 +211,7 @@ async function searchPlayers(searchQuery, limit = 10) {
       current_team,
       current_league,
       ROUND(total_points, 2) as total_points
-    FROM \`prodigy-ranking.algorithm_core.player_cumulative_points\`
+    FROM \`prodigy-ranking.algorithm_core.player_rankings\`
     WHERE LOWER(player_name) LIKE LOWER(@searchQuery)
     ORDER BY total_points DESC
     LIMIT @limit
@@ -241,7 +241,7 @@ async function getStats() {
       COUNT(DISTINCT current_league) as total_leagues,
       COUNT(DISTINCT nationality_name) as total_countries,
       MAX(calculated_at) as last_updated
-    FROM \`prodigy-ranking.algorithm_core.player_cumulative_points\`
+    FROM \`prodigy-ranking.algorithm_core.player_rankings\`
   `;
 
   const rows = await executeQuery(query);
@@ -345,7 +345,7 @@ async function getRankings(birthYear, scope, position, limit = 250) {
       COALESCE(f22_manual_points, 0) as f22_manual_points,
       COALESCE(f23_prodigylikes_points, 0) as f23_prodigylikes_points,
       COALESCE(f24_card_sales_points, 0) as f24_card_sales_points
-    FROM \`prodigy-ranking.algorithm_core.player_cumulative_points\`
+    FROM \`prodigy-ranking.algorithm_core.player_rankings\`
     ${whereClause}
     ORDER BY total_points DESC
     LIMIT @limit
