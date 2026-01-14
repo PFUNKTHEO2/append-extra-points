@@ -39,6 +39,11 @@ const PERCENTILE_COLUMNS = [
   'overall_percentile'
 ];
 
+// Pre-computed rank columns (computed in BigQuery, not Supabase view)
+const RANK_COLUMNS = [
+  'world_rank', 'country_rank'
+];
+
 /**
  * Main sync function - triggered by Cloud Scheduler
  */
@@ -69,12 +74,25 @@ exports.syncRankings = async (req, res) => {
     const ratingColsSql = RATING_COLUMNS.map(col => `COALESCE(r.${col}, 0) as ${col}`);
     const pctColsSql = PERCENTILE_COLUMNS.map(col => `COALESCE(pct.${col}, 0) as ${col}`);
 
+    // Pre-compute ranks in BigQuery (much faster than computing in Supabase view)
     const query = `
-      SELECT ${[...baseColsSql, ...ratingColsSql, ...pctColsSql].join(', ')}
-      FROM \`prodigy-ranking.algorithm_core.player_cumulative_points\` p
-      LEFT JOIN \`prodigy-ranking.algorithm_core.player_card_ratings\` r ON p.player_id = r.player_id
-      LEFT JOIN \`prodigy-ranking.algorithm_core.player_category_percentiles\` pct ON p.player_id = pct.player_id
-      ORDER BY p.total_points DESC
+      WITH ranked AS (
+        SELECT
+          ${[...baseColsSql, ...ratingColsSql, ...pctColsSql].join(', ')},
+          ROW_NUMBER() OVER (
+            PARTITION BY p.birth_year, p.position
+            ORDER BY p.total_points DESC
+          ) as world_rank,
+          ROW_NUMBER() OVER (
+            PARTITION BY p.birth_year, p.position, p.nationality_name
+            ORDER BY p.total_points DESC
+          ) as country_rank
+        FROM \`prodigy-ranking.algorithm_core.player_cumulative_points\` p
+        LEFT JOIN \`prodigy-ranking.algorithm_core.player_card_ratings\` r ON p.player_id = r.player_id
+        LEFT JOIN \`prodigy-ranking.algorithm_core.player_category_percentiles\` pct ON p.player_id = pct.player_id
+      )
+      SELECT * FROM ranked
+      ORDER BY total_points DESC
     `;
 
     console.log('Querying BigQuery...');
@@ -95,21 +113,27 @@ exports.syncRankings = async (req, res) => {
           } else {
             record[key] = 0;
           }
+        } else if (key === 'calculated_at') {
+          // Handle calculated_at timestamp - MUST come before generic object check
+          if (typeof value === 'string') {
+            try {
+              record[key] = new Date(value).toISOString();
+            } catch (e) {
+              record[key] = now;
+            }
+          } else if (typeof value === 'object' && value.value) {
+            // BigQuery timestamp object
+            record[key] = new Date(value.value).toISOString();
+          } else if (value instanceof Date) {
+            record[key] = value.toISOString();
+          } else {
+            record[key] = now;
+          }
         } else if (typeof value === 'object' && value.value !== undefined) {
-          // Handle BigQuery Decimal type
+          // Handle BigQuery Decimal type (NOT timestamps)
           record[key] = parseFloat(value.value);
         } else if (value instanceof Date) {
           record[key] = value.toISOString();
-        } else if (key === 'calculated_at' && typeof value === 'string') {
-          // Ensure timestamp is properly formatted
-          try {
-            record[key] = new Date(value).toISOString();
-          } catch (e) {
-            record[key] = now;
-          }
-        } else if (key === 'calculated_at' && typeof value === 'object' && value.value) {
-          // BigQuery timestamp object
-          record[key] = new Date(value.value).toISOString();
         } else {
           record[key] = value;
         }
@@ -173,3 +197,51 @@ exports.syncRankings = async (req, res) => {
     });
   }
 };
+
+/**
+ * Delete female players from Supabase
+ * Female players are identified by team names containing "(W)"
+ */
+exports.deleteFemales = async (req, res) => {
+  console.log('Starting female player deletion from Supabase...');
+
+  try {
+    if (!SUPABASE_URL || !SUPABASE_KEY) {
+      throw new Error('Supabase credentials not configured');
+    }
+
+    const supabase = createClient(SUPABASE_URL, SUPABASE_KEY, {
+      auth: { autoRefreshToken: false, persistSession: false }
+    });
+
+    // Delete players where current_team contains '(W)'
+    const { data, error } = await supabase
+      .from('player_rankings')
+      .delete()
+      .like('current_team', '%(W)%')
+      .select('player_id');
+
+    if (error) {
+      throw new Error(`Supabase delete error: ${error.message}`);
+    }
+
+    const deletedCount = data ? data.length : 0;
+    console.log(`Deleted ${deletedCount} female players from Supabase`);
+
+    res.status(200).json({
+      success: true,
+      message: `Deleted ${deletedCount} female players from Supabase`,
+      deleted_count: deletedCount,
+      timestamp: new Date().toISOString()
+    });
+
+  } catch (error) {
+    console.error('Delete failed:', error);
+    res.status(500).json({
+      success: false,
+      error: error.message,
+      timestamp: new Date().toISOString()
+    });
+  }
+};
+

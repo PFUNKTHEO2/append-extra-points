@@ -1,10 +1,11 @@
 -- ============================================================================
 -- REBUILD player_cumulative_points WITH FULLY DEDUPLICATED JOINS
 -- ============================================================================
--- VERSION: v2.8-f25-f27
+-- VERSION: v2.9-exclude-females
 --
 -- CRITICAL FIX (Dec 2025): Added GROUP BY + MAX() to ALL factor CTEs to prevent
 -- duplicate rows when source tables have duplicate player_ids.
+-- FIX (Jan 14, 2026): Exclude female players (teams with "(W)" suffix)
 --
 -- ROOT CAUSES FIXED:
 -- 1. DL_F13_league_points had case-variant duplicates ('OHL' vs 'ohl')
@@ -21,6 +22,7 @@ WITH base_players AS (
   -- Get all unique players from player_stats as the base
   -- FIX (Jan 2026): Use correct column names - latestStats_teamName and latestStats_league_name
   -- have 91.5% coverage vs latestStats_team_name/latestStats_team_league_name at only 8%
+  -- FIX (Jan 14, 2026): Exclude female players (teams with "(W)" suffix)
   SELECT DISTINCT
     id AS player_id,
     name AS player_name,
@@ -32,6 +34,7 @@ WITH base_players AS (
     latestStats_season_slug AS current_season,
     COALESCE(latestStats_league_country_name, latestStats_team_league_country_name) AS team_country
   FROM `prodigy-ranking.algorithm_core.player_stats`
+  WHERE COALESCE(latestStats_teamName, latestStats_team_name) NOT LIKE '%(W)%'
 ),
 
 -- Performance Factors (F01-F12) - All use GROUP BY to prevent duplicates
