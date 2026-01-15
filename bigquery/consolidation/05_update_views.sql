@@ -112,19 +112,25 @@ raw_scores AS (
     COALESCE(f01.ep_views, 0) AS ep_views_raw,
     COALESCE(p.f01_views, 0) + COALESCE(p.f23_prodigylikes_points, 0) AS visibility_raw,
 
+    -- F35 Achievements raw: F15 + F16 + F17 + F21 + F22 (per Algorithm 2026.01.14 spec)
     LEAST(COALESCE(p.f15_international_points, 0), 1000) +
     COALESCE(p.f16_commitment_points, 0) +
     COALESCE(p.f17_draft_points, 0) +
-    COALESCE(p.f21_tournament_points, 0) AS achievements_raw,
+    COALESCE(p.f21_tournament_points, 0) +
+    COALESCE(p.f22_manual_points, 0) AS achievements_raw,
 
-    COALESCE(p.f18_weekly_points_delta, 0) + COALESCE(p.f19_weekly_assists_delta, 0) AS trending_raw,
+    -- F36 Trending raw: F18 + F19 + F25 (per Algorithm 2026.01.14 spec)
+    COALESCE(p.f18_weekly_points_delta, 0) +
+    COALESCE(p.f19_weekly_assists_delta, 0) +
+    COALESCE(p.f25_weekly_views, 0) AS trending_raw,
 
+    -- F34 Physical raw: F02 + F26 + F27 (F02 max 200 per Algorithm 2026.01.14 spec)
     LEAST(COALESCE(p.f02_height, 0), 200) +
     COALESCE(pd.f26_weight_points, 0) +
     COALESCE(pd.f27_bmi_points, 0) AS physical_raw,
 
     COALESCE(p.f01_views, 0) AS f01_views,
-    LEAST(COALESCE(p.f02_height, 0), 200) AS f02_height,
+    LEAST(COALESCE(p.f02_height, 0), 200) AS f02_height,  -- Max 200 per spec
     COALESCE(p.f13_league_points, 0) AS f13_league_points,
     COALESCE(p.f14_team_points, 0) AS f14_team_points,
     LEAST(COALESCE(p.f15_international_points, 0), 1000) AS f15_international_points,
@@ -132,6 +138,7 @@ raw_scores AS (
     COALESCE(p.f17_draft_points, 0) AS f17_draft_points,
     COALESCE(pd.f26_weight_points, 0) AS f26_weight_points,
     COALESCE(pd.f27_bmi_points, 0) AS f27_bmi_points,
+    COALESCE(p.f25_weekly_views, 0) AS f25_weekly_views,
 
     COALESCE(f03.current_goals_pg, 0) AS current_goals_pg_f,
     COALESCE(f04.current_goals_pg, 0) AS current_goals_pg_d,
@@ -206,27 +213,36 @@ ea_ratings AS (
     END AS performance_rating,
 
     CAST(GREATEST(1, level_tier_rating) AS INT64) AS level_rating,
-    CAST(LEAST(99, GREATEST(0, ROUND(ep_views_raw * 99.0 / 15000))) AS INT64) AS visibility_rating,
+    -- F33 Visibility: Linear 0-99 from 100-15000 views (per Algorithm 2026.01.14 spec)
+    CASE
+      WHEN ep_views_raw < 100 THEN 0
+      WHEN ep_views_raw >= 15000 THEN 99
+      ELSE CAST(ROUND(99.0 * (ep_views_raw - 100) / 14900) AS INT64)
+    END AS visibility_rating,
 
-    CAST(GREATEST(1, CASE
-      WHEN achievements_pct >= 99.9 THEN 99
-      WHEN achievements_pct >= 99 THEN 95 + (achievements_pct - 99) * 4
-      WHEN achievements_pct >= 95 THEN 90 + (achievements_pct - 95) * 1.25
-      WHEN achievements_pct >= 80 THEN 75 + (achievements_pct - 80) * 1
-      WHEN achievements_pct >= 50 THEN 50 + (achievements_pct - 50) * 0.83
-      WHEN achievements_pct >= 20 THEN 25 + (achievements_pct - 20) * 0.83
-      ELSE 1 + achievements_pct * 1.2
-    END) AS INT64) AS achievements_rating,
+    -- F35 Achievements: Direct formula (per Algorithm 2026.01.14 spec)
+    -- IF(sum >= 1500; 99; ROUND(99 * sum / 1500))
+    CASE
+      WHEN achievements_raw >= 1500 THEN 99
+      ELSE CAST(ROUND(99.0 * achievements_raw / 1500) AS INT64)
+    END AS achievements_rating,
 
-    CAST(GREATEST(1, CASE
-      WHEN trending_pct >= 99.9 THEN 99
-      WHEN trending_pct >= 99 THEN 95 + (trending_pct - 99) * 4
-      WHEN trending_pct >= 95 THEN 90 + (trending_pct - 95) * 1.25
-      WHEN trending_pct >= 80 THEN 75 + (trending_pct - 80) * 1
-      WHEN trending_pct >= 50 THEN 50 + (trending_pct - 50) * 0.83
-      WHEN trending_pct >= 20 THEN 25 + (trending_pct - 20) * 0.83
-      ELSE 1 + trending_pct * 1.2
-    END) AS INT64) AS trending_rating,
+    -- F36 Trending: Direct formula (per Algorithm 2026.01.14 spec)
+    -- F,D: IF(sum >= 250; 99; ROUND(99 * sum / 250))
+    -- G: IF(F25 >= 50; 99; ROUND(99 * F25 / 50))
+    CASE
+      WHEN position IN ('F', 'D') THEN
+        CASE
+          WHEN trending_raw >= 250 THEN 99
+          ELSE CAST(ROUND(99.0 * trending_raw / 250) AS INT64)
+        END
+      WHEN position = 'G' THEN
+        CASE
+          WHEN COALESCE(f25_weekly_views, 0) >= 50 THEN 99
+          ELSE CAST(ROUND(99.0 * COALESCE(f25_weekly_views, 0) / 50) AS INT64)
+        END
+      ELSE 0
+    END AS trending_rating,
 
     CAST(LEAST(99, GREATEST(0, ROUND(physical_raw / 600.0 * 99))) AS INT64) AS physical_rating
 
@@ -301,7 +317,7 @@ SELECT
 
   calculated_at,
   algorithm_version,
-  'v4.2-linear-physical' AS ratings_version,
+  'v4.4-2026.01.14-deltas' AS ratings_version,
   CURRENT_TIMESTAMP() AS ratings_generated_at
 
 FROM ea_ratings

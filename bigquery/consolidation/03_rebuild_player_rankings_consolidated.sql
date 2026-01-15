@@ -68,17 +68,17 @@ f01_calc AS (
 
 -- ============================================================================
 -- F02: HEIGHT POINTS (Inline calculation)
--- Formula: Metric: (height_cm - 175) * 25, Imperial: ((inches - 65) / 11) * 500
--- Max 500 points
+-- Formula: Linear distribution, varies by birth year & position
+-- Max 200 points (per Algorithm 2026.01.14 spec)
 -- ============================================================================
 f02_calc AS (
   SELECT
     player_id,
     CASE
       WHEN height_cm IS NOT NULL AND height_cm > 0
-        THEN LEAST(GREATEST((height_cm - 175) * 25, 0), 500)
+        THEN LEAST(GREATEST((height_cm - 175) * 10, 0), 200)
       WHEN height_inches IS NOT NULL AND SAFE_CAST(height_inches AS FLOAT64) > 0
-        THEN LEAST(GREATEST(((SAFE_CAST(height_inches AS FLOAT64) - 65) / 11) * 500, 0), 500)
+        THEN LEAST(GREATEST(((SAFE_CAST(height_inches AS FLOAT64) - 65) / 11) * 200, 0), 200)
       ELSE 0
     END AS f02_height
   FROM base_players
@@ -307,6 +307,59 @@ external_factors AS (
     COALESCE(prodigylikes_points, 0) AS f23_prodigylikes_points,
     COALESCE(card_sales_points, 0) AS f24_card_sales_points
   FROM `prodigy-ranking.algorithm_core.player_external_factors`
+),
+
+-- ============================================================================
+-- F18/F19/F25: WEEKLY DELTAS (from weekly_stats_snapshot)
+-- Per Algorithm 2026.01.14 spec:
+--   F18: 40 points per goal delta, max 200, capped at 5 goals (F,D only)
+--   F19: 25 points per assist delta, max 125, capped at 5 assists (F,D only)
+--   F25: 1 point per view delta, max 200 (all positions)
+-- ============================================================================
+latest_snapshot AS (
+  SELECT
+    player_id,
+    goals AS snapshot_goals,
+    assists AS snapshot_assists,
+    views AS snapshot_views
+  FROM `prodigy-ranking.algorithm_core.weekly_stats_snapshot`
+  WHERE snapshot_date = (
+    SELECT MAX(snapshot_date)
+    FROM `prodigy-ranking.algorithm_core.weekly_stats_snapshot`
+    WHERE snapshot_date < CURRENT_DATE()  -- Get previous snapshot, not today's
+  )
+),
+
+weekly_deltas AS (
+  SELECT
+    bp.player_id,
+    bp.position,
+    -- Goal delta (current - snapshot), capped at 5
+    LEAST(GREATEST(COALESCE(bp.goals, 0) - COALESCE(ls.snapshot_goals, 0), 0), 5) AS goal_delta,
+    -- Assist delta (current - snapshot), capped at 5
+    LEAST(GREATEST(COALESCE(bp.assists, 0) - COALESCE(ls.snapshot_assists, 0), 0), 5) AS assist_delta,
+    -- View delta (current - snapshot), no negative
+    GREATEST(COALESCE(bp.views, 0) - COALESCE(ls.snapshot_views, 0), 0) AS view_delta
+  FROM base_players bp
+  LEFT JOIN latest_snapshot ls ON bp.player_id = ls.player_id
+),
+
+f18_f19_f25_calc AS (
+  SELECT
+    player_id,
+    -- F18: Weekly Goals (F,D only) - 40 pts/goal, max 200
+    CASE
+      WHEN position IN ('F', 'D') THEN LEAST(goal_delta * 40, 200)
+      ELSE 0
+    END AS f18_weekly_goals,
+    -- F19: Weekly Assists (F,D only) - 25 pts/assist, max 125
+    CASE
+      WHEN position IN ('F', 'D') THEN LEAST(assist_delta * 25, 125)
+      ELSE 0
+    END AS f19_weekly_assists,
+    -- F25: Weekly EP Views (all positions) - 1 pt/view, max 200
+    LEAST(view_delta, 200) AS f25_weekly_views
+  FROM weekly_deltas
 )
 
 -- ============================================================================
@@ -343,16 +396,16 @@ SELECT
   COALESCE(ef.f15_international_points, 0) AS f15_international_points,
   COALESCE(ef.f16_commitment_points, 0) AS f16_commitment_points,
   COALESCE(ef.f17_draft_points, 0) AS f17_draft_points,
-  0 AS f18_weekly_points_delta,  -- TODO: Implement if needed
-  0 AS f19_weekly_assists_delta, -- TODO: Implement if needed
+  COALESCE(wd.f18_weekly_goals, 0) AS f18_weekly_points_delta,
+  COALESCE(wd.f19_weekly_assists, 0) AS f19_weekly_assists_delta,
   COALESCE(ef.f20_playing_up_points, 0) AS f20_playing_up_points,
   COALESCE(ef.f21_tournament_points, 0) AS f21_tournament_points,
   COALESCE(ef.f22_manual_points, 0) AS f22_manual_points,
   COALESCE(ef.f23_prodigylikes_points, 0) AS f23_prodigylikes_points,
   COALESCE(ef.f24_card_sales_points, 0) AS f24_card_sales_points,
-  0 AS f25_weekly_views,    -- TODO: Implement if needed
-  0 AS f26_weight_points,   -- TODO: Implement if needed
-  0 AS f27_bmi_points,      -- TODO: Implement if needed
+  COALESCE(wd.f25_weekly_views, 0) AS f25_weekly_views,
+  0 AS f26_weight_points,   -- TODO: Needs Physical Standards tables
+  0 AS f27_bmi_points,      -- TODO: Needs Physical Standards tables
 
   -- Calculate performance total (F01-F12)
   (
@@ -377,16 +430,16 @@ SELECT
     COALESCE(ef.f15_international_points, 0) +
     COALESCE(ef.f16_commitment_points, 0) +
     COALESCE(ef.f17_draft_points, 0) +
-    0 +  -- F18
-    0 +  -- F19
+    COALESCE(wd.f18_weekly_goals, 0) +
+    COALESCE(wd.f19_weekly_assists, 0) +
     COALESCE(ef.f20_playing_up_points, 0) +
     COALESCE(ef.f21_tournament_points, 0) +
     COALESCE(ef.f22_manual_points, 0) +
     COALESCE(ef.f23_prodigylikes_points, 0) +
     COALESCE(ef.f24_card_sales_points, 0) +
-    0 +  -- F25
-    0 +  -- F26
-    0    -- F27
+    COALESCE(wd.f25_weekly_views, 0) +
+    0 +  -- F26 needs Physical Standards tables
+    0    -- F27 needs Physical Standards tables
   ) AS direct_load_total,
 
   -- Calculate total points
@@ -410,15 +463,18 @@ SELECT
     COALESCE(ef.f15_international_points, 0) +
     COALESCE(ef.f16_commitment_points, 0) +
     COALESCE(ef.f17_draft_points, 0) +
+    COALESCE(wd.f18_weekly_goals, 0) +
+    COALESCE(wd.f19_weekly_assists, 0) +
     COALESCE(ef.f20_playing_up_points, 0) +
     COALESCE(ef.f21_tournament_points, 0) +
     COALESCE(ef.f22_manual_points, 0) +
     COALESCE(ef.f23_prodigylikes_points, 0) +
-    COALESCE(ef.f24_card_sales_points, 0)
+    COALESCE(ef.f24_card_sales_points, 0) +
+    COALESCE(wd.f25_weekly_views, 0)
   ) AS total_points,
 
   CURRENT_TIMESTAMP() AS calculated_at,
-  'v3.0-consolidated' AS algorithm_version
+  'v3.2-2026.01.14-deltas' AS algorithm_version
 
 FROM base_players bp
 LEFT JOIN f01_calc f01 ON bp.player_id = f01.player_id
@@ -434,4 +490,5 @@ LEFT JOIN f10_calc f10 ON bp.player_id = f10.player_id
 LEFT JOIN f11_calc f11 ON bp.player_id = f11.player_id
 LEFT JOIN f12_calc f12 ON bp.player_id = f12.player_id
 LEFT JOIN f13_calc f13 ON bp.player_id = f13.player_id
-LEFT JOIN external_factors ef ON bp.player_id = ef.player_id;
+LEFT JOIN external_factors ef ON bp.player_id = ef.player_id
+LEFT JOIN f18_f19_f25_calc wd ON bp.player_id = wd.player_id;
