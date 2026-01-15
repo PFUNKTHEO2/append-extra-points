@@ -52,18 +52,15 @@ base_players AS (
 ),
 
 -- ============================================================================
--- F01: VIEWS POINTS (Inline calculation)
+-- F01: VIEWS POINTS (from PT_F01_EPV - has correct views data)
+-- Note: player_stats.views is stale for many players, PT_F01_EPV has current data
 -- Formula: (views - 100) * (2000 / 29900), capped at 0-2000
 -- ============================================================================
 f01_calc AS (
   SELECT
     player_id,
-    CASE
-      WHEN views IS NULL OR views < 100 THEN 0
-      WHEN views >= 30000 THEN 2000
-      ELSE ROUND((views - 100) * (2000.0 / 29900.0), 2)
-    END AS f01_views
-  FROM base_players
+    COALESCE(factor_1_epv_points, 0) AS f01_views
+  FROM `prodigy-ranking.algorithm_core.PT_F01_EPV`
 ),
 
 -- ============================================================================
@@ -474,7 +471,7 @@ SELECT
   ) AS total_points,
 
   CURRENT_TIMESTAMP() AS calculated_at,
-  'v3.2-2026.01.14-deltas' AS algorithm_version
+  'v3.3-2026.01.15-f01-fix' AS algorithm_version
 
 FROM base_players bp
 LEFT JOIN f01_calc f01 ON bp.player_id = f01.player_id
