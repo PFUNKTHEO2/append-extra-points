@@ -24,7 +24,7 @@ const BASE_COLUMNS = [
   'f18_weekly_points_delta', 'f19_weekly_assists_delta', 'f20_playing_up_points',
   'f21_tournament_points', 'f22_manual_points', 'f23_prodigylikes_points',
   'f24_card_sales_points', 'f25_weekly_views', 'f26_weight_points', 'f27_bmi_points',
-  'calculated_at', 'algorithm_version'
+  'f28_nhl_scouting_points', 'calculated_at', 'algorithm_version'
 ];
 
 const RATING_COLUMNS = [
@@ -87,7 +87,7 @@ exports.syncRankings = async (req, res) => {
             PARTITION BY p.birth_year, p.position, p.nationality_name
             ORDER BY p.total_points DESC
           ) as country_rank
-        FROM \`prodigy-ranking.algorithm_core.player_rankings\` p
+        FROM \`prodigy-ranking.algorithm_core.player_cumulative_points\` p
         LEFT JOIN \`prodigy-ranking.algorithm_core.player_card_ratings\` r ON p.player_id = r.player_id
         LEFT JOIN \`prodigy-ranking.algorithm_core.player_category_percentiles\` pct ON p.player_id = pct.player_id
       )
