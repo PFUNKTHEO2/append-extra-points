@@ -24,8 +24,9 @@ const BASE_COLUMNS = [
   'f18_weekly_points_delta', 'f19_weekly_assists_delta', 'f20_playing_up_points',
   'f21_tournament_points', 'f22_manual_points', 'f23_prodigylikes_points',
   'f24_card_sales_points', 'f25_weekly_views', 'f26_weight_points', 'f27_bmi_points',
-  'f28_nhl_scouting_points', 'calculated_at', 'algorithm_version'
+  'calculated_at', 'algorithm_version'
 ];
+// NOTE: f28_nhl_scouting_points excluded until Supabase column is added
 
 const RATING_COLUMNS = [
   'overall_rating', 'performance_rating', 'level_rating', 'visibility_rating',
