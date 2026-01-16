@@ -257,6 +257,17 @@ f27_data AS (
     MAX(factor_27_bmi_points) AS f27_bmi_points
   FROM `prodigy-ranking.algorithm_core.PT_F27_bmi`
   GROUP BY player_id
+),
+
+-- F28: NHL Scouting Report Points - with GROUP BY for safety
+-- Source: NHL Central Scouting Mid-Term Rankings 2025/2026
+-- Points: 1000 (rank 1) to 500 (last), linear distribution per list
+f28_data AS (
+  SELECT
+    player_id,
+    MAX(factor_28_nhl_scouting_points) AS f28_nhl_scouting_points
+  FROM `prodigy-ranking.algorithm_core.PT_F28_NHLSR`
+  GROUP BY player_id
 )
 
 -- Combine everything with proper JOINs to the fixed source tables
@@ -301,6 +312,7 @@ SELECT
   COALESCE(f25.f25_weekly_views, 0.0) AS f25_weekly_views,
   COALESCE(f26.f26_weight_points, 0.0) AS f26_weight_points,
   COALESCE(f27.f27_bmi_points, 0.0) AS f27_bmi_points,
+  COALESCE(f28.f28_nhl_scouting_points, 0.0) AS f28_nhl_scouting_points,
 
   -- Calculate performance total (F01-F12)
   (
@@ -318,7 +330,7 @@ SELECT
     COALESCE(f12.f12_last_svp, 0.0)
   ) AS performance_total,
 
-  -- Calculate direct load total (F13-F24 + F26-F27)
+  -- Calculate direct load total (F13-F28)
   (
     COALESCE(f13.f13_league_points, 0) +
     COALESCE(f14.f14_team_points, 0) +
@@ -334,7 +346,8 @@ SELECT
     COALESCE(f24.f24_card_sales_points, 0) +
     COALESCE(f25.f25_weekly_views, 0.0) +
     COALESCE(f26.f26_weight_points, 0.0) +
-    COALESCE(f27.f27_bmi_points, 0.0)
+    COALESCE(f27.f27_bmi_points, 0.0) +
+    COALESCE(f28.f28_nhl_scouting_points, 0.0)
   ) AS direct_load_total,
 
   -- Calculate total points
@@ -367,11 +380,12 @@ SELECT
     COALESCE(f24.f24_card_sales_points, 0) +
     COALESCE(f25.f25_weekly_views, 0.0) +
     COALESCE(f26.f26_weight_points, 0.0) +
-    COALESCE(f27.f27_bmi_points, 0.0)
+    COALESCE(f27.f27_bmi_points, 0.0) +
+    COALESCE(f28.f28_nhl_scouting_points, 0.0)
   ) AS total_points,
 
   CURRENT_TIMESTAMP() AS calculated_at,
-  'v2.8-f25-f27' AS algorithm_version
+  'v2.9-f28-nhl-scouting' AS algorithm_version
 
 FROM base_players bp
 LEFT JOIN f01_data f01 ON bp.player_id = f01.player_id
@@ -400,4 +414,5 @@ LEFT JOIN f23_data f23 ON bp.player_id = f23.player_id
 LEFT JOIN f24_data f24 ON bp.player_id = f24.player_id
 LEFT JOIN f25_data f25 ON bp.player_id = f25.player_id
 LEFT JOIN f26_data f26 ON bp.player_id = f26.player_id
-LEFT JOIN f27_data f27 ON bp.player_id = f27.player_id;
+LEFT JOIN f27_data f27 ON bp.player_id = f27.player_id
+LEFT JOIN f28_data f28 ON bp.player_id = f28.player_id;
