@@ -110,15 +110,17 @@ f12_data AS (
   GROUP BY player_id
 ),
 
--- F13: League Points - FIXED WITH MAX() + GROUP BY
--- Fixes case-variant duplicates like 'OHL' (1000 pts) vs 'ohl' (150 pts)
+-- F13: League Points - FIXED 2026-01-16
+-- FIX: Use COALESCE(latestStats_league_name, latestStats_team_league_name)
+-- because latestStats_team_league_name is NULL for most players!
+-- Also switched to DL_all_leagues which has better coverage (26,829 leagues)
 f13_data AS (
   SELECT
     ps.id AS player_id,
-    MAX(COALESCE(lp.points, 0)) AS f13_league_points
+    MAX(COALESCE(lp.league_points, 0)) AS f13_league_points
   FROM `prodigy-ranking.algorithm_core.player_stats` ps
-  LEFT JOIN `prodigy-ranking.algorithm_core.DL_F13_league_points` lp
-    ON LOWER(TRIM(REPLACE(REPLACE(ps.latestStats_team_league_name, ' ', '-'), '_', '-'))) =
+  LEFT JOIN `prodigy-ranking.algorithm_core.DL_all_leagues` lp
+    ON LOWER(TRIM(REPLACE(REPLACE(COALESCE(ps.latestStats_league_name, ps.latestStats_team_league_name), ' ', '-'), '_', '-'))) =
        LOWER(TRIM(REPLACE(REPLACE(lp.league_name, ' ', '-'), '_', '-')))
   GROUP BY ps.id
 ),
