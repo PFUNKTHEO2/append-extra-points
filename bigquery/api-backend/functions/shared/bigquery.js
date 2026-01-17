@@ -816,6 +816,72 @@ async function getPlayerPhysical(playerId) {
   };
 }
 
+/**
+ * Get season-by-season stats for a player
+ * @param {number} playerId - Player ID
+ * @param {number} limit - Max seasons to return (default 10)
+ * @returns {Promise<Array>} Season stats
+ */
+async function getPlayerSeasonStats(playerId, limit = 10) {
+  const cacheKey = `seasonStats:${playerId}:${limit}`;
+  const cached = getCached(cacheKey);
+  if (cached) {
+    console.log(`Cache HIT for season stats ${playerId}`);
+    return cached;
+  }
+
+  const query = `
+    SELECT
+      player_id,
+      season_slug as season,
+      season_start_year,
+      team_name,
+      league_name,
+      league_level,
+      gp as games_played,
+      goals,
+      assists,
+      points,
+      plus_minus,
+      pim,
+      ppg as points_per_game,
+      -- Goalie stats
+      gaa,
+      svp as save_pct,
+      wins,
+      losses,
+      shutouts,
+      saves,
+      -- Postseason
+      has_postseason,
+      postseason_gp,
+      postseason_goals,
+      postseason_assists,
+      postseason_points
+    FROM \`prodigy-ranking.algorithm_core.player_season_stats\`
+    WHERE player_id = @playerId
+      AND season_start_year >= 2018
+    ORDER BY season_start_year DESC, gp DESC
+    LIMIT @limit
+  `;
+
+  const options = {
+    query,
+    params: {
+      playerId: parseInt(playerId),
+      limit: parseInt(limit)
+    },
+  };
+
+  const rows = await executeQuery(query, options);
+
+  if (rows.length > 0) {
+    setCache(cacheKey, rows);
+  }
+
+  return rows;
+}
+
 module.exports = {
   bigquery,
   executeQuery,
@@ -833,5 +899,7 @@ module.exports = {
   getPlayerPercentiles,
   getPlayerPercentilesBatch,
   // Physical Data API
-  getPlayerPhysical
+  getPlayerPhysical,
+  // Season Stats API
+  getPlayerSeasonStats
 };

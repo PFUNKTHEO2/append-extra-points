@@ -20,7 +20,9 @@ const {
   getPlayerPercentiles: getPlayerPercentilesDB,
   getPlayerPercentilesBatch: getPlayerPercentilesBatchDB,
   // Physical Data
-  getPlayerPhysical: getPlayerPhysicalDB
+  getPlayerPhysical: getPlayerPhysicalDB,
+  // Season Stats
+  getPlayerSeasonStats: getPlayerSeasonStatsDB
 } = require('./shared/bigquery');
 
 // Enable CORS for all functions
@@ -96,6 +98,33 @@ functions.http('getPlayer', withCors(async (req, res) => {
     res.json(player);
   } catch (error) {
     console.error('Error in getPlayer:', error);
+    return errorResponse(res, 500, 'Internal server error');
+  }
+}));
+
+/**
+ * GET /api/player/:player_id/stats
+ * Get season-by-season stats for a player
+ */
+functions.http('getPlayerStats', withCors(async (req, res) => {
+  try {
+    const playerId = req.params.player_id || req.query.player_id;
+    const limit = parseInt(req.query.limit) || 10;
+
+    if (!playerId) {
+      return errorResponse(res, 400, 'player_id is required');
+    }
+
+    const stats = await getPlayerSeasonStatsDB(playerId, limit);
+
+    setCacheHeaders(res, 'player');
+    res.json({
+      player_id: parseInt(playerId),
+      count: stats.length,
+      seasons: stats
+    });
+  } catch (error) {
+    console.error('Error in getPlayerStats:', error);
     return errorResponse(res, 500, 'Internal server error');
   }
 }));
@@ -679,3 +708,6 @@ require('./ai-blurbs');
 // Import sync function for Cloud Scheduler
 const { syncRankings } = require('./sync');
 functions.http('syncRankings', syncRankings);
+
+// Import Stripe payment functions
+require('./stripe');
