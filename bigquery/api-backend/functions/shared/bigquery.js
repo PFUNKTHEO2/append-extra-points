@@ -149,6 +149,10 @@ async function getPlayerById(playerId) {
       ROUND(COALESCE(f26_weight_points, 0), 2) as f26_weight_points,
       ROUND(COALESCE(f27_bmi_points, 0), 2) as f27_bmi_points,
 
+      -- Physical measurements (raw values for BMI tool)
+      height_cm,
+      weight_kg,
+
       calculated_at,
       algorithm_version
 

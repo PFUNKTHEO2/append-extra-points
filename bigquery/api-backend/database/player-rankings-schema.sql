@@ -39,6 +39,14 @@ CREATE TABLE IF NOT EXISTS player_rankings (
     f17_draft_points NUMERIC(10,2) DEFAULT 0,
     f22_manual_points NUMERIC(10,2) DEFAULT 0,
 
+    -- Physical measurements (raw values for BMI tool)
+    height_cm INTEGER,
+    weight_kg INTEGER,
+
+    -- Pre-computed ranks (computed in BigQuery during sync for performance)
+    world_rank INTEGER,       -- Rank within birth_year + position
+    country_rank INTEGER,     -- Rank within birth_year + position + nationality
+
     -- Metadata
     calculated_at TIMESTAMP,
     algorithm_version TEXT,
@@ -70,6 +78,13 @@ ON player_rankings (LOWER(player_name));
 -- Sync status
 CREATE INDEX IF NOT EXISTS idx_synced_at
 ON player_rankings (synced_at DESC);
+
+-- Pre-computed ranks for fast rank-based queries
+CREATE INDEX IF NOT EXISTS idx_world_rank
+ON player_rankings (birth_year, position, world_rank);
+
+CREATE INDEX IF NOT EXISTS idx_country_rank
+ON player_rankings (birth_year, position, nationality_name, country_rank);
 
 -- ============================================================
 -- ROW LEVEL SECURITY (RLS)
@@ -110,21 +125,13 @@ CREATE TRIGGER update_player_rankings_updated_at
     EXECUTE FUNCTION update_updated_at_column();
 
 -- ============================================================
--- HELPER VIEW: Rankings with computed rank
+-- HELPER VIEW: Rankings with pre-computed ranks
 -- ============================================================
+-- NOTE: world_rank and country_rank are now pre-computed in BigQuery during sync
+-- for much better query performance (was computing dynamically with ROW_NUMBER)
 
 CREATE OR REPLACE VIEW vw_player_rankings AS
-SELECT
-    *,
-    ROW_NUMBER() OVER (
-        PARTITION BY birth_year, position
-        ORDER BY total_points DESC
-    ) as world_rank,
-    ROW_NUMBER() OVER (
-        PARTITION BY birth_year, position, nationality_name
-        ORDER BY total_points DESC
-    ) as country_rank
-FROM player_rankings;
+SELECT * FROM player_rankings;
 
 -- ============================================================
 -- GRANT PERMISSIONS
