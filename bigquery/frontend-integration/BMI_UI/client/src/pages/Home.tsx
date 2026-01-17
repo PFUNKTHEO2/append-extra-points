@@ -1,7 +1,6 @@
 import PlayerGraphic from "@/components/PlayerGraphic";
 import BenchmarkBar from "@/components/BenchmarkBar";
 
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
@@ -19,8 +18,10 @@ import {
   PHYSICAL_STANDARDS,
   NHL_BENCHMARKS,
   getBenchmarkStatus,
-  getNHLComparison
+  getNHLComparison,
+  PhysicalRange
 } from "@/lib/bmi";
+import { fetchPhysicalBenchmarks, benchmarkToPhysicalRange, PhysicalBenchmarksResponse } from "@/lib/api";
 import { motion } from "framer-motion";
 import { useEffect, useState, useMemo } from "react";
 
@@ -47,10 +48,46 @@ export default function Home() {
     category: 'Normal Weight'
   });
 
+  // API data for real player benchmarks
+  const [apiBenchmarks, setApiBenchmarks] = useState<PhysicalBenchmarksResponse | null>(null);
+  const [isLoadingBenchmarks, setIsLoadingBenchmarks] = useState(true);
+
+  // Fetch real player benchmarks from API on mount
+  useEffect(() => {
+    fetchPhysicalBenchmarks()
+      .then((data) => {
+        if (data) {
+          setApiBenchmarks(data);
+          console.log('Loaded real player benchmarks from API');
+        }
+      })
+      .finally(() => setIsLoadingBenchmarks(false));
+  }, []);
+
   // Get current standards based on age/position
-  const currentStandards = useMemo(() => {
+  // Uses real API data when available, falls back to hardcoded values
+  const currentStandards = useMemo((): PhysicalRange => {
+    // Try to get real data from API first
+    if (apiBenchmarks?.by_age_category?.[ageCategory]?.[position]) {
+      const apiData = apiBenchmarks.by_age_category[ageCategory][position];
+      return benchmarkToPhysicalRange(apiData);
+    }
+    // Fallback to hardcoded values
     return PHYSICAL_STANDARDS[position][ageCategory];
-  }, [position, ageCategory]);
+  }, [position, ageCategory, apiBenchmarks]);
+
+  // Get sample size for current selection (for display)
+  const sampleSize = useMemo(() => {
+    if (apiBenchmarks?.by_age_category?.[ageCategory]?.[position]) {
+      return apiBenchmarks.by_age_category[ageCategory][position].sample_size;
+    }
+    return null;
+  }, [position, ageCategory, apiBenchmarks]);
+
+  // Check if using real data
+  const usingRealData = useMemo(() => {
+    return apiBenchmarks?.by_age_category?.[ageCategory]?.[position] !== undefined;
+  }, [position, ageCategory, apiBenchmarks]);
 
   const nhlBenchmark = useMemo(() => {
     return NHL_BENCHMARKS[position];
@@ -300,14 +337,29 @@ export default function Home() {
           ageCategory={ageCategory}
           nhlBenchmark={nhlBenchmark}
           optimalRange={currentStandards}
+          unitSystem={unitSystem}
         />
 
         {/* Age/Position Badge */}
-        <div className="absolute top-6 left-6 flex gap-2">
+        <div className="absolute top-6 left-6 flex flex-col gap-2">
           <div className="bg-black/60 backdrop-blur-md px-4 py-2 rounded-lg border border-white/10">
             <span className="text-[#d946ef] font-bold">{ageCategory}</span>
             <span className="text-white/50 mx-2">|</span>
             <span className="text-white font-medium capitalize">{position}</span>
+          </div>
+          {/* Data Source Indicator */}
+          <div className={`backdrop-blur-md px-3 py-1.5 rounded-lg border text-xs ${
+            usingRealData
+              ? 'bg-blue-500/20 border-blue-500/40 text-blue-300'
+              : 'bg-white/10 border-white/20 text-white/60'
+          }`}>
+            {isLoadingBenchmarks ? (
+              <span>Loading benchmarks...</span>
+            ) : usingRealData ? (
+              <span>Real data: {sampleSize?.toLocaleString()} players</span>
+            ) : (
+              <span>Using estimated benchmarks</span>
+            )}
           </div>
         </div>
 
@@ -321,7 +373,7 @@ export default function Home() {
               : 'bg-red-500/20 border-red-500/50 text-red-400'
           }`}>
             <span className="font-bold uppercase text-sm">
-              {benchmarkStatuses.bmi === 'within' ? 'Optimal Range' : benchmarkStatuses.bmi === 'below' ? 'Below Range' : 'Above Range'}
+              {benchmarkStatuses.bmi === 'within' ? 'Average Range' : benchmarkStatuses.bmi === 'below' ? 'Below Range' : 'Above Range'}
             </span>
           </div>
         </div>

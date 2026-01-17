@@ -817,6 +817,73 @@ async function getPlayerPhysical(playerId) {
 }
 
 /**
+ * Get physical benchmarks by birth year and position
+ * Returns average height, weight, BMI with percentile ranges for real player data
+ * Used by the BMI comparison tool to show real player averages instead of hardcoded values
+ * @returns {Promise<Array>} Physical benchmarks by birth year and position
+ */
+async function getPhysicalBenchmarks() {
+  // Check cache (benchmarks don't change often)
+  const cacheKey = 'physicalBenchmarks:all';
+  const cached = getCached(cacheKey);
+  if (cached) {
+    console.log('Cache HIT for physical benchmarks');
+    return cached;
+  }
+
+  const query = `
+    WITH player_physical AS (
+      SELECT
+        ps.yearOfBirth as birth_year,
+        ps.position,
+        ps.height_metrics as height_cm,
+        ps.weight_metrics as weight_kg,
+        CASE
+          WHEN ps.height_metrics > 0 AND ps.weight_metrics > 0
+          THEN ROUND(ps.weight_metrics / POW(ps.height_metrics / 100, 2), 1)
+          ELSE NULL
+        END as bmi
+      FROM \`prodigy-ranking.algorithm.player_stats\` ps
+      WHERE ps.yearOfBirth BETWEEN 2007 AND 2011
+        AND ps.position IN ('F', 'D', 'G')
+        AND ps.height_metrics > 100  -- Valid height > 100cm
+        AND ps.weight_metrics > 30   -- Valid weight > 30kg
+    )
+    SELECT
+      birth_year,
+      position,
+      COUNT(*) as sample_size,
+      -- Height stats
+      ROUND(AVG(height_cm), 1) as avg_height,
+      CAST(APPROX_QUANTILES(height_cm, 4)[OFFSET(1)] AS INT64) as height_p25,
+      CAST(APPROX_QUANTILES(height_cm, 4)[OFFSET(3)] AS INT64) as height_p75,
+      MIN(height_cm) as height_min,
+      MAX(height_cm) as height_max,
+      -- Weight stats
+      ROUND(AVG(weight_kg), 1) as avg_weight,
+      CAST(APPROX_QUANTILES(weight_kg, 4)[OFFSET(1)] AS INT64) as weight_p25,
+      CAST(APPROX_QUANTILES(weight_kg, 4)[OFFSET(3)] AS INT64) as weight_p75,
+      MIN(weight_kg) as weight_min,
+      MAX(weight_kg) as weight_max,
+      -- BMI stats
+      ROUND(AVG(bmi), 1) as avg_bmi,
+      ROUND(APPROX_QUANTILES(bmi, 4)[OFFSET(1)], 1) as bmi_p25,
+      ROUND(APPROX_QUANTILES(bmi, 4)[OFFSET(3)], 1) as bmi_p75
+    FROM player_physical
+    WHERE bmi IS NOT NULL
+    GROUP BY birth_year, position
+    ORDER BY birth_year DESC, position
+  `;
+
+  const rows = await executeQuery(query);
+
+  // Cache for 15 minutes (benchmarks don't change often)
+  setCache(cacheKey, rows);
+
+  return rows;
+}
+
+/**
  * Get season-by-season stats for a player
  * @param {number} playerId - Player ID
  * @param {number} limit - Max seasons to return (default 10)
@@ -900,6 +967,7 @@ module.exports = {
   getPlayerPercentilesBatch,
   // Physical Data API
   getPlayerPhysical,
+  getPhysicalBenchmarks,
   // Season Stats API
   getPlayerSeasonStats
 };

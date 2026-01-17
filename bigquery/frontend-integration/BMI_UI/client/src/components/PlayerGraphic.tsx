@@ -1,4 +1,4 @@
-import { BodyStats, AgeCategory, Position, NHLBenchmark, PhysicalRange } from "@/lib/bmi";
+import { BodyStats, AgeCategory, Position, NHLBenchmark, PhysicalRange, UnitSystem, metricToImperial } from "@/lib/bmi";
 import { motion } from "framer-motion";
 
 interface PlayerGraphicProps {
@@ -7,6 +7,7 @@ interface PlayerGraphicProps {
   ageCategory: AgeCategory;
   nhlBenchmark: NHLBenchmark;
   optimalRange: PhysicalRange;
+  unitSystem: UnitSystem;
 }
 
 interface BodyModelProps {
@@ -20,9 +21,10 @@ interface BodyModelProps {
   heightScale: number;
   widthScale: number;
   delay?: number;
+  unitSystem: UnitSystem;
 }
 
-function BodyModel({ label, sublabel, height, weight, bmi, accentColor, heightScale, widthScale, delay = 0 }: BodyModelProps) {
+function BodyModel({ label, sublabel, height, weight, bmi, accentColor, heightScale, widthScale, delay = 0, unitSystem }: BodyModelProps) {
   // Select image based on BMI
   const getPlayerImage = (bmi: number) => {
     if (bmi < 22) return '/images/mesh-aligned-lean-transparent.png';
@@ -38,6 +40,13 @@ function BodyModel({ label, sublabel, height, weight, bmi, accentColor, heightSc
   const maxFigureHeight = 320;
   // Actual height for this figure based on its scale
   const actualHeight = maxFigureHeight * heightScale;
+
+  // Convert to imperial if needed
+  const imperial = metricToImperial(height, weight);
+  const displayHeight = unitSystem === 'imperial' ? `${imperial.feet}'${imperial.inches}"` : height;
+  const displayWeight = unitSystem === 'imperial' ? imperial.lbs : weight;
+  const heightUnit = unitSystem === 'imperial' ? '' : 'cm';
+  const weightUnit = unitSystem === 'imperial' ? 'lbs' : 'kg';
 
   return (
     <motion.div
@@ -87,12 +96,12 @@ function BodyModel({ label, sublabel, height, weight, bmi, accentColor, heightSc
       >
         <div className="grid grid-cols-3 gap-1 text-center">
           <div>
-            <div className="text-base font-bold text-white">{height}</div>
-            <div className="text-[9px] text-muted-foreground uppercase">cm</div>
+            <div className="text-base font-bold text-white">{displayHeight}</div>
+            <div className="text-[9px] text-muted-foreground uppercase">{heightUnit}</div>
           </div>
           <div>
-            <div className="text-base font-bold text-white">{weight}</div>
-            <div className="text-[9px] text-muted-foreground uppercase">kg</div>
+            <div className="text-base font-bold text-white">{displayWeight}</div>
+            <div className="text-[9px] text-muted-foreground uppercase">{weightUnit}</div>
           </div>
           <div>
             <div className="text-base font-bold" style={{ color: accentColor }}>{bmi}</div>
@@ -104,7 +113,7 @@ function BodyModel({ label, sublabel, height, weight, bmi, accentColor, heightSc
   );
 }
 
-export default function PlayerGraphic({ stats, position, ageCategory, nhlBenchmark, optimalRange }: PlayerGraphicProps) {
+export default function PlayerGraphic({ stats, position, ageCategory, nhlBenchmark, optimalRange, unitSystem }: PlayerGraphicProps) {
   // Calculate optimal range midpoints
   const optimalBMI = Math.round(((optimalRange.bmi[0] + optimalRange.bmi[1]) / 2) * 10) / 10;
   const optimalHeight = Math.round((optimalRange.height[0] + optimalRange.height[1]) / 2);
@@ -158,11 +167,12 @@ export default function PlayerGraphic({ stats, position, ageCategory, nhlBenchma
             heightScale={playerHeightScale}
             widthScale={playerWidthScale}
             delay={0}
+            unitSystem={unitSystem}
           />
 
           {/* Optimal Range Model */}
           <BodyModel
-            label={`Optimal ${ageCategory}`}
+            label={`Average ${ageCategory}`}
             sublabel={`${positionLabel} benchmark`}
             height={optimalHeight}
             weight={optimalWeight}
@@ -171,6 +181,7 @@ export default function PlayerGraphic({ stats, position, ageCategory, nhlBenchma
             heightScale={optimalHeightScale}
             widthScale={optimalWidthScale}
             delay={0.1}
+            unitSystem={unitSystem}
           />
 
           {/* NHL Model */}
@@ -184,6 +195,7 @@ export default function PlayerGraphic({ stats, position, ageCategory, nhlBenchma
             heightScale={nhlHeightScale}
             widthScale={nhlWidthScale}
             delay={0.2}
+            unitSystem={unitSystem}
           />
         </div>
       </div>
@@ -198,7 +210,7 @@ export default function PlayerGraphic({ stats, position, ageCategory, nhlBenchma
         <div className="flex justify-center gap-8">
           {/* vs Optimal */}
           <div className="text-center">
-            <div className="text-xs text-muted-foreground uppercase mb-1">vs Optimal {ageCategory}</div>
+            <div className="text-xs text-muted-foreground uppercase mb-1">vs Average {ageCategory}</div>
             <div className="flex gap-4">
               <div>
                 <span className={`text-sm font-bold ${stats.height - optimalHeight >= 0 ? 'text-green-400' : 'text-amber-400'}`}>

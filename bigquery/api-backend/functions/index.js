@@ -21,6 +21,7 @@ const {
   getPlayerPercentilesBatch: getPlayerPercentilesBatchDB,
   // Physical Data
   getPlayerPhysical: getPlayerPhysicalDB,
+  getPhysicalBenchmarks: getPhysicalBenchmarksDB,
   // Season Stats
   getPlayerSeasonStats: getPlayerSeasonStatsDB
 } = require('./shared/bigquery');
@@ -689,6 +690,105 @@ functions.http('getPlayerPhysical', withCors(async (req, res) => {
     });
   } catch (error) {
     console.error('Error in getPlayerPhysical:', error);
+    return errorResponse(res, 500, 'Internal server error');
+  }
+}));
+
+/**
+ * GET /api/physical/benchmarks
+ * Get physical benchmarks (height, weight, BMI) by birth year and position
+ *
+ * Returns real player averages from the database for the BMI comparison tool.
+ * Data is grouped by birth year (2007-2011) and position (F, D, G).
+ *
+ * Response includes:
+ * - avg_height, height_p25, height_p75 (25th-75th percentile range)
+ * - avg_weight, weight_p25, weight_p75
+ * - avg_bmi, bmi_p25, bmi_p75
+ * - sample_size: number of players with valid physical data
+ *
+ * The BMI tool uses height_p25-p75 as the "average range" for comparison.
+ */
+functions.http('getPhysicalBenchmarks', withCors(async (req, res) => {
+  try {
+    const benchmarks = await getPhysicalBenchmarksDB();
+
+    // Transform into a more frontend-friendly structure
+    // Organized by birth year -> position
+    const byYearAndPosition = {};
+
+    for (const row of benchmarks) {
+      const year = row.birth_year;
+      const pos = row.position.toLowerCase();  // 'f', 'd', 'g'
+
+      if (!byYearAndPosition[year]) {
+        byYearAndPosition[year] = {};
+      }
+
+      byYearAndPosition[year][pos] = {
+        sample_size: row.sample_size,
+        height: {
+          avg: row.avg_height,
+          range: [row.height_p25, row.height_p75],
+          min: row.height_min,
+          max: row.height_max
+        },
+        weight: {
+          avg: row.avg_weight,
+          range: [row.weight_p25, row.weight_p75],
+          min: row.weight_min,
+          max: row.weight_max
+        },
+        bmi: {
+          avg: row.avg_bmi,
+          range: [row.bmi_p25, row.bmi_p75]
+        }
+      };
+    }
+
+    // Map birth years to age categories for the BMI tool
+    // Based on 2025-2026 season: U14 = 2012, U15 = 2011, U16 = 2010, etc.
+    const ageCategoryMapping = {
+      2012: 'U14',
+      2011: 'U15',
+      2010: 'U16',
+      2009: 'U17',
+      2008: 'U18',
+      2007: 'U19',
+      2006: 'U20'
+    };
+
+    // Position mapping from API (f, d, g) to frontend (forward, defender, goalie)
+    const positionMapping = {
+      'f': 'forward',
+      'd': 'defender',
+      'g': 'goalie'
+    };
+
+    // Also provide data keyed by age category for easier frontend use
+    // Uses full position names to match frontend expectations
+    const byAgeCategory = {};
+    for (const [year, positions] of Object.entries(byYearAndPosition)) {
+      const ageCategory = ageCategoryMapping[year];
+      if (ageCategory) {
+        byAgeCategory[ageCategory] = {};
+        for (const [posKey, data] of Object.entries(positions)) {
+          const fullPosName = positionMapping[posKey] || posKey;
+          byAgeCategory[ageCategory][fullPosName] = data;
+        }
+      }
+    }
+
+    setCacheHeaders(res, 'metadata');
+    res.json({
+      by_birth_year: byYearAndPosition,
+      by_age_category: byAgeCategory,
+      age_category_mapping: ageCategoryMapping,
+      total_benchmarks: benchmarks.length,
+      generated_at: new Date().toISOString()
+    });
+  } catch (error) {
+    console.error('Error in getPhysicalBenchmarks:', error);
     return errorResponse(res, 500, 'Internal server error');
   }
 }));

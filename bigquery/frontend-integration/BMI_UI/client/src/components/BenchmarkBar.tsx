@@ -86,7 +86,7 @@ export default function BenchmarkBar({
       {/* Status Label */}
       <div className="flex justify-center">
         <span className={`text-xs font-medium ${statusColors[status].text}`}>
-          {status === 'within' ? 'Within optimal range' : status === 'below' ? 'Below optimal range' : 'Above optimal range'}
+          {status === 'within' ? 'Within average range' : status === 'below' ? 'Below average range' : 'Above average range'}
         </span>
       </div>
     </div>
