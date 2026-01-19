@@ -390,7 +390,7 @@ functions.http('adminGetFactors', withCors(async (req, res) => {
         coverage: 100,
         minPoints: 0,
         maxPoints: 99,
-        avgPoints: null,
+        avgPoints: 50,
         factorType: 'rating',
         formula: 'FWD: IF(0.7*(F03+F05)+0.3*(F08+F10)>=1, 99, ROUND(98*(0.7*(F03+F05)+0.3*(F08+F10))))'
       },
@@ -408,7 +408,7 @@ functions.http('adminGetFactors', withCors(async (req, res) => {
         coverage: 100,
         minPoints: 0,
         maxPoints: 99,
-        avgPoints: null,
+        avgPoints: 50,
         factorType: 'rating',
         formula: 'From league tier lookup table'
       },
@@ -426,7 +426,7 @@ functions.http('adminGetFactors', withCors(async (req, res) => {
         coverage: 100,
         minPoints: 0,
         maxPoints: 99,
-        avgPoints: null,
+        avgPoints: 50,
         factorType: 'rating',
         formula: 'Linear: 0-99 for 100-15000 EP views'
       },
@@ -444,7 +444,7 @@ functions.http('adminGetFactors', withCors(async (req, res) => {
         coverage: 100,
         minPoints: 0,
         maxPoints: 99,
-        avgPoints: null,
+        avgPoints: 50,
         factorType: 'rating',
         formula: '(F02 + F26 + F27) / 600 * 99'
       },
@@ -462,7 +462,7 @@ functions.http('adminGetFactors', withCors(async (req, res) => {
         coverage: 100,
         minPoints: 0,
         maxPoints: 99,
-        avgPoints: null,
+        avgPoints: 50,
         factorType: 'rating',
         formula: 'IF((F15+F16+F17+F21+F22)>=1500, 99, ROUND(99*(F15+F16+F17+F21+F22)/1500))'
       },
@@ -480,7 +480,7 @@ functions.http('adminGetFactors', withCors(async (req, res) => {
         coverage: 100,
         minPoints: 0,
         maxPoints: 99,
-        avgPoints: null,
+        avgPoints: 50,
         factorType: 'rating',
         formula: 'Skaters: IF((F18+F19+F25)>=250, 99, ROUND(99*(F18+F19+F25)/250)), Goalies: IF(F25>=50, 99, ROUND(99*F25/50))'
       },
@@ -498,7 +498,7 @@ functions.http('adminGetFactors', withCors(async (req, res) => {
         coverage: 100,
         minPoints: 0,
         maxPoints: 99,
-        avgPoints: null,
+        avgPoints: 50,
         factorType: 'rating',
         formula: 'F31*0.03 + F32*0.70 + F33*0.19 + F34*0.05 + F35*0.03'
       }
