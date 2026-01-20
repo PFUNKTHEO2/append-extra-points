@@ -19,14 +19,19 @@ with open('nepsac_week_jan19.json', 'r', encoding='utf-8') as f:
             'division': team_standing.get('division', '')
         }
 
-# Read logo URLs
+# Read logo URLs (use GitHub URLs for standalone HTML)
 logos_by_team = {}
 try:
-    with open('nepsac_logos.json', 'r', encoding='utf-8') as f:
+    with open('nepsac_logos_github.json', 'r', encoding='utf-8') as f:
         logos_by_team = json.load(f)
-    print(f"Loaded {len(logos_by_team)} logo URLs")
+    print(f"Loaded {len(logos_by_team)} logo URLs (GitHub)")
 except FileNotFoundError:
-    print("No nepsac_logos.json found, using initials for all teams")
+    try:
+        with open('nepsac_logos.json', 'r', encoding='utf-8') as f:
+            logos_by_team = json.load(f)
+        print(f"Loaded {len(logos_by_team)} logo URLs (relative)")
+    except FileNotFoundError:
+        print("No nepsac_logos.json found, using initials for all teams")
 
 # Read player images from players table
 player_images = {}
@@ -976,7 +981,7 @@ html_content = f'''<!DOCTYPE html>
     <div class="container">
         <!-- Header -->
         <header class="header">
-            <img src="nepsac_school_logos/Ace_Scouty_transparent.png" alt="Ace & Scout" class="mascot-image">
+            <img src="https://raw.githubusercontent.com/PFUNKTHEO2/append-extra-points/main/bigquery/nepsac_logos_short/ace_scouty.png" alt="Ace & Scout" class="mascot-image">
             <h1>NEPSAC Team Matchup</h1>
             <div class="subtitle">⚔️ HEAD TO HEAD ⚔️</div>
             <div class="date-badge">WEDNESDAY, JANUARY 21, 2026</div>
