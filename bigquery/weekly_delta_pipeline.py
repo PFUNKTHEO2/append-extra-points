@@ -5,10 +5,14 @@ Weekly Delta Pipeline for F18/F19/F25
 This pipeline calculates weekly changes in goals, assists, and EP views,
 then updates the corresponding factor tables.
 
+Updated: 2026-01-21 - Migrated to v_latest_player_stats view architecture
+- Snapshots now taken from v_latest_player_stats view (derived from player_season_stats)
+- player_stats is used only for metadata (name, position, yearOfBirth, views)
+
 Schedule: Run weekly (e.g., Monday morning after EliteProspects data refresh)
 
 Steps:
-1. Create a snapshot of current player_stats in player_stats_history
+1. Create a snapshot of current v_latest_player_stats + player_stats metadata
 2. Calculate deltas by comparing to previous week's snapshot
 3. Update PT_F18 (goals: 40 pts/goal, max 200)
 4. Update PT_F19 (assists: 25 pts/assist, max 125)
@@ -73,9 +77,15 @@ class WeeklyDeltaPipeline:
         return None, None
 
     def step1_create_snapshot(self):
-        """Step 1: Create a snapshot of current player_stats"""
+        """
+        Step 1: Create a snapshot of current stats from v_latest_player_stats view
+        combined with player_stats metadata.
+
+        This is the new approach - stats come from player_season_stats (via view),
+        metadata comes from player_stats.
+        """
         self.log("=" * 70)
-        self.log("STEP 1: Creating weekly snapshot of player_stats")
+        self.log("STEP 1: Creating weekly snapshot from v_latest_player_stats view")
         self.log("=" * 70)
 
         # Check if today's snapshot already exists
@@ -94,7 +104,8 @@ class WeeklyDeltaPipeline:
         week_start = today - timedelta(days=today.weekday())  # Monday
         week_end = week_start + timedelta(days=6)  # Sunday
 
-        # Create snapshot from player_stats
+        # Create snapshot from v_latest_player_stats view joined with player_stats metadata
+        # This replaces the old approach of reading from player_stats.latestStats_* columns
         snapshot_query = f"""
         INSERT INTO `{self.project_id}.{self.dataset}.player_stats_history`
         (snapshot_id, snapshot_date, snapshot_week_start, snapshot_week_end,
@@ -110,41 +121,43 @@ class WeeklyDeltaPipeline:
             CURRENT_TIMESTAMP() as snapshot_date,
             DATE('{week_start}') as snapshot_week_start,
             DATE('{week_end}') as snapshot_week_end,
-            id as player_id,
-            name as player_name,
-            position,
-            yearOfBirth as yearofbirth,
-            latestStats_season_slug as season_slug,
-            latestStats_season_startYear as season_start_year,
-            latestStats_season_endYear as season_end_year,
-            latestStats_team_id as team_id,
-            latestStats_team_name as team_name,
-            latestStats_team_league_slug as league_slug,
-            latestStats_team_league_name as league_name,
-            latestStats_regularStats_GP as regular_GP,
-            CAST(latestStats_regularStats_G AS STRING) as regular_G,
-            SAFE_CAST(latestStats_regularStats_G AS NUMERIC) as regular_G_numeric,
-            CAST(latestStats_regularStats_A AS STRING) as regular_A,
-            SAFE_CAST(latestStats_regularStats_A AS NUMERIC) as regular_A_numeric,
-            CAST(latestStats_regularStats_PTS AS STRING) as regular_PTS,
-            SAFE_CAST(latestStats_regularStats_PTS AS NUMERIC) as regular_PTS_numeric,
-            CAST(latestStats_regularStats_PM AS STRING) as regular_PM,
-            CAST(latestStats_regularStats_PIM AS STRING) as regular_PIM,
-            CAST(latestStats_regularStats_PPG AS STRING) as regular_PPG,
-            latestStats_regularStats_GAA as regular_GAA,
-            latestStats_regularStats_SVP as regular_SVP,
-            latestStats_regularStats_SO as regular_SO,
-            latestStats_regularStats_W as regular_W,
-            latestStats_regularStats_L as regular_L,
-            latestStats_regularStats_T as regular_T,
-            CAST(latestStats_regularStats_TOI AS STRING) as regular_TOI,
-            views,
-            loadts as source_loadts,
+            CAST(v.player_id AS INT64) as player_id,
+            pm.name as player_name,
+            pm.position,
+            pm.yearOfBirth as yearofbirth,
+            v.season_slug as season_slug,
+            v.season_start_year as season_start_year,
+            CAST(v.season_start_year AS INT64) + 1 as season_end_year,
+            v.team_id as team_id,
+            v.team_name as team_name,
+            v.league_slug as league_slug,
+            v.league_name as league_name,
+            CAST(v.gp AS INT64) as regular_GP,
+            CAST(v.goals AS STRING) as regular_G,
+            CAST(v.goals AS NUMERIC) as regular_G_numeric,
+            CAST(v.assists AS STRING) as regular_A,
+            CAST(v.assists AS NUMERIC) as regular_A_numeric,
+            CAST(v.points AS STRING) as regular_PTS,
+            CAST(v.points AS NUMERIC) as regular_PTS_numeric,
+            CAST(v.plus_minus AS STRING) as regular_PM,
+            CAST(v.pim AS STRING) as regular_PIM,
+            CAST(SAFE_DIVIDE(v.points, v.gp) AS STRING) as regular_PPG,
+            v.gaa as regular_GAA,
+            v.svp as regular_SVP,
+            NULL as regular_SO,  -- Not in view, add if needed
+            NULL as regular_W,
+            NULL as regular_L,
+            NULL as regular_T,
+            NULL as regular_TOI,
+            pm.views,
+            v.loadts as source_loadts,
             CURRENT_TIMESTAMP() as created_at
-        FROM `{self.project_id}.{self.dataset}.player_stats`
+        FROM `{self.project_id}.{self.dataset}.v_latest_player_stats` v
+        INNER JOIN `{self.project_id}.{self.dataset}.player_stats` pm
+            ON v.player_id = pm.id
         """
 
-        self.execute_query(snapshot_query, f"Creating snapshot {self.snapshot_id}")
+        self.execute_query(snapshot_query, f"Creating snapshot {self.snapshot_id} from v_latest_player_stats view")
 
         # Verify snapshot creation
         if not self.dry_run:
@@ -415,6 +428,7 @@ class WeeklyDeltaPipeline:
         start_time = datetime.now()
         self.log("=" * 70)
         self.log("WEEKLY DELTA PIPELINE - STARTING")
+        self.log(f"Using v_latest_player_stats view architecture")
         self.log(f"Timestamp: {self.timestamp}")
         self.log(f"Dry Run: {self.dry_run}")
         self.log("=" * 70)
