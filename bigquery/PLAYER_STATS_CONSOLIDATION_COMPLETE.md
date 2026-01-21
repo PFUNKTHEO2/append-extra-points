@@ -61,11 +61,26 @@ Key scripts already migrated:
 - `nepsac_full_refresh.py` ✓
 - `weekly_delta_pipeline.py` ✓
 
+## Deployment Script
+
+A consolidated deployment script has been created: `DEPLOY_STATS_CONSOLIDATION.sql`
+
+This script combines all deployment steps into a single file that can be run in BigQuery Console:
+1. Creates the `v_latest_player_stats` view
+2. Rebuilds `player_cumulative_points` using the view
+3. Includes verification queries
+
 ## Validation Steps
 
 Before marking the migration complete, perform these verification steps:
 
-### Step 1: Create the View
+### Step 1: Run the Deployment Script
+```sql
+-- Run DEPLOY_STATS_CONSOLIDATION.sql in BigQuery Console
+-- This creates the view and rebuilds cumulative points
+```
+
+### Alternative: Create the View Separately
 ```sql
 -- Run create_v_latest_player_stats.sql in BigQuery Console
 ```
