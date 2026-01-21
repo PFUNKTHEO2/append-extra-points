@@ -1,0 +1,520 @@
+{
+  "version": "1.0",
+  "imageSize": "500x500",
+  "format": "webp",
+  "teams": {
+    "andover": {
+      "name": "Andover",
+      "images": {
+        "away_left": "andover_away_left.webp",
+        "away_right": "andover_away_right.webp",
+        "home_left": "andover_home_left.webp",
+        "home_right": "andover_home_right.webp"
+      }
+    },
+    "austin-prep": {
+      "name": "Austin Prep",
+      "images": {
+        "away_left": "austin-prep_away_left.webp",
+        "away_right": "austin-prep_away_right.webp",
+        "home_left": "austin-prep_home_left.webp",
+        "home_right": "austin-prep_home_right.webp"
+      }
+    },
+    "avon-old-farms": {
+      "name": "Avon Old Farms",
+      "images": {
+        "away_left": "avon-old-farms_away_left.webp",
+        "away_right": "avon-old-farms_away_right.webp",
+        "home_left": "avon-old-farms_home_left.webp",
+        "home_right": "avon-old-farms_home_right.webp"
+      }
+    },
+    "belmont-hill-school": {
+      "name": "Belmont Hill School",
+      "images": {
+        "away_left": "belmont-hill-school_away_left.webp",
+        "away_right": "belmont-hill-school_away_right.webp",
+        "home_left": "belmont-hill-school_home_left.webp",
+        "home_right": "belmont-hill-school_home_right.webp"
+      }
+    },
+    "berkshire-school": {
+      "name": "Berkshire School",
+      "images": {
+        "away_left": "berkshire-school_away_left.webp",
+        "away_right": "berkshire-school_away_right.webp",
+        "home_left": "berkshire-school_home_left.webp",
+        "home_right": "berkshire-school_home_right.webp"
+      }
+    },
+    "berwick-academy": {
+      "name": "Berwick Academy",
+      "images": {
+        "away_left": "berwick-academy_away_left.webp",
+        "away_right": "berwick-academy_away_right.webp",
+        "home_left": "berwick-academy_home_left.webp",
+        "home_right": "berwick-academy_home_right.webp"
+      }
+    },
+    "brewster-academy": {
+      "name": "Brewster Academy",
+      "images": {
+        "away_left": "brewster-academy_away_left.webp",
+        "away_right": "brewster-academy_away_right.webp",
+        "home_left": "brewster-academy_home_left.webp",
+        "home_right": "brewster-academy_home_right.webp"
+      }
+    },
+    "brooks-school": {
+      "name": "Brooks School",
+      "images": {
+        "away_left": "brooks-school_away_left.webp",
+        "away_right": "brooks-school_away_right.webp",
+        "home_left": "brooks-school_home_left.webp",
+        "home_right": "brooks-school_home_right.webp"
+      }
+    },
+    "brunswick-school": {
+      "name": "Brunswick School",
+      "images": {
+        "away_left": "brunswick-school_away_left.webp",
+        "away_right": "brunswick-school_away_right.webp",
+        "home_left": "brunswick-school_home_left.webp",
+        "home_right": "brunswick-school_home_right.webp"
+      }
+    },
+    "buckingham-browne-and-nichols": {
+      "name": "Buckingham Browne and Nichols",
+      "images": {
+        "away_left": "buckingham-browne-and-nichols_away_left.webp",
+        "away_right": "buckingham-browne-and-nichols_away_right.webp",
+        "home_left": "buckingham-browne-and-nichols_home_left.webp",
+        "home_right": "buckingham-browne-and-nichols_home_right.webp"
+      }
+    },
+    "canterbury-school": {
+      "name": "Canterbury School",
+      "images": {
+        "away_left": "canterbury-school_away_left.webp",
+        "away_right": "canterbury-school_away_right.webp",
+        "home_left": "canterbury-school_home_left.webp",
+        "home_right": "canterbury-school_home_right.webp"
+      }
+    },
+    "choate-rosemary-hall": {
+      "name": "Choate Rosemary Hall",
+      "images": {
+        "away_left": "choate-rosemary-hall_away_left.webp",
+        "away_right": "choate-rosemary-hall_away_right.webp",
+        "home_left": "choate-rosemary-hall_home_left.webp",
+        "home_right": "choate-rosemary-hall_home_right.webp"
+      }
+    },
+    "cushing-academy": {
+      "name": "Cushing Academy",
+      "images": {
+        "away_left": "cushing-academy_away_left.webp",
+        "away_right": "cushing-academy_away_right.webp",
+        "home_left": "cushing-academy_home_left.webp",
+        "home_right": "cushing-academy_home_right.webp"
+      }
+    },
+    "deerfield-academy": {
+      "name": "Deerfield Academy",
+      "images": {
+        "away_left": "deerfield-academy_away_left.webp",
+        "away_right": "deerfield-academy_away_right.webp",
+        "home_left": "deerfield-academy_home_left.webp",
+        "home_right": "deerfield-academy_home_right.webp"
+      }
+    },
+    "dexter-southfield": {
+      "name": "Dexter Southfield",
+      "images": {
+        "away_left": "dexter-southfield_away_left.webp",
+        "away_right": "dexter-southfield_away_right.webp",
+        "home_left": "dexter-southfield_home_left.webp",
+        "home_right": "dexter-southfield_home_right.webp"
+      }
+    },
+    "frederick-gunn-school": {
+      "name": "Frederick Gunn School",
+      "images": {
+        "away_left": "frederick-gunn-school_away_left.webp",
+        "away_right": "frederick-gunn-school_away_right.webp",
+        "home_left": "frederick-gunn-school_home_left.webp",
+        "home_right": "frederick-gunn-school_home_right.webp"
+      }
+    },
+    "groton-school": {
+      "name": "Groton School",
+      "images": {
+        "away_left": "groton-school_away_left.webp",
+        "away_right": "groton-school_away_right.webp",
+        "home_left": "groton-school_home_left.webp",
+        "home_right": "groton-school_home_right.webp"
+      }
+    },
+    "hebron-academy": {
+      "name": "Hebron Academy",
+      "images": {
+        "away_left": "hebron-academy_away_left.webp",
+        "away_right": "hebron-academy_away_right.webp",
+        "home_left": "hebron-academy_home_left.webp",
+        "home_right": "hebron-academy_home_right.webp"
+      }
+    },
+    "holderness-school": {
+      "name": "Holderness School",
+      "images": {
+        "away_left": "holderness-school_away_left.webp",
+        "away_right": "holderness-school_away_right.webp",
+        "home_left": "holderness-school_home_left.webp",
+        "home_right": "holderness-school_home_right.webp"
+      }
+    },
+    "hoosac-school": {
+      "name": "Hoosac School",
+      "images": {
+        "away_left": "hoosac-school_away_left.webp",
+        "away_right": "hoosac-school_away_right.webp",
+        "home_left": "hoosac-school_home_left.webp",
+        "home_right": "hoosac-school_home_right.webp"
+      }
+    },
+    "hotchkiss-school": {
+      "name": "Hotchkiss School",
+      "images": {
+        "away_left": "hotchkiss-school_away_left.webp",
+        "away_right": "hotchkiss-school_away_right.webp",
+        "home_left": "hotchkiss-school_home_left.webp",
+        "home_right": "hotchkiss-school_home_right.webp"
+      }
+    },
+    "kent-school": {
+      "name": "Kent School",
+      "images": {
+        "away_left": "kent-school_away_left.webp",
+        "away_right": "kent-school_away_right.webp",
+        "home_left": "kent-school_home_left.webp",
+        "home_right": "kent-school_home_right.webp"
+      }
+    },
+    "kents-hill-school": {
+      "name": "Kents Hill School",
+      "images": {
+        "away_left": "kents-hill-school_away_left.webp",
+        "away_right": "kents-hill-school_away_right.webp",
+        "home_left": "kents-hill-school_home_left.webp",
+        "home_right": "kents-hill-school_home_right.webp"
+      }
+    },
+    "kimball-union-academy": {
+      "name": "Kimball Union Academy",
+      "images": {
+        "away_left": "kimball-union-academy_away_left.webp",
+        "away_right": "kimball-union-academy_away_right.webp",
+        "home_left": "kimball-union-academy_home_left.webp",
+        "home_right": "kimball-union-academy_home_right.webp"
+      }
+    },
+    "kingswood-oxford": {
+      "name": "Kingswood Oxford",
+      "images": {
+        "away_left": "kingswood-oxford_away_left.webp",
+        "away_right": "kingswood-oxford_away_right.webp",
+        "home_left": "kingswood-oxford_home_left.webp",
+        "home_right": "kingswood-oxford_home_right.webp"
+      }
+    },
+    "lawrence-academy": {
+      "name": "Lawrence Academy",
+      "images": {
+        "away_left": "lawrence-academy_away_left.webp",
+        "away_right": "lawrence-academy_away_right.webp",
+        "home_left": "lawrence-academy_home_left.webp",
+        "home_right": "lawrence-academy_home_right.webp"
+      }
+    },
+    "loomis-chaffee": {
+      "name": "Loomis Chaffee",
+      "images": {
+        "away_left": "loomis-chaffee_away_left.webp",
+        "away_right": "loomis-chaffee_away_right.webp",
+        "home_left": "loomis-chaffee_home_left.webp",
+        "home_right": "loomis-chaffee_home_right.webp"
+      }
+    },
+    "middlesex-school": {
+      "name": "Middlesex School",
+      "images": {
+        "away_left": "middlesex-school_away_left.webp",
+        "away_right": "middlesex-school_away_right.webp",
+        "home_left": "middlesex-school_home_left.webp",
+        "home_right": "middlesex-school_home_right.webp"
+      }
+    },
+    "millbrook-school": {
+      "name": "Millbrook School",
+      "images": {
+        "away_left": "millbrook-school_away_left.webp",
+        "away_right": "millbrook-school_away_right.webp",
+        "home_left": "millbrook-school_home_left.webp",
+        "home_right": "millbrook-school_home_right.webp"
+      }
+    },
+    "new-hampton-school": {
+      "name": "New Hampton School",
+      "images": {
+        "away_left": "new-hampton-school_away_left.webp",
+        "away_right": "new-hampton-school_away_right.webp",
+        "home_left": "new-hampton-school_home_left.webp",
+        "home_right": "new-hampton-school_home_right.webp"
+      }
+    },
+    "noble-and-greenough": {
+      "name": "Noble and Greenough",
+      "images": {
+        "away_left": "noble-and-greenough_away_left.webp",
+        "away_right": "noble-and-greenough_away_right.webp",
+        "home_left": "noble-and-greenough_home_left.webp",
+        "home_right": "noble-and-greenough_home_right.webp"
+      }
+    },
+    "northfield-mount-hermon": {
+      "name": "Northfield Mount Hermon",
+      "images": {
+        "away_left": "northfield-mount-hermon_away_left.webp",
+        "away_right": "northfield-mount-hermon_away_right.webp",
+        "home_left": "northfield-mount-hermon_home_left.webp",
+        "home_right": "northfield-mount-hermon_home_right.webp"
+      }
+    },
+    "phillips-exeter-academy": {
+      "name": "Phillips Exeter Academy",
+      "images": {
+        "away_left": "phillips-exeter-academy_away_left.webp",
+        "away_right": "phillips-exeter-academy_away_right.webp",
+        "home_left": "phillips-exeter-academy_home_left.webp",
+        "home_right": "phillips-exeter-academy_home_right.webp"
+      }
+    },
+    "pingree-school": {
+      "name": "Pingree School",
+      "images": {
+        "away_left": "pingree-school_away_left.webp",
+        "away_right": "pingree-school_away_right.webp",
+        "home_left": "pingree-school_home_left.webp",
+        "home_right": "pingree-school_home_right.webp"
+      }
+    },
+    "pomfret-school": {
+      "name": "Pomfret School",
+      "images": {
+        "away_left": "pomfret-school_away_left.webp",
+        "away_right": "pomfret-school_away_right.webp",
+        "home_left": "pomfret-school_home_left.webp",
+        "home_right": "pomfret-school_home_right.webp"
+      }
+    },
+    "portsmouth-abbey": {
+      "name": "Portsmouth Abbey",
+      "images": {
+        "away_left": "portsmouth-abbey_away_left.webp",
+        "away_right": "portsmouth-abbey_away_right.webp",
+        "home_left": "portsmouth-abbey_home_left.webp",
+        "home_right": "portsmouth-abbey_home_right.webp"
+      }
+    },
+    "proctor-academy": {
+      "name": "Proctor Academy",
+      "images": {
+        "away_left": "proctor-academy_away_left.webp",
+        "away_right": "proctor-academy_away_right.webp",
+        "home_left": "proctor-academy_home_left.webp",
+        "home_right": "proctor-academy_home_right.webp"
+      }
+    },
+    "rivers-school": {
+      "name": "Rivers School",
+      "images": {
+        "away_left": "rivers-school_away_left.webp",
+        "away_right": "rivers-school_away_right.webp",
+        "home_left": "rivers-school_home_left.webp",
+        "home_right": "rivers-school_home_right.webp"
+      }
+    },
+    "roxbury-latin": {
+      "name": "Roxbury Latin",
+      "images": {
+        "away_left": "roxbury-latin_away_left.webp",
+        "away_right": "roxbury-latin_away_right.webp",
+        "home_left": "roxbury-latin_home_left.webp",
+        "home_right": "roxbury-latin_home_right.webp"
+      }
+    },
+    "salisbury-school": {
+      "name": "Salisbury School",
+      "images": {
+        "away_left": "salisbury-school_away_left.webp",
+        "away_right": "salisbury-school_away_right.webp",
+        "home_left": "salisbury-school_home_left.webp",
+        "home_right": "salisbury-school_home_right.webp"
+      }
+    },
+    "st-georges-school": {
+      "name": "St. George's School",
+      "images": {
+        "away_left": "st-georges-school_away_left.webp",
+        "away_right": "st-georges-school_away_right.webp",
+        "home_left": "st-georges-school_home_left.webp",
+        "home_right": "st-georges-school_home_right.webp"
+      }
+    },
+    "st-lukes-school": {
+      "name": "St. Luke's School",
+      "images": {
+        "away_left": "st-lukes-school_away_left.webp",
+        "away_right": "st-lukes-school_away_right.webp",
+        "home_left": "st-lukes-school_home_left.webp",
+        "home_right": "st-lukes-school_home_right.webp"
+      }
+    },
+    "st-marks-school": {
+      "name": "St. Mark's School",
+      "images": {
+        "away_left": "st-marks-school_away_left.webp",
+        "away_right": "st-marks-school_away_right.webp",
+        "home_left": "st-marks-school_home_left.webp",
+        "home_right": "st-marks-school_home_right.webp"
+      }
+    },
+    "st-pauls-school": {
+      "name": "St. Paul's School",
+      "images": {
+        "away_left": "st-pauls-school_away_left.webp",
+        "away_right": "st-pauls-school_away_right.webp",
+        "home_left": "st-pauls-school_home_left.webp",
+        "home_right": "st-pauls-school_home_right.webp"
+      }
+    },
+    "st-sebastians-school": {
+      "name": "St. Sebastian's School",
+      "images": {
+        "away_left": "st-sebastians-school_away_left.webp",
+        "away_right": "st-sebastians-school_away_right.webp",
+        "home_left": "st-sebastians-school_home_left.webp",
+        "home_right": "st-sebastians-school_home_right.webp"
+      }
+    },
+    "tabor-academy": {
+      "name": "Tabor Academy",
+      "images": {
+        "away_left": "tabor-academy_away_left.webp",
+        "away_right": "tabor-academy_away_right.webp",
+        "home_left": "tabor-academy_home_left.webp",
+        "home_right": "tabor-academy_home_right.webp"
+      }
+    },
+    "taft-school": {
+      "name": "Taft School",
+      "images": {
+        "away_left": "taft-school_away_left.webp",
+        "away_right": "taft-school_away_right.webp",
+        "home_left": "taft-school_home_left.webp",
+        "home_right": "taft-school_home_right.webp"
+      }
+    },
+    "thayer-academy": {
+      "name": "Thayer Academy",
+      "images": {
+        "away_left": "thayer-academy_away_left.webp",
+        "away_right": "thayer-academy_away_right.webp",
+        "home_left": "thayer-academy_home_left.webp",
+        "home_right": "thayer-academy_home_right.webp"
+      }
+    },
+    "the-governors-academy": {
+      "name": "The Governor's Academy",
+      "images": {
+        "away_left": "the-governors-academy_away_left.webp",
+        "away_right": "the-governors-academy_away_right.webp",
+        "home_left": "the-governors-academy_home_left.webp",
+        "home_right": "the-governors-academy_home_right.webp"
+      }
+    },
+    "tilton-school": {
+      "name": "Tilton School",
+      "images": {
+        "away_left": "tilton-school_away_left.webp",
+        "away_right": "tilton-school_away_right.webp",
+        "home_left": "tilton-school_home_left.webp",
+        "home_right": "tilton-school_home_right.webp"
+      }
+    },
+    "trinity-pawling-school": {
+      "name": "Trinity-Pawling School",
+      "images": {
+        "away_left": "trinity-pawling-school_away_left.webp",
+        "away_right": "trinity-pawling-school_away_right.webp",
+        "home_left": "trinity-pawling-school_home_left.webp",
+        "home_right": "trinity-pawling-school_home_right.webp"
+      }
+    },
+    "vermont-academy": {
+      "name": "Vermont Academy",
+      "images": {
+        "away_left": "vermont-academy_away_left.webp",
+        "away_right": "vermont-academy_away_right.webp",
+        "home_left": "vermont-academy_home_left.webp",
+        "home_right": "vermont-academy_home_right.webp"
+      }
+    },
+    "westminster-school": {
+      "name": "Westminster School",
+      "images": {
+        "away_left": "westminster-school_away_left.webp",
+        "away_right": "westminster-school_away_right.webp",
+        "home_left": "westminster-school_home_left.webp",
+        "home_right": "westminster-school_home_right.webp"
+      }
+    },
+    "wilbraham-and-monson-academy": {
+      "name": "Wilbraham and Monson Academy",
+      "images": {
+        "away_left": "wilbraham-and-monson-academy_away_left.webp",
+        "away_right": "wilbraham-and-monson-academy_away_right.webp",
+        "home_left": "wilbraham-and-monson-academy_home_left.webp",
+        "home_right": "wilbraham-and-monson-academy_home_right.webp"
+      }
+    },
+    "williston-northampton": {
+      "name": "Williston Northampton",
+      "images": {
+        "away_left": "williston-northampton_away_left.webp",
+        "away_right": "williston-northampton_away_right.webp",
+        "home_left": "williston-northampton_home_left.webp",
+        "home_right": "williston-northampton_home_right.webp"
+      }
+    },
+    "winchendon-school": {
+      "name": "Winchendon School",
+      "images": {
+        "away_left": "winchendon-school_away_left.webp",
+        "away_right": "winchendon-school_away_right.webp",
+        "home_left": "winchendon-school_home_left.webp",
+        "home_right": "winchendon-school_home_right.webp"
+      }
+    },
+    "worcester-academy": {
+      "name": "Worcester Academy",
+      "images": {
+        "away_left": "worcester-academy_away_left.webp",
+        "away_right": "worcester-academy_away_right.webp",
+        "home_left": "worcester-academy_home_left.webp",
+        "home_right": "worcester-academy_home_right.webp"
+      }
+    }
+  }
+}
