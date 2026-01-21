@@ -1,154 +1,150 @@
-# NEPSAC GameDay Session Notes - January 21, 2026
-
-## What We Accomplished
-
-### 1. Trading Card Image Optimization
-- **Source:** `NEPSAC_Trading_Cards_Complete.zip` (1.68GB, 232 high-res PNGs)
-- **Optimized:** Resized from 2048px to 500px, converted to WebP
-- **Result:** 228 images at ~50KB each = 11.2MB total (99.3% reduction)
-- **Location:** `bigquery/nepsac-cards/` (clean path, no spaces)
-
-### 2. GitHub Hosting Setup
-- Made repo public: `PFUNKTHEO2/append-extra-points`
-- Pushed optimized images to: `bigquery/nepsac-cards/`
-- **Base URL for images:**
-```
-https://github.com/PFUNKTHEO2/append-extra-points/blob/main/bigquery/nepsac-cards/{teamId}_{variant}.webp?raw=true
-```
-
-### 3. Lovable Project Started
-- Created project with full prompt (EA Sports style NEPSAC GameDay)
-- Need to configure image URLs to use GitHub hosting
+# NEPSAC GameDay - Resume Document
+## Ready to Continue - January 21, 2026
 
 ---
 
-## Files Created/Modified
+# QUICK START - DO THIS FIRST
 
-| File | Purpose |
-|------|---------|
-| `bigquery/nepsac-cards/*.webp` | 228 optimized trading card images |
-| `bigquery/nepsac-cards/manifest.json` | Team name to image filename mapping |
-| `bigquery/optimize_trading_cards.py` | Script that created optimized images |
-| `bigquery/NEPSAC Logos/optimized_cards/` | Duplicate of nepsac-cards (original location) |
-| `bigquery/NEPSAC Logos/optimized_trading_cards.zip` | Zipped optimized images |
+## 1. Verify Images Still Work
+Open in browser:
+```
+https://raw.githubusercontent.com/PFUNKTHEO2/append-extra-points/main/bigquery/nepsac-cards/avon-old-farms_home_left.webp
+```
+Should show Avon Old Farms trading card. ✓ CONFIRMED WORKING
+
+## 2. Give Lovable This Base URL
+```
+https://raw.githubusercontent.com/PFUNKTHEO2/append-extra-points/main/bigquery/nepsac-cards/
+```
+
+## 3. Give Lovable This Helper Function
+```javascript
+const CARD_BASE_URL = 'https://raw.githubusercontent.com/PFUNKTHEO2/append-extra-points/main/bigquery/nepsac-cards';
+
+function getTeamCardUrl(teamId, isHome) {
+  const variant = isHome ? 'home_left' : 'away_right';
+  return `${CARD_BASE_URL}/${teamId}_${variant}.webp`;
+}
+
+// Usage:
+// Away team card (facing right): getTeamCardUrl('avon-old-farms', false)
+// Home team card (facing left):  getTeamCardUrl('taft-school', true)
+```
 
 ---
 
-## API Endpoints (Already Deployed)
+# WHAT'S ALREADY DONE
 
-All Cloud Functions are live at:
-```
-https://us-central1-prodigy-ranking.cloudfunctions.net/
-```
+## Backend (100% Complete)
+- ✅ 6 Cloud Functions deployed and working
+- ✅ BigQuery tables with NEPSAC data
+- ✅ Team aliases for name matching
 
-| Endpoint | Purpose |
+## Trading Cards (100% Complete)
+- ✅ 228 images optimized (500x500 WebP, ~50KB each)
+- ✅ Hosted on GitHub (repo is public)
+- ✅ URLs confirmed working
+
+## Lovable Project (Started)
+- ✅ Full prompt provided
+- ⏳ Need to configure image URLs
+- ⏳ Need to test API connections
+
+---
+
+# API ENDPOINTS (ALL WORKING)
+
+Base: `https://us-central1-prodigy-ranking.cloudfunctions.net`
+
+| Endpoint | Example |
 |----------|---------|
-| `getNepsacGameDates?season=2025-26` | Get dates with scheduled games |
-| `getNepsacSchedule?date=2026-01-19` | Get games for a specific date |
-| `getNepsacMatchup?gameId=xxx` | Get full matchup details |
-| `getNepsacTeams?season=2025-26` | Get all teams with rankings |
-| `getNepsacStandings?season=2025-26` | Get current standings |
-| `getNepsacRoster?teamId=xxx` | Get team roster |
+| Game Dates | `/getNepsacGameDates?season=2025-26` |
+| Schedule | `/getNepsacSchedule?date=2026-01-19` |
+| Matchup | `/getNepsacMatchup?gameId=game_20260119_1` |
+| Teams | `/getNepsacTeams?season=2025-26` |
+| Standings | `/getNepsacStandings?season=2025-26` |
+| Roster | `/getNepsacRoster?teamId=avon-old-farms` |
 
 ---
 
-## Trading Card URL Format
+# TRADING CARD URL FORMAT
 
-**Pattern:**
+**Base URL:**
 ```
-https://github.com/PFUNKTHEO2/append-extra-points/blob/main/bigquery/nepsac-cards/{team-slug}_{variant}.webp?raw=true
+https://raw.githubusercontent.com/PFUNKTHEO2/append-extra-points/main/bigquery/nepsac-cards/
 ```
 
-**Team slug format:** lowercase, spaces to hyphens, remove apostrophes
-- "Avon Old Farms" → `avon-old-farms`
-- "St. Paul's School" → `st-pauls-school`
+**Filename pattern:** `{team-slug}_{variant}.webp`
 
-**Variants:**
-- `home_left` - Home team (facing left ←)
-- `home_right` - Home team (facing right →)
-- `away_left` - Away team (facing left ←)
-- `away_right` - Away team (facing right →)
+**Team slug rules:**
+- Lowercase
+- Spaces → hyphens
+- Remove apostrophes
 
-**For matchups use:**
-- Away team: `{slug}_away_right.webp` (facing →)
-- Home team: `{slug}_home_left.webp` (facing ←)
+| Team Name | Slug |
+|-----------|------|
+| Avon Old Farms | `avon-old-farms` |
+| St. Paul's School | `st-pauls-school` |
+| Phillips Exeter Academy | `phillips-exeter-academy` |
+| Buckingham Browne and Nichols | `buckingham-browne-and-nichols` |
 
-**Example:**
-```
-https://github.com/PFUNKTHEO2/append-extra-points/blob/main/bigquery/nepsac-cards/avon-old-farms_home_left.webp?raw=true
-```
+**Variants for matchups:**
+- Away team: `_away_right.webp` (facing →)
+- Home team: `_home_left.webp` (facing ←)
 
 ---
 
-## Where We Left Off
+# WHAT TO DO NEXT IN LOVABLE
 
-### Issue:
-- `raw.githubusercontent.com` URLs were returning 404
-- `?raw=true` format should work but needs testing
+1. **Open your Lovable project**
 
-### Next Steps:
-1. **Test this URL in browser:**
-   ```
-   https://github.com/PFUNKTHEO2/append-extra-points/blob/main/bigquery/nepsac-cards/avon-old-farms_home_left.webp?raw=true
-   ```
+2. **Find where images are configured** (likely in a component or config file)
 
-2. **If it works, update Lovable** with this helper function:
-   ```javascript
-   const CARD_BASE_URL = 'https://github.com/PFUNKTHEO2/append-extra-points/blob/main/bigquery/nepsac-cards';
+3. **Update to use GitHub URLs:**
+   - Replace `/images/teams/` with the GitHub base URL
+   - Or add the helper function above
 
-   function getTeamCardUrl(teamId, isHome) {
-     const variant = isHome ? 'home_left' : 'away_right';
-     return `${CARD_BASE_URL}/${teamId}_${variant}.webp?raw=true`;
-   }
-   ```
+4. **Test a matchup** - trading cards should appear
 
-3. **If URLs still don't work**, alternatives:
-   - Use Google Cloud Storage (you have GCP set up)
-   - Use Cloudflare R2 (free)
-   - Check if GitHub needs more time for CDN propagation
+5. **If API not connected yet**, add these endpoints to fetch data
 
 ---
 
-## Lovable Project
+# KEY FILES
 
-### Full Prompt Location:
-The complete Lovable prompt was provided in the conversation. Key sections:
-- Design system (colors, fonts, effects)
-- Component specifications (header, game selector, matchup, players)
-- API integration details
-- Trading card helper function
-
-### Assets to Upload to Lovable:
-1. `ace-and-scouty.png` from `NEPSAC Logos/`
-2. Trading cards now hosted on GitHub (no upload needed)
+| File | Location |
+|------|----------|
+| Trading Cards | `bigquery/nepsac-cards/*.webp` |
+| Image Manifest | `bigquery/nepsac-cards/manifest.json` |
+| Integration Plan | `bigquery/NEPSAC_DYNAMIC_INTEGRATION_PLAN.md` |
+| API Code | `api-backend/functions/nepsac.js` |
+| Mascot Image | `bigquery/NEPSAC Logos/ace and scouty.png` |
 
 ---
 
-## Quick Resume Commands
+# LINKS
 
-```bash
-# Navigate to project
-cd "C:\Users\phili\OneDrive\Documents\GitHub\append-extra-points\bigquery"
-
-# Check git status
-git status
-
-# Test if images are accessible (open in browser)
-start https://github.com/PFUNKTHEO2/append-extra-points/blob/main/bigquery/nepsac-cards/avon-old-farms_home_left.webp?raw=true
-
-# Browse all trading cards on GitHub
-start https://github.com/PFUNKTHEO2/append-extra-points/tree/main/bigquery/nepsac-cards
-```
-
----
-
-## Contacts/References
-
-- **Lovable:** https://lovable.dev (your project should be saved there)
 - **GitHub Repo:** https://github.com/PFUNKTHEO2/append-extra-points
-- **GCP Project:** prodigy-ranking
-- **Integration Plan:** `bigquery/NEPSAC_DYNAMIC_INTEGRATION_PLAN.md`
+- **Trading Cards Folder:** https://github.com/PFUNKTHEO2/append-extra-points/tree/main/bigquery/nepsac-cards
+- **Lovable:** https://lovable.dev
 
 ---
 
-*Session ended: January 21, 2026 ~12:30 AM*
+# IF SOMETHING BREAKS
+
+**Images not loading?**
+- Check the URL is exactly right (case sensitive)
+- Verify repo is still public: `gh repo view PFUNKTHEO2/append-extra-points --json isPrivate`
+
+**API not responding?**
+- Test directly: `https://us-central1-prodigy-ranking.cloudfunctions.net/getNepsacGameDates?season=2025-26`
+- Check Cloud Functions console in GCP
+
+**Team not found?**
+- Check `bigquery/nepsac_team_aliases.json` for name mappings
+- Verify team slug matches filename in nepsac-cards folder
+
+---
+
+*Last updated: January 21, 2026 12:45 AM*
+*Status: Ready to continue in Lovable*
