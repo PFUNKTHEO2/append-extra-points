@@ -264,6 +264,15 @@
         "home_right": "millbrook-school_home_right.webp"
       }
     },
+    "milton-academy": {
+      "name": "Milton Academy",
+      "images": {
+        "away_left": "milton-academy_away_left.webp",
+        "away_right": "milton-academy_away_right.webp",
+        "home_left": "milton-academy_home_left.webp",
+        "home_right": "milton-academy_home_right.webp"
+      }
+    },
     "new-hampton-school": {
       "name": "New Hampton School",
       "images": {

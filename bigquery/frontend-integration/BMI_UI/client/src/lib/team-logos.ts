@@ -67,7 +67,7 @@ export const TEAM_ID_TO_IMAGE_SLUG: Record<string, string> = {
 const BASE_URL = "https://raw.githubusercontent.com/PFUNKTHEO2/append-extra-points/main/bigquery/nepsac-cards";
 
 // Teams that don't have card images yet (use placeholder)
-const TEAMS_WITHOUT_CARDS = ["albany-academy", "milton-academy", "north-yarmouth-academy"];
+const TEAMS_WITHOUT_CARDS = ["albany-academy", "north-yarmouth-academy"];
 
 /**
  * Get the card image URL for a team
