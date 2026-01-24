@@ -63,6 +63,7 @@ export const TEAM_ID_TO_IMAGE_SLUG: Record<string, string> = {
   "winchendon": "winchendon-school",
   "worcester": "worcester-academy",
   "shattuck-st-marys": "shattuck-st-marys",
+  "shattuck-st-mary-s": "shattuck-st-marys",
 };
 
 const BASE_URL = "https://raw.githubusercontent.com/PFUNKTHEO2/append-extra-points/main/bigquery/nepsac-cards";
@@ -125,11 +126,12 @@ export function getImageSlug(teamId: string): string {
 export function teamNameToId(teamName: string): string {
   // Special case mappings for non-standard names
   const specialCases: Record<string, string> = {
-    "shattuck st. mary's": "shattuck-st-marys",
-    "shattuck st mary's": "shattuck-st-marys",
-    "shattuck st. marys": "shattuck-st-marys",
-    "shattuck st marys": "shattuck-st-marys",
-    "shattuck": "shattuck-st-marys",
+    "shattuck st. mary's": "shattuck-st-mary-s",
+    "shattuck st mary's": "shattuck-st-mary-s",
+    "shattuck st. marys": "shattuck-st-mary-s",
+    "shattuck st marys": "shattuck-st-mary-s",
+    "shattuck-st. mary's school": "shattuck-st-mary-s",
+    "shattuck": "shattuck-st-mary-s",
     "bb&n": "bbn",
     "buckingham browne & nichols": "bbn",
     "nmh": "nmh",
