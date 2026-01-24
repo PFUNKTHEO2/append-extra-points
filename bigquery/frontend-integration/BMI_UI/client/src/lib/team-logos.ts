@@ -62,6 +62,7 @@ export const TEAM_ID_TO_IMAGE_SLUG: Record<string, string> = {
   "williston": "williston-northampton",
   "winchendon": "winchendon-school",
   "worcester": "worcester-academy",
+  "shattuck-st-marys": "shattuck-st-marys",
 };
 
 const BASE_URL = "https://raw.githubusercontent.com/PFUNKTHEO2/append-extra-points/main/bigquery/nepsac-cards";

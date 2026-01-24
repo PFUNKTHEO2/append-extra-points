@@ -390,6 +390,15 @@
         "home_right": "salisbury-school_home_right.webp"
       }
     },
+    "shattuck-st-marys": {
+      "name": "Shattuck St. Mary's",
+      "images": {
+        "away_left": "shattuck-st-marys_away_left.webp",
+        "away_right": "shattuck-st-marys_away_right.webp",
+        "home_left": "shattuck-st-marys_home_left.webp",
+        "home_right": "shattuck-st-marys_home_right.webp"
+      }
+    },
     "st-georges-school": {
       "name": "St. George's School",
       "images": {
