@@ -117,3 +117,36 @@ export function hasTeamCardImages(teamId: string): boolean {
 export function getImageSlug(teamId: string): string {
   return TEAM_ID_TO_IMAGE_SLUG[teamId] || teamId;
 }
+
+/**
+ * Convert display team name to team ID slug
+ * Handles special cases like "Shattuck St. Mary's" -> "shattuck-st-marys"
+ */
+export function teamNameToId(teamName: string): string {
+  // Special case mappings for non-standard names
+  const specialCases: Record<string, string> = {
+    "shattuck st. mary's": "shattuck-st-marys",
+    "shattuck st mary's": "shattuck-st-marys",
+    "shattuck st. marys": "shattuck-st-marys",
+    "shattuck st marys": "shattuck-st-marys",
+    "shattuck": "shattuck-st-marys",
+    "bb&n": "bbn",
+    "buckingham browne & nichols": "bbn",
+    "nmh": "nmh",
+    "northfield mount hermon": "nmh",
+  };
+
+  const normalized = teamName.toLowerCase().trim();
+
+  // Check special cases first
+  if (specialCases[normalized]) {
+    return specialCases[normalized];
+  }
+
+  // Default: convert to slug format
+  return normalized
+    .replace(/['']/g, "")
+    .replace(/&/g, "and")
+    .replace(/\s+/g, "-")
+    .replace(/[^a-z0-9-]/g, "");
+}
