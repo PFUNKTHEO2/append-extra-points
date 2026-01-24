@@ -210,14 +210,11 @@ For `teamId = "brooks"` (away team):
 | winchendon | winchendon-school |
 | worcester | worcester-academy |
 
-## Teams Missing Card Images
+## All Teams Have Card Images
 
-These 2 teams don't have card images yet. The `getTeamCardUrl` function returns `null` for these teams - use a placeholder image in your component:
+All 57+ NEPSAC teams now have card images. The `getTeamCardUrl` function will return valid URLs for all teams.
 
-1. **Albany Academy** (`albany-academy`)
-2. **North Yarmouth Academy** (`north-yarmouth-academy`)
-
-### Handling Missing Images in Component
+### Handling Image Load Errors in Component
 
 ```tsx
 import { getTeamCardUrl } from "@/lib/team-logos";

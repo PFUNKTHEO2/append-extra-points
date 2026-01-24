@@ -3,6 +3,15 @@
   "imageSize": "500x500",
   "format": "webp",
   "teams": {
+    "albany-academy": {
+      "name": "Albany Academy",
+      "images": {
+        "away_left": "albany-academy_away_left.webp",
+        "away_right": "albany-academy_away_right.webp",
+        "home_left": "albany-academy_home_left.webp",
+        "home_right": "albany-academy_home_right.webp"
+      }
+    },
     "andover": {
       "name": "Andover",
       "images": {
@@ -289,6 +298,15 @@
         "away_right": "noble-and-greenough_away_right.webp",
         "home_left": "noble-and-greenough_home_left.webp",
         "home_right": "noble-and-greenough_home_right.webp"
+      }
+    },
+    "north-yarmouth-academy": {
+      "name": "North Yarmouth Academy",
+      "images": {
+        "away_left": "north-yarmouth-academy_away_left.webp",
+        "away_right": "north-yarmouth-academy_away_right.webp",
+        "home_left": "north-yarmouth-academy_home_left.webp",
+        "home_right": "north-yarmouth-academy_home_right.webp"
       }
     },
     "northfield-mount-hermon": {
