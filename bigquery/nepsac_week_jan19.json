@@ -1,0 +1,1541 @@
+{
+  "week_of": "2026-01-19",
+  "generated": "2026-01-19T11:38:19.424435",
+  "standings": [
+    {
+      "team": "St. Marks",
+      "wins": 11,
+      "losses": 1,
+      "ties": 0,
+      "win_pct": 0.917,
+      "total_games": 12,
+      "division": "ISL"
+    },
+    {
+      "team": "Avon Old Farms",
+      "wins": 10,
+      "losses": 1,
+      "ties": 0,
+      "win_pct": 0.909,
+      "total_games": 11,
+      "division": "Elite"
+    },
+    {
+      "team": "Dexter",
+      "wins": 13,
+      "losses": 1,
+      "ties": 2,
+      "win_pct": 0.875,
+      "total_games": 16,
+      "division": "ISL"
+    },
+    {
+      "team": "Salisbury School",
+      "wins": 10,
+      "losses": 1,
+      "ties": 1,
+      "win_pct": 0.875,
+      "total_games": 12,
+      "division": "Elite"
+    },
+    {
+      "team": "Holderness",
+      "wins": 10,
+      "losses": 2,
+      "ties": 0,
+      "win_pct": 0.833,
+      "total_games": 12,
+      "division": "Lakes Region"
+    },
+    {
+      "team": "Kimball Union",
+      "wins": 15,
+      "losses": 4,
+      "ties": 1,
+      "win_pct": 0.775,
+      "total_games": 20,
+      "division": "Lakes Region"
+    },
+    {
+      "team": "Tabor",
+      "wins": 10,
+      "losses": 3,
+      "ties": 0,
+      "win_pct": 0.769,
+      "total_games": 13,
+      "division": "ISL"
+    },
+    {
+      "team": "Canterbury",
+      "wins": 11,
+      "losses": 3,
+      "ties": 1,
+      "win_pct": 0.767,
+      "total_games": 15,
+      "division": "Founders"
+    },
+    {
+      "team": "Austin Prep",
+      "wins": 11,
+      "losses": 4,
+      "ties": 2,
+      "win_pct": 0.706,
+      "total_games": 17,
+      "division": "Catholic"
+    },
+    {
+      "team": "Pomfret",
+      "wins": 10,
+      "losses": 4,
+      "ties": 2,
+      "win_pct": 0.688,
+      "total_games": 16,
+      "division": "Founders"
+    },
+    {
+      "team": "Belmont Hill",
+      "wins": 10,
+      "losses": 4,
+      "ties": 2,
+      "win_pct": 0.688,
+      "total_games": 16,
+      "division": "ISL"
+    },
+    {
+      "team": "St. Sebastian's",
+      "wins": 8,
+      "losses": 4,
+      "ties": 0,
+      "win_pct": 0.667,
+      "total_games": 12,
+      "division": "ISL"
+    },
+    {
+      "team": "Berkshire School",
+      "wins": 11,
+      "losses": 6,
+      "ties": 0,
+      "win_pct": 0.647,
+      "total_games": 17,
+      "division": "Elite"
+    },
+    {
+      "team": "Brunswick",
+      "wins": 9,
+      "losses": 5,
+      "ties": 0,
+      "win_pct": 0.643,
+      "total_games": 14,
+      "division": "Founders"
+    },
+    {
+      "team": "Kent School",
+      "wins": 8,
+      "losses": 5,
+      "ties": 0,
+      "win_pct": 0.615,
+      "total_games": 13,
+      "division": "Elite"
+    },
+    {
+      "team": "Thayer Academy",
+      "wins": 7,
+      "losses": 4,
+      "ties": 3,
+      "win_pct": 0.607,
+      "total_games": 14,
+      "division": "ISL"
+    },
+    {
+      "team": "Governors Academy",
+      "wins": 7,
+      "losses": 4,
+      "ties": 3,
+      "win_pct": 0.607,
+      "total_games": 14,
+      "division": "ISL"
+    },
+    {
+      "team": "Pingree",
+      "wins": 7,
+      "losses": 4,
+      "ties": 3,
+      "win_pct": 0.607,
+      "total_games": 14,
+      "division": "EIL"
+    },
+    {
+      "team": "Andover",
+      "wins": 9,
+      "losses": 6,
+      "ties": 0,
+      "win_pct": 0.6,
+      "total_games": 15,
+      "division": "ISL"
+    },
+    {
+      "team": "Hotchkiss School",
+      "wins": 5,
+      "losses": 3,
+      "ties": 2,
+      "win_pct": 0.6,
+      "total_games": 10,
+      "division": "Elite"
+    },
+    {
+      "team": "Middlesex",
+      "wins": 5,
+      "losses": 3,
+      "ties": 2,
+      "win_pct": 0.6,
+      "total_games": 10,
+      "division": "ISL"
+    },
+    {
+      "team": "Choate Rosemary Hall",
+      "wins": 5,
+      "losses": 3,
+      "ties": 3,
+      "win_pct": 0.591,
+      "total_games": 11,
+      "division": "Elite"
+    },
+    {
+      "team": "Loomis Chaffee",
+      "wins": 6,
+      "losses": 4,
+      "ties": 2,
+      "win_pct": 0.583,
+      "total_games": 12,
+      "division": "Founders"
+    },
+    {
+      "team": "St. Paul's School",
+      "wins": 9,
+      "losses": 7,
+      "ties": 0,
+      "win_pct": 0.562,
+      "total_games": 16,
+      "division": "Lakes Region"
+    },
+    {
+      "team": "Rivers School",
+      "wins": 5,
+      "losses": 4,
+      "ties": 1,
+      "win_pct": 0.55,
+      "total_games": 10,
+      "division": "ISL"
+    },
+    {
+      "team": "Roxbury Latin",
+      "wins": 5,
+      "losses": 4,
+      "ties": 1,
+      "win_pct": 0.55,
+      "total_games": 10,
+      "division": "ISL"
+    },
+    {
+      "team": "Mount St. Charles",
+      "wins": 5,
+      "losses": 4,
+      "ties": 1,
+      "win_pct": 0.55,
+      "total_games": 10,
+      "division": "Catholic"
+    },
+    {
+      "team": "Groton",
+      "wins": 7,
+      "losses": 6,
+      "ties": 0,
+      "win_pct": 0.538,
+      "total_games": 13,
+      "division": "ISL"
+    },
+    {
+      "team": "Millbrook",
+      "wins": 9,
+      "losses": 9,
+      "ties": 1,
+      "win_pct": 0.5,
+      "total_games": 19,
+      "division": "Founders"
+    },
+    {
+      "team": "Cushing Academy",
+      "wins": 7,
+      "losses": 7,
+      "ties": 1,
+      "win_pct": 0.5,
+      "total_games": 15,
+      "division": "Stuart"
+    },
+    {
+      "team": "Deerfield Academy",
+      "wins": 5,
+      "losses": 5,
+      "ties": 2,
+      "win_pct": 0.5,
+      "total_games": 12,
+      "division": "Elite"
+    },
+    {
+      "team": "New Hampton",
+      "wins": 8,
+      "losses": 9,
+      "ties": 0,
+      "win_pct": 0.471,
+      "total_games": 17,
+      "division": "Lakes Region"
+    },
+    {
+      "team": "Winchendon",
+      "wins": 5,
+      "losses": 6,
+      "ties": 5,
+      "win_pct": 0.469,
+      "total_games": 16,
+      "division": "Small School"
+    },
+    {
+      "team": "Frederick Gunn",
+      "wins": 6,
+      "losses": 7,
+      "ties": 2,
+      "win_pct": 0.467,
+      "total_games": 15,
+      "division": "Founders"
+    },
+    {
+      "team": "Tilton",
+      "wins": 6,
+      "losses": 7,
+      "ties": 2,
+      "win_pct": 0.467,
+      "total_games": 15,
+      "division": "Lakes Region"
+    },
+    {
+      "team": "Williston-Northampton",
+      "wins": 6,
+      "losses": 7,
+      "ties": 2,
+      "win_pct": 0.467,
+      "total_games": 15,
+      "division": "Stuart"
+    },
+    {
+      "team": "St. Georges",
+      "wins": 6,
+      "losses": 7,
+      "ties": 2,
+      "win_pct": 0.467,
+      "total_games": 15,
+      "division": "ISL"
+    },
+    {
+      "team": "Exeter",
+      "wins": 6,
+      "losses": 7,
+      "ties": 1,
+      "win_pct": 0.464,
+      "total_games": 14,
+      "division": "ISL"
+    },
+    {
+      "team": "Lawrenceville School",
+      "wins": 5,
+      "losses": 6,
+      "ties": 0,
+      "win_pct": 0.455,
+      "total_games": 11,
+      "division": "Mid-Atlantic"
+    },
+    {
+      "team": "BB&N",
+      "wins": 5,
+      "losses": 6,
+      "ties": 0,
+      "win_pct": 0.455,
+      "total_games": 11,
+      "division": "ISL"
+    },
+    {
+      "team": "Lawrence Academy",
+      "wins": 5,
+      "losses": 7,
+      "ties": 1,
+      "win_pct": 0.423,
+      "total_games": 13,
+      "division": "ISL"
+    },
+    {
+      "team": "Westminster",
+      "wins": 4,
+      "losses": 6,
+      "ties": 1,
+      "win_pct": 0.409,
+      "total_games": 11,
+      "division": "Stuart"
+    },
+    {
+      "team": "Milton Academy",
+      "wins": 6,
+      "losses": 9,
+      "ties": 1,
+      "win_pct": 0.406,
+      "total_games": 16,
+      "division": "ISL"
+    },
+    {
+      "team": "Noble & Greenough",
+      "wins": 5,
+      "losses": 8,
+      "ties": 0,
+      "win_pct": 0.385,
+      "total_games": 13,
+      "division": "ISL"
+    },
+    {
+      "team": "Worcester Academy",
+      "wins": 4,
+      "losses": 7,
+      "ties": 2,
+      "win_pct": 0.385,
+      "total_games": 13,
+      "division": "Stuart"
+    },
+    {
+      "team": "North Yarmouth",
+      "wins": 6,
+      "losses": 11,
+      "ties": 3,
+      "win_pct": 0.375,
+      "total_games": 20,
+      "division": "Small School"
+    },
+    {
+      "team": "Kents Hill",
+      "wins": 4,
+      "losses": 8,
+      "ties": 4,
+      "win_pct": 0.375,
+      "total_games": 16,
+      "division": "Small School"
+    },
+    {
+      "team": "Brooks School",
+      "wins": 4,
+      "losses": 7,
+      "ties": 0,
+      "win_pct": 0.364,
+      "total_games": 11,
+      "division": "ISL"
+    },
+    {
+      "team": "The Hill School",
+      "wins": 5,
+      "losses": 10,
+      "ties": 1,
+      "win_pct": 0.344,
+      "total_games": 16,
+      "division": "Mid-Atlantic"
+    },
+    {
+      "team": "Berwick",
+      "wins": 4,
+      "losses": 9,
+      "ties": 2,
+      "win_pct": 0.333,
+      "total_games": 15,
+      "division": "Small School"
+    },
+    {
+      "team": "Ridley College (ON)",
+      "wins": 1,
+      "losses": 2,
+      "ties": 0,
+      "win_pct": 0.333,
+      "total_games": 3,
+      "division": "Canadian"
+    },
+    {
+      "team": "Hoosac",
+      "wins": 2,
+      "losses": 6,
+      "ties": 1,
+      "win_pct": 0.278,
+      "total_games": 9,
+      "division": "Small School"
+    },
+    {
+      "team": "Portsmouth Abbey",
+      "wins": 3,
+      "losses": 8,
+      "ties": 0,
+      "win_pct": 0.273,
+      "total_games": 11,
+      "division": "EIL"
+    },
+    {
+      "team": "Hebron",
+      "wins": 3,
+      "losses": 10,
+      "ties": 2,
+      "win_pct": 0.267,
+      "total_games": 15,
+      "division": "Small School"
+    },
+    {
+      "team": "Proctor Academy",
+      "wins": 4,
+      "losses": 12,
+      "ties": 0,
+      "win_pct": 0.25,
+      "total_games": 16,
+      "division": "Lakes Region"
+    },
+    {
+      "team": "Brewster",
+      "wins": 2,
+      "losses": 6,
+      "ties": 0,
+      "win_pct": 0.25,
+      "total_games": 8,
+      "division": "Lakes Region"
+    },
+    {
+      "team": "Trinity-Pawling",
+      "wins": 2,
+      "losses": 7,
+      "ties": 1,
+      "win_pct": 0.25,
+      "total_games": 10,
+      "division": "Founders"
+    },
+    {
+      "team": "Stanstead College",
+      "wins": 2,
+      "losses": 9,
+      "ties": 2,
+      "win_pct": 0.231,
+      "total_games": 13,
+      "division": "Canadian"
+    },
+    {
+      "team": "Vermont Academy",
+      "wins": 3,
+      "losses": 12,
+      "ties": 1,
+      "win_pct": 0.219,
+      "total_games": 16,
+      "division": "Lakes Region"
+    },
+    {
+      "team": "Taft",
+      "wins": 2,
+      "losses": 8,
+      "ties": 0,
+      "win_pct": 0.2,
+      "total_games": 10,
+      "division": "Elite"
+    },
+    {
+      "team": "Albany Academy",
+      "wins": 3,
+      "losses": 14,
+      "ties": 1,
+      "win_pct": 0.194,
+      "total_games": 18,
+      "division": "Small School"
+    },
+    {
+      "team": "NMH",
+      "wins": 2,
+      "losses": 15,
+      "ties": 0,
+      "win_pct": 0.118,
+      "total_games": 17,
+      "division": "Stuart"
+    },
+    {
+      "team": "Wilbraham & Monson",
+      "wins": 0,
+      "losses": 5,
+      "ties": 0,
+      "win_pct": 0.0,
+      "total_games": 5,
+      "division": "Stuart"
+    },
+    {
+      "team": "TBD",
+      "wins": 0,
+      "losses": 3,
+      "ties": 0,
+      "win_pct": 0.0,
+      "total_games": 3,
+      "division": "Unknown"
+    },
+    {
+      "team": "Bishops College",
+      "wins": 0,
+      "losses": 1,
+      "ties": 0,
+      "win_pct": 0.0,
+      "total_games": 1,
+      "division": "Canadian"
+    }
+  ],
+  "schedule": [
+    {
+      "date": "2026-01-19",
+      "away": "Salisbury School",
+      "home": "Choate Rosemary Hall",
+      "time": "5:15 PM",
+      "venue": "Remsen Arena",
+      "predicted_winner": "Salisbury School",
+      "confidence": 58
+    },
+    {
+      "date": "2026-01-19",
+      "away": "Kent School",
+      "home": "Avon Old Farms",
+      "time": "5:30 PM",
+      "venue": "Avon Old Farms",
+      "predicted_winner": "Avon Old Farms",
+      "confidence": 61
+    },
+    {
+      "date": "2026-01-21",
+      "away": "Vermont Academy",
+      "home": "Williston-Northampton",
+      "time": "2:30 PM",
+      "venue": "Easthampton, MA",
+      "predicted_winner": "Williston-Northampton",
+      "confidence": 70
+    },
+    {
+      "date": "2026-01-21",
+      "away": "Kent School",
+      "home": "Hotchkiss School",
+      "time": "2:30 PM",
+      "venue": "Hotchkiss School",
+      "predicted_winner": "Hotchkiss School",
+      "confidence": 51
+    },
+    {
+      "date": "2026-01-21",
+      "away": "Westminster",
+      "home": "Canterbury",
+      "time": "2:30 PM",
+      "venue": "O'Neill Arena",
+      "predicted_winner": "Canterbury",
+      "confidence": 67
+    },
+    {
+      "date": "2026-01-21",
+      "away": "Frederick Gunn",
+      "home": "Millbrook",
+      "time": "2:30 PM",
+      "venue": "Millbrook, NY",
+      "predicted_winner": "Millbrook",
+      "confidence": 54
+    },
+    {
+      "date": "2026-01-21",
+      "away": "Dexter",
+      "home": "Austin Prep",
+      "time": "2:45 PM",
+      "venue": "MPG Memorial Arena, Wilmington MA",
+      "predicted_winner": "Dexter",
+      "confidence": 54
+    },
+    {
+      "date": "2026-01-21",
+      "away": "Brewster",
+      "home": "Tilton",
+      "time": "3:00 PM",
+      "venue": "Tilton, NH",
+      "predicted_winner": "Tilton",
+      "confidence": 67
+    },
+    {
+      "date": "2026-01-21",
+      "away": "Holderness",
+      "home": "North Yarmouth",
+      "time": "3:00 PM",
+      "venue": "Travis Roy Ice Arena, Yarmouth, ME",
+      "predicted_winner": "Holderness",
+      "confidence": 66
+    },
+    {
+      "date": "2026-01-21",
+      "away": "Taft",
+      "home": "Loomis Chaffee",
+      "time": "3:30 PM",
+      "venue": "Windsor, CT",
+      "predicted_winner": "Loomis Chaffee",
+      "confidence": 76
+    },
+    {
+      "date": "2026-01-21",
+      "away": "Mount St. Charles",
+      "home": "Wilbraham & Monson",
+      "time": "3:50 PM",
+      "venue": "Enfield CT",
+      "predicted_winner": "Mount St. Charles",
+      "confidence": 92
+    },
+    {
+      "date": "2026-01-21",
+      "away": "Pomfret",
+      "home": "Worcester Academy",
+      "time": "4:00 PM",
+      "venue": "Worcester, MA",
+      "predicted_winner": "Pomfret",
+      "confidence": 61
+    },
+    {
+      "date": "2026-01-21",
+      "away": "St. Sebastian's",
+      "home": "Andover",
+      "time": "4:00 PM",
+      "venue": "Andover, MA",
+      "predicted_winner": "St. Sebastian's",
+      "confidence": 51
+    },
+    {
+      "date": "2026-01-21",
+      "away": "Choate Rosemary Hall",
+      "home": "Berkshire School",
+      "time": "4:00 PM",
+      "venue": "Berkshire School",
+      "predicted_winner": "Berkshire School",
+      "confidence": 54
+    },
+    {
+      "date": "2026-01-21",
+      "away": "St. Paul's School",
+      "home": "Proctor Academy",
+      "time": "4:15 PM",
+      "venue": "Andover, NH",
+      "predicted_winner": "St. Paul's School",
+      "confidence": 65
+    },
+    {
+      "date": "2026-01-21",
+      "away": "Avon Old Farms",
+      "home": "NMH",
+      "time": "4:30 PM",
+      "venue": "NMH",
+      "predicted_winner": "Avon Old Farms",
+      "confidence": 84
+    },
+    {
+      "date": "2026-01-21",
+      "away": "TBD",
+      "home": "The Hill School",
+      "time": "4:30 PM",
+      "venue": "Pottstown, PA",
+      "predicted_winner": "The Hill School",
+      "confidence": 100
+    },
+    {
+      "date": "2026-01-21",
+      "away": "BB&N",
+      "home": "St. Georges",
+      "time": "4:30 PM",
+      "venue": "Middletown, RI",
+      "predicted_winner": "St. Georges",
+      "confidence": 53
+    },
+    {
+      "date": "2026-01-21",
+      "away": "Groton",
+      "home": "Governors Academy",
+      "time": "4:45 PM",
+      "venue": "Governors Academy",
+      "predicted_winner": "Governors Academy",
+      "confidence": 55
+    },
+    {
+      "date": "2026-01-21",
+      "away": "Trinity-Pawling",
+      "home": "Salisbury School",
+      "time": "4:45 PM",
+      "venue": "Salisbury, CT",
+      "predicted_winner": "Salisbury School",
+      "confidence": 79
+    },
+    {
+      "date": "2026-01-21",
+      "away": "Deerfield Academy",
+      "home": "Kimball Union",
+      "time": "5:00 PM",
+      "venue": "Kimball Union Academy",
+      "predicted_winner": "Kimball Union",
+      "confidence": 62
+    },
+    {
+      "date": "2026-01-21",
+      "away": "Middlesex",
+      "home": "Roxbury Latin",
+      "time": "5:00 PM",
+      "venue": "West Roxbury, MA",
+      "predicted_winner": "Middlesex",
+      "confidence": 50
+    },
+    {
+      "date": "2026-01-21",
+      "away": "Exeter",
+      "home": "Tabor",
+      "time": "5:00 PM",
+      "venue": "Marion, MA",
+      "predicted_winner": "Tabor",
+      "confidence": 64
+    },
+    {
+      "date": "2026-01-21",
+      "away": "Hoosac",
+      "home": "Winchendon",
+      "time": "5:00 PM",
+      "venue": "Winchendon, MA",
+      "predicted_winner": "Winchendon",
+      "confidence": 65
+    },
+    {
+      "date": "2026-01-21",
+      "away": "Berwick",
+      "home": "Kents Hill",
+      "time": "5:00 PM",
+      "venue": "Kents Hill School",
+      "predicted_winner": "Kents Hill",
+      "confidence": 56
+    },
+    {
+      "date": "2026-01-21",
+      "away": "Thayer Academy",
+      "home": "Cushing Academy",
+      "time": "5:00 PM",
+      "venue": "Ashburnham, MA",
+      "predicted_winner": "Thayer Academy",
+      "confidence": 52
+    },
+    {
+      "date": "2026-01-21",
+      "away": "Pingree",
+      "home": "Portsmouth Abbey",
+      "time": "5:30 PM",
+      "venue": "Portsmouth RI",
+      "predicted_winner": "Pingree",
+      "confidence": 65
+    },
+    {
+      "date": "2026-01-21",
+      "away": "Princeton Day School",
+      "home": "Lawrenceville School",
+      "time": "6:00 PM",
+      "venue": "Lawrenceville, NJ",
+      "predicted_winner": "Lawrenceville School",
+      "confidence": 100
+    },
+    {
+      "date": "2026-01-21",
+      "away": "Milton Academy",
+      "home": "Lawrence Academy",
+      "time": "6:15 PM",
+      "venue": "Groton, MA",
+      "predicted_winner": "Lawrence Academy",
+      "confidence": 54
+    },
+    {
+      "date": "2026-01-22",
+      "away": "Taft",
+      "home": "Frederick Gunn",
+      "time": "5:00 PM",
+      "venue": "Washington, CT",
+      "predicted_winner": "Frederick Gunn",
+      "confidence": 72
+    },
+    {
+      "date": "2026-01-23",
+      "away": "Hebron",
+      "home": "Austin Prep",
+      "time": "2:30 PM",
+      "venue": "MPG Memorial Arena, Wilmington MA",
+      "predicted_winner": "Austin Prep",
+      "confidence": 74
+    },
+    {
+      "date": "2026-01-23",
+      "away": "Bishops College",
+      "home": "Albany Academy",
+      "time": "3:00 PM",
+      "venue": "Albany Academy",
+      "predicted_winner": "Albany Academy",
+      "confidence": 100
+    },
+    {
+      "date": "2026-01-23",
+      "away": "Worcester Academy",
+      "home": "NMH",
+      "time": "3:30 PM",
+      "venue": "Mount Hermon, MA",
+      "predicted_winner": "Worcester Academy",
+      "confidence": 70
+    },
+    {
+      "date": "2026-01-23",
+      "away": "Wilbraham & Monson",
+      "home": "TBD",
+      "time": "4:00 PM",
+      "venue": "TBD",
+      "predicted_winner": "TBD",
+      "confidence": 100
+    },
+    {
+      "date": "2026-01-23",
+      "away": "Governors Academy",
+      "home": "Holderness",
+      "time": "4:30 PM",
+      "venue": "Holderness",
+      "predicted_winner": "Holderness",
+      "confidence": 59
+    },
+    {
+      "date": "2026-01-23",
+      "away": "Dexter",
+      "home": "Shattuck St. Mary's",
+      "time": "5:00 PM",
+      "venue": "TBD",
+      "predicted_winner": "Dexter",
+      "confidence": 54,
+      "note": "Shattuck normalized to NEPSAC - elite national program (one-off game)"
+    },
+    {
+      "date": "2026-01-23",
+      "away": "Pingree",
+      "home": "Groton",
+      "time": "5:00 PM",
+      "venue": "Groton, MA",
+      "predicted_winner": "Pingree",
+      "confidence": 51
+    },
+    {
+      "date": "2026-01-23",
+      "away": "Cushing Academy",
+      "home": "Winchendon",
+      "time": "5:00 PM",
+      "venue": "Winchendon, MA",
+      "predicted_winner": "Winchendon",
+      "confidence": 51
+    },
+    {
+      "date": "2026-01-23",
+      "away": "Portsmouth Abbey",
+      "home": "Berwick",
+      "time": "5:00 PM",
+      "venue": "Dover, NH",
+      "predicted_winner": "Berwick",
+      "confidence": 58
+    },
+    {
+      "date": "2026-01-23",
+      "away": "Loomis Chaffee",
+      "home": "Westminster",
+      "time": "5:15 PM",
+      "venue": "Simsbury, CT",
+      "predicted_winner": "Loomis Chaffee",
+      "confidence": 56
+    },
+    {
+      "date": "2026-01-23",
+      "away": "St. Georges",
+      "home": "St. Marks",
+      "time": "5:30 PM",
+      "venue": "Southborough MA",
+      "predicted_winner": "St. Marks",
+      "confidence": 67
+    },
+    {
+      "date": "2026-01-23",
+      "away": "Moses Brown",
+      "home": "BB&N",
+      "time": "5:30 PM",
+      "venue": "Cambridge, MA",
+      "predicted_winner": "BB&N",
+      "confidence": 100
+    },
+    {
+      "date": "2026-01-23",
+      "away": "Thayer Academy",
+      "home": "Roxbury Latin",
+      "time": "5:45 PM",
+      "venue": "West Roxbury, MA",
+      "predicted_winner": "Thayer Academy",
+      "confidence": 50
+    },
+    {
+      "date": "2026-01-23",
+      "away": "Millbrook",
+      "home": "Brunswick",
+      "time": "6:00 PM",
+      "venue": "Greenwich, CT",
+      "predicted_winner": "Brunswick",
+      "confidence": 58
+    },
+    {
+      "date": "2026-01-23",
+      "away": "St. Sebastian's",
+      "home": "Middlesex",
+      "time": "6:00 PM",
+      "venue": "Concord, MA",
+      "predicted_winner": "St. Sebastian's",
+      "confidence": 51
+    },
+    {
+      "date": "2026-01-23",
+      "away": "Vermont Academy",
+      "home": "New Hampton",
+      "time": "6:00 PM",
+      "venue": "New Hampton, NH",
+      "predicted_winner": "New Hampton",
+      "confidence": 70
+    },
+    {
+      "date": "2026-01-23",
+      "away": "Kents Hill",
+      "home": "Bridgton Academy",
+      "time": "6:00 PM",
+      "venue": "Bridgton",
+      "predicted_winner": "Kents Hill",
+      "confidence": 88
+    },
+    {
+      "date": "2026-01-23",
+      "away": "Lawrence Academy",
+      "home": "Noble & Greenough",
+      "time": "6:30 PM",
+      "venue": "Dedham, MA",
+      "predicted_winner": "Noble & Greenough",
+      "confidence": 51
+    },
+    {
+      "date": "2026-01-24",
+      "away": "Dexter",
+      "home": "Shattuck St. Mary's",
+      "time": "10:00 AM",
+      "venue": "TBD",
+      "predicted_winner": "Dexter",
+      "confidence": 54,
+      "note": "Shattuck normalized to NEPSAC - elite national program (one-off game)"
+    },
+    {
+      "date": "2026-01-24",
+      "away": "Stanstead College",
+      "home": "Albany Academy",
+      "time": "12:15 PM",
+      "venue": "Albany, NY",
+      "predicted_winner": "Albany Academy",
+      "confidence": 51
+    },
+    {
+      "date": "2026-01-24",
+      "away": "Rivers School",
+      "home": "BB&N",
+      "time": "1:00 PM",
+      "venue": "Cambridge, MA",
+      "predicted_winner": "Rivers School",
+      "confidence": 52
+    },
+    {
+      "date": "2026-01-24",
+      "away": "Pomfret",
+      "home": "Milton Academy",
+      "time": "1:30 PM",
+      "venue": "Milton Academy",
+      "predicted_winner": "Pomfret",
+      "confidence": 60
+    },
+    {
+      "date": "2026-01-24",
+      "away": "Tabor",
+      "home": "Belmont Hill",
+      "time": "2:00 PM",
+      "venue": "Keller Rink, Belmont Hill",
+      "predicted_winner": "Tabor",
+      "confidence": 51
+    },
+    {
+      "date": "2026-01-24",
+      "away": "Hebron",
+      "home": "Brewster",
+      "time": "2:00 PM",
+      "venue": "Wolfeboro, NH",
+      "predicted_winner": "Brewster",
+      "confidence": 53
+    },
+    {
+      "date": "2026-01-24",
+      "away": "Winchendon",
+      "home": "Kents Hill",
+      "time": "2:00 PM",
+      "venue": "Kents Hill School",
+      "predicted_winner": "Winchendon",
+      "confidence": 52
+    },
+    {
+      "date": "2026-01-24",
+      "away": "Middlesex",
+      "home": "Groton",
+      "time": "2:30 PM",
+      "venue": "Groton, MA",
+      "predicted_winner": "Middlesex",
+      "confidence": 50
+    },
+    {
+      "date": "2026-01-24",
+      "away": "Ridley College (ON)",
+      "home": "Lawrenceville School",
+      "time": "2:30 PM",
+      "venue": "Albany, NY",
+      "predicted_winner": "Lawrenceville School",
+      "confidence": 60
+    },
+    {
+      "date": "2026-01-24",
+      "away": "Governors Academy",
+      "home": "St. Sebastian's",
+      "time": "2:30 PM",
+      "venue": "Needham, MA",
+      "predicted_winner": "St. Sebastian's",
+      "confidence": 54
+    },
+    {
+      "date": "2026-01-24",
+      "away": "Noble & Greenough",
+      "home": "Andover",
+      "time": "2:30 PM",
+      "venue": "Andover, MA",
+      "predicted_winner": "Andover",
+      "confidence": 63
+    },
+    {
+      "date": "2026-01-24",
+      "away": "Proctor Academy",
+      "home": "Tilton",
+      "time": "2:30 PM",
+      "venue": "Tilton, NH",
+      "predicted_winner": "Tilton",
+      "confidence": 67
+    },
+    {
+      "date": "2026-01-24",
+      "away": "Williston-Northampton",
+      "home": "NMH",
+      "time": "2:45 PM",
+      "venue": "Mount Hermon, MA",
+      "predicted_winner": "Williston-Northampton",
+      "confidence": 74
+    },
+    {
+      "date": "2026-01-24",
+      "away": "Avon Old Farms",
+      "home": "Berkshire School",
+      "time": "3:00 PM",
+      "venue": "Berkshire School",
+      "predicted_winner": "Avon Old Farms",
+      "confidence": 57
+    },
+    {
+      "date": "2026-01-24",
+      "away": "Hoosac",
+      "home": "Brunswick",
+      "time": "3:00 PM",
+      "venue": "Greenwich, CT",
+      "predicted_winner": "Brunswick",
+      "confidence": 71
+    },
+    {
+      "date": "2026-01-24",
+      "away": "Roxbury Latin",
+      "home": "Portsmouth Abbey",
+      "time": "4:00 PM",
+      "venue": "Portsmouth RI",
+      "predicted_winner": "Roxbury Latin",
+      "confidence": 63
+    },
+    {
+      "date": "2026-01-24",
+      "away": "Exeter",
+      "home": "Hotchkiss School",
+      "time": "4:00 PM",
+      "venue": "Eaglebrook School",
+      "predicted_winner": "Hotchkiss School",
+      "confidence": 58
+    },
+    {
+      "date": "2026-01-24",
+      "away": "North Yarmouth",
+      "home": "Worcester Academy",
+      "time": "4:00 PM",
+      "venue": "Worcester, MA",
+      "predicted_winner": "Worcester Academy",
+      "confidence": 54
+    },
+    {
+      "date": "2026-01-24",
+      "away": "St. Lukes",
+      "home": "Wilbraham & Monson",
+      "time": "4:10 PM",
+      "venue": "Enfield CT",
+      "predicted_winner": "Wilbraham & Monson",
+      "confidence": 100
+    },
+    {
+      "date": "2026-01-24",
+      "away": "Canterbury",
+      "home": "Taft",
+      "time": "4:15 PM",
+      "venue": "Watertown, CT",
+      "predicted_winner": "Canterbury",
+      "confidence": 75
+    },
+    {
+      "date": "2026-01-24",
+      "away": "Frederick Gunn",
+      "home": "Trinity-Pawling",
+      "time": "4:30 PM",
+      "venue": "Pawling, NY",
+      "predicted_winner": "Frederick Gunn",
+      "confidence": 61
+    },
+    {
+      "date": "2026-01-24",
+      "away": "Kimball Union",
+      "home": "Cushing Academy",
+      "time": "5:00 PM",
+      "venue": "Ashburnham, MA",
+      "predicted_winner": "Kimball Union",
+      "confidence": 58
+    },
+    {
+      "date": "2026-01-24",
+      "away": "New Hampton",
+      "home": "Holderness",
+      "time": "5:15 PM",
+      "venue": "Holderness School",
+      "predicted_winner": "Holderness",
+      "confidence": 65
+    },
+    {
+      "date": "2026-01-24",
+      "away": "Brooks School",
+      "home": "Lawrence Academy",
+      "time": "6:00 PM",
+      "venue": "Groton, MA",
+      "predicted_winner": "Lawrence Academy",
+      "confidence": 57
+    },
+    {
+      "date": "2026-01-24",
+      "away": "Vermont Academy",
+      "home": "St. Paul's School",
+      "time": "6:00 PM",
+      "venue": "Concord, NH",
+      "predicted_winner": "St. Paul's School",
+      "confidence": 74
+    },
+    {
+      "date": "2026-01-24",
+      "away": "Choate Rosemary Hall",
+      "home": "Deerfield Academy",
+      "time": "6:30 PM",
+      "venue": "Deerfield Academy",
+      "predicted_winner": "Choate Rosemary Hall",
+      "confidence": 52
+    },
+    {
+      "date": "2026-01-24",
+      "away": "Salisbury School",
+      "home": "Kent School",
+      "time": "6:30 PM",
+      "venue": "Kent, CT",
+      "predicted_winner": "Salisbury School",
+      "confidence": 57
+    },
+    {
+      "date": "2026-01-25",
+      "away": "Bishops College",
+      "home": "The Hill School",
+      "time": "9:00 AM",
+      "venue": "RPI Houston Field House",
+      "predicted_winner": "The Hill School",
+      "confidence": 100
+    },
+    {
+      "date": "2026-01-25",
+      "away": "Ridley College (ON)",
+      "home": "Albany Academy",
+      "time": "1:30 PM",
+      "venue": "RPI Houston Field House",
+      "predicted_winner": "Ridley College (ON)",
+      "confidence": 58
+    },
+    {
+      "date": "2026-01-25",
+      "away": "Hoosac",
+      "home": "Wyoming Seminary",
+      "time": "2:45 PM",
+      "venue": "Wilkes-Barre, PA",
+      "predicted_winner": "Hoosac",
+      "confidence": 85
+    }
+  ],
+  "featured_games": [
+    {
+      "date": "2026-01-19",
+      "away": "Salisbury School",
+      "home": "Choate Rosemary Hall",
+      "time": "5:15 PM",
+      "venue": "Remsen Arena",
+      "away_record": "10-1-1",
+      "home_record": "5-3-3",
+      "away_win_pct": 0.875,
+      "home_win_pct": 0.5909090909090909
+    },
+    {
+      "date": "2026-01-19",
+      "away": "Kent School",
+      "home": "Avon Old Farms",
+      "time": "5:30 PM",
+      "venue": "Avon Old Farms",
+      "away_record": "8-5-0",
+      "home_record": "10-1-0",
+      "away_win_pct": 0.6153846153846154,
+      "home_win_pct": 0.9090909090909091
+    },
+    {
+      "date": "2026-01-21",
+      "away": "Kent School",
+      "home": "Hotchkiss School",
+      "time": "2:30 PM",
+      "venue": "Hotchkiss School",
+      "away_record": "8-5-0",
+      "home_record": "5-3-2",
+      "away_win_pct": 0.6153846153846154,
+      "home_win_pct": 0.6
+    },
+    {
+      "date": "2026-01-21",
+      "away": "Dexter",
+      "home": "Austin Prep",
+      "time": "2:45 PM",
+      "venue": "MPG Memorial Arena, Wilmington MA",
+      "away_record": "13-1-2",
+      "home_record": "11-4-2",
+      "away_win_pct": 0.875,
+      "home_win_pct": 0.7058823529411765
+    },
+    {
+      "date": "2026-01-21",
+      "away": "St. Sebastian's",
+      "home": "Andover",
+      "time": "4:00 PM",
+      "venue": "Andover, MA",
+      "away_record": "8-4-0",
+      "home_record": "9-6-0",
+      "away_win_pct": 0.6666666666666666,
+      "home_win_pct": 0.6
+    },
+    {
+      "date": "2026-01-21",
+      "away": "Choate Rosemary Hall",
+      "home": "Berkshire School",
+      "time": "4:00 PM",
+      "venue": "Berkshire School",
+      "away_record": "5-3-3",
+      "home_record": "11-6-0",
+      "away_win_pct": 0.5909090909090909,
+      "home_win_pct": 0.6470588235294118
+    },
+    {
+      "date": "2026-01-21",
+      "away": "Groton",
+      "home": "Governors Academy",
+      "time": "4:45 PM",
+      "venue": "Governors Academy",
+      "away_record": "7-6-0",
+      "home_record": "7-4-3",
+      "away_win_pct": 0.5384615384615384,
+      "home_win_pct": 0.6071428571428571
+    },
+    {
+      "date": "2026-01-21",
+      "away": "Deerfield Academy",
+      "home": "Kimball Union",
+      "time": "5:00 PM",
+      "venue": "Kimball Union Academy",
+      "away_record": "5-5-2",
+      "home_record": "15-4-1",
+      "away_win_pct": 0.5,
+      "home_win_pct": 0.775
+    },
+    {
+      "date": "2026-01-21",
+      "away": "Middlesex",
+      "home": "Roxbury Latin",
+      "time": "5:00 PM",
+      "venue": "West Roxbury, MA",
+      "away_record": "5-3-2",
+      "home_record": "5-4-1",
+      "away_win_pct": 0.6,
+      "home_win_pct": 0.55
+    },
+    {
+      "date": "2026-01-21",
+      "away": "Thayer Academy",
+      "home": "Cushing Academy",
+      "time": "5:00 PM",
+      "venue": "Ashburnham, MA",
+      "away_record": "7-4-3",
+      "home_record": "7-7-1",
+      "away_win_pct": 0.6071428571428571,
+      "home_win_pct": 0.5
+    },
+    {
+      "date": "2026-01-23",
+      "away": "Governors Academy",
+      "home": "Holderness",
+      "time": "4:30 PM",
+      "venue": "Holderness",
+      "away_record": "7-4-3",
+      "home_record": "10-2-0",
+      "away_win_pct": 0.6071428571428571,
+      "home_win_pct": 0.8333333333333334
+    },
+    {
+      "date": "2026-01-23",
+      "away": "Pingree",
+      "home": "Groton",
+      "time": "5:00 PM",
+      "venue": "Groton, MA",
+      "away_record": "7-4-3",
+      "home_record": "7-6-0",
+      "away_win_pct": 0.6071428571428571,
+      "home_win_pct": 0.5384615384615384
+    },
+    {
+      "date": "2026-01-23",
+      "away": "Thayer Academy",
+      "home": "Roxbury Latin",
+      "time": "5:45 PM",
+      "venue": "West Roxbury, MA",
+      "away_record": "7-4-3",
+      "home_record": "5-4-1",
+      "away_win_pct": 0.6071428571428571,
+      "home_win_pct": 0.55
+    },
+    {
+      "date": "2026-01-23",
+      "away": "Millbrook",
+      "home": "Brunswick",
+      "time": "6:00 PM",
+      "venue": "Greenwich, CT",
+      "away_record": "9-9-1",
+      "home_record": "9-5-0",
+      "away_win_pct": 0.5,
+      "home_win_pct": 0.6428571428571429
+    },
+    {
+      "date": "2026-01-23",
+      "away": "St. Sebastian's",
+      "home": "Middlesex",
+      "time": "6:00 PM",
+      "venue": "Concord, MA",
+      "away_record": "8-4-0",
+      "home_record": "5-3-2",
+      "away_win_pct": 0.6666666666666666,
+      "home_win_pct": 0.6
+    },
+    {
+      "date": "2026-01-24",
+      "away": "Tabor",
+      "home": "Belmont Hill",
+      "time": "2:00 PM",
+      "venue": "Keller Rink, Belmont Hill",
+      "away_record": "10-3-0",
+      "home_record": "10-4-2",
+      "away_win_pct": 0.7692307692307693,
+      "home_win_pct": 0.6875
+    },
+    {
+      "date": "2026-01-24",
+      "away": "Middlesex",
+      "home": "Groton",
+      "time": "2:30 PM",
+      "venue": "Groton, MA",
+      "away_record": "5-3-2",
+      "home_record": "7-6-0",
+      "away_win_pct": 0.6,
+      "home_win_pct": 0.5384615384615384
+    },
+    {
+      "date": "2026-01-24",
+      "away": "Governors Academy",
+      "home": "St. Sebastian's",
+      "time": "2:30 PM",
+      "venue": "Needham, MA",
+      "away_record": "7-4-3",
+      "home_record": "8-4-0",
+      "away_win_pct": 0.6071428571428571,
+      "home_win_pct": 0.6666666666666666
+    },
+    {
+      "date": "2026-01-24",
+      "away": "Avon Old Farms",
+      "home": "Berkshire School",
+      "time": "3:00 PM",
+      "venue": "Berkshire School",
+      "away_record": "10-1-0",
+      "home_record": "11-6-0",
+      "away_win_pct": 0.9090909090909091,
+      "home_win_pct": 0.6470588235294118
+    },
+    {
+      "date": "2026-01-24",
+      "away": "Kimball Union",
+      "home": "Cushing Academy",
+      "time": "5:00 PM",
+      "venue": "Ashburnham, MA",
+      "away_record": "15-4-1",
+      "home_record": "7-7-1",
+      "away_win_pct": 0.775,
+      "home_win_pct": 0.5
+    },
+    {
+      "date": "2026-01-24",
+      "away": "Choate Rosemary Hall",
+      "home": "Deerfield Academy",
+      "time": "6:30 PM",
+      "venue": "Deerfield Academy",
+      "away_record": "5-3-3",
+      "home_record": "5-5-2",
+      "away_win_pct": 0.5909090909090909,
+      "home_win_pct": 0.5
+    },
+    {
+      "date": "2026-01-24",
+      "away": "Salisbury School",
+      "home": "Kent School",
+      "time": "6:30 PM",
+      "venue": "Kent, CT",
+      "away_record": "10-1-1",
+      "home_record": "8-5-0",
+      "away_win_pct": 0.875,
+      "home_win_pct": 0.6153846153846154
+    }
+  ]
+}
