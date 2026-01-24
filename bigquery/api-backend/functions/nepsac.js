@@ -255,8 +255,23 @@ functions.http('getNepsacMatchup', withCors(async (req, res) => {
       WHERE team_id IN ('${game.away_team_id}', '${game.home_team_id}') AND season = '${season}'
     `;
 
-    // Get rosters with player points (top 6 each)
+    // Get rosters with player points and season stats (top 6 each)
+    // Use subquery to get only the best stats row per player (most games played)
     const rosterQuery = `
+      WITH ranked_stats AS (
+        SELECT
+          player_id,
+          gp,
+          goals,
+          assists,
+          points,
+          gaa,
+          svp,
+          ROW_NUMBER() OVER (PARTITION BY player_id ORDER BY gp DESC) as rn
+        FROM \`prodigy-ranking.algorithm_core.player_season_stats\`
+        WHERE season_start_year = 2025
+          AND league_name = 'USHS-Prep'
+      )
       SELECT
         r.team_id,
         r.roster_name,
@@ -265,10 +280,20 @@ functions.http('getNepsacMatchup', withCors(async (req, res) => {
         r.jersey_number,
         r.player_id,
         r.image_url,
-        COALESCE(p.total_points, 0) as total_points
+        COALESCE(p.total_points, 0) as total_points,
+        -- Season stats from player_season_stats (USHS-Prep = NEPSAC in Elite Prospects)
+        s.gp as games_played,
+        s.goals,
+        s.assists,
+        s.points as season_points,
+        s.gaa,
+        s.svp as save_pct
       FROM \`prodigy-ranking.algorithm_core.nepsac_rosters\` r
       LEFT JOIN \`prodigy-ranking.algorithm_core.player_cumulative_points\` p
         ON r.player_id = p.player_id
+      LEFT JOIN ranked_stats s
+        ON r.player_id = s.player_id
+        AND s.rn = 1
       WHERE r.team_id IN ('${game.away_team_id}', '${game.home_team_id}')
         AND r.season = '${season}'
         AND r.is_active = TRUE
@@ -309,7 +334,16 @@ functions.http('getNepsacMatchup', withCors(async (req, res) => {
           jerseyNumber: p.jersey_number,
           imageUrl: p.image_url,
           prodigyPoints: Math.round(points * 100) / 100,
-          ovr: calculateOVR(points, maxPoints)
+          ovr: calculateOVR(points, maxPoints),
+          // Season stats
+          stats: {
+            gp: p.games_played,
+            goals: p.goals,
+            assists: p.assists,
+            points: p.season_points,
+            gaa: p.gaa ? Math.round(p.gaa * 100) / 100 : null,
+            savePct: p.save_pct ? Math.round(p.save_pct * 1000) / 1000 : null
+          }
         };
       });
 
@@ -326,7 +360,16 @@ functions.http('getNepsacMatchup', withCors(async (req, res) => {
           jerseyNumber: p.jersey_number,
           imageUrl: p.image_url,
           prodigyPoints: Math.round(points * 100) / 100,
-          ovr: calculateOVR(points, maxPoints)
+          ovr: calculateOVR(points, maxPoints),
+          // Season stats
+          stats: {
+            gp: p.games_played,
+            goals: p.goals,
+            assists: p.assists,
+            points: p.season_points,
+            gaa: p.gaa ? Math.round(p.gaa * 100) / 100 : null,
+            savePct: p.save_pct ? Math.round(p.save_pct * 1000) / 1000 : null
+          }
         };
       });
 
@@ -653,8 +696,23 @@ functions.http('getNepsacRoster', withCors(async (req, res) => {
       LIMIT 1
     `;
 
-    // Get roster
+    // Get roster with season stats
+    // Use subquery to get only the best stats row per player (most games played)
     const rosterQuery = `
+      WITH ranked_stats AS (
+        SELECT
+          player_id,
+          gp,
+          goals,
+          assists,
+          points,
+          gaa,
+          svp,
+          ROW_NUMBER() OVER (PARTITION BY player_id ORDER BY gp DESC) as rn
+        FROM \`prodigy-ranking.algorithm_core.player_season_stats\`
+        WHERE season_start_year = 2025
+          AND league_name = 'USHS-Prep'
+      )
       SELECT
         r.roster_name,
         r.position,
@@ -668,10 +726,20 @@ functions.http('getNepsacRoster', withCors(async (req, res) => {
         p.birth_year,
         p.nationality_name,
         p.current_team as db_team,
-        p.current_league as db_league
+        p.current_league as db_league,
+        -- Season stats from player_season_stats (USHS-Prep = NEPSAC in Elite Prospects)
+        s.gp as games_played,
+        s.goals,
+        s.assists,
+        s.points as season_points,
+        s.gaa,
+        s.svp as save_pct
       FROM \`prodigy-ranking.algorithm_core.nepsac_rosters\` r
       LEFT JOIN \`prodigy-ranking.algorithm_core.player_cumulative_points\` p
         ON r.player_id = p.player_id
+      LEFT JOIN ranked_stats s
+        ON r.player_id = s.player_id
+        AND s.rn = 1
       WHERE r.team_id = '${teamId}' AND r.season = '${season}' AND r.is_active = TRUE
       ORDER BY p.total_points DESC NULLS LAST, r.position, r.roster_name
     `;
@@ -707,7 +775,16 @@ functions.http('getNepsacRoster', withCors(async (req, res) => {
         birthYear: row.birth_year,
         nationality: row.nationality_name,
         dbTeam: row.db_team,
-        dbLeague: row.db_league
+        dbLeague: row.db_league,
+        // Season stats
+        stats: {
+          gp: row.games_played,
+          goals: row.goals,
+          assists: row.assists,
+          points: row.season_points,
+          gaa: row.gaa ? Math.round(row.gaa * 100) / 100 : null,
+          savePct: row.save_pct ? Math.round(row.save_pct * 1000) / 1000 : null
+        }
       };
     });
 
