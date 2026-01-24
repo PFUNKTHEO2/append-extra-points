@@ -211,7 +211,9 @@
         "tier": "Competitive",
         "away_pct": 54.0,
         "home_pct": 46.0,
-        "note": "Shattuck normalized to NEPSAC - elite national program (one-off game)"
+        "note": "Shattuck normalized to NEPSAC - elite national program (one-off game)",
+        "away_id": "dexter",
+        "home_id": "shattuck-st-marys"
       }
     ],
     "2026-01-24": [
@@ -513,7 +515,9 @@
         "tier": "Competitive",
         "away_pct": 54.0,
         "home_pct": 46.0,
-        "note": "Shattuck normalized to NEPSAC - elite national program (one-off game)"
+        "note": "Shattuck normalized to NEPSAC - elite national program (one-off game)",
+        "away_id": "dexter",
+        "home_id": "shattuck-st-marys"
       }
     ],
     "2026-01-26": [
