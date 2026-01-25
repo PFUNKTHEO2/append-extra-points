@@ -1,0 +1,253 @@
+{
+  "generated_at": "2026-01-24T20:00:13.095647",
+  "model_version": "2.1",
+  "weights": {
+    "mhr_rating": 0.3,
+    "top_player": 0.15,
+    "recent_form": 0.15,
+    "win_pct": 0.15,
+    "head_to_head": 0.08,
+    "prodigy_points": 0.07,
+    "home_advantage": 0.05,
+    "expert_rank": 0.03,
+    "goal_diff": 0.02
+  },
+  "home_advantage": 0.55,
+  "total_games": 39,
+  "predictions": {
+    "e241aa30-60b9-4f92-b2b9-78b75db10cd4": {
+      "predicted_winner_id": "salisbury-school",
+      "confidence": 51,
+      "away_pct": 51.5,
+      "home_pct": 48.5
+    },
+    "6d13e27c-7e16-4502-bf83-12e0b6456da1": {
+      "predicted_winner_id": "avon-old-farms",
+      "confidence": 54,
+      "away_pct": 45.9,
+      "home_pct": 54.1
+    },
+    "9bc56f5a-8664-4a34-8622-33057cde56c6": {
+      "predicted_winner_id": "mount-st-charles",
+      "confidence": 62,
+      "away_pct": 62.5,
+      "home_pct": 37.5
+    },
+    "b95b3b03-025e-45bd-b5ce-f0d5a931c3c1": {
+      "predicted_winner_id": "the-hill-school",
+      "confidence": 74,
+      "away_pct": 25.6,
+      "home_pct": 74.4
+    },
+    "425adef2-1e63-48f6-9b2a-20546bce39a4": {
+      "predicted_winner_id": "andover",
+      "confidence": 51,
+      "away_pct": 48.3,
+      "home_pct": 51.7
+    },
+    "1a5e0d99-9ee2-43ad-b05f-3b610e70d977": {
+      "predicted_winner_id": "salisbury-school",
+      "confidence": 74,
+      "away_pct": 25.4,
+      "home_pct": 74.6
+    },
+    "a6199c7e-18fe-4c9f-bc83-10c5444db78b": {
+      "predicted_winner_id": "st-paul-s-school",
+      "confidence": 56,
+      "away_pct": 56.6,
+      "home_pct": 43.4
+    },
+    "7a054cba-2b98-4c3c-9195-4048b95d2393": {
+      "predicted_winner_id": "taft",
+      "confidence": 62,
+      "away_pct": 62.5,
+      "home_pct": 37.5
+    },
+    "5915dcfb-9852-4738-93b7-59295217e5da": {
+      "predicted_winner_id": "st-marks",
+      "confidence": 56,
+      "away_pct": 43.0,
+      "home_pct": 57.0
+    },
+    "9b9361fc-9d87-431d-b8ab-6f11ebf40dbe": {
+      "predicted_winner_id": "cushing",
+      "confidence": 55,
+      "away_pct": 55.1,
+      "home_pct": 44.9
+    },
+    "e383d29d-a2d4-4792-9e8c-055e50100d7e": {
+      "predicted_winner_id": "austin-prep",
+      "confidence": 57,
+      "away_pct": 42.2,
+      "home_pct": 57.8
+    },
+    "9c48a192-f829-4cf7-ae2b-b786d3ff8ad1": {
+      "predicted_winner_id": "portsmouth-abbey",
+      "confidence": 50,
+      "away_pct": 50.8,
+      "home_pct": 49.2
+    },
+    "09b2e57f-0f8f-45a3-b97e-a665ca72d2d4": {
+      "predicted_winner_id": "thayer-academy",
+      "confidence": 67,
+      "away_pct": 67.4,
+      "home_pct": 32.6
+    },
+    "52398091-85d3-45ac-a1df-989eafdf567a": {
+      "predicted_winner_id": "worcester-academy",
+      "confidence": 79,
+      "away_pct": 79.7,
+      "home_pct": 20.3
+    },
+    "4f0b45ca-f7e5-461f-8853-129c64bd31f1": {
+      "predicted_winner_id": "new-hampton",
+      "confidence": 59,
+      "away_pct": 40.2,
+      "home_pct": 59.8
+    },
+    "94c2f039-e621-43fe-808d-822b55b7b77c": {
+      "predicted_winner_id": "kents-hill",
+      "confidence": 66,
+      "away_pct": 66.9,
+      "home_pct": 33.1
+    },
+    "0bba7de5-106b-4784-b881-46191a9c596d": {
+      "predicted_winner_id": "albany-academy",
+      "confidence": 62,
+      "away_pct": 37.6,
+      "home_pct": 62.4
+    },
+    "5117e3dd-4862-403b-b15a-2c69628eea9e": {
+      "predicted_winner_id": "groton",
+      "confidence": 56,
+      "away_pct": 43.1,
+      "home_pct": 56.9
+    },
+    "78635731-0467-4535-8bf2-0a404393ca63": {
+      "predicted_winner_id": "bb-n",
+      "confidence": 60,
+      "away_pct": 39.6,
+      "home_pct": 60.4
+    },
+    "9b71a64b-4bac-4279-9ef0-2d4fde39704c": {
+      "predicted_winner_id": "dexter",
+      "confidence": 53,
+      "away_pct": 53.9,
+      "home_pct": 46.1
+    },
+    "29e072cf-89b1-40e3-92a6-252c5bb247fa": {
+      "predicted_winner_id": "st-sebastian-s",
+      "confidence": 54,
+      "away_pct": 54.5,
+      "home_pct": 45.5
+    },
+    "59e4b154-5707-469f-8493-bb848e4b377f": {
+      "predicted_winner_id": "lawrence-academy",
+      "confidence": 52,
+      "away_pct": 52.5,
+      "home_pct": 47.5
+    },
+    "3818a8c0-e8ff-4635-820a-29480239c723": {
+      "predicted_winner_id": "westminster",
+      "confidence": 50,
+      "away_pct": 49.8,
+      "home_pct": 50.2
+    },
+    "d9a1d523-0379-42d4-8d47-cbfa26f8fc1c": {
+      "predicted_winner_id": "brunswick",
+      "confidence": 70,
+      "away_pct": 29.2,
+      "home_pct": 70.8
+    },
+    "a27b3a68-1daf-4cc1-b14f-05a65479c07b": {
+      "predicted_winner_id": "wilbraham-monson",
+      "confidence": 69,
+      "away_pct": 69.8,
+      "home_pct": 30.2
+    },
+    "c2917e90-a202-43d7-a2fd-fe65c0073e4e": {
+      "predicted_winner_id": "holderness",
+      "confidence": 51,
+      "away_pct": 48.4,
+      "home_pct": 51.6
+    },
+    "93a050cf-4c7f-4dc8-a97d-0fee8cc2818f": {
+      "predicted_winner_id": "avon-old-farms",
+      "confidence": 54,
+      "away_pct": 54.3,
+      "home_pct": 45.7
+    },
+    "66eb2f3e-2b9d-401b-bf8b-81242f1700c7": {
+      "predicted_winner_id": "milton-academy",
+      "confidence": 57,
+      "away_pct": 42.8,
+      "home_pct": 57.2
+    },
+    "a35886a2-32f3-4872-b076-a42b9355c258": {
+      "predicted_winner_id": "kimball-union",
+      "confidence": 52,
+      "away_pct": 52.7,
+      "home_pct": 47.3
+    },
+    "bb27fbec-f9ea-4cf5-966c-8bcc6b387c86": {
+      "predicted_winner_id": "lawrence-academy",
+      "confidence": 51,
+      "away_pct": 48.7,
+      "home_pct": 51.3
+    },
+    "4998ce93-e64b-4dac-b380-b9d1baa1689f": {
+      "predicted_winner_id": "choate",
+      "confidence": 58,
+      "away_pct": 58.6,
+      "home_pct": 41.4
+    },
+    "7b096b47-a5cd-4055-9036-1c66719ed4dd": {
+      "predicted_winner_id": "williston-northampton",
+      "confidence": 80,
+      "away_pct": 80.4,
+      "home_pct": 19.6
+    },
+    "30a0e5ba-b45e-4130-a07d-e788fc9e292f": {
+      "predicted_winner_id": "albany-academy",
+      "confidence": 54,
+      "away_pct": 46.0,
+      "home_pct": 54.0
+    },
+    "81f5004f-4939-4199-a89f-caf66722dc51": {
+      "predicted_winner_id": "wilbraham-monson",
+      "confidence": 53,
+      "away_pct": 46.1,
+      "home_pct": 53.9
+    },
+    "1dbf5a05-8958-4561-8c76-8a4fc2a22491": {
+      "predicted_winner_id": "north-yarmouth",
+      "confidence": 52,
+      "away_pct": 52.7,
+      "home_pct": 47.3
+    },
+    "a041a66f-a5be-49d6-ae08-7b2d2e9dbf0c": {
+      "predicted_winner_id": "brewster",
+      "confidence": 53,
+      "away_pct": 46.8,
+      "home_pct": 53.2
+    },
+    "f90cfc14-6c80-4d3a-9728-3c74aa98610d": {
+      "predicted_winner_id": "wyoming-seminary",
+      "confidence": 57,
+      "away_pct": 42.1,
+      "home_pct": 57.9
+    },
+    "93b177c1-ab90-42c3-a3d3-2569ca778462": {
+      "predicted_winner_id": "ridley-college-on",
+      "confidence": 50,
+      "away_pct": 50.9,
+      "home_pct": 49.1
+    },
+    "9200c278-4b05-41f2-952f-f14a2b3554a3": {
+      "predicted_winner_id": "the-hill-school",
+      "confidence": 74,
+      "away_pct": 25.6,
+      "home_pct": 74.4
+    }
+  }
+}
