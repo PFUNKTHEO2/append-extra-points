@@ -117,6 +117,54 @@ export interface NepsacGameDatesResponse {
   dates: NepsacGameDate[];
 }
 
+// Past Results Types
+export interface NepsacPastResultTeam {
+  teamId: string;
+  name: string;
+  shortName: string;
+  score: number;
+  isWinner: boolean;
+  wasPredicted: boolean;
+}
+
+export interface NepsacPastResultGame {
+  gameId: string;
+  gameTime: string;
+  awayTeam: NepsacPastResultTeam;
+  homeTeam: NepsacPastResultTeam;
+  prediction: {
+    winnerId: string;
+    confidence: number;
+  };
+  result: 'correct' | 'incorrect' | 'tie';
+  isTie: boolean;
+}
+
+export interface NepsacPastResultDate {
+  date: string;
+  dayOfWeek: string;
+  games: NepsacPastResultGame[];
+  correct: number;
+  incorrect: number;
+  ties: number;
+}
+
+export interface NepsacPastResultsSummary {
+  totalGames: number;
+  correct: number;
+  incorrect: number;
+  ties: number;
+  accuracy: number;
+  record: string;
+}
+
+export interface NepsacPastResultsResponse {
+  season: string;
+  summary: NepsacPastResultsSummary;
+  dateCount: number;
+  dates: NepsacPastResultDate[];
+}
+
 export interface NepsacTeamWithStats extends NepsacTeam {
   venue: string | null;
   city: string | null;
@@ -193,6 +241,28 @@ export async function fetchNepsacGameDates(
     return await response.json();
   } catch (error) {
     console.error('Error fetching NEPSAC game dates:', error);
+    return null;
+  }
+}
+
+/**
+ * Fetch past results with prediction accuracy
+ */
+export async function fetchNepsacPastResults(
+  season: string = '2025-26',
+  limit: number = 200
+): Promise<NepsacPastResultsResponse | null> {
+  try {
+    const response = await fetch(
+      `${API_BASE}/getNepsacPastResults?season=${season}&limit=${limit}`
+    );
+    if (!response.ok) {
+      console.error('Failed to fetch NEPSAC past results:', response.status);
+      return null;
+    }
+    return await response.json();
+  } catch (error) {
+    console.error('Error fetching NEPSAC past results:', error);
     return null;
   }
 }

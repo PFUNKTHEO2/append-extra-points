@@ -834,6 +834,164 @@ functions.http('getNepsacRoster', withCors(async (req, res) => {
 }));
 
 /**
+ * GET /getNepsacPastResults
+ * Returns completed games with prediction accuracy tracking
+ *
+ * Query params:
+ * - season: string (default: '2025-26')
+ * - startDate: string (optional YYYY-MM-DD, defaults to season start)
+ * - endDate: string (optional YYYY-MM-DD, defaults to today)
+ * - limit: number (optional, max games to return, default 100)
+ */
+functions.http('getNepsacPastResults', withCors(async (req, res) => {
+  try {
+    const { season = '2025-26', startDate, endDate, limit = 100 } = req.query;
+
+    const query = `
+      SELECT
+        s.game_id,
+        s.game_date,
+        s.game_time,
+        s.day_of_week,
+        s.status,
+        s.away_score,
+        s.home_score,
+        s.predicted_winner_id,
+        s.prediction_confidence,
+        s.away_team_id,
+        away.team_name as away_team_name,
+        away.short_name as away_short_name,
+        s.home_team_id,
+        home.team_name as home_team_name,
+        home.short_name as home_short_name
+      FROM \`prodigy-ranking.algorithm_core.nepsac_schedule\` s
+      LEFT JOIN \`prodigy-ranking.algorithm_core.nepsac_teams\` away
+        ON s.away_team_id = away.team_id
+      LEFT JOIN \`prodigy-ranking.algorithm_core.nepsac_teams\` home
+        ON s.home_team_id = home.team_id
+      WHERE s.season = '${season}'
+        AND s.status = 'final'
+        AND s.predicted_winner_id IS NOT NULL
+        ${startDate ? `AND s.game_date >= '${startDate}'` : ''}
+        ${endDate ? `AND s.game_date <= '${endDate}'` : ''}
+      ORDER BY s.game_date DESC, s.game_time
+      LIMIT ${parseInt(limit)}
+    `;
+
+    const rows = await executeQuery(query);
+
+    // Process results and calculate accuracy
+    let correct = 0;
+    let incorrect = 0;
+    let ties = 0;
+    const gamesByDate = {};
+
+    rows.forEach(row => {
+      const awayScore = parseInt(row.away_score) || 0;
+      const homeScore = parseInt(row.home_score) || 0;
+      const predictedWinnerId = row.predicted_winner_id;
+
+      // Determine actual winner
+      let actualWinnerId = null;
+      let isTie = false;
+      if (awayScore > homeScore) {
+        actualWinnerId = row.away_team_id;
+      } else if (homeScore > awayScore) {
+        actualWinnerId = row.home_team_id;
+      } else {
+        isTie = true;
+      }
+
+      // Calculate prediction result
+      let predictionResult;
+      if (isTie) {
+        predictionResult = 'tie';
+        ties++;
+      } else if (predictedWinnerId === actualWinnerId) {
+        predictionResult = 'correct';
+        correct++;
+      } else {
+        predictionResult = 'incorrect';
+        incorrect++;
+      }
+
+      // Get date string for grouping
+      const dateStr = parseValue(row.game_date);
+      if (!gamesByDate[dateStr]) {
+        gamesByDate[dateStr] = {
+          date: dateStr,
+          dayOfWeek: row.day_of_week,
+          games: [],
+          correct: 0,
+          incorrect: 0,
+          ties: 0
+        };
+      }
+
+      // Update date stats
+      if (predictionResult === 'correct') gamesByDate[dateStr].correct++;
+      else if (predictionResult === 'incorrect') gamesByDate[dateStr].incorrect++;
+      else gamesByDate[dateStr].ties++;
+
+      // Add game to date
+      gamesByDate[dateStr].games.push({
+        gameId: row.game_id,
+        gameTime: row.game_time,
+        awayTeam: {
+          teamId: row.away_team_id,
+          name: row.away_team_name,
+          shortName: row.away_short_name,
+          score: awayScore,
+          isWinner: awayScore > homeScore,
+          wasPredicted: predictedWinnerId === row.away_team_id
+        },
+        homeTeam: {
+          teamId: row.home_team_id,
+          name: row.home_team_name,
+          shortName: row.home_short_name,
+          score: homeScore,
+          isWinner: homeScore > awayScore,
+          wasPredicted: predictedWinnerId === row.home_team_id
+        },
+        prediction: {
+          winnerId: predictedWinnerId,
+          confidence: row.prediction_confidence
+        },
+        result: predictionResult,
+        isTie
+      });
+    });
+
+    // Convert to sorted array
+    const dates = Object.values(gamesByDate).sort((a, b) =>
+      new Date(b.date) - new Date(a.date)
+    );
+
+    // Calculate overall stats
+    const totalGames = correct + incorrect + ties;
+    const accuracy = totalGames > 0 ? Math.round((correct / (totalGames - ties)) * 1000) / 10 : 0;
+
+    res.json({
+      season,
+      summary: {
+        totalGames,
+        correct,
+        incorrect,
+        ties,
+        accuracy, // Percentage (excludes ties from denominator)
+        record: `${correct}-${incorrect}${ties > 0 ? `-${ties}` : ''}`
+      },
+      dateCount: dates.length,
+      dates
+    });
+
+  } catch (error) {
+    console.error('getNepsacPastResults error:', error);
+    return errorResponse(res, 500, error.message);
+  }
+}));
+
+/**
  * GET /getNepsacGameDates
  * Returns all dates that have scheduled games
  *
