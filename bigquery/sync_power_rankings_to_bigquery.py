@@ -140,8 +140,7 @@ def update_rankings(client, power_rankings, existing_rankings, dry_run=False):
     for u in updates:
         query = f"""
         UPDATE `{PROJECT_ID}.{DATASET_ID}.{TABLE_ID}`
-        SET rank = {u['new_rank']},
-            calculated_at = CURRENT_TIMESTAMP()
+        SET rank = {u['new_rank']}
         WHERE team_id = '{u['team_id']}'
           AND season = '{SEASON}'
         """
