@@ -1,0 +1,984 @@
+rank,first_name,last_name,team,position,gp,shoots,goals,assists,points,ppg
+1,Caiden,Pellegrino,St. Marks,C,12,L,13,25,38,3.17
+2,James,McMurray,Berkshire School,F,17,R,14,19,33,1.94
+3,Josh,Phillips,Kimball Union,F,20,,10,20,30,1.5
+4,Evan,Nee,St. Marks,F,12,L,19,11,30,2.5
+5,Rich,Cavanagh,Pomfret,F,16,L,13,17,30,1.88
+6,Will,Manchuso,St. Marks,F,12,L,14,16,30,2.5
+7,Myles,Brosnan,Dexter,D,16,R,5,24,29,1.81
+8,Matthew,Lacombe,Berkshire School,F,17,R,8,21,29,1.71
+9,Giacomo,Caliri,Pomfret,F,16,,12,17,29,1.81
+10,Jack,Broderick,Kent School,F,13,L,11,17,28,2.15
+11,Cam,Mcpherson,St. Marks,F,12,,6,18,24,2
+12,Keith,Olympia,St. Marks,F,12,R,6,18,24,2
+13,Jonah,Rainisch,Berkshire School,F,17,R,13,10,23,1.35
+14,Max,Donatelli,St. Georges,F,14,L,9,14,23,1.64
+15,Charlie,Puglisi,Winchendon,F,16,R,9,14,23,1.44
+16,Seamus,McMakin,Canterbury,F,15,R,8,15,23,1.53
+17,Billy,MacAusland,Noble & Greenough,F,13,R,10,13,23,1.77
+18,Noah,Poinsett-Yoshida,Exeter,F,14,L,8,14,22,1.57
+19,CJ,List,Millbrook,F,19,R,10,12,22,1.16
+20,Lucas,Husted-Edwards,Kent School,F,12,R,10,12,22,1.83
+21,Logan,Ferrara,Loomis Chaffee,F,12,R,8,14,22,1.83
+22,Nick,Dolympio,Dexter,F,16,R,6,16,22,1.38
+23,Johnny,Niemela,New Hampton,F,17,R,9,13,22,1.29
+24,Sam,Gero,Millbrook,F,19,R,6,15,21,1.11
+25,Conal,Mulkerrin,Kimball Union,F,20,,15,6,21,1.05
+26,Will,Schlechtweg,Kent School,F,10,L,8,13,21,2.1
+27,Jack,Fitzpatrick,Dexter,F,16,L,13,8,21,1.31
+28,Ryan,Mogielnicki,Austin Prep,F,17,R,14,7,21,1.24
+29,Nathan,Dono,Pomfret,F,16,,6,15,21,1.31
+30,Tommy,Browne,Canterbury,D,15,R,7,14,21,1.4
+31,Jackson,Kimelman,Kimball Union,F,20,,8,12,20,1
+32,Lucas,Hannay,Kimball Union,D,20,,5,15,20,1
+33,Aiden,Ferreira,St. Georges,F,14,R,10,9,19,1.36
+34,Sam,Lee,Belmont Hill,F,16,,9,10,19,1.19
+35,Mason,McGovern,Austin Prep,F,17,R,10,9,19,1.12
+36,Luke,Long,Proctor Academy,F,16,R,9,10,19,1.19
+37,Jack,Mceleney,Canterbury,F,15,,7,12,19,1.27
+38,Patrick,Woods,Belmont Hill,F,16,R,8,10,18,1.13
+39,Owen,McHale,Dexter,F,15,L,13,5,18,1.2
+40,Nate,Kreppner,Andover,F,15,L,6,12,18,1.2
+41,Laz,Giardina,Winchendon,F,16,L,9,9,18,1.13
+42,Danny,Patch,Pingree,F,13,L,7,11,18,1.38
+43,Deagan,Nadeau,North Yarmouth,F,20,R,9,8,17,0.85
+44,Grady,Bishop,St. Marks,F,12,R,8,9,17,1.42
+45,Teddy,Drury,St. Marks,F,12,,6,11,17,1.42
+46,TJ,Swinson,Pomfret,F,16,R,7,10,17,1.06
+47,Zach,Boss,The Hill School,F,16,R,10,7,17,1.06
+48,Tommy,Egan,Austin Prep,F,17,R,5,12,17,1
+49,Viktor,Samal,Holderness,F,11,L,8,9,17,1.55
+50,Jack,Goodrich,Berwick,F,15,L,8,9,17,1.13
+51,Cam,Peltz,Pomfret,F,16,,9,8,17,1.06
+52,Nate,Moons,Groton,F,13,,4,13,17,1.31
+53,Cam,Lathrop,North Yarmouth,F,11,L,8,8,16,1.45
+54,Jacob,Colaluca,North Yarmouth,F,19,R,6,10,16,0.84
+55,Jake,West,Winchendon,F,16,R,9,7,16,1
+56,Nasean,Faria,Kimball Union,D,19,,6,10,16,0.84
+57,Jack,Lee,Canterbury,F,15,,9,7,16,1.07
+58,Evan,Jones,Belmont Hill,D,15,L,9,7,16,1.07
+59,Joe,Feinberg,Milton Academy,F,16,R,10,6,16,1
+60,AJ,Oliveri,Worcester Academy,F,13,R,10,6,16,1.23
+61,Garrett,Aceto,Proctor Academy,F,16,L,7,9,16,1
+62,Max,Colosimo,Milton Academy,F,16,L,7,9,16,1
+63,Alex,Small,Andover,F,15,L,4,12,16,1.07
+64,Matt,Homer,New Hampton,F,12,L,10,6,16,1.33
+65,Jack,Queally,St. Sebastian's,F,12,L,9,7,16,1.33
+66,Sawyer,Graubins,Holderness,F,12,R,6,10,16,1.33
+67,Ryan,MacCurtain,Noble & Greenough,F,13,L,9,7,16,1.23
+68,Colvin,Callahan,Tabor,F,13,R,9,7,16,1.23
+69,Kellan,Kissane,Worcester Academy,F,10,L,7,9,16,1.6
+70,Cade,Noonan,St. Sebastian's,F,12,L,7,9,16,1.33
+71,Justin,Garvey,Milton Academy,D,16,R,2,14,16,1
+72,Joey,Dellacroce,NMH,F,17,R,9,6,15,0.88
+73,Shamil,Sitdkov,Kents Hill,F,16,L,5,10,15,0.94
+74,Carter,Balducci,Mount St. Charles,F,10,L,7,8,15,1.5
+75,Brandon,Remppel,Millbrook,F,19,L,4,11,15,0.79
+76,Owen,Cronan,Groton,F,13,L,7,8,15,1.15
+77,Michael,Delaney,Holderness,F,12,L,5,10,15,1.25
+78,Tripp,Schuhwerk,Governors Academy,F,14,L,9,6,15,1.07
+79,Mitchell,Smith,St. Paul's School,F,16,L,7,8,15,0.94
+80,Ford,Sullivan,Governors Academy,F,14,R,6,9,15,1.07
+81,Robbie,Daley,Governors Academy,F,14,R,8,7,15,1.07
+82,Matt,Carolan,Belmont Hill,F,16,R,9,6,15,0.94
+83,Dylan,Podergois,New Hampton,F,14,R,3,12,15,1.07
+84,Hayden,Hutner,Williston-Northampton,F,15,L,6,9,15,1
+85,Jackson,Smail,Winchendon,F,15,R,5,10,15,1
+86,Ty,Hymovitz,Thayer Academy,F,10,R,5,10,15,1.5
+87,Noah,Survilas,Dexter,F,16,R,6,8,14,0.88
+88,Teddy,Farren,NMH,F,17,L,4,10,14,0.82
+89,Max,Gagnon,Tilton,F,15,R,5,9,14,0.93
+90,Kaiden,Sahajpal,Winchendon,F,12,L,6,8,14,1.17
+91,Jaxon,Sabataso,North Yarmouth,F,20,R,7,7,14,0.7
+92,Maddox,Boyle,Kent School,F,13,R,5,9,14,1.08
+93,Carson,Woolcott,Loomis Chaffee,F,12,R,3,11,14,1.17
+94,Jack,Funk,Thayer Academy,F,14,L,9,5,14,1
+95,Phin,Howard,St. Marks,D,12,,1,13,14,1.17
+96,Axel,Black,Proctor Academy,F,16,R,9,5,14,0.88
+97,Blake,Cash,Cushing Academy,F,15,L,7,7,14,0.93
+98,Finian,Kilbourne,St. Paul's School,F,16,R,4,10,14,0.88
+99,Nico,Ciardiello,Avon Old Farms,F,11,R,7,7,14,1.27
+100,Carter,Felt,Rivers School,F,10,L,7,7,14,1.4
+101,Jack,Ross,Kimball Union,F,20,,3,11,14,0.7
+102,JP,Messuri,Dexter,F,16,L,3,11,14,0.88
+103,Ben,Romer,BB&N,F,11,R,4,10,14,1.27
+104,Dawson,Wood,Kimball Union,F,19,,7,7,14,0.74
+105,Anthony,Brunetti,St. Marks,F,12,L,6,8,14,1.17
+106,Liam,Welsh,Kents Hill,F,15,R,6,8,14,0.93
+107,Joe,Sasso,Exeter,F,14,L,6,7,13,0.93
+108,Cam,Fiasconaro,Exeter,D,14,L,5,8,13,0.93
+109,Tyler,Hamilton,Dexter,F,16,R,7,6,13,0.81
+110,Erion,Milla,Berkshire School,F,17,L,5,8,13,0.76
+111,Cooper,Ludwar,Winchendon,F,10,R,7,6,13,1.3
+112,Dominic,Somma,Berkshire School,D,17,R,3,10,13,0.76
+113,Jonathan,Rivard,Rivers School,F,10,R,4,9,13,1.3
+114,Michael,Federico,Thayer Academy,F,14,L,8,5,13,0.93
+115,Jake,Assad,Dexter,F,16,L,3,10,13,0.81
+116,Nick,Ranaldi,Austin Prep,F,17,L,11,2,13,0.76
+117,Liam,Conley,Austin Prep,F,17,L,5,8,13,0.76
+118,Ian,Sherman,Pomfret,D,16,,5,8,13,0.81
+119,Axel,Favreau,Cushing Academy,C,15,L,2,11,13,0.87
+120,Noah,Keeler,Milton Academy,F,16,L,8,5,13,0.81
+121,Mason,Serafin,Millbrook,D,19,L,3,10,13,0.68
+122,Tommy,Wilkinson,Thayer Academy,F,14,R,8,5,13,0.93
+123,Robert,DeKleine,Belmont Hill,F,16,,4,9,13,0.81
+124,Kieran,McIntosh,Andover,F,15,R,3,10,13,0.87
+125,Ethan,Travis,Tabor,F,12,L,8,5,13,1.08
+126,Gaines,Clonts,Canterbury,F,15,R,3,10,13,0.87
+127,Hunter,Barone,BB&N,F,11,R,5,8,13,1.18
+128,Casey,Berninger,Millbrook,F,19,R,6,7,13,0.68
+129,Alexis,Gagne,Kimball Union,F,20,,5,8,13,0.65
+130,Ethan,Gingeleskie,Avon Old Farms,F,9,R,8,5,13,1.44
+131,Blake,Grislis,St. Marks,D/F,12,,1,12,13,1.08
+132,Andrew,Giguere,Governors Academy,F,14,R,3,10,13,0.93
+133,Aiden,Goodwin,Austin Prep,F,17,L,3,10,13,0.76
+134,Nick,Sumner,Thayer Academy,F,14,R,3,10,13,0.93
+135,Cal,Gustafson,Kent School,D,13,L,2,11,13,1
+136,David,O'Neill,Andover,F,15,R,2,10,12,0.8
+137,Isaac,Hutchinson,NMH,F,17,L,4,8,12,0.71
+138,Jason,Rothstein,Taft,F,10,L,2,10,12,1.2
+139,Stephen,Rousell,Rivers School,F,10,R,6,6,12,1.2
+140,Gavin,Wainwright,St. Sebastian's,D,12,L,4,8,12,1
+141,Tom,Ford,Austin Prep,F,17,R,6,6,12,0.71
+142,Max,Santos,St. Marks,F,7,,4,8,12,1.71
+143,Bruce,Zhong,St. Marks,F,12,,6,6,12,1
+144,Tucker,Harris,Avon Old Farms,F,11,L,5,7,12,1.09
+145,Will,Norton,Pomfret,F,16,L,9,3,12,0.75
+146,Jake,Pandolfo,Austin Prep,F,17,L,5,7,12,0.71
+147,Jason,Faith,Andover,F,15,R,4,8,12,0.8
+148,Drew,Gallucci,Pingree,F,12,L,6,6,12,1
+149,Dylan,Chery,Taft,F,10,L,8,4,12,1.2
+150,Dylan,Hall,Frederick Gunn,D,15,L,6,6,12,0.8
+151,Jackson,Davies,Kimball Union,F,20,,2,10,12,0.6
+152,Brendan,Matthews,St. Sebastian's,F,12,R,3,9,12,1
+153,Declan,Grenache,Williston-Northampton,F,15,L,7,5,12,0.8
+154,Joseph,Covelluzzi,Cushing Academy,F,15,R,8,4,12,0.8
+155,Anderson,Kilbourne,St. Paul's School,F,14,R,4,8,12,0.86
+156,Liam,Donnelly,Avon Old Farms,D,11,R,5,7,12,1.09
+157,Jamie,Calla,Governors Academy,F,13,R,7,5,12,0.92
+158,Zach,Greenlund,The Hill School,F,16,R,1,11,12,0.75
+159,Matthew,Macinnis,Winchendon,D,16,L,4,8,12,0.75
+160,Carter,Johnson,Berkshire School,F,17,L,1,11,12,0.71
+161,Justin,Fernandez,Millbrook,F,19,R,3,8,11,0.58
+162,Charlie,MacLeod,Kimball Union,F,19,,5,6,11,0.58
+163,Marko,Huo,NMH,D,17,R,2,9,11,0.65
+164,Anthony,Pomarico,Winchendon,D,16,L,1,10,11,0.69
+165,Kaden,Kern,Winchendon,F,16,L,1,10,11,0.69
+166,Richard,Shin,Kent School,F,13,R,5,6,11,0.85
+167,Jack,Welby,Holderness,F,11,L,9,2,11,1
+168,Felix,Menard,The Hill School,F,16,L,5,6,11,0.69
+169,Ryan,Magaletta,St. Georges,F,14,L,3,8,11,0.79
+170,Ethan,Figueiredo,Mount St. Charles,F,8,L,5,6,11,1.38
+171,Harry,Dermody,St. Paul's School,F,16,L,6,5,11,0.69
+172,Ryan,Vohra,St. Paul's School,F,16,L,5,6,11,0.69
+173,Henry,Colbert,Holderness,F,12,R,3,8,11,0.92
+174,Britton,Bethard,Canterbury,F,15,R,6,5,11,0.73
+175,Owen,Schwarz,Loomis Chaffee,F,12,L,6,5,11,0.92
+176,Alex,Stahl,Exeter,D/F,14,R,4,7,11,0.79
+177,Tucker,Mears,Frederick Gunn,F,15,R,3,8,11,0.73
+178,Nathan,Desanto,Frederick Gunn,F,15,R,8,3,11,0.73
+179,Greg,Najda,Choate Rosemary Hall,F,11,L,5,6,11,1
+180,Luke,Allen,Lawrence Academy,RW,13,R,8,3,11,0.85
+181,Brayden,White,Williston-Northampton,F,15,,4,7,11,0.73
+182,Owen,Carter,Tabor,D,13,R,4,7,11,0.85
+183,Austin,Wu,Dexter,F,16,L,5,6,11,0.69
+184,Joseph,Marchi,Dexter,F,13,R,1,10,11,0.85
+185,John,Williams,BB&N,F,11,R,6,5,11,1
+186,Cameron,Daigle,St. Georges,F,13,R,5,6,11,0.85
+187,Parker,Murch,Cushing Academy,F,14,R,5,6,11,0.79
+188,Jack,Grahling,Millbrook,F,19,R,6,5,11,0.58
+189,AJ,Jones,Holderness,F,12,L,4,7,11,0.92
+190,Chase,Watts,Tabor,F,13,L,4,7,11,0.85
+191,Anthony,Leech,Kimball Union,D,19,,2,9,11,0.58
+192,Camden,Tabb,Williston-Northampton,F,15,L,5,6,11,0.73
+193,Reed,Kenney,Berwick,F,15,L,5,6,11,0.73
+194,Jake,Donatelli,St. Georges,D,14,L,1,10,11,0.79
+195,Harry,Seely,North Yarmouth,F,20,R,2,9,11,0.55
+196,Max,Prudovsky,Dexter,F,16,L,2,9,11,0.69
+197,Ben,Marcolini,Cushing Academy,F,15,L,4,7,11,0.73
+198,Edouard,Cantin,Winchendon,F,16,R,2,9,11,0.69
+199,Zachary,Fedele,Andover,D,15,L,4,7,11,0.73
+200,Steven,Khonroo,Winchendon,F,16,R,1,10,11,0.69
+201,Zach,Gay,Tilton,F,15,R,5,5,10,0.67
+202,Carter,Cowan,Kimball Union,F,20,,4,6,10,0.5
+203,Mason,St. Louis,Brunswick,F,14,,4,6,10,0.71
+204,Ethan,Goodrich,St. Georges,F,13,L,5,5,10,0.77
+205,Liam,Hewins,Worcester Academy,F,11,R,7,3,10,0.91
+206,Preston,Kelly-Paquet,Berkshire School,F,17,L,5,5,10,0.59
+207,Elliot,Wood,Groton,D,13,R,4,6,10,0.77
+208,Ryan,Murray,Hotchkiss School,F,10,L,6,4,10,1
+209,Graham,Luskin,Pingree,D,13,L,3,7,10,0.77
+210,Tim,Sullivan,Proctor Academy,F,16,R,2,8,10,0.63
+211,Gus,Lambert,Berwick,F,15,L,5,5,10,0.67
+212,Jack,Galvin,Austin Prep,D,17,R,2,8,10,0.59
+213,Gavin,Holland,Lawrence Academy,D,12,R,1,9,10,0.83
+214,Matteo,Alvarez,Deerfield Academy,F,12,R,6,4,10,0.83
+215,Alex,Strug,Deerfield Academy,F,12,L,5,5,10,0.83
+216,Easton,Kinsler,Choate Rosemary Hall,F,11,L,5,5,10,0.91
+217,Kane,Mori,Holderness,F,12,L,6,4,10,0.83
+218,Stephen,Connolly,North Yarmouth,F,20,L,8,2,10,0.5
+219,Alex,Reed,Tilton,F,15,R,5,5,10,0.67
+220,Chance,Bolton,Milton Academy,D,16,R,2,8,10,0.63
+221,Dylan,Chernoff,Berkshire School,F,17,R,6,4,10,0.59
+222,Sam,Fishbone,St. Sebastian's,D,12,R,1,9,10,0.83
+223,Timothy,Donohue,Westminster,F,11,L,3,7,10,0.91
+224,Bryan,Aquino,Lawrenceville School,F,11,R,3,7,10,0.91
+225,Cam,Potter,Worcester Academy,D,13,L,1,9,10,0.77
+226,Gus,Chong,Berkshire School,D,17,R,0,10,10,0.59
+227,Nick,Ware,Belmont Hill,D,16,,0,10,10,0.63
+228,Jake,Harrison,Hotchkiss School,F,10,R,0,10,10,1
+229,Thomas,Wilson,Exeter,D,14,L,1,8,9,0.64
+230,Owen,Cheever,North Yarmouth,D,12,L,1,8,9,0.75
+231,Alex,Theodore,Andover,F,13,L,7,2,9,0.69
+232,Tanner,Smith,Albany Academy,F,18,R,5,4,9,0.5
+233,Thomas,Ojard,Kimball Union,D,20,,4,5,9,0.45
+234,Mike,Tober,Mount St. Charles,F,8,R,8,1,9,1.13
+235,Quinn,Brandell,St. Paul's School,D,16,L,4,5,9,0.56
+236,Will,Watson,Loomis Chaffee,F,11,R,4,5,9,0.82
+237,Oliver,Svoboda,Cushing Academy,D,15,L,1,8,9,0.6
+238,Edouard,Belval-Turmel,Proctor Academy,D,16,L,1,8,9,0.56
+239,William,Wright,Frederick Gunn,F,15,R,2,7,9,0.6
+240,Adam,Lopashanski,Berwick,F,15,R,2,7,9,0.6
+241,Callum,Green,St. Paul's School,F,16,L,6,3,9,0.56
+242,Nick,Dias,Brooks School,F,11,L,5,4,9,0.82
+243,Cameron,Roof,BB&N,D,11,R,2,7,9,0.82
+244,Nolan,Roberts,Andover,F,15,R,3,6,9,0.6
+245,Hampus,Vandenberg,Brunswick,D,14,,2,7,9,0.64
+246,Cameron,Clark,Berwick,D,15,R,5,4,9,0.6
+247,Gino,LaRusso,Canterbury,F,15,L,2,7,9,0.6
+248,Lukas,Machan,Deerfield Academy,F,12,L,4,5,9,0.75
+249,Jeff,Swartz,Cushing Academy,C,15,L,5,4,9,0.6
+250,Alistair,At. Hilaire,Lawrenceville School,F,11,R,4,5,9,0.82
+251,Owen,Connolly,Avon Old Farms,F,11,L,3,5,8,0.73
+252,Chris,Thompson,Deerfield Academy,F,12,R,5,3,8,0.67
+253,Jake,Speck,Milton Academy,F,16,R,4,4,8,0.5
+254,Sam,Farrell,Middlesex,F,10,L,4,4,8,0.8
+255,Jack,Dahill,Brooks School,F,11,L,5,3,8,0.73
+256,Ryan,Quirk,St. Georges,F,14,L,5,3,8,0.57
+257,Alex,Nolan,Hotchkiss School,F,10,R,2,6,8,0.8
+258,George,Gritsenko,New Hampton,F,17,R,3,5,8,0.47
+259,Will,Burr,Loomis Chaffee,F,12,R,3,5,8,0.67
+260,Jack,Schaal,Salisbury School,F,12,,6,2,8,0.67
+261,Kevin,Mannix,Westminster,F,11,R,2,6,8,0.73
+262,Marek,Hrnciar,Canterbury,F,15,R,4,4,8,0.53
+263,James,Levis,Andover,F,15,R,2,6,8,0.53
+264,Garrett,Kohler,Andover,F,15,R,3,5,8,0.53
+265,Evan,Benoit,Albany Academy,F,18,L,2,6,8,0.44
+266,Finn,Dorrity,Brunswick,D,14,,2,6,8,0.57
+267,Jake,Crowley,Exeter,F,14,R,2,6,8,0.57
+268,Will,Frain,Lawrence Academy,F,13,L,3,5,8,0.62
+269,John,Crowley,Groton,F,13,R,2,6,8,0.62
+270,Jack,Daly,Salisbury School,F,12,,4,4,8,0.67
+271,Caleb,Howe,Millbrook,F,19,R,2,6,8,0.42
+272,Braden,Marshall,Westminster,D,11,R,1,7,8,0.73
+273,Alek,Geffken,Proctor Academy,D,16,R,4,4,8,0.5
+274,Isaac,Lavoie,North Yarmouth,F,20,L,3,5,8,0.4
+275,Charlie,Blake,Andover,F,15,R,4,4,8,0.53
+276,Ollie,Haynes,Mount St. Charles,F,10,L,4,4,8,0.8
+277,Matthew,Patko,Canterbury,D,14,L,3,5,8,0.57
+278,Logan,Martel,Canterbury,D,15,L,2,6,8,0.53
+279,Gavin,Burley,New Hampton,F,17,L,2,6,8,0.47
+280,Ryan,Tartaglione,Frederick Gunn,F,15,R,3,5,8,0.53
+281,James,Ferreira,BB&N,F,11,L,2,6,8,0.73
+282,Andrew,Martin,Brooks School,F,10,L,4,4,8,0.8
+283,Oliver,Quong,New Hampton,F,16,L,1,7,8,0.5
+284,Brady,Grislis,Pomfret,F,16,,2,6,8,0.5
+285,Maks,Morgoslepov,Avon Old Farms,F,11,L,4,4,8,0.73
+286,Jonas,Marek,NMH,F,16,L,3,5,8,0.5
+287,Owen,Andrews,Deerfield Academy,F,12,L,4,4,8,0.67
+288,Nick,Ferrie,Loomis Chaffee,F,12,L,3,5,8,0.67
+289,Cam,Joinville,Worcester Academy,F,13,R,3,5,8,0.62
+290,Tegan,Gregory,Holderness,D,12,L,1,7,8,0.67
+291,Kris,Soja,Noble & Greenough,D,13,L,1,7,8,0.62
+292,Zach,Mohamed,Noble & Greenough,F,13,L,4,4,8,0.62
+293,Marcello,Martinelli,Tabor,D,13,L,1,7,8,0.62
+294,Michael,Rutledge,Millbrook,D,19,R,3,5,8,0.42
+295,Evan,Handler,Rivers School,D,10,R,2,6,8,0.8
+296,Cam,Swank,St. Marks,D,12,R,5,3,8,0.67
+297,Jake,Cabral,New Hampton,F,17,L,6,2,8,0.47
+298,Matt,Lumia,Kents Hill,F,15,L,2,6,8,0.53
+299,Jack,O'Dell,Andover,D,15,R,4,4,8,0.53
+300,Harry,Holland,Deerfield Academy,D,11,R,1,7,8,0.73
+301,Cameron,Conklin,Choate Rosemary Hall,F,11,L,2,6,8,0.73
+302,Aiden,Grinshpun,Kent School,F,8,R,4,4,8,1
+303,Alex,Bourque,Proctor Academy,D,16,L,1,7,8,0.5
+304,Logan,Cotter,St. Marks,D,12,,3,5,8,0.67
+305,Will,Cooney,St. Marks,F,12,L,1,7,8,0.67
+306,Tavian,Mandeville,Rivers School,D,10,L,2,6,8,0.8
+307,Austin,Groves,Hotchkiss School,F,10,L,5,3,8,0.8
+308,Chase,Green,Austin Prep,F,17,L,2,6,8,0.47
+309,Cooper,Hosmer,Milton Academy,F,16,R,3,5,8,0.5
+310,Cooper,Schuhwerk,Governors Academy,D,11,R,1,7,8,0.73
+311,Cullen,Gullott,Lawrence Academy,F,13,L,4,4,8,0.62
+312,Griffin,Halecki,Tilton,F,15,L,3,5,8,0.53
+313,Brian,McFadden,Thayer Academy,D,14,R,1,7,8,0.57
+314,Heyden,Hildebrandt,Tabor,F,13,L,0,8,8,0.62
+315,Jack,Couture,Governors Academy,D,14,L,0,8,8,0.57
+316,Brendan,McCarthy,Exeter,D,14,R,2,5,7,0.5
+317,Matt,Hines,Dexter,D,13,R,2,5,7,0.54
+318,Joey,Riganti,Albany Academy,F,18,R,2,5,7,0.39
+319,Aiden,Craft,Exeter,F,14,R,4,3,7,0.5
+320,Tristan,Dandel,Hoosac,F,9,L,5,2,7,0.78
+321,Zach,Broccolo,Kents Hill,F,16,L,3,4,7,0.44
+322,Cole,Longfield,St. Georges,F,14,L,4,3,7,0.5
+323,Harrison,McLean,Berkshire School,D,17,L,2,5,7,0.41
+324,Connor,Wig,Groton,D,13,L,1,6,7,0.54
+325,Davis,Jamison,Groton,F,13,,6,1,7,0.54
+326,Sebastien,Drouin,Groton,F,13,,3,4,7,0.54
+327,Maddox,Larocque,Vermont Academy,F,16,R,5,2,7,0.44
+328,Blake,Postles,Vermont Academy,F,16,R,5,2,7,0.44
+329,Logan,McGovern,Austin Prep,D,17,L,4,3,7,0.41
+330,Jaden,Ficek,St. Paul's School,F,16,R,4,3,7,0.44
+331,Aidan,McNeal,Worcester Academy,D,13,R,2,5,7,0.54
+332,Owen,Burke,Westminster,F,11,L,5,2,7,0.64
+333,Will,Derbyshire,Westminster,F,11,R,4,3,7,0.64
+334,Michael,Barrett,Andover,F,15,,6,1,7,0.47
+335,Owen,Gibbons,Brunswick,F,14,,3,4,7,0.5
+336,Keegan,Kazan,Brunswick,F,14,,2,5,7,0.5
+337,Luke,Morin,Rivers School,F,10,R,4,3,7,0.7
+338,Ryan,Collins,Frederick Gunn,D,15,R,2,5,7,0.47
+339,Chris,Paolone,Frederick Gunn,D,15,R,2,5,7,0.47
+340,Preston,Abbott,New Hampton,D,17,L,1,6,7,0.41
+341,Noah,Fitzsimons,Kent School,F,13,L,2,5,7,0.54
+342,Luca,Didio,Albany Academy,F,18,R,3,4,7,0.39
+343,Maxx,Corradi,Avon Old Farms,F,11,L,2,5,7,0.64
+344,Will,Pratt,Rivers School,D,9,L,2,5,7,0.78
+345,Quaye,MacDonald,Holderness,F,12,R,2,5,7,0.58
+346,Ares,Miller,Tabor,F,13,L,4,3,7,0.54
+347,Sebastian,Mogull,Cushing Academy,F,15,R,3,4,7,0.47
+348,Avin,Rodovsky,Kents Hill,F,16,R,2,5,7,0.44
+349,Tommy,Moore,Dexter,F,16,R,5,2,7,0.44
+350,Frank,Fan,Pomfret,F,16,,3,4,7,0.44
+351,Nikolai,Bazalitski,Loomis Chaffee,F,11,L,4,3,7,0.64
+352,Martyn,Ogorodnikov,Kent School,D,12,R,2,5,7,0.58
+353,Colton,Simas,Deerfield Academy,F,10,R,2,5,7,0.7
+354,Ty,Curry,St. Sebastian's,F,12,R,1,6,7,0.58
+355,Kaiden,Donia,Groton,D,13,R,2,5,7,0.54
+356,Levi,Jones,Vermont Academy,F,16,L,2,5,7,0.44
+357,Coen,Bassler,Winchendon,F,11,L,3,4,7,0.64
+358,Payton,Tracy,St. Georges,D,10,L,1,6,7,0.7
+359,James,Hayward,Pomfret,F,16,,3,4,7,0.44
+360,Wil,DeMan,The Hill School,D,16,L,2,5,7,0.44
+361,Aidan,Norton,Pomfret,D,16,L,2,5,7,0.44
+362,Domenico,Clarizio,Taft,F,10,R,4,3,7,0.7
+363,Dennis,Klimashov,Austin Prep,F,17,L,1,6,7,0.41
+364,Ryan,Porter,Dexter,D,16,L,1,6,7,0.44
+365,Michael,McGrath,Deerfield Academy,F,9,L,1,6,7,0.78
+366,Olivier,Tellier,Albany Academy,D,18,L,0,7,7,0.39
+367,Ben,English,Worcester Academy,D,13,L,0,7,7,0.54
+368,Owen,Hughes,Austin Prep,D,17,R,0,7,7,0.41
+369,Lucas,Smith,Berkshire School,D,17,L,0,7,7,0.41
+370,Michael,Mosher,Holderness,D,12,L,0,7,7,0.58
+371,Joel,Thompson,St. Georges,D,14,R,0,7,7,0.5
+372,Cazimir,Wotkowicz,Tilton,F,15,L,4,2,6,0.4
+373,Ryan,Shanahan,Tilton,F,15,R,2,4,6,0.4
+374,Eddie,Hannan,Tilton,D,15,L,2,4,6,0.4
+375,Matthew,McLellan,Tilton,F,15,R,4,2,6,0.4
+376,Bryce,Turmel,Tilton,F,15,L,4,2,6,0.4
+377,Max,Monroe,Berkshire School,D,17,R,2,4,6,0.35
+378,James,Jackson,Brunswick,F,14,,3,3,6,0.43
+379,Ben,Lombardi,Brunswick,F,14,,4,2,6,0.43
+380,Jack,Thompson,Brunswick,F,14,,5,1,6,0.43
+381,Brayden,Erickson,St. Georges,F,13,R,3,3,6,0.46
+382,Thomas,Birks,St. Marks,F,9,L,2,4,6,0.67
+383,Jimmy,Carrara,Mount St. Charles,F,10,L,2,4,6,0.6
+384,John,Bentley,St. Paul's School,F,16,L,1,5,6,0.38
+385,Grover,Henderson,Avon Old Farms,F,10,R,2,4,6,0.6
+386,Matthew,Wallace,Hotchkiss School,F,10,R,4,2,6,0.6
+387,Brenden,Gilooly,Westminster,F,11,R,3,3,6,0.55
+388,Cole,Cournoyer,Berwick,F,15,R,3,3,6,0.4
+389,Dylan,Kolcun,Lawrenceville School,F,11,R,3,3,6,0.55
+390,Hudson,Wood,Brooks School,F,11,R,2,4,6,0.55
+391,Easton,Anello,Williston-Northampton,D,15,L,1,5,6,0.4
+392,Michael,Block,Frederick Gunn,D,15,R,1,5,6,0.4
+393,Mikey,Dossier,Choate Rosemary Hall,F,10,L,3,3,6,0.6
+394,Carter,Watson,Dexter,F,16,R,3,3,6,0.38
+395,Giovanni,Ferrucci,Loomis Chaffee,F,12,R,4,2,6,0.5
+396,Ryan,Holmes,Westminster,F,11,L,4,2,6,0.55
+397,Max,O'Regan,St. Paul's School,F,10,L,4,2,6,0.6
+398,Bruce,Li,Groton,D,13,,1,5,6,0.46
+399,Donovan,Richards,Lawrenceville School,F,11,L,3,3,6,0.55
+400,Jan,Mrnavy,Hoosac,D,9,L,1,5,6,0.67
+401,Malkin,Pierre,Millbrook,F,13,L,4,2,6,0.46
+402,Alex,Gadbois,Kents Hill,F,16,L,2,4,6,0.38
+403,Max,Yakub,Avon Old Farms,D,11,L,1,5,6,0.55
+404,Jack,Devlin,Mount St. Charles,D,10,L,1,5,6,0.6
+405,Cam,Reed,Mount St. Charles,F,10,L,2,4,6,0.6
+406,Jeremy,Lavoie,Hebron,F,15,,3,3,6,0.4
+407,Phil,Skoczylas,Kents Hill,F,16,L,2,4,6,0.38
+408,Matas,Janulis,Lawrence Academy,D,13,L,1,5,6,0.46
+409,London,McDonald,Tabor,F,13,R,2,4,6,0.46
+410,Leo,Kavey,Tabor,F,13,L,2,4,6,0.46
+411,Colton,Cleaves,Brunswick,F,12,,4,2,6,0.5
+412,Will,Carosi,St. Georges,F,14,L,2,4,6,0.43
+413,Ryan,Clay,BB&N,D,9,R,1,5,6,0.67
+414,Logan,Smith,Taft,D,10,L,1,5,6,0.6
+415,Paul,Smith,Austin Prep,D,17,R,1,5,6,0.35
+416,Brodie,Donovan,Governors Academy,F,14,L,1,5,6,0.43
+417,Daniel,Chang,Groton,F,13,,1,5,6,0.46
+418,Brody,Latkin,Avon Old Farms,D,11,R,0,6,6,0.55
+419,Bruce,Danaher,Pingree,F,13,L,0,6,6,0.46
+420,Tyler,Poti,Winchendon,D,16,L,0,6,6,0.38
+421,Liam,Carlin,Winchendon,F,15,R,0,6,6,0.4
+422,Jack,Daly,Loomis Chaffee,D,12,L,0,6,6,0.5
+423,Brett,Kohut,Millbrook,F,15,R,3,2,5,0.33
+424,Xander,Boutilier,Kimball Union,F,3,,2,3,5,1.67
+425,James,Reilly,Berkshire School,D,17,R,3,2,5,0.29
+426,Nolan,Wilson,Groton,F,13,R,3,2,5,0.38
+427,Gehrig,White,Kents Hill,D,16,R,3,2,5,0.31
+428,James,Albers,Holderness,F,12,R,4,1,5,0.42
+429,Travis,Gillen,Brewster,F,7,,4,1,5,0.71
+430,Rahmi,Moazzez,The Hill School,D,16,R,3,2,5,0.31
+431,Hayden,Addison,NMH,F,14,R,1,4,5,0.36
+432,Aiden,Ayojiak,Hoosac,F,9,L,2,3,5,0.56
+433,Graham,Phinney,Mount St. Charles,D,10,L,2,3,5,0.5
+434,Hunter,Henderson,Holderness,F,12,L,3,2,5,0.42
+435,Nick,Burns,Wilbraham & Monson,C,5,L,5,0,5,1
+436,Jack,Cannon,Andover,F,15,R,2,3,5,0.33
+437,Mason,Keramidas,Albany Academy,F,18,R,3,2,5,0.28
+438,Aiden,Bean,Kimball Union,F,20,,2,3,5,0.25
+439,Aidan,Lally,Berwick,F,15,L,2,3,5,0.33
+440,Joe,Gannon,Taft,F,10,R,2,3,5,0.5
+441,Brady,Smith,Taft,D,10,L,1,4,5,0.5
+442,Andy,Xu,Choate Rosemary Hall,F,10,R,4,1,5,0.5
+443,Landon,Brawn,Williston-Northampton,F,15,R,3,2,5,0.33
+444,Logan,Melillo,Millbrook,D,19,R,1,4,5,0.26
+445,Jack,McCullough,Brunswick,D,14,,1,4,5,0.36
+446,Liam,Walker,BB&N,F,11,L,3,2,5,0.45
+447,Danny,Porter,St. Sebastian's,F,11,R,4,1,5,0.45
+448,Chris,Gannon,Millbrook,F,19,R,2,3,5,0.26
+449,Artie,Ambuhl,Millbrook,F,17,L,2,3,5,0.29
+450,Cooper,Shea,Thayer Academy,D,14,L,2,3,5,0.36
+451,Jack,Oliver,Albany Academy,F,18,L,2,3,5,0.28
+452,Olivier,Benoit,Tabor,D,13,L,2,3,5,0.38
+453,Cam,Plourde,North Yarmouth,F,20,L,1,4,5,0.25
+454,John,Shaughnessy,Tabor,F,13,L,4,1,5,0.38
+455,Dan,Tracy,NMH,F,17,L,2,3,5,0.29
+456,Alex,Khamichonak,The Hill School,F,16,L,2,3,5,0.31
+457,Max,Hu,Loomis Chaffee,D,12,L,1,4,5,0.42
+458,Andrew,Dunleavy,St. Marks,RW,12,,3,2,5,0.42
+459,Jared,Hughes,St. Sebastian's,F,12,L,3,2,5,0.42
+460,TJ,Petropoulos,Milton Academy,F,16,R,2,3,5,0.31
+461,Aidan,Patton,Hotchkiss School,F,10,L,2,3,5,0.5
+462,Talon,Beyer,Berwick,F,15,L,3,2,5,0.33
+463,Gavin,Bishop,Millbrook,D,19,L,1,4,5,0.26
+464,Phil,Groeling,New Hampton,F,16,R,2,3,5,0.31
+465,Tynan,Moses,Pingree,D,13,L,1,4,5,0.38
+466,Will,Sheehan,Pingree,RW,13,R,2,3,5,0.38
+467,Xander,Robertson,Vermont Academy,F,16,R,4,1,5,0.31
+468,Leyton,Riendeau,Vermont Academy,D,16,L,2,3,5,0.31
+469,Michael,Ronan,New Hampton,F,16,L,2,3,5,0.31
+470,Alex,Robbins,BB&N,F,10,L,1,4,5,0.5
+471,Thomas,Mattera,Roxbury Latin,F,9,L,3,2,5,0.56
+472,Chay,Simons,St. Paul's School,D,16,L,1,4,5,0.31
+473,Carter,Doherty,St. Paul's School,F,15,L,2,3,5,0.33
+474,Brodie,Anderson,Cushing Academy,D,15,R,1,4,5,0.33
+475,Louis,Marobella,Belmont Hill,D,16,R,1,4,5,0.31
+476,Matthew,Bowolick,St. Georges,F,14,R,2,3,5,0.36
+477,Michael,Battista,Lawrence Academy,F,13,L,4,1,5,0.38
+478,Patrick,Maguire,Lawrence Academy,F,13,L,2,3,5,0.38
+479,Sam,Chartier,Williston-Northampton,D,15,R,1,4,5,0.33
+480,Conor,Reilly,Brewster,F,7,,2,3,5,0.71
+481,RJ,Grace,Winchendon,D,16,L,1,4,5,0.31
+482,George,Kavanaugh,New Hampton,D,17,L,1,4,5,0.29
+483,Jameson,Needham,St. Sebastian's,F,10,R,2,3,5,0.5
+484,Jamison,Nicosia,Middlesex,F,10,L,1,4,5,0.5
+485,Harrison,Ooten,Vermont Academy,D,16,R,1,4,5,0.31
+486,Josh,Levy,Milton Academy,D,16,R,2,3,5,0.31
+487,Jalen,Carter,Choate Rosemary Hall,F,10,L,2,3,5,0.5
+488,Kurt,Beck,Dexter,D,16,L,1,4,5,0.31
+489,Nolan,Wrenn,Pomfret,D,16,R,1,4,5,0.31
+490,Michael,Nerich,Tilton,D,15,R,0,5,5,0.33
+491,Ethan,Wang,Kent School,F,6,R,0,5,5,0.83
+492,Owen,Draddy,St. Georges,D,14,R,0,5,5,0.36
+493,Stephen,Pinette,Worcester Academy,F,13,L,0,5,5,0.38
+494,Gabriel,Auger,The Hill School,F,13,R,0,5,5,0.38
+495,John,Lovell,Wilbraham & Monson,F,5,R,0,5,5,1
+496,Alex,Zinman,Brunswick,D,14,,0,5,5,0.36
+497,Nathan,Caples,Deerfield Academy,D,9,L,0,5,5,0.56
+498,Marek,Oboril,NMH,D,17,L,0,5,5,0.29
+499,Carson,Craig,Westminster,D,11,L,0,5,5,0.45
+500,Aaron,Sheck,Kimball Union,D,20,,0,5,5,0.25
+501,Alex,Guo,Belmont Hill,D,16,L,0,5,5,0.31
+502,Chase,McCoy,Tabor,F,13,R,0,5,5,0.38
+503,Landon,Roe,Belmont Hill,F,16,,0,5,5,0.31
+504,George,Tsatas,Westminster,D,11,L,0,5,5,0.45
+505,Eric,Bagg,Exeter,F,14,L,3,1,4,0.29
+506,Michael,Contino,Millbrook,F,19,R,1,3,4,0.21
+507,Tyler,Callander,Exeter,F,14,L,1,3,4,0.29
+508,Josh,Dietz,Albany Academy,F,14,R,3,1,4,0.29
+509,Jan,Hlavka,Hoosac,F,9,L,3,1,4,0.44
+510,Hunter,Hanford,Brunswick,F,13,,4,0,4,0.31
+511,Jonathan,Chon,Canterbury,F,15,L,1,3,4,0.27
+512,Max,Menkowitz,The Hill School,F,16,R,4,0,4,0.25
+513,Brady,Lecuyer,Mount St. Charles,D,10,L,1,3,4,0.4
+514,Robbie,Mcphee,Worcester Academy,F,13,L,3,1,4,0.31
+515,Massimo,Guarnieri,Westminster,F,11,R,3,1,4,0.36
+516,Ethan,Machado,Cushing Academy,F,15,R,2,2,4,0.27
+517,Thomas,Broderick,Dexter,D,16,L,2,2,4,0.25
+518,Henning,Reinnprecht,Taft,F,7,L,3,1,4,0.57
+519,Cam,Menhall,Lawrence Academy,F,13,L,1,3,4,0.31
+520,Keenan,Hauser,Choate Rosemary Hall,F,4,R,2,2,4,1
+521,Owen,Hannah,Deerfield Academy,F,12,L,3,1,4,0.33
+522,William,Kertesz,Deerfield Academy,F,12,L,3,1,4,0.33
+523,Justin,Dupuis,Choate Rosemary Hall,D,11,R,2,2,4,0.36
+524,Charlie,Delay,St. Sebastian's,F,5,L,1,3,4,0.8
+525,Dylan,Jordan,Proctor Academy,F,16,R,2,2,4,0.25
+526,Finn,Gatta,Millbrook,F,17,R,3,1,4,0.24
+527,Owen,Lundin,Lawrence Academy,C,12,R,2,2,4,0.33
+528,Jacob,Turcotte,Winchendon,D,15,R,1,3,4,0.27
+529,Jonah,Lindsay,Albany Academy,D,18,L,2,2,4,0.22
+530,Grant,Solomon,Tabor,F,13,L,2,2,4,0.31
+531,Rick,Cheng,Lawrenceville School,D,11,L,2,2,4,0.36
+532,Brody,Nies,Holderness,D,8,R,1,3,4,0.5
+533,Kevin,Summers,Vermont Academy,D/F,16,L,3,1,4,0.25
+534,Caleb,Keyes,Worcester Academy,F,13,R,4,0,4,0.31
+535,Colin,Celiberti,Worcester Academy,F,13,R,2,2,4,0.31
+536,Joey,Burke,Loomis Chaffee,F,12,L,2,2,4,0.33
+537,Miles,Sobky,Proctor Academy,F,16,R,1,3,4,0.25
+538,Cameron,Hunchak,Choate Rosemary Hall,F,11,R,1,3,4,0.36
+539,Chris,Welby,St. Sebastian's,F,12,R,2,2,4,0.33
+540,Emilien,Goudreault,Kents Hill,F,16,R,3,1,4,0.25
+541,Dylan,Rafail,Kent School,F,13,R,1,3,4,0.31
+542,Shane,Fraser,Loomis Chaffee,F,12,L,2,2,4,0.33
+543,Luke,Walkauskas,Salisbury School,F,12,,3,1,4,0.33
+544,Keegan,Sears,Kent School,F,13,R,3,1,4,0.31
+545,Connor,Emens,Canterbury,D,15,R,1,3,4,0.27
+546,Hayden,Meskin,Loomis Chaffee,D,12,R,2,2,4,0.33
+547,Colton,Stecchini,Lawrenceville School,F,11,R,1,3,4,0.36
+548,Evan,Seow,Hotchkiss School,D,10,L,1,3,4,0.4
+549,James,Connor,Berwick,D,15,L,1,3,4,0.27
+550,Dylan,Potvin,Governors Academy,F,14,L,2,2,4,0.29
+551,Blake,Abramson,NMH,F,17,R,2,2,4,0.24
+552,Chase,Warsofsky,Cushing Academy,F,14,L,1,3,4,0.29
+553,Will,Archibald,Roxbury Latin,D,10,R,2,2,4,0.4
+554,Brian,Yandle,Cushing Academy,F,15,L,1,3,4,0.27
+555,Jai,Perry-Pereira,St. Paul's School,F,16,R,2,2,4,0.25
+556,James,Hamlin,Roxbury Latin,F,10,R,2,2,4,0.4
+557,Tucker,O'Neil,Holderness,D,12,R,1,3,4,0.33
+558,Trey,Hanson,Governors Academy,F,14,R,1,3,4,0.29
+559,Alex,Taylor,Frederick Gunn,F,15,R,2,2,4,0.27
+560,Brady,Harris,Austin Prep,D,17,L,1,3,4,0.24
+561,Brady,Ellis,Lawrence Academy,C,13,R,2,2,4,0.31
+562,Luke,Sardone,Middlesex,F,10,R,2,2,4,0.4
+563,Jacob,Jett,Avon Old Farms,F,11,L,1,3,4,0.36
+564,Joey,Carpentieri,Austin Prep,D,17,R,2,2,4,0.24
+565,Chace,Kivlehan,Austin Prep,F,17,R,1,3,4,0.24
+566,Patrick,Quill,Austin Prep,F,17,R,1,3,4,0.24
+567,Raphael,Aberbach,Groton,F,13,L,1,3,4,0.31
+568,Cal,Hoyt,Williston-Northampton,F,15,R,1,3,4,0.27
+569,Gleb,Kokorin,Cushing Academy,D,14,R,0,4,4,0.29
+570,Matteo,Di Marzo,Westminster,D,9,L,0,4,4,0.44
+571,Russell,Louie,Andover,F,15,L,0,4,4,0.27
+572,Tayvin,Frongello,Dexter,D,16,L,0,4,4,0.25
+573,Cliff,Hedges,Hebron,D,15,,0,4,4,0.27
+574,Curtis,Brown,North Yarmouth,F,20,L,0,4,4,0.2
+575,Travis,Chatwin,Albany Academy,D,18,R,0,4,4,0.22
+576,Esref,Erkmen,Millbrook,D,19,L,0,4,4,0.21
+577,Nicholas,Lapointe,Hebron,F,15,,0,4,4,0.27
+578,Colin,O'Leary,St. Paul's School,D,16,L,0,4,4,0.25
+579,Gavin,Code,St. Paul's School,F,16,R,0,4,4,0.25
+580,Frank,Tillinghast,Worcester Academy,D,13,L,0,4,4,0.31
+581,Matyas,Matl,Kents Hill,D,16,R,0,4,4,0.25
+582,Tyler,Beaudoin,Westminster,F,11,R,0,4,4,0.36
+583,Michael,Shaw,Milton Academy,D,16,L,0,4,4,0.25
+584,Cam,Cataruzolo,Roxbury Latin,F,10,L,0,4,4,0.4
+585,Sean,Farrell,Pomfret,D,16,,0,4,4,0.25
+586,Matthew,Koch,Avon Old Farms,D,11,L,0,4,4,0.36
+587,Keegan,Hunt,New Hampton,D,17,R,0,4,4,0.24
+588,Nathan,Roy,Kents Hill,D,16,R,0,4,4,0.25
+589,Christopher,Saint-Phard,Kimball Union,F,20,,3,0,3,0.15
+590,Patrick,Cerullo,Frederick Gunn,F,15,L,2,1,3,0.2
+591,Connor,Leminen,Pingree,D,13,,2,1,3,0.23
+592,Cam,McDonough,Cushing Academy,C,15,L,2,1,3,0.2
+593,Tommy,Nicolopolous,St. Marks,D,12,,1,2,3,0.25
+594,Steven,Burke,Brewster,F,7,,2,1,3,0.43
+595,Matteo,Sollazzo,Brewster,D,7,,2,1,3,0.43
+596,Peter,Gilraine,Austin Prep,F,17,R,1,2,3,0.18
+597,Charlie,Davis,Westminster,F,9,L,1,2,3,0.33
+598,Henry,Zidek,The Hill School,F,16,R,2,1,3,0.19
+599,Tyler,Branch,Brewster,F,7,,2,1,3,0.43
+600,Kevin,Bertrand,Hebron,F,15,,3,0,3,0.2
+601,Matty,Hanrahan,Westminster,F,11,L,2,1,3,0.27
+602,Whit,Denzin,Frederick Gunn,F,15,L,2,1,3,0.2
+603,Brady,Lee,Lawrenceville School,D,11,R,2,1,3,0.27
+604,Caden,Desjardins,Berwick,F,15,L,2,1,3,0.2
+605,Yoshiki,Chitose,Choate Rosemary Hall,F,11,R,2,1,3,0.27
+606,Cole,Bradford,Brooks School,F,11,L,2,1,3,0.27
+607,Karolis,Janulis,Lawrence Academy,F,13,L,2,1,3,0.23
+608,Alejandro,Hassan,Groton,F/D,13,L,3,0,3,0.23
+609,Christopher,Marques,Tilton,D,15,R,1,2,3,0.2
+610,Dylan,Rothstein,Taft,F,10,R,1,2,3,0.3
+611,Will,Gerst,Proctor Academy,F,16,R,2,1,3,0.19
+612,Braiden,Moriarty,Worcester Academy,F,13,R,1,2,3,0.23
+613,Kai,Bara,Brooks School,F,11,R,2,1,3,0.27
+614,Joe,Meade,Roxbury Latin,F,10,L,3,0,3,0.3
+615,Deniz,Unal,Noble & Greenough,D,13,R,1,2,3,0.23
+616,Cam,Sadak,Williston-Northampton,F,15,R,1,2,3,0.2
+617,Aiden,Shou,Lawrenceville School,F,11,R,1,2,3,0.27
+618,Joey,Gualtieri,Hebron,F,15,,1,2,3,0.2
+619,Caleb,North,Canterbury,F,15,R,3,0,3,0.2
+620,Ryan,Hecker,Avon Old Farms,D,11,R,1,2,3,0.27
+621,Richard,Jenkins,New Hampton,D,17,L,1,2,3,0.18
+622,Chase,Mallin,Hebron,F,15,,2,1,3,0.2
+623,Andy,Haban,NMH,F,15,L,2,1,3,0.2
+624,Davyd,Jefferies,Hebron,F,15,,2,1,3,0.2
+625,Tedy,Hannon,Tilton,F,14,L,2,1,3,0.21
+626,Jack,Kang,Choate Rosemary Hall,F,11,R,1,2,3,0.27
+627,Bear,Tang,BB&N,F,11,L,2,1,3,0.27
+628,Nolan,Sweeney,Tabor,D,11,L,1,2,3,0.27
+629,Nao,Dutil,The Hill School,D,15,L,1,2,3,0.2
+630,Daniel,Raff Cohen,Williston-Northampton,F,15,R,1,2,3,0.2
+631,Ollie,Manning,St. Sebastian's,D,12,R,2,1,3,0.25
+632,Andrew,Marcucci,New Hampton,D,11,L,2,1,3,0.27
+633,Shane,Flanagan,The Hill School,F,16,R,2,1,3,0.19
+634,Evan,Williams,Hotchkiss School,D,10,L,2,1,3,0.3
+635,Nico,Potts,Governors Academy,F,14,R,1,2,3,0.21
+636,Andrew,Martineau,Canterbury,F,15,L,1,2,3,0.2
+637,Nolan,Hartman,BB&N,F,11,L,2,1,3,0.27
+638,Daniel,Maglathlin,Winchendon,D,16,L,2,1,3,0.19
+639,Brian,Whitecross,Roxbury Latin,F,10,L,2,1,3,0.3
+640,Eben,Alden,Noble & Greenough,D,13,R,1,2,3,0.23
+641,Ben,Levering,Noble & Greenough,F,13,,1,2,3,0.23
+642,Parfen,Adbin,Kents Hill,D,16,L,2,1,3,0.19
+643,Zach,Noxon,Rivers School,F,10,L,1,2,3,0.3
+644,Leo,Packard,Middlesex,F,10,R,2,1,3,0.3
+645,Ryan,Kiyonaga,Albany Academy,F,15,R,1,2,3,0.2
+646,Carson,Lowry,Taft,F,10,L,1,2,3,0.3
+647,Marcus,Pukel,Brooks School,,11,,1,2,3,0.27
+648,Ethen,Fines,Williston-Northampton,F,14,R,1,2,3,0.21
+649,Colby,Mara,Lawrence Academy,D,13,L,1,2,3,0.23
+650,Emmett,Aufiero,Belmont Hill,D,15,,1,2,3,0.2
+651,Wyatt,Langway,Pingree,D,13,R,1,2,3,0.23
+652,William,Lefebvre,Exeter,D,14,R,0,3,3,0.21
+653,Zennon,Turnovitski,Berkshire School,D,17,L,0,3,3,0.18
+654,Carter,Rowles,Hoosac,F,9,L,0,3,3,0.33
+655,Patrick,Benson,Rivers School,F,10,R,0,3,3,0.3
+656,Cam,Daley,Dexter,D,16,R,0,3,3,0.19
+657,Maxwell,Rusov,Brewster,F,7,,0,3,3,0.43
+658,Liam,Wachob,The Hill School,F,16,R,0,3,3,0.19
+659,Nicholas,Denon,Hoosac,D,9,R,0,3,3,0.33
+660,Gavin,Smith,Westminster,D,11,R,0,3,3,0.27
+661,Christian,Marsh,Pingree,F,13,R,0,3,3,0.23
+662,Ian,Beauparlant,Brooks School,F,10,L,0,3,3,0.3
+663,Joe,Orszulak,Loomis Chaffee,F,12,L,0,3,3,0.25
+664,Matt,Brooks,Millbrook,D,19,R,0,3,3,0.16
+665,Max,Sullivan,Holderness,D,10,L,0,3,3,0.3
+666,Cody,Hew,Canterbury,G,15,L,0,3,3,0.2
+667,Jacob,Bellinger,Groton,F,13,,0,3,3,0.23
+668,Nolan,Nassar,Governors Academy,D,14,R,0,3,3,0.21
+669,Karl,Warren,NMH,F,16,R,0,3,3,0.19
+670,Harry,Jackson,Brooks School,D,10,R,0,3,3,0.3
+671,Mikey,Covelluzzi,Pingree,D,13,R,0,3,3,0.23
+672,Andy,Zhang,Lawrenceville School,F,11,R,0,3,3,0.27
+673,Lexi,Kert,Choate Rosemary Hall,D,11,L,0,3,3,0.27
+674,Brayden,Robinson,Milton Academy,D,16,R,0,3,3,0.19
+675,Zachary,Gill,Salisbury School,D,12,,0,3,3,0.25
+676,Shane,Devin,Thayer Academy,D,14,L,0,3,3,0.21
+677,Dylan,Mallgrave,Kent School,D,12,R,0,3,3,0.25
+678,Harrison,Freelove,Holderness,F,11,R,0,3,3,0.27
+679,Brady,Andrews,Austin Prep,D,17,R,0,3,3,0.18
+680,Adam,Pelletier,North Yarmouth,D,20,L,0,3,3,0.15
+681,Max,Gerum,Pomfret,D,16,R,0,3,3,0.19
+682,Owen,Morris,Choate Rosemary Hall,F,11,R,0,3,3,0.27
+683,Tyler,Miocevich,Andover,D,15,L,0,3,3,0.2
+684,Josh,Freeman,Brooks School,D,11,,0,3,3,0.27
+685,Niko,Tzouganatos,St. Marks,D,12,,0,3,3,0.25
+686,Ned,Akashian,Exeter,F,14,L,1,1,2,0.14
+687,Josh,Timone,Berkshire School,F,17,R,1,1,2,0.12
+688,Leo,Chen,Berkshire School,F,17,L,2,0,2,0.12
+689,Jeremy,See,Albany Academy,D,18,L,1,1,2,0.11
+690,Harry,Stubbert,New Hampton,D,17,R,2,0,2,0.12
+691,Liam,Miga,Pingree,F,13,R,2,0,2,0.15
+692,Declan,Dupre,Kents Hill,D,16,L,1,1,2,0.13
+693,Hayden,Hunter,Tilton,F,13,R,2,0,2,0.15
+694,Miroslav,Fedor,NMH,D,16,L,1,1,2,0.13
+695,Jeremy,Polzer,Milton Academy,F,15,R,1,1,2,0.13
+696,Benjamin,Short,Winchendon,F,6,L,1,1,2,0.33
+697,Topher,Jones,Taft,D,10,L,2,0,2,0.2
+698,Tucker,Montecalvo,Berwick,F,15,R,1,1,2,0.13
+699,Daniel,Peate,Avon Old Farms,F,11,R,2,0,2,0.18
+700,Sean,Millen,Avon Old Farms,F,4,L,1,1,2,0.5
+701,Henry,Hao,NMH,F,13,L,1,1,2,0.15
+702,Jorden,Marzi,Rivers School,D,10,L,1,1,2,0.2
+703,Colin,Driscoll,Pingree,F,12,L,2,0,2,0.17
+704,Dylan,Ness,Westminster,F,7,L,1,1,2,0.29
+705,Brody,Baum,Millbrook,F,15,R,1,1,2,0.13
+706,Alex,Zaneski,Noble & Greenough,F,13,L,1,1,2,0.15
+707,Nathan,Rooney,Thayer Academy,D,10,L,1,1,2,0.2
+708,Bauer,Gammill,Berkshire School,F,17,L,1,1,2,0.12
+709,Alex,Chiesi,Kent School,D,13,R,1,1,2,0.15
+710,Adam,Krogmeier,Governors Academy,D,14,R,1,1,2,0.14
+711,Jake,Pleau,Westminster,F,11,L,1,1,2,0.18
+712,Scott,Crabtree,BB&N,D,10,L,1,1,2,0.2
+713,Ryder,Tremblay,Loomis Chaffee,D,12,R,1,1,2,0.17
+714,Alex,Vogel,Hebron,F,15,,1,1,2,0.13
+715,Luca,Desjardins,Salisbury School,F,12,,2,0,2,0.17
+716,Jake,Doherty,Hotchkiss School,F,10,L,1,1,2,0.2
+717,Colin,Yandle,Cushing Academy,D,15,R,2,0,2,0.13
+718,Marco,Linton,Milton Academy,F,16,R,1,1,2,0.13
+719,Tommy,Zine,Noble & Greenough,F,13,R,1,1,2,0.15
+720,Harry,Rubin,New Hampton,F,17,L,1,1,2,0.12
+721,Charlie,Ness,Thayer Academy,F,14,R,2,0,2,0.14
+722,Jack,Green,Lawrenceville School,D,11,L,2,0,2,0.18
+723,Chase,Field,Lawrence Academy,F,12,L,1,1,2,0.17
+724,Ryan,Barlow,The Hill School,F,16,L,1,1,2,0.13
+725,John Michael,Mugavero,The Hill School,F,13,R,1,1,2,0.15
+726,Finley,Walsh,Hotchkiss School,F,10,R,2,0,2,0.2
+727,Georges,Vergnion,Winchendon,F,8,R,1,1,2,0.25
+728,Thomas,Sibley,Winchendon,F,9,R,1,1,2,0.22
+729,Nate,Cook,Brunswick,F,14,,1,1,2,0.14
+730,Riley,Slovis,Salisbury School,F,12,,2,0,2,0.17
+731,Caden,Creech,Salisbury School,F,12,,1,1,2,0.17
+732,Ian,King,Middlesex,D,10,R,1,1,2,0.2
+733,Christian,Toma,Kimball Union,D,20,,1,1,2,0.1
+734,Chris,Williams,Thayer Academy,F,14,R,2,0,2,0.14
+735,Charlie,Brand,Middlesex,F,10,L,1,1,2,0.2
+736,Shane,McGoldrick,Roxbury Latin,D,10,L,1,1,2,0.2
+737,Cole,Travaglini,Governors Academy,F,14,R,2,0,2,0.14
+738,Mathys,Paradis,Vermont Academy,F,16,L,1,1,2,0.13
+739,Raphael,Ouimet,Vermont Academy,F,16,L,2,0,2,0.13
+740,Ray,MacDougall,New Hampton,F,17,R,1,1,2,0.12
+741,Justin,Baxter,Proctor Academy,F,16,L,1,1,2,0.13
+742,Elliot,Bibeau-Rivard,Salisbury School,F,12,,1,1,2,0.17
+743,Miles,Mireault,Cushing Academy,F,12,R,1,1,2,0.17
+744,Liam,Newell,NMH,D,17,L,1,1,2,0.12
+745,Mathis,Moreau,Kents Hill,F,16,L,1,1,2,0.13
+746,Noah,Feingold,Brewster,F,7,,1,1,2,0.29
+747,Amir,Makdad,Berwick,F,15,L,1,1,2,0.13
+748,Gavin,Dibble,Albany Academy,F,18,R,1,1,2,0.11
+749,Parker,Farnham,Canterbury,F,8,R,1,1,2,0.25
+750,Colby,Goldstein,Pomfret,F,16,,1,1,2,0.13
+751,Lukas,Royko,Deerfield Academy,F,12,L,1,1,2,0.17
+752,Henry,Prowse,Holderness,D,9,R,1,1,2,0.22
+753,Alex,Mitza,Tilton,F,14,R,0,2,2,0.14
+754,Thierry,Vigneault,Hoosac,F,9,R,0,2,2,0.22
+755,Eli,Youmans,NMH,F,17,L,0,2,2,0.12
+756,Sean,Sweeney,Thayer Academy,F,14,R,0,2,2,0.14
+757,Nate,Daly,Pingree,F,13,L,0,2,2,0.15
+758,Braydon,Swarr,The Hill School,D,13,L,0,2,2,0.15
+759,Evan,Gardner,Tilton,D,14,L,0,2,2,0.14
+760,Jordan,Pallof,Mount St. Charles,F,10,R,0,2,2,0.2
+761,Evan,Ashton,Brewster,F,7,,0,2,2,0.29
+762,Ben,Agrodnia,Holderness,D,12,L,0,2,2,0.17
+763,Aidan,Dougherty,Brunswick,D,14,,0,2,2,0.14
+764,Grady,Glandorf,Choate Rosemary Hall,F,10,L,0,2,2,0.2
+765,Matt,Piotrowski,Andover,D,15,L,0,2,2,0.13
+766,Jake,Power,Avon Old Farms,D,11,L,0,2,2,0.18
+767,Cullen,Tully,Taft,D,10,R,0,2,2,0.2
+768,Will,Lavelle,Noble & Greenough,F,13,L,0,2,2,0.15
+769,Tuck,Gilbane,Noble & Greenough,D,13,R,0,2,2,0.15
+770,Owen,Frick,Cushing Academy,F,15,R,0,2,2,0.13
+771,Ayden,Heron,Lawrenceville School,F,11,R,0,2,2,0.18
+772,Marshall,Paul,Avon Old Farms,D,11,R,0,2,2,0.18
+773,Holden,Sandner,Berkshire School,F,15,L,0,2,2,0.13
+774,Ryan,Merrill,St. Sebastian's,D,9,R,0,2,2,0.22
+775,Declan,Moran,Mount St. Charles,D,10,R,0,2,2,0.2
+776,Issac,Oberting,Hotchkiss School,F,10,L,0,2,2,0.2
+777,Ezra,Jones,Deerfield Academy,D,12,R,0,2,2,0.17
+778,Michael,Buscaino,Brooks School,D,10,R,0,2,2,0.2
+779,Tommy,Lally,Thayer Academy,F,14,R,0,2,2,0.14
+780,George,Karayiannis,Brunswick,F,10,,0,2,2,0.2
+781,Grayson,Espenshade,Salisbury School,F,12,,0,2,2,0.17
+782,Aidan,Bujnicki,Hotchkiss School,D,10,R,0,2,2,0.2
+783,Ethan,Hung,Hotchkiss School,D,10,L,0,2,2,0.2
+784,Mikey,Mansfield,Governors Academy,D,14,L,0,2,2,0.14
+785,Lance,Toland,Belmont Hill,F/D,16,L,0,2,2,0.13
+786,Connor,Wright,Tabor,D,13,L,0,2,2,0.15
+787,Jack,Hartwell,Noble & Greenough,D,13,R,0,2,2,0.15
+788,Jonah,Frattasio,Thayer Academy,F,14,L,0,2,2,0.14
+789,Nolan,Cahill,Roxbury Latin,F,10,R,0,2,2,0.2
+790,Jacob,Gathers,Lawrence Academy,F,13,L,0,2,2,0.15
+791,Samuel,Brebner,The Hill School,D,16,L,0,2,2,0.13
+792,Jonathan,Dion,Brewster,D,7,,0,2,2,0.29
+793,Avery,Tymus,Salisbury School,D,12,,0,2,2,0.17
+794,Nick,Apostol,Thayer Academy,F,13,L,0,2,2,0.15
+795,Matthew,Mott,North Yarmouth,D,20,L,0,2,2,0.1
+796,Timmy,Peracchi,Berwick,D/F,15,L,0,2,2,0.13
+797,Alex,Yankopoulos,Berwick,D,15,L,0,2,2,0.13
+798,Brody,Dorian,Pomfret,D,16,,0,2,2,0.13
+799,Oliver,Graves,Hoosac,D,9,L,0,2,2,0.22
+800,Sebastien,Mackson,Albany Academy,F,18,L,0,2,2,0.11
+801,Cam,Simon,St. Marks,D,12,,0,2,2,0.17
+802,Elijah,Nacht,St. Paul's School,D,12,L,0,2,2,0.17
+803,Gabriel,Visnicky,Brewster,F,7,,0,2,2,0.29
+804,Chase,Jelenic,Kent School,D,7,R,0,2,2,0.29
+805,Liam,Connelly,Rivers School,D,10,L,0,2,2,0.2
+806,Michael,Rossi,Westminster,D,11,L,0,2,2,0.18
+807,James,Wu,Tabor,F,10,L,0,2,2,0.2
+808,Trent,Digiovanni,Governors Academy,D,14,R,0,2,2,0.14
+809,Josh,Zifcak,Worcester Academy,F,13,L,0,2,2,0.15
+810,Finn,Mills-Hall,Loomis Chaffee,D,11,L,0,2,2,0.18
+811,Noah,Meyers,St. Sebastian's,D,12,L,0,2,2,0.17
+812,Brady,Guenther,Tilton,D,15,L,0,2,2,0.13
+813,Kevin,Greene,Roxbury Latin,F,10,L,0,2,2,0.2
+814,Kasen,Walsh,Noble & Greenough,D,13,L,0,2,2,0.15
+815,Nicholas,Hand,Belmont Hill,F,16,,0,2,2,0.13
+816,Zachary,Zusman,Kent School,F,13,R,0,2,2,0.15
+817,Spencer,Grazon,Kents Hill,D,16,L,0,2,2,0.13
+818,Jacob,BriseBois,Choate Rosemary Hall,D,10,R,0,2,2,0.2
+819,Brady,Leonard,Albany Academy,F,7,L,1,0,1,0.14
+820,Justin,L'Abbe,Hotchkiss School,F,10,L,1,0,1,0.1
+821,Duncan,Vittands,Austin Prep,F,17,R,1,0,1,0.06
+822,Brayden,McKenna,Brewster,F,7,,1,0,1,0.14
+823,Nicholas,Jakowiw,Hoosac,F,9,R,1,0,1,0.11
+824,Nicholiah,Montano Rodriguez,Mount St. Charles,F,10,L,1,0,1,0.1
+825,Liam,Guilderson,Dexter,F,12,L,1,0,1,0.08
+826,Payton,Helt,Hebron,F/D,15,L,1,0,1,0.07
+827,Matteo,Pani,Hebron,,15,,1,0,1,0.07
+828,Cam,Wilkinson,North Yarmouth,F,20,R,1,0,1,0.05
+829,Ethan,Wei,Lawrenceville School,F/D,11,R,1,0,1,0.09
+830,Luca,Carlomusto,Hebron,F,15,,1,0,1,0.07
+831,James,Foster,Rivers School,D,10,L,1,0,1,0.1
+832,Brooks,Armstrong,Avon Old Farms,F,11,R,1,0,1,0.09
+833,Tim,Jia,Kents Hill,F,16,L,1,0,1,0.06
+834,Chase,Collins,Milton Academy,F,16,L,1,0,1,0.06
+835,Miles,Bronson,Choate Rosemary Hall,F,5,R,1,0,1,0.2
+836,Bryce,Mastriano,Loomis Chaffee,F,12,R,1,0,1,0.08
+837,Colton,McNamara,Tabor,D,9,L,1,0,1,0.11
+838,Trey,O'Keefe,Hebron,F,15,,1,0,1,0.07
+839,Markus,Gentile,Berkshire School,F,11,R,1,0,1,0.09
+840,Chris,D'Alleva,Pingree,F,13,R,1,0,1,0.08
+841,Laurent,Normand,Hebron,F,15,,1,0,1,0.07
+842,Adam,Boys,Proctor Academy,F,16,R,1,0,1,0.06
+843,Daniel,Pratt,Thayer Academy,F,7,R,1,0,1,0.14
+844,Joseph,Mallette,Canterbury,D,9,,1,0,1,0.11
+845,Mason,Kuchinski,Canterbury,F,15,,1,0,1,0.07
+846,William,Raymond,Belmont Hill,F,16,,1,0,1,0.06
+847,Jonathan,Clark,Brooks School,F,11,L,1,0,1,0.09
+848,Alex,Munoz,Noble & Greenough,D/F,13,R,1,0,1,0.08
+849,Jake,Glickman,Pomfret,F,16,,1,0,1,0.06
+850,Logan,Cantele,Lawrence Academy,D,13,R,1,0,1,0.08
+851,John,Mara,Lawrence Academy,D,13,L,1,0,1,0.08
+852,Leeo,Cote-Tardif,Vermont Academy,F,16,R,1,0,1,0.06
+853,Whit,Fusting,St. Paul's School,D,16,L,1,0,1,0.06
+854,Ty,Higginbotham,Hotchkiss School,F,10,R,1,0,1,0.1
+855,Max,Romano,St. Paul's School,F,15,L,1,0,1,0.07
+856,Chase,Kopley,Worcester Academy,D,13,R,1,0,1,0.08
+857,Elliot,Watson,Salisbury School,D,12,,1,0,1,0.08
+858,Connor,Mudd,Deerfield Academy,F,12,L,1,0,1,0.08
+859,Kota,Shinozaki,Middlesex,F,10,L,1,0,1,0.1
+860,David,Moroz,Middlesex,F,10,L,1,0,1,0.1
+861,Griffin,Taylor,New Hampton,F,12,R,1,0,1,0.08
+862,John,Donohue,Westminster,D,11,L,1,0,1,0.09
+863,Troy,Hamelin,Frederick Gunn,F,15,L,1,0,1,0.07
+864,Vassar,Tarumianz,Lawrenceville School,F,10,R,1,0,1,0.1
+865,William,Nadeau,Williston-Northampton,D,15,R,1,0,1,0.07
+866,Sawyer,Berzins,Williston-Northampton,D,15,L,1,0,1,0.07
+867,Luke,Kelley,Proctor Academy,D,16,R,1,0,1,0.06
+868,Jake,Thompson,North Yarmouth,F,9,R,0,1,1,0.11
+869,Dave,Cho,Berkshire School,D,9,L,0,1,1,0.11
+870,Max,Troubh,Tilton,D,15,L,0,1,1,0.07
+871,Owen,Giles,Brunswick,F,14,,0,1,1,0.07
+872,Hunter,Harper,Brunswick,F,13,,0,1,1,0.08
+873,Cooper,Bell,Austin Prep,D,17,R,0,1,1,0.06
+874,Connor,Long,Tilton,F,13,R,0,1,1,0.08
+875,Brady,Hall,St. Paul's School,D,7,R,0,1,1,0.14
+876,Logan,Wood,Brewster,D,7,,0,1,1,0.14
+877,Thomas,Hoh,Lawrenceville School,D,9,L,0,1,1,0.11
+878,Reed,Enders,Milton Academy,F,16,R,0,1,1,0.06
+879,Keegan,Norton,Berwick,D/F,15,R,0,1,1,0.07
+880,Devlin,Thomas,Mount St. Charles,F,9,L,0,1,1,0.11
+881,Matthew,Rodriguez,Williston-Northampton,D,15,,0,1,1,0.07
+882,Peter,Royer,Frederick Gunn,F,15,L,0,1,1,0.07
+883,Curtis,Savage,Berwick,D,15,R,0,1,1,0.07
+884,Kellar,Kelusky,Deerfield Academy,F,10,L,0,1,1,0.1
+885,Caleb,Regner,Deerfield Academy,F,12,R,0,1,1,0.08
+886,Carsen,Cunningham,Worcester Academy,D,13,R,0,1,1,0.08
+887,Christian,Renaud,Pingree,F,12,R,0,1,1,0.08
+888,Adam,Fraser,Millbrook,F,16,L,0,1,1,0.06
+889,Luca,Damian,Brooks School,,11,,0,1,1,0.09
+890,Liam,Boyle,Belmont Hill,F,16,L,0,1,1,0.06
+891,Vincent,Vitale,Holderness,G,12,L,0,1,1,0.08
+892,Evan,Waden,St. Marks,F,10,L,0,1,1,0.1
+893,Sammy,Baymout,Hebron,D,15,R,0,1,1,0.07
+894,Gianluca,Zappitelli,Hebron,F,15,,0,1,1,0.07
+895,Brady,Hanlon,Dexter,F,16,R,0,1,1,0.06
+896,AJ,Haas,Cushing Academy,D,15,R,0,1,1,0.07
+897,Jack,Morley,Vermont Academy,D,16,L,0,1,1,0.06
+898,James,Bellig,Deerfield Academy,F,12,R,0,1,1,0.08
+899,Chris,Chun,Hotchkiss School,D,10,R,0,1,1,0.1
+900,Cam,Gardiner,North Yarmouth,D,19,L,0,1,1,0.05
+901,Nolan,Boyle,Belmont Hill,F,16,,0,1,1,0.06
+902,Connor,Callahan,Noble & Greenough,F,13,R,0,1,1,0.08
+903,Vinnie,Mercadante,Hotchkiss School,F,8,R,0,1,1,0.13
+904,Ryder,Press,Kent School,D,13,L,0,1,1,0.08
+905,Julian,Ikeda-Thew,Brunswick,F,12,,0,1,1,0.08
+906,Lukas,Reisen,Frederick Gunn,F,15,R,0,1,1,0.07
+907,Tyler,Roccas,Salisbury School,D,12,,0,1,1,0.08
+908,Milo,Conlin,Middlesex,F,10,R,0,1,1,0.1
+909,Giuseppe,Moriello,Middlesex,D,10,L,0,1,1,0.1
+910,Hayden,Postles,Vermont Academy,D,16,R,0,1,1,0.06
+911,Stephen,King,Avon Old Farms,F,11,R,0,1,1,0.09
+912,Jace,Knopp,Canterbury,D,15,,0,1,1,0.07
+913,Brayden,Bowes,Pomfret,F,16,,0,1,1,0.06
+914,Escher,Briere,Exeter,F,14,R,0,1,1,0.07
+915,Thomas,Hamilton,Taft,D,10,R,0,1,1,0.1
+916,Ettore,Monson,Groton,D,13,L,0,1,1,0.08
+917,Bhaveeth,Vemulapalli,Exeter,F,14,L,0,1,1,0.07
+918,Max,Froeschl,Exeter,D,14,R,0,1,1,0.07
+919,Beckham,Gould,Exeter,F,14,R,0,1,1,0.07
+920,Colin,Reilly,Tilton,D,15,R,0,1,1,0.07
+921,Will,Booth,Albany Academy,D,15,L,0,1,1,0.07
+922,Tristan,Murgo,Tilton,D,6,L,0,1,1,0.17
+923,Soja,Russell,Berkshire School,F/D,15,R,0,1,1,0.07
+924,Zai,Ferraro,Brunswick,G,14,,0,1,1,0.07
+925,Trevor,DiMaio,Brunswick,D,14,,0,1,1,0.07
+926,Hunter,Dryden,Taft,G,10,L,0,1,1,0.1
+927,Cam,Ingram,Kimball Union,G,20,,0,1,1,0.05
+928,Noah,Wood,Groton,D,13,,0,1,1,0.08
+929,Owen,Ma,St. Marks,F,12,,0,1,1,0.08
+930,Christopher,Kimmel,Brewster,D,7,,0,1,1,0.14
+931,James,Small,The Hill School,F,16,R,0,1,1,0.06
+932,Brody,Gouin,Wilbraham & Monson,D,5,R,0,1,1,0.2
+933,Owen,Dutton,Proctor Academy,D,16,L,0,1,1,0.06
+934,Greer,Difani,New Hampton,D,16,R,0,1,1,0.06
+935,Matt,Rioux,Berwick,F,11,R,0,1,1,0.09
+936,Aidan,Quinn,Mount St. Charles,D,8,R,0,1,1,0.13
+937,Johan,Wilkerson,Deerfield Academy,D,9,R,0,1,1,0.11
+938,Anton,Kabanov,Berwick,D,15,L,0,1,1,0.07
+939,Andrew,Moawad,Millbrook,G,13,L,0,1,1,0.08
+940,Reid,Gueldenzoph,Kimball Union,D,20,,0,1,1,0.05
+941,David,O'Brien,Thayer Academy,D,4,L,0,1,1,0.25
+942,Nolan,Wellman,Hebron,F,15,R,0,1,1,0.07
+943,Ethan,Bauer,Belmont Hill,G,16,,0,1,1,0.06
+944,Sam,Gerst,Proctor Academy,D,16,L,0,1,1,0.06
+945,MIchael,Phelan,Albany Academy,D,18,R,0,1,1,0.06
+946,Brendan,Martin,St. Sebastian's,D,12,R,0,1,1,0.08
+947,Noah,Indes,Canterbury,F,15,L,0,1,1,0.07
+948,Joe,Mascari,St. Marks,F,11,,0,1,1,0.09
+949,Evan,Alifieris,St. Marks,F,12,,0,1,1,0.08
+950,Caleb,Guthrie,Pingree,LW,13,L,0,1,1,0.08
+951,Alessandro,Dolder,Brunswick,D,14,,0,1,1,0.07
+952,Declan,Minella,Brunswick,D,14,,0,1,1,0.07
+953,Beckett,Stenz,Hotchkiss School,D,10,R,0,1,1,0.1
+954,Landon,Nickulas,Cushing Academy,D,9,L,0,1,1,0.11
+955,Patrick,Viano,Milton Academy,D,16,L,0,1,1,0.06
+956,Luke,Fox,St. Georges,D,12,R,0,1,1,0.08
+957,Vinnie,D'Urso,Tabor,G,13,L,0,1,1,0.08
+958,Adam,Beltrami,Thayer Academy,D,14,R,0,1,1,0.07
+959,Matteo,Gil,Governors Academy,F,13,R,0,1,1,0.08
+960,Dom,Zabat,Lawrenceville School,D,11,R,0,1,1,0.09
+961,Teddy,Smart,Lawrenceville School,D,11,L,0,1,1,0.09
+962,Ace,Watson,Frederick Gunn,F,15,R,0,1,1,0.07
+963,Tiger,Tang,BB&N,D,11,L,0,1,1,0.09
+964,Brady,Mulloy,Vermont Academy,D,16,L,0,1,1,0.06
+965,Eli,Zucker,Milton Academy,G,16,,0,1,1,0.06
+966,Lucas,Lian,Middlesex,F,10,L,0,1,1,0.1
+967,Parker,Boyce,Middlesex,F,10,R,0,1,1,0.1
+968,Tei,Lee,Pomfret,F,16,R,0,1,1,0.06
+969,Jeremy,Acrobati,Vermont Academy,F,16,L,0,1,1,0.06
+970,Jack,Giamou,Frederick Gunn,D,15,L,0,1,1,0.07
+971,Lincoln,Durfee,Taft,D,5,R,0,1,1,0.2
+972,Liam,TenHarmsel,Andover,D,15,R,0,1,1,0.07
+973,Jack,Bruning,St. Paul's School,D,9,L,0,1,1,0.11
+974,Trey,Ledoux,Wilbraham & Monson,F,5,,0,1,1,0.2
+975,Alex,Wang,Kents Hill,F,16,L,0,1,1,0.06
+976,Billy,Weller,Deerfield Academy,D,12,L,0,1,1,0.08
+977,Matthew,Ingersoll,Berwick,D,15,R,0,1,1,0.07
+978,Luca,Fantasia,Williston-Northampton,D,15,R,0,1,1,0.07
+979,Lincoln,Smith,Pomfret,F,16,,0,1,1,0.06
+980,Tommy,Drienik,Taft,D,9,R,0,1,1,0.11
+981,Charlie,Stevens,Taft,F,10,R,0,1,1,0.1
+982,Basil,Hemberger,Lawrenceville School,G,11,L,0,1,1,0.09
+983,Matt,Haley,Worcester Academy,D,13,L,0,1,1,0.08

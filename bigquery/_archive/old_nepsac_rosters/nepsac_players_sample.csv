@@ -1,0 +1,51 @@
+rank,first_name,last_name,team,position,gp,shoots,goals,assists,points,ppg
+1,Caiden,Pellegrino,St. Marks,C,12,L,13,25,38,3.17
+2,James,McMurray,Berkshire School,F,17,R,14,19,33,1.94
+3,Josh,Phillips,Kimball Union,F,20,,10,20,30,1.5
+4,Evan,Nee,St. Marks,F,12,L,19,11,30,2.5
+5,Rich,Cavanagh,Pomfret,F,16,L,13,17,30,1.88
+6,Will,Manchuso,St. Marks,F,12,L,14,16,30,2.5
+7,Myles,Brosnan,Dexter,D,16,R,5,24,29,1.81
+8,Matthew,Lacombe,Berkshire School,F,17,R,8,21,29,1.71
+9,Giacomo,Caliri,Pomfret,F,16,,12,17,29,1.81
+10,Jack,Broderick,Kent School,F,13,L,11,17,28,2.15
+11,Cam,Mcpherson,St. Marks,F,12,,6,18,24,2
+12,Keith,Olympia,St. Marks,F,12,R,6,18,24,2
+13,Jonah,Rainisch,Berkshire School,F,17,R,13,10,23,1.35
+14,Max,Donatelli,St. Georges,F,14,L,9,14,23,1.64
+15,Charlie,Puglisi,Winchendon,F,16,R,9,14,23,1.44
+16,Seamus,McMakin,Canterbury,F,15,R,8,15,23,1.53
+17,Billy,MacAusland,Noble & Greenough,F,13,R,10,13,23,1.77
+18,Noah,Poinsett-Yoshida,Exeter,F,14,L,8,14,22,1.57
+19,CJ,List,Millbrook,F,19,R,10,12,22,1.16
+20,Lucas,Husted-Edwards,Kent School,F,12,R,10,12,22,1.83
+21,Logan,Ferrara,Loomis Chaffee,F,12,R,8,14,22,1.83
+22,Nick,Dolympio,Dexter,F,16,R,6,16,22,1.38
+23,Johnny,Niemela,New Hampton,F,17,R,9,13,22,1.29
+24,Sam,Gero,Millbrook,F,19,R,6,15,21,1.11
+25,Conal,Mulkerrin,Kimball Union,F,20,,15,6,21,1.05
+26,Will,Schlechtweg,Kent School,F,10,L,8,13,21,2.1
+27,Jack,Fitzpatrick,Dexter,F,16,L,13,8,21,1.31
+28,Ryan,Mogielnicki,Austin Prep,F,17,R,14,7,21,1.24
+29,Nathan,Dono,Pomfret,F,16,,6,15,21,1.31
+30,Tommy,Browne,Canterbury,D,15,R,7,14,21,1.4
+31,Jackson,Kimelman,Kimball Union,F,20,,8,12,20,1
+32,Lucas,Hannay,Kimball Union,D,20,,5,15,20,1
+33,Aiden,Ferreira,St. Georges,F,14,R,10,9,19,1.36
+34,Sam,Lee,Belmont Hill,F,16,,9,10,19,1.19
+35,Mason,McGovern,Austin Prep,F,17,R,10,9,19,1.12
+36,Luke,Long,Proctor Academy,F,16,R,9,10,19,1.19
+37,Jack,Mceleney,Canterbury,F,15,,7,12,19,1.27
+38,Patrick,Woods,Belmont Hill,F,16,R,8,10,18,1.13
+39,Owen,McHale,Dexter,F,15,L,13,5,18,1.2
+40,Nate,Kreppner,Andover,F,15,L,6,12,18,1.2
+41,Laz,Giardina,Winchendon,F,16,L,9,9,18,1.13
+42,Danny,Patch,Pingree,F,13,L,7,11,18,1.38
+43,Deagan,Nadeau,North Yarmouth,F,20,R,9,8,17,0.85
+44,Grady,Bishop,St. Marks,F,12,R,8,9,17,1.42
+45,Teddy,Drury,St. Marks,F,12,,6,11,17,1.42
+46,TJ,Swinson,Pomfret,F,16,R,7,10,17,1.06
+47,Zach,Boss,The Hill School,F,16,R,10,7,17,1.06
+48,Tommy,Egan,Austin Prep,F,17,R,5,12,17,1
+49,Viktor,Samal,Holderness,F,11,L,8,9,17,1.55
+50,Jack,Goodrich,Berwick,F,15,L,8,9,17,1.13

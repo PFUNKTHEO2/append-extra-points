@@ -1,0 +1,1416 @@
+roster_name,roster_team,roster_position,roster_grad_year,roster_dob,db_player_id,db_name,db_birth_year,total_points,match_score,confidence
+Senji Kimura,Andover,G,2029,3/16/2010,1134096,Senji Kimura,2010,2100.36,0.9,HIGH
+Alex Theodore,Andover,F,2027,5/21/2008,937103,Alex Theodore,2008,4320.87,0.9,HIGH
+Zachary Fedele,Andover,D,2026,5/31/2007,755227,Zachary Fedele,2007,2835.97,0.9,HIGH
+Bucky Greer,Andover,D,2026,5/23/2008,,,,0,0,NO_MATCH
+Louis-Felix Beaulieu,Andover,D,2026,11/1/2006,900499,Félix Beaulieu,2007,1639.35,0.669,LOW
+Ethan Xu,Andover,D,2028,5/11/2009,701418,Ethan Xu,2009,2034.08,0.9,HIGH
+Russell Louie,Andover,F,2027,6/11/2008,888344,Russell Louie,2008,3379.87,0.9,HIGH
+Michael Barrett,Andover,F,,"Lynnfield, MA",999095,Michael Barrett,2010,2281.09,0.7,LOW
+Kieran McIntosh,Andover,F,2027,2/23/2008,871548,Kieran McIntosh,2008,3116.04,0.9,HIGH
+Jack Cannon,Andover,F,2029,10/7/2009,1057675,Jack Cannon,2009,2071.26,0.9,HIGH
+Liam TenHarmsel,Andover,D,2026,9/2/2007,861980,Liam TenHarmsel,2007,2743.62,0.9,HIGH
+Nate Kreppner,Andover,F,2027,9/17/2008,987158,Nathan Kreppner,2008,2569.57,0.9,HIGH
+Tyler Miocevich,Andover,D,2026,1/4/2007,577183,Tyler Miocevich,2007,2794.93,0.9,HIGH
+Joe Doyle,Andover,F,2026,3/2/2008,914124,Joe Doyle,2008,2378.34,0.9,HIGH
+Alex Small,Andover,F,2026,5/26/2007,577170,Alexander Small,2007,3245.37,0.9,HIGH
+David O'Neill,Andover,F,2026,10/17/2006,,,,0,0.372,NO_MATCH
+Max Krasovsky,Andover,G,2027,12/5/2008,888563,Maxim Krasovsky,2008,2928.52,0.83,MEDIUM
+Jason Faith,Andover,F,2026,2/18/2008,904505,Jason Faith,2008,3260.48,0.9,HIGH
+Edouard Lord,Andover,G,2026,10/28/2006,,,,0,0,NO_MATCH
+Matt Piotrowski,Andover,D,2026,6/27/2008,783146,Matthew Piotrowski,2008,2509.83,0.9,HIGH
+Jack O'Dell,Andover,D,2028,7/30/2009,979011,Jack O'Dell,2009,2225.8,0.9,HIGH
+Nolan Roberts,Andover,F,2028,9/4/2008,861648,Nolan Roberts,2008,3180.4300000000003,0.9,HIGH
+Tucker Art,Albany Academy,G,2028,7/29/2010,,,,0,0.6,NO_MATCH
+Travis Chatwin,Albany Academy,D,2026,3/10/2008,948824,Travis Chatwin,2008,718.77,1.0,HIGH
+Luca Didio,Albany Academy,F,2026,3/8/2008,1004174,Luca Didio,2008,599.45,1.0,HIGH
+Brady Leonard,Albany Academy,F,2026,10/28/2006,795045,Braeden Leonard,2007,578.75,0.707,LOW
+MIchael Phelan,Albany Academy,D,2026,10/30/2008,1100890,Michael Phelan,2008,2543.11,1.0,HIGH
+Marshall Somerville,Albany Academy,F,2027,5/29/2009,936884,Marshall Somerville,2009,220.4,0.9,HIGH
+Chris McEntee,Albany Academy,D,2028,12/29/2009,1100886,Christopher Joseph McEntee,2010,1497.0,0.8,MEDIUM
+Will Booth,Albany Academy,D,2027,8/4/2009,1022495,William Booth,2009,372.5,1.0,HIGH
+Jonah Lindsay,Albany Academy,D,2026,7/17/2008,890451,Jonah Lindsay,2008,1077.0,1.0,HIGH
+Mason Keramidas,Albany Academy,F,2026,4/10/2007,986570,Mason Keramidas,2007,356.15,1.0,HIGH
+Joey Riganti,Albany Academy,F,2029,3/28/2011,1075947,Joey Riganti,2011,1703.8,1.0,HIGH
+Olivier Tellier,Albany Academy,D,2026,2/14/2008,903482,Olivier Tellier,2008,750.5699999999999,1.0,HIGH
+Jack Oliver,Albany Academy,F,2026,4/9/2008,1022719,Jack Oliver,2008,298.84,1.0,HIGH
+Blake Rezendes,Albany Academy,F,2027,5/17/2008,979696,Blake Rezendes,2008,652.76,0.9,HIGH
+Sebastien Mackson,Albany Academy,F,2026,2/13/2007,851945,Sebastien Mackson,2007,562.99,1.0,HIGH
+Josh Dietz,Albany Academy,F,2027,6/16/2009,,,,0,0,NO_MATCH
+Jeremy See,Albany Academy,D,2027,12/16/2008,1102609,Jeremy See,2009,2556.86,0.9,HIGH
+Connor Cataldo,Albany Academy,F,2028,6/2/2010,1203437,Cohan Catalfamo,2010,805.0,0.725,LOW
+Braden Wiseman,Albany Academy,F,2028,4/20/2010,1137088,Braden Wiseman,2010,1941.31,0.9,HIGH
+Tanner Smith,Albany Academy,F,2026,6/20/2007,897353,Tanner Smith,2007,745.96,1.0,HIGH
+Ryan Kiyonaga,Albany Academy,F,2027,3/11/2009,1022499,Ryan Kiyonaga,2009,277.19,1.0,HIGH
+Kolton Livsey,Albany Academy,F,2028,8/1/2010,1114099,Kolton Livsey,2010,215.45,0.9,HIGH
+Soren Jensen,Albany Academy,F,2027,9/2/2008,1100884,Soren Jensen,2008,245.48,0.9,HIGH
+Gavin Dibble,Albany Academy,F,2027,10/27/2008,1029157,Gavin Dibble,2008,608.96,1.0,HIGH
+Brennan Hughes,Albany Academy,D,2028,10/16/2008,914171,Brayden Hughes,2008,3762.08,0.78,MEDIUM
+Aaden Wilsey,Albany Academy,G,2026,7/16/2008,932995,Aaden Wilsey,2008,744.26,0.9,HIGH
+Brady Andrews,Austin Prep,D,2026,9/7/2006,1003725,Brady Andrews,2008,879.0,0.7,LOW
+Jack Galvin,Austin Prep,D,2027,6/4/2008,861998,Jack Galvin,2008,2398.92,1.0,HIGH
+Patrick Quill,Austin Prep,F,2027,3/4/2008,980375,Patrick Quill,2008,1968.66,1.0,HIGH
+Brady Harris,Austin Prep,D,2025,,1011535,Brady Harris,2009,1698.58,0.8,MEDIUM
+Owen Hughes,Austin Prep,D,2028,6/9/2009,938347,Owen Hughes,2009,1726.3,1.0,HIGH
+Aiden Goodwin,Austin Prep,F,2027,1/1/2009,1011527,Aiden Goodwin,2009,1877.6100000000001,1.0,HIGH
+Duncan Vittands,Austin Prep,F,2028,9/25/2009,,,,0,0,NO_MATCH
+Dennis Klimashov,Austin Prep,F,2028,3/22/2010,1001621,Dennis Klimashov,2010,2010.85,1.0,HIGH
+Mason McGovern,Austin Prep,F,2030,6/3/2011,1083095,Mason McGovern,2011,1625.98,1.0,HIGH
+Peter Gilraine,Austin Prep,F,2025,1/2/2007,993271,Peter Gilraine,2009,1959.85,0.8,MEDIUM
+Tommy Egan,Austin Prep,F,2029,,1084111,Thomas Egan,2010,2907.57,0.9,HIGH
+Logan McGovern,Austin Prep,D,2027,1/1/2008,1011528,Logan McGovern,2009,1958.76,0.9,HIGH
+Ryan Mogielnicki,Austin Prep,F,2027,9/15/2009,1011526,Ryan Mogielnicki,2009,2201.9,1.0,HIGH
+Joey Carpentieri,Austin Prep,D,2027,9/20/2008,,,,0,0.638,NO_MATCH
+Paul Smith,Austin Prep,D,2027,8/31/2008,1037974,Paul Smith,2008,3115.69,1.0,HIGH
+Tom Ford,Austin Prep,F,2025,1/1/2008,951048,Tommy Ford,2008,2074.15,0.93,HIGH
+Cooper Bell,Austin Prep,D,2029,3/17/2011,1076229,Cooper Bell,2011,1249.69,1.0,HIGH
+Chase Green,Austin Prep,F,2028,9/23/2009,1103078,Chase Green,2009,1745.42,1.0,HIGH
+Nick Ranaldi,Austin Prep,F,2026,8/7/2007,764360,Nicholas Ranaldi,2007,3447.17,1.0,HIGH
+Liam Conley,Austin Prep,F,2027,1/1/2008,951053,Liam Conley,2008,2495.64,1.0,HIGH
+Michael Abbott,Austin Prep,F,2028,1/1/2009,957272,Michael Abbott,2009,1922.74,0.9,HIGH
+Chace Kivlehan,Austin Prep,F,2027,2/22/2008,,,,0,0,NO_MATCH
+Jake Pandolfo,Austin Prep,F,2026,2/6/2008,991638,Jake Pandolfo,2008,2299.69,1.0,HIGH
+Lucas Lilley,Austin Prep,G,2028,3/17/2010,1087538,Lucas Lilley,2010,1630.3,0.9,HIGH
+Warren Dubois,Austin Prep,G,2027,4/6/2008,1082519,Warren Dubois,2009,1926.02,0.8,MEDIUM
+Branden Davis,Austin Prep,G,2027,12/31/2008,993737,Braeden Davis,2008,2658.37,0.86,HIGH
+Cole Davis,Austin Prep,G,2026,1/1/2007,1104207,Cole Davis,2007,1881.08,0.9,HIGH
+Brooks Armstrong,Avon Old Farms,F,,,788013,Brooks Armstrong,2007,2846.88,0.78,MEDIUM
+William Bagot,Avon Old Farms,G,,,1048922,Will Bagot,2008,4122.24,0.7,LOW
+Nicholas Ciardiello,Avon Old Farms,F,,,969822,Nico Ciardiello,2008,2602.59,0.71,LOW
+Maxx Corradi,Avon Old Farms,F,,,,,,0,0,NO_MATCH
+Liam Donnelly,Avon Old Farms,F,,,961408,Liam Donnelly,2008,3788.55,0.78,MEDIUM
+Myles Foster,Avon Old Farms,D,,,961796,Myles Foster,2008,2280.4,0.7,LOW
+Ethan Gingeleskie,Avon Old Farms,F,,,978994,Ethan Gingeleskie,2009,3113.0,0.78,MEDIUM
+Taylor Gross,Avon Old Farms,G,,,,,,0,0.56,NO_MATCH
+Tucker Harris,Avon Old Farms,F,,,577035,Tucker Harris,2007,2973.52,0.78,MEDIUM
+Ryan Hecker,Avon Old Farms,D,,,617473,Ryan Hecker,2008,2993.27,0.78,MEDIUM
+Andrew Henderson,Avon Old Farms,F,,,,,,0,0.607,NO_MATCH
+Jacob Jett,Avon Old Farms,F,,,783134,Jacob Jett,2008,3253.79,0.78,MEDIUM
+Stephen King,Avon Old Farms,F,,,861982,Stephen King,2008,3745.3599999999997,0.78,MEDIUM
+Matthew Koch,Avon Old Farms,D,,,701320,Matthew Koch,2009,3460.65,0.78,MEDIUM
+Brody Latkin,Avon Old Farms,D,,,757829,Brody Latkin,2008,2863.57,0.78,MEDIUM
+Jayden Liu,Avon Old Farms,F,,,961413,Jayden Liu,2008,2810.69,0.7,LOW
+Sean Millen,Avon Old Farms,F,,,941636,Sean Millen,2008,2644.26,0.78,MEDIUM
+Maksim Morgoslepov,Avon Old Farms,F,,,1008959,Maksim Morgoslepov,2009,2472.0299999999997,0.78,MEDIUM
+Alexander Ostromenskiy,Avon Old Farms,F,,,1075076,Alexander Ostromensky,2007,2487.0,0.682,LOW
+Anthony Palmer,Avon Old Farms,G,,,929794,Anthony Palmer,2007,2756.11,0.7,LOW
+Marshall Paul,Avon Old Farms,D,,,955410,Marshall Paul,2009,2307.34,0.78,MEDIUM
+Daniel Peate,Avon Old Farms,F,,,888316,Daniel Peate,2008,2704.31,0.78,MEDIUM
+Jake Power,Avon Old Farms,D,,,906002,Jake Power,2008,2737.42,0.78,MEDIUM
+John David Stem,Avon Old Farms,F,,,,,,0,0.592,NO_MATCH
+Aiden Strzelecki,Avon Old Farms,F,,,911609,Aiden Strzelecki,2008,2835.45,0.7,LOW
+Tyler Waterman,Avon Old Farms,D,,,868981,Tyler Waterman,2007,2297.1,0.7,LOW
+Maksim Yakub,Avon Old Farms,D,,,936267,Maksim Yakub,2009,3270.09,0.78,MEDIUM
+Abel Ma,BB&N,G,2028,6/2/2010,1093216,Abel Ma,2010,1813.62,0.9,HIGH
+Tucker Hartman,BB&N,F,2027,11/23/2008,,,,0,0.645,NO_MATCH
+Ben Romer,BB&N,F,2026,7/2/2007,872050,Benjamin Romer,2007,2846.93,0.9,HIGH
+Ryan Clay,BB&N,D,2026,2/5/2007,800740,Ryan Clay,2007,2867.09,0.9,HIGH
+Max Carvalho,BB&N,F,2029,8/30/2010,,,,0,0.41,NO_MATCH
+Abe Krishnan,BB&N,D,2029,5/27/2011,,,,0,0,NO_MATCH
+Liam Walker,BB&N,F,2028,10/28/2009,1016201,William Walker,2009,964.26,0.9,HIGH
+Tiger Tang,BB&N,D,2029,1/15/2010,1216369,Tiger Tang,2010,1577.0,0.9,HIGH
+Alex Robbins,BB&N,F,2026,7/11/2007,930989,Alex Robbins,2007,2585.62,0.9,HIGH
+Cameron Roof,BB&N,D,2027,2/11/2008,1022845,Cameron Roof,2008,2477.58,0.9,HIGH
+Bear Tang,BB&N,F,2029,1/15/2010,1216368,Bear Tang,2010,1647.4,0.9,HIGH
+Jack D'Alelio,BB&N,F,2027,6/12/2007,1007681,Jack D'Alelio,2007,2418.13,0.9,HIGH
+Ethan Kane,BB&N,F,2029,9/13/2010,1092268,Ethan Kane,2010,851.0,0.9,HIGH
+Nolan Hartman,BB&N,F,2011,1/14/2011,997041,Dylan Hartman,2010,1505.82,0.688,LOW
+Zach Davis,BB&N,F,2030,6/15/2011,1180839,Zachary Davis,2011,1080.0,0.9,HIGH
+Scott Crabtree,BB&N,D,2026,2/7/2008,982916,Scott Crabtree,2008,2415.81,0.9,HIGH
+Daniel Driscoll,BB&N,F,2028,10/14/2009,1202752,Ryan Parker Driscoll,2009,1220.0,0.78,MEDIUM
+Hunter Barone,BB&N,F,2028,7/10/2008,1012535,Hunter Barone,2008,2713.15,0.9,HIGH
+James Ferreira,BB&N,F,2026,4/11/2007,957766,James Ferreira,2007,2663.62,0.9,HIGH
+Thomas Bresler,BB&N,F,2027,6/29/2009,,,,0,0.583,NO_MATCH
+John Williams,BB&N,F,2027,12/23/2008,982915,John Williams,2008,2821.26,0.9,HIGH
+Leighton Lam,BB&N,G,2029,5/9/2011,1092725,Leighton Matthias Lam,2011,1593.1,0.9,HIGH
+James Potter,BB&N,G,2026,2/28/2007,942631,James Potter,2007,2609.63,0.9,HIGH
+Will Days,Belmont Hill,G,2027,,1212825,Liam Day,2010,1657.56,0.664,LOW
+Robert DeKleine,Belmont Hill,F,2028,,1046763,Robert Dekleine,2010,1888.63,0.977,HIGH
+Nick Ware,Belmont Hill,D,2028,,1098093,Nick Ware,2010,3136.39,0.977,HIGH
+Alex Guo,Belmont Hill,D,2028,5/5/2010,998451,Alexander Guo,2010,3273.06,0.977,HIGH
+Andrew Sousa,Belmont Hill,D,2027,,963258,Andrew Sousa,2007,2574.03,0.7,LOW
+Lance Toland,Belmont Hill,F/D,2027,2/11/2008,937002,Lance Toland,2008,2574.59,0.977,HIGH
+Nicholas Hand,Belmont Hill,F,2028,,951054,Nick Hand,2008,2602.14,0.777,MEDIUM
+Emmett Aufiero,Belmont Hill,D,2029,,951660,Emmett Aufiero,2011,1790.04,0.977,HIGH
+Jackson Burns,Belmont Hill,F,2028,,933939,Jackson Burns,2009,1915.18,0.8,MEDIUM
+Cam Kelley,Belmont Hill,F,2026,,764339,Cameron Kelley,2008,2623.21,0.9,HIGH
+Liam Boyle,Belmont Hill,F,2027,2/8/2008,1004642,Liam Boyle,2008,2545.11,0.977,HIGH
+Matt Carolan,Belmont Hill,F,2026,3/26/2007,979668,Matthew Carolan,2007,3175.74,0.977,HIGH
+William Raymond,Belmont Hill,F,2027,,947644,William Raymond,2008,2248.84,0.877,HIGH
+Nolan Boyle,Belmont Hill,F,2029,,951657,Nolan Boyle,2011,1256.48,0.9,HIGH
+Evan Jones,Belmont Hill,D,2026,2/9/2007,750565,Evan Jones,2007,3422.8,0.977,HIGH
+Landon Roe,Belmont Hill,F,2029,,997686,Landon Roe,2010,1795.4,0.877,HIGH
+Louis Marobella,Belmont Hill,D,2026,5/31/2007,752620,Louie Marobella,2007,2734.38,0.921,HIGH
+Harry Lavoie,Belmont Hill,F,2027,12/19/2007,979666,Harry Lavoie,2007,2373.47,0.9,HIGH
+Sam Lee,Belmont Hill,F,2029,,998453,Samuel Lee,2010,2307.09,0.877,HIGH
+Patrick Woods,Belmont Hill,F,2026,7/5/2007,576996,Patrick Woods,2007,3536.21,0.977,HIGH
+Ethan Bauer,Belmont Hill,G,2027,,1085288,Ethan Bauer,2008,2540.98,0.877,HIGH
+Jason Thibodeau,Belmont Hill,G,2026,2/20/2007,576999,Jason Thibodeau,2007,2695.27,0.9,HIGH
+Alex Kim,Berkshire,G,2027,1/2/2008,759635,Alex Kim,2008,2895.7200000000003,0.9,HIGH
+Gus Chong,Berkshire,D,2026,3/9/2007,812500,Gus Chong,2007,3354.59,0.972,HIGH
+James Reilly,Berkshire,D,2026,3/10/2008,1085755,Jaxson Reilley,2008,191.0,0.74,LOW
+Holden Sandner,Berkshire,F,2028,5/8/2009,947209,Holden Sandner,2009,1602.67,0.972,HIGH
+Matthew Lacombe,Berkshire,F,2026,1/4/2007,748889,Matthew Lacombe,2007,3814.8199999999997,0.972,HIGH
+Bauer Gammill,Berkshire,F,2027,1/27/2008,1071690,Bauer Gammill,2008,2032.32,0.972,HIGH
+Harrison McLean,Berkshire,D,2026,9/23/2007,577214,Harrison McLean,2007,3104.88,0.972,HIGH
+Jonah Rainisch,Berkshire,F,2026,10/28/2007,962126,Jonah Rainisch,2007,3439.7,0.972,HIGH
+Carter Johnson,Berkshire,F,2026,2/2/2007,783220,Carter Johnson,2007,3236.27,0.972,HIGH
+Matthew Chernoff,Berkshire,F,2028,4/17/2009,1021389,Matthew Chernoff,2009,2154.7,0.9,HIGH
+Zennon Turnovitski,Berkshire,D,2027,10/4/2008,805246,Zennon Turnovitski,2008,3185.29,0.972,HIGH
+Markus Gentile,Berkshire,F,2028,8/13/2008,914260,Markus Gentile,2008,3078.66,0.972,HIGH
+Leo Chen,Berkshire,F,2027,5/17/2008,991559,Leo Chen,2008,2938.29,0.972,HIGH
+James McMurray,Berkshire,F,2026,6/15/2007,897623,James McMurray,2007,3557.7,0.972,HIGH
+Dylan Pagliuca,Berkshire,F,2027,8/18/2008,941605,Dylan Pagliuca,2008,3025.05,0.9,HIGH
+Erion Milla,Berkshire,F,2026,12/19/2007,869032,Erion Milla,2007,3642.74,0.972,HIGH
+Preston Kelly-Paquet,Berkshire,F,2027,11/11/2008,879239,Preston Kelly-Paquet,2008,2810.2599999999998,0.972,HIGH
+Dave Cho,Berkshire,D,2028,8/2/2009,1048632,David Cho,2009,1247.22,0.9,HIGH
+Dylan Chernoff,Berkshire,F,2027,7/20/2007,764159,Dylan Chernoff,2007,3446.71,0.972,HIGH
+Lucas Smtih,Berkshire,D,2027,3/25/2008,,,,0,0,NO_MATCH
+Dominic Somma,Berkshire,D,2026,7/16/2007,690477,Dominic Somma,2007,3787.99,0.972,HIGH
+Max Monroe,Berkshire,D,2027,3/11/2008,940901,Max Monroe,2008,1944.27,0.972,HIGH
+Soja Russell,Berkshire,F/D,2026,9/28/2006,,,,0,0.56,NO_MATCH
+Josh Timone,Berkshire,F,2027,3/28/2008,978457,Josh Timone,2008,2216.5299999999997,0.972,HIGH
+Xavier Rivera,Berkshire,G,2028,12/21/2009,1021398,Xavier Rivera,2009,1993.17,0.9,HIGH
+Kai Vitiello,Berkshire,G,2028,4/16/2009,983811,Kai Vitiello,2009,1852.04,0.9,HIGH
+Ethan Addazio,Berwick,G,2026,9/6/2007,957759,Ethan Addazio,2007,363.39,0.9,HIGH
+Adam Lopashanski,Berwick,F,2027,4/22/2009,1025415,Adam Lopashanski,2009,1752.41,0.964,HIGH
+Alex Yankopoulos,Berwick,D,2026,1/31/2007,1001814,Alex Yankopoulos,2007,349.21000000000004,0.964,HIGH
+James Connor,Berwick,D,2026,11/19/2007,904474,Jimmy Connor,2007,2454.78,0.964,HIGH
+Curtis Savage,Berwick,D,2027,6/19/2009,,,,0,0.573,NO_MATCH
+Tucker Montecalvo,Berwick,F,2028,5/27/2009,1011530,Tucker Montecalvo,2009,331.57,0.964,HIGH
+Aidan Lally,Berwick,F,2026,8/3/2007,866431,Aidan Lally,2007,528.29,0.964,HIGH
+Amir Makdad,Berwick,F,2027,5/23/2008,920353,Amir Makdad,2008,721.85,0.964,HIGH
+Cameron Clark,Berwick,D,2026,4/29/2008,895024,Cameron Clark,2008,504.79,0.964,HIGH
+Cole Cournoyer,Berwick,F,2028,5/12/2009,1011501,Cole Cournoyer,2009,391.19,0.964,HIGH
+Caden Desjardins,Berwick,F,2029,9/19/2010,1087530,Caden Desjardins,2010,1673.35,0.964,HIGH
+Timmy Peracchi,Berwick,D/F,2029,9/1/2010,1114197,Timothy Peracchi,2010,1362.94,0.964,HIGH
+Matthew Ingersoll,Berwick,D,2027,7/28/2009,936881,Matthew Ingersoll,2009,588.41,0.964,HIGH
+Talon Beyer,Berwick,F,2027,8/8/2008,1051308,Talon Beyer,2008,600.99,0.964,HIGH
+Reed Kenney,Berwick,F,2027,9/1/2009,936875,Reed Kenney,2009,542.0699999999999,0.964,HIGH
+Gus Lambert,Berwick,F,2028,11/4/2009,967859,Gus Lambert,2009,521.46,0.964,HIGH
+Anton Kabanov,Berwick,D,2027,7/20/2009,938353,Anton Kabanov,2009,2358.76,0.964,HIGH
+Jack Goodrich,Berwick,F,2028,6/21/2009,938349,Jack Goodrich,2009,2108.09,0.964,HIGH
+Matt Rioux,Berwick,F,2029,5/27/2010,1148606,Matthew Rioux,2010,510.27,0.964,HIGH
+Keegan Norton,Berwick,D/F,2026,3/25/2007,764363,Keegan Norton,2007,293.61,0.964,HIGH
+DJ Patriss,Berwick,G,2026,1/13/2007,764150,D.J. Patriss,2007,1065.18,0.9,HIGH
+Preston Randall,Berwick,G,2027,2/11/2009,936898,Preston Randall,2009,1639.88,0.9,HIGH
+Brian Bonia Jr,Brewster,G,2027,,988994,Brian Bonia Jr.,2008,2710.9,0.8,MEDIUM
+Christopher Kimmel,Brewster,D,2026,,830660,Christopher Kimmel,2007,2436.09,0.867,HIGH
+Logan Wood,Brewster,D,2026,,902119,Logan Wood,2008,2196.5,0.9,HIGH
+Matteo Sollazzo,Brewster,D,2027,,885480,Matteo Sollazzo,2008,2373.98,0.867,HIGH
+Jackson Gouveia,Brewster,F,2029,,1064901,Jackson Gouveia,2010,1814.0,0.8,MEDIUM
+Jonathan Dion,Brewster,D,2026,,866423,Jonathan Dion,2007,2538.92,0.867,HIGH
+Maxwell Rusov,Brewster,F,2026,,951602,Max Rusov,2007,2612.94,0.867,HIGH
+Noah Feingold,Brewster,F,2028,,1104943,Noah Feingold,2008,2618.0,0.767,MEDIUM
+Evan Ashton,Brewster,F,2028,,1067040,Evan Ashton,2009,2281.35,0.867,HIGH
+Tyler Branch,Brewster,F,2027,,877983,Tyler Branch,2008,3046.21,0.867,HIGH
+Steven Burke,Brewster,F,2026,,920652,Steven Burke,2007,2474.8,0.867,HIGH
+Brayden McKenna,Brewster,F,2026,,,,,0,0.64,NO_MATCH
+William Brochu,Brewster,F,2026,,931219,William Brochu,2007,217.46,0.8,MEDIUM
+Gabriel Visnicky,Brewster,F,2026,,1021327,Gabe Visnicky,2008,2284.3,0.89,HIGH
+Mason Patriarca,Brewster,D,2027,,,,,0,0.464,NO_MATCH
+Luke Smolan,Brewster,D,2026,,951599,Luke Smolan,2007,2322.27,0.8,MEDIUM
+Conor Reilly,Brewster,F,2027,,930612,Connor Reilly,2008,2601.35,0.775,MEDIUM
+Otavio Haygert-Roxo,Brewster,D,2027,,1054037,Otavio Haygert-Roxo,2008,3103.66,0.8,MEDIUM
+Travis Gillen,Brewster,F,2026,,,,,0,0,NO_MATCH
+Simon Bellavigna,Brewster,G,2027,,903534,Simon Bellavigna,2008,2379.1,0.8,MEDIUM
+Josh Freeman,Brooks School,D,,,898795,Joshua Freeman,2008,2845.34,0.8,MEDIUM
+Ian Beauparlant,Brooks School,F,2027,12/17/2008,961768,Ian Beauparlant,2008,1758.16,1.0,HIGH
+Harry Jackson,Brooks School,D,2027,1/1/2008,914123,Harry Jackson,2008,2517.99,1.0,HIGH
+Peter Clark,Brooks School,,,,1006530,Peter Clark,2009,1700.27,0.7,LOW
+Michael Buscaino,Brooks School,D,2028,1/1/2010,998506,Michael Buscaino,2010,2677.79,1.0,HIGH
+Luca Damian,Brooks School,,,,951055,Luca Damian,2008,2961.24,0.8,MEDIUM
+Marcus Pukel,Brooks School,,,,1019223,Marcus Pukel,2008,2879.56,0.8,MEDIUM
+Jonathan Clark,Brooks School,F,2027,6/6/2008,1037976,Jonathan Clark,2008,2769.51,1.0,HIGH
+Nick Dias,Brooks School,F,2026,3/24/2007,851358,Nick Dias,2007,3131.94,1.0,HIGH
+Drew Hemenway,Brooks School,D,2026,6/15/2006,,,,0,0,NO_MATCH
+Kai Bara,Brooks School,F,2026,1/1/2007,845963,Kai Bara,2007,2463.63,1.0,HIGH
+CJ Ford,Brooks School,D,2028,1/1/2009,,,,0,0,NO_MATCH
+Hudson Wood,Brooks School,F,2027,1/1/2008,1105856,Hudson Wood,2008,2743.83,1.0,HIGH
+Cam Fazendeiro,Brooks School,,,,1158820,Cameron Fazendeiro,2008,2885.89,0.7,LOW
+Cole Bradford,Brooks School,F,2026,3/13/2008,1051309,Cole Bradford,2008,3004.94,1.0,HIGH
+Dax Lafoe,Brooks School,,,,1068086,Dax Lafoe,2009,1478.91,0.7,LOW
+Andrew Martin,Brooks School,F,2027,8/16/2008,1022779,Andrew Martin,2008,3138.0699999999997,1.0,HIGH
+James Sullivan,Brooks School,,,,1084786,James Sullivan,2007,2032.0,0.7,LOW
+Jacob Su,Brooks School,G,2028,,1087971,Luke Su,2009,2176.8199999999997,0.66,LOW
+Lachlan Fletcher,Brooks School,G,2027,1/1/2008,1048921,Lachlan Fletcher,2008,3935.85,0.9,HIGH
+Zai Ferraro,Brunswick,G,2027,3/4/2008,617417,Zai Ferraro,2008,3709.12,0.972,HIGH
+James Jackson,Brunswick,F,2027,2/9/2009,701316,James Jackson,2009,2175.0,0.972,HIGH
+Jack McCullough,Brunswick,D,2026,11/7/2007,893565,Jack McCullough,2007,3121.71,0.972,HIGH
+Alessandro Dolder,Brunswick,D,2028,6/27/2009,1019527,Alessandro Dolder,2009,1642.32,0.972,HIGH
+Luke Hall,Brunswick,D,2026,9/8/2006,978630,Luke Hall,2008,1840.54,0.7,LOW
+Alex Zinman,Brunswick,D,2027,3/11/2008,911511,Alex Zinman,2008,1995.96,0.972,HIGH
+Hampus Vandenberg,Brunswick,D,2026,4/24/2008,941335,Hampus Vandenberg,2008,2495.08,0.9,HIGH
+Aidan Dougherty,Brunswick,D,2026,10/2/2007,808505,Aidan Dougherty,2007,2827.89,0.972,HIGH
+Keegan Kazan,Brunswick,F,2027,11/15/2008,931609,Keegan Kazan,2008,2314.1800000000003,0.972,HIGH
+Hunter Harper,Brunswick,F,2027,10/21/2008,961467,Hunter Harper,2008,1775.41,0.972,HIGH
+Ben Lombardi,Brunswick,F,2026,3/24/2008,617405,Ben Lombardi,2008,2288.5299999999997,0.972,HIGH
+Ben Taylor,Brunswick,F,2026,6/23/2008,963794,Benjamin Taylor,2008,2762.43,0.9,HIGH
+Cam Kovary,Brunswick,F,2027,8/2/2008,978456,Cam Kovary,2008,3114.85,0.9,HIGH
+George Karayiannis,Brunswick,F,2027,9/4/2008,950526,George Karayiannis,2008,2843.13,0.972,HIGH
+Mason St. Louis,Brunswick,F,2026,1/16/2008,617403,Mason St. Louis,2008,4359.139999999999,0.972,HIGH
+Nate Cook,Brunswick,F,2028,7/1/2009,953805,Nathan Cook,2009,1960.22,0.9,HIGH
+Owen Giles,Brunswick,F,2027,4/13/2009,978996,Owen Giles,2009,1677.97,0.972,HIGH
+Owen Gibbons,Brunswick,F,2026,4/23/2007,763308,Owen Gibbons,2007,3074.84,0.972,HIGH
+Trevor DiMaio,Brunswick,D,2027,1/29/2009,1024723,Trevor DiMaio,2009,1907.66,0.972,HIGH
+Jack Thompson,Brunswick,F,2028,12/24/2008,1071137,Jack Thompson,2008,2182.59,0.9,HIGH
+Hunter Hanford,Brunswick,F,2028,7/21/2009,979000,Hunter Hanford,2009,2738.3,0.972,HIGH
+Declan Minella,Brunswick,D,2026,2/12/2008,950530,Declan Minella,2008,1777.8899999999999,0.972,HIGH
+Colton Cleaves,Brunswick,F,2028,8/31/2009,1019521,Colton Cleaves,2009,2018.6599999999999,0.972,HIGH
+Julian Ikeda-Thew,Brunswick,F,2027,5/22/2009,957678,Julian Ikeda-Thew,2009,2066.1800000000003,0.972,HIGH
+Evan Akerman,Brunswick,G,2027,8/2/2008,916568,Evan Akerman,2008,3292.39,0.9,HIGH
+Alex Marottolo,Canterbury,F,2028,4/21/2009,1031352,Alex Marottolo,2009,1711.51,0.9,HIGH
+Connor Emens,Canterbury,D,2026,,758116,Connor Emens,2007,2691.8,0.874,HIGH
+Noah Indes,Canterbury,F,2027,,911633,Noah Indes,2008,2668.51,0.874,HIGH
+Caleb North,Canterbury,F,2026,,,,,0,0.645,NO_MATCH
+Mason Kuchinski,Canterbury,F,2026,8/26/2007,869068,Mason Kuchinski,2007,1834.81,0.974,HIGH
+Matthew Patko,Canterbury,D,2027,2/7/2008,888337,Matthew Patko,2008,3260.23,0.974,HIGH
+Jace Knopp,Canterbury,D,2027,6/27/2008,932991,Jace Knopp,2008,2495.57,0.974,HIGH
+Thomas Heslin,Canterbury,F,2028,3/30/2009,954685,Thomas Heslin,2009,260.43,0.9,HIGH
+Seamus McMakin,Canterbury,F,2026,,930991,Seamus McMakin,2007,2567.98,0.874,HIGH
+Jonathan Chon,Canterbury,F,2026,,845969,Jonathan Chon,2007,2548.69,0.874,HIGH
+Andrew Martineau,Canterbury,F,2029,4/26/2010,998589,Andrew Martineau,2010,1947.08,0.974,HIGH
+Joseph Mallette,Canterbury,D,2027,,974724,Joseph Mallette,2008,3041.96,0.874,HIGH
+Logan Martel,Canterbury,D,2026,11/20/2006,902343,Nelian Martel,2007,1503.92,0.673,LOW
+Parker Farnham,Canterbury,F,2026,,852905,Parker Farnham,2007,2757.99,0.874,HIGH
+Jack Mceleney,Canterbury,F,2026,7/7/2007,924243,Jack McEleney,2007,2632.99,0.974,HIGH
+Jack Lee,Canterbury,F,2026,8/18/2007,750563,Jack Lee,2007,2266.42,0.9,HIGH
+Micheal O'Sullivan,Canterbury,F,2028,9/1/2009,,,,0,0,NO_MATCH
+Gino LaRusso,Canterbury,F,2026,6/5/2007,817477,Giovanni LaRusso,2007,3558.51,0.834,MEDIUM
+Tommy Browne,Canterbury,D,2026,,750741,Tommy Browne,2007,3180.23,0.874,HIGH
+James Levell-Lynch,Canterbury,D,2027,,991571,James Levell-Lynch,2008,2660.94,0.8,MEDIUM
+Britton Bethard,Canterbury,F,2026,,885195,Britton Bethard,2007,2575.63,0.874,HIGH
+Gaines Clonts,Canterbury,F,2026,,816873,Gaines Clonts,2007,2774.59,0.874,HIGH
+Wilson Szydlo,Canterbury,G,2027,10/30/2008,947528,Wilson Szydlo,2008,2767.28,0.9,HIGH
+Cody Hew,Canterbury,G,2026,9/16/2008,949295,Cody Hew,2008,2804.0299999999997,0.974,HIGH
+Cole Cassidy,Choate,D,2029,9/24/2010,1016059,Cole Cassidy,2010,1516.44,0.9,HIGH
+Justin Dupuis,Choate,D,2026,11/16/2006,1228415,Simon Dupuis,2007,1413.0,0.673,LOW
+Paul Stearns,Choate,D,2026,7/24/2007,757827,Paul Stearns,2007,2595.93,0.9,HIGH
+Jacob BriseBois,Choate,D,2028,5/20/2009,988284,Jacob BriseBois,2009,2184.11,0.9,HIGH
+Liam Oliver,Choate,D,2027,5/19/2008,1057385,Liam Oliver,2008,2225.2200000000003,0.9,HIGH
+Grady Glandorf,Choate,F,2027,10/18/2007,754061,Grady Glandorf,2007,2709.7,0.9,HIGH
+Greg Najda,Choate,F,2026,1/17/2008,999250,Gregory Najda,2008,4043.3,0.824,MEDIUM
+Jack Kang,Choate,F,2027,7/29/2009,938279,Jack Kang,2009,1973.34,0.9,HIGH
+Yoshiki Chitose,Choate,F,2027,3/24/2007,740254,Yoshiki Chitose,2007,2445.18,0.9,HIGH
+Brayden Young,Choate,D,2029,7/29/2009,1006124,Brayden Young,2009,1713.83,0.9,HIGH
+Ethan Russo,Choate,D,2028,11/25/2009,1020887,Ethan Russo,2009,1777.82,0.9,HIGH
+Jalen Carter,Choate,F,2028,2/12/2008,897776,Jalen Carter,2008,2746.39,0.9,HIGH
+Miles Bronson,Choate,F,2026,9/26/2006,,,,0,0.624,NO_MATCH
+Easton Kinsler,Choate,F,2026,7/12/2007,790866,Easton Kinsler,2007,3080.51,0.9,HIGH
+Owen Morris,Choate,F,2026,7/3/2007,434177,Owen Morris,2007,2350.07,0.9,HIGH
+Lexi Kert,Choate,D,2026,12/12/2007,803139,Leo Kern,2007,1353.34,0.675,LOW
+Ryan Zobeidat,Choate,F,2026,7/15/2007,812133,Ryan Zobeidat,2007,2483.19,0.9,HIGH
+Cameron Hunchak,Choate,F,2027,1/11/2008,888185,Cameron Hunchak,2008,3429.52,0.9,HIGH
+Mikey Dossier,Choate,F,2027,5/24/2008,974713,Michael Dossier,2008,2674.16,0.9,HIGH
+Andy Xu,Choate,F,2028,9/17/2008,1232719,Andrew Xu,2010,531.61,0.7,LOW
+Keenan Hauser,Choate,F,2027,6/8/2008,888343,Keenan Hauser,2008,2904.18,0.9,HIGH
+Cameron Conklin,Choate,F,2027,12/21/2007,886793,Cameron Conklin,2007,2798.81,0.9,HIGH
+Tyler Donroe,Choate,G,2027,2/23/2008,809473,Tyler Donroe,2008,3637.77,0.9,HIGH
+Jacob Saldanha,Choate,G,2026,6/9/2008,888200,Jacob Saldanha,2008,2558.44,0.9,HIGH
+Harper Hubbard,Cushing,G,2027,2/21/2009,1032201,Harper Hubbard,2009,1438.33,0.9,HIGH
+Sebastian Mogull,Cushing,F,2027,12/12/2008,920251,Sebastian Mogull,2008,2866.16,0.964,HIGH
+Ben Marcolini,Cushing,F,2026,2/18/2008,914170,Benjamin Marcolini,2008,2677.06,0.964,HIGH
+Miles Mireault,Cushing,F,2027,6/6/2008,936999,Miles Mireault,2008,2795.4700000000003,0.964,HIGH
+Axel Favreau,Cushing,C,2026,7/29/2007,904910,Axel Favreau,2007,3250.3199999999997,0.964,HIGH
+Ryan Finn,Cushing,D,2026,3/23/2007,1031942,Ryan Finn,2007,2681.88,0.9,HIGH
+AJ Haas,Cushing,D,2028,8/19/2009,,,,0,0,NO_MATCH
+Blake Cash,Cushing,F,2026,5/9/2008,895018,Blake Cash,2008,2756.54,0.964,HIGH
+Joseph Covelluzzi,Cushing,F,2027,1/15/2009,701462,Joseph Covelluzzi,2009,5458.58,0.964,HIGH
+Marcus Bonanni,Cushing,D,2027,5/2/2008,1168876,Marcus Bonanni,2008,2510.67,0.9,HIGH
+Jackson Logan,Cushing,D,2027,1/16/2008,1013875,Jacob Logan,2007,1894.0,0.707,LOW
+Brodie Anderson,Cushing,D,2028,5/7/2010,999108,Brodie Anderson,2010,1738.3,0.964,HIGH
+Gleb Kokorin,Cushing,D,2027,9/8/2008,888562,Gleb Kokorin,2008,2736.93,0.964,HIGH
+Ethan Machado,Cushing,F,2028,9/7/2010,999109,Ethan Machado,2010,2038.55,0.964,HIGH
+Owen Frick,Cushing,F,2028,3/17/2010,999110,Owen Frick,2010,1791.14,0.964,HIGH
+Oliver Svoboda,Cushing,D,2027,10/9/2008,914257,Oliver Svoboda,2008,2627.03,0.964,HIGH
+Landon Nickulas,Cushing,D,2028,6/10/2009,701472,Landon Nickulas,2009,2806.9,0.964,HIGH
+Brian Yandle,Cushing,F,2026,10/5/2006,,,,0,0.558,NO_MATCH
+Mason Raycroft,Cushing,G,2029,7/30/2009,1113652,Mason Raycroft,2009,1778.45,0.9,HIGH
+Jiang Leo Tourchot,Cushing,G,2026,5/25/2007,907261,Jiang Leo Tourchot,2007,2769.85,0.9,HIGH
+Colin Yandle,Cushing,D,2028,10/15/2009,988290,Colin Yandle,2009,3309.0,0.964,HIGH
+Chase Warsofsky,Cushing,F,2027,6/1/2009,1034818,Chase Warsofsky,2009,3316.96,0.964,HIGH
+Jeff Swartz,Cushing,C,2026,3/1/2008,911524,Jeffrey Swartz,2008,3154.87,0.887,HIGH
+Parker Murch,Cushing,F,2026,5/22/2007,851361,Parker Murch,2007,3025.58,0.964,HIGH
+Cam McDonough,Cushing,C,2026,11/29/2006,869660,Cade McDonough,2007,2229.26,0.68,LOW
+Aidan Fitzpatrick,Cushing,F,2027,2/10/2008,949298,Aidan Fitzpatrick,2008,3231.93,0.9,HIGH
+Drake Esquer,Deerfield,G,2028,12/8/2008,888339,Drake Esquer,2008,478.57,0.9,HIGH
+Quinn Peterson,Deerfield,D,2027,11/9/2007,1157116,Quinn Peterson,2008,1824.71,0.8,MEDIUM
+Harry Holland,Deerfield,D,2027,3/28/2008,617411,Harry Holland,2008,879.8499999999999,0.969,HIGH
+Billy Weller,Deerfield,D,2026,1/12/2007,921092,Billy Weller,2007,2851.51,0.969,HIGH
+Lucas Ward,Deerfield,D,2028,10/7/2009,992075,Lucas Ward,2009,539.94,0.9,HIGH
+Nathan Caples,Deerfield,D,2027,12/27/2007,764361,Nathan Caples,2007,711.9100000000001,0.969,HIGH
+Ezra Jones,Deerfield,D,2027,1/5/2008,861643,Ezra Jones,2008,587.94,0.969,HIGH
+Michael McGrath,Deerfield,F,2026,3/14/2007,1016389,Michael McGrath,2007,765.13,0.969,HIGH
+Caleb Regner,Deerfield,F,2027,1/5/2008,859660,Caleb Regner,2008,513.8,0.969,HIGH
+William Kertesz,Deerfield,F,2027,1/21/2008,887374,William Kertesz,2008,697.99,0.969,HIGH
+Lukas Royko,Deerfield,F,2027,9/7/2008,907095,Lukas Royko,2008,720.89,0.969,HIGH
+Kellar Kelusky,Deerfield,F,2027,5/26/2008,890438,Kellar Kelusky,2008,582.0699999999999,0.969,HIGH
+Owen Hannah,Deerfield,F,2029,11/29/2010,1135778,Owen Hannah,2010,2010.51,0.969,HIGH
+Owen Andrews,Deerfield,F,2028,1/16/2009,1021065,Owen Andrews,2009,913.9000000000001,0.969,HIGH
+Lukas Machan,Deerfield,F,2026,4/17/2007,903358,Lukas Machan,2007,3021.69,0.969,HIGH
+Connor Mudd,Deerfield,F,2026,7/16/2007,877349,Connor Mudd,2007,625.95,0.969,HIGH
+Nate Watson,Deerfield,D,2026,3/16/2007,577058,Nathan Watson,2007,1779.16,0.9,HIGH
+Colton Simas,Deerfield,F,2028,3/22/2009,1021048,Colton Simas,2009,2569.77,0.969,HIGH
+Jack Welch,Deerfield,F,2026,5/15/2007,750766,Jack Welch,2007,2775.77,0.9,HIGH
+James Bellig,Deerfield,F,2027,4/6/2008,888346,James Bellig,2008,619.54,0.969,HIGH
+Trey Sanford,Deerfield,D,2027,1/10/2008,941660,Trey Sanford,2008,399.88,0.9,HIGH
+Alex Strug,Deerfield,F,2028,5/1/2009,701324,Alexander Strug,2009,2177.86,0.969,HIGH
+Johan Wilkerson,Deerfield,D,2027,4/5/2008,971525,Johan Wilkerson,2008,511.77,0.969,HIGH
+Matteo Alvarez,Deerfield,F,2026,7/20/2007,845962,Matteo Alvarez,2007,2873.54,0.969,HIGH
+Elliot Lennon,Deerfield,G,2026,3/5/2008,617451,Elliot Lennon,2008,4256.23,0.9,HIGH
+Drew Karlovits,Dexter,G,2027,8/26/2008,967884,Drew Karlovits,2008,2577.75,0.9,HIGH
+JP Messuri,Dexter,F,2027,6/19/2008,1005572,JP Messuri,2008,2805.87,0.9,HIGH
+Tayvin Frongello,Dexter,D,2027,6/6/2008,1005573,Tayvin Frongello,2008,2578.25,0.9,HIGH
+Myles Brosnan,Dexter,D,2026,10/19/2007,750559,Myles Brosnan,2007,4645.63,0.9,HIGH
+Ryan Porter,Dexter,D,2029,6/4/2010,839948,Ryan Porter,2010,1336.77,0.9,HIGH
+Jake Capone,Dexter,F,2026,4/18/2007,987365,Jake Capone,2007,2481.66,0.9,HIGH
+Brady Hanlon,Dexter,F,2026,3/20/2007,929784,Brady Hanlon,2007,2435.39,0.9,HIGH
+Christian Inello,Dexter,F,2026,8/4/2006,,,,0,0,NO_MATCH
+Liam Guilderson,Dexter,F,2028,3/30/2009,1085277,Liam Guilderson,2009,2206.62,0.9,HIGH
+Cam Daley,Dexter,D,2027,7/23/2007,893601,Cam Daley,2007,2417.49,0.9,HIGH
+Jack Fitzpatrick,Dexter,F,2026,10/22/2007,877345,Jack Fitzpatrick,2007,3105.99,0.9,HIGH
+Jake Assad,Dexter,F,2026,7/24/2007,893577,Jake Assad,2007,2933.5299999999997,0.9,HIGH
+Noah Survilas,Dexter,F,2027,12/27/2008,914125,Noah Survilas,2008,4136.9,0.9,HIGH
+Joseph Marchi,Dexter,F,2026,,783078,Joseph Marchi,2007,3290.45,0.8,MEDIUM
+Nick Dolympio,Dexter,F,2026,6/8/2007,861996,Nicholas D'Olympio,2007,2678.27,0.9,HIGH
+Matt Hines,Dexter,D,2026,6/10/2008,1004636,Matt Hines,2008,2705.02,0.9,HIGH
+Kurt Beck,Dexter,D,2027,2/4/2009,978968,Kurt Beck,2009,3424.96,0.9,HIGH
+Thomas Broderick,Dexter,D,2026,1/21/2008,949303,Thomas Broderick,2008,2806.37,0.9,HIGH
+Tommy Moore,Dexter,F,2028,10/20/2009,701471,Tommy Moore,2009,2138.74,0.9,HIGH
+Max Prudovsky,Dexter,F,2029,7/29/2011,951652,Maxwell Prudovsky,2011,1983.3,0.9,HIGH
+Kolton Kelleher,Dexter,F,2027,5/25/2009,701468,Kolton Kelleher,2009,2599.78,0.9,HIGH
+Jacob McDevitt,Dexter,D,2029,1/4/2011,1083094,Jacob McDevitt,2011,1226.62,0.9,HIGH
+Carter Watson,Dexter,F,2029,2/28/2011,951654,Carter Watson,2011,1663.24,0.9,HIGH
+Austin Wu,Dexter,F,2028,1/28/2010,997050,Austin Wu,2010,3594.38,0.9,HIGH
+Tyler Hamilton,Dexter,F,2026,12/7/2006,,,,0,0.55,NO_MATCH
+Owen McHale,Dexter,F,2026,2/17/2008,617463,Owen McHale,2008,4341.26,0.9,HIGH
+Kyle Ready,Dexter,G,2026,7/5/2006,,,,0,0,NO_MATCH
+Thomas Wilson,Exeter,D,2026,5/30/2007,1154437,Thomas Wilson,2007,2644.8,0.9,HIGH
+Jack Marquardt,Exeter,F,2026,5/20/2007,852907,Jack Marquardt,2007,2747.99,0.9,HIGH
+Luke Lang,Exeter,D,2029,5/4/2010,1021174,Lucas Lang,2010,1220.0,0.9,HIGH
+Alex Stahl,Exeter,D/F,2026,5/16/2006,,,,0,0.631,NO_MATCH
+Cam Fiasconaro,Exeter,D,2026,11/5/2006,,,,0,0,NO_MATCH
+Charlie Kaplinski,Exeter,F,2028,12/3/2008,961610,Michal Kapuscinsky,2008,3233.99,0.666,LOW
+Dillon Shea,Exeter,D,2026,1/18/2007,1016388,Dillon Shea,2007,2319.42,0.9,HIGH
+Brendan McCarthy,Exeter,D,2026,7/16/2006,843326,Rylan McCarthy,2007,1410.64,0.66,LOW
+Tyler Callander,Exeter,F,2026,6/26/2008,895017,Ty Callander,2008,2758.69,0.9,HIGH
+Luke Gurkan,Exeter,F,2026,7/16/2007,752391,Luke Gurkan,2007,2616.23,0.9,HIGH
+Beckham Gould,Exeter,F,2027,2/19/2008,1038805,Beckham Gould,2008,2913.1,0.9,HIGH
+Bhaveeth Vemulapalli,Exeter,F,2026,6/3/2007,945482,Blaveeth Vemulapalli,2007,2324.45,0.865,HIGH
+Ryan Hasapis,Exeter,F,2026,10/17/2007,871747,Ryan Hasapis,2007,3029.2,0.9,HIGH
+Noah Poinsett-Yoshida,Exeter,F,2027,11/29/2007,888672,Noah Poinsett-Yoshida,2007,2971.7,0.9,HIGH
+Ned Akashian,Exeter,F,2027,4/7/2008,933281,Ned Akashian,2008,2924.03,0.9,HIGH
+Eric Bagg,Exeter,F,2026,9/1/2006,,,,0,0,NO_MATCH
+Joe Sasso,Exeter,F,2028,9/1/2006,1081630,Joseph Sasso,2008,2851.11,0.7,LOW
+Jackson Bloemker,Exeter,D,2026,9/22/2006,,,,0,0.455,NO_MATCH
+Brendan Petraco,Exeter,G,2026,6/11/2007,812126,Brendan Petraco,2007,3703.04,0.9,HIGH
+Sebastian Duarte,Exeter,G,2028,2/6/2010,1030496,Sebastian Duarte,2010,1873.1399999999999,0.9,HIGH
+Escher Briere,Exeter,F,2028,10/24/2009,936893,Escher Briere,2009,1460.67,0.9,HIGH
+Lucas Mesika,Exeter,G,2026,7/20/2008,940774,Lucas Mesika,2008,3215.69,0.9,HIGH
+Jack Tucker,Exeter,D,2028,10/23/2008,1003330,Jackson Tucker,2008,2533.07,0.824,MEDIUM
+Max Froeschl,Exeter,D,2026,5/23/2007,884552,Max Froeschl,2007,1643.72,0.9,HIGH
+Holden Chang,Exeter,F,2027,9/9/2009,1010179,Holden Chang,2009,2671.04,0.9,HIGH
+William Lefebvre,Exeter,D,2027,9/28/2008,1012945,William Lefebvre,2008,1962.45,0.9,HIGH
+Aiden Craft,Exeter,F,2026,1/16/2007,893574,Aiden Craft,2007,523.02,0.9,HIGH
+Alex Saga,Frederick Gunn,G,2027,7/23/2008,,,,0,0.555,NO_MATCH
+Alex Jarvis,Frederick Gunn,F,2028,8/28/2009,1032146,Alex Jarvis,2009,434.81,0.9,HIGH
+Ryan Collins,Frederick Gunn,D,2027,7/9/2008,759636,Ryan Collins,2008,2580.89,0.972,HIGH
+Dylan Hall,Frederick Gunn,D,2026,4/26/2007,750546,Dylan Hall,2007,2730.29,0.9,HIGH
+Isaac Butorac,Frederick Gunn,D,2027,4/4/2008,955605,Isaac Butorac,2008,663.22,0.9,HIGH
+Christian Luo,Frederick Gunn,F,2027,2/15/2008,911520,Christian Luo,2008,584.5899999999999,0.9,HIGH
+Patrick Cerullo,Frederick Gunn,F,2027,4/19/2008,868110,Patrick Cerullo,2008,582.56,0.972,HIGH
+Carter Davis,Frederick Gunn,F,2028,2/23/2009,993627,Carter Davis,2009,785.58,0.9,HIGH
+Tyler Clouthier,Frederick Gunn,D,2026,8/20/2007,851359,Tyler Clouthier,2007,736.6600000000001,0.9,HIGH
+Whit Denzin,Frederick Gunn,F,2026,4/18/2007,887208,Whitford Denzin,2007,757.66,0.878,HIGH
+Alex Taylor,Frederick Gunn,F,2027,1/14/2009,992074,Alex Taylor,2009,744.97,0.972,HIGH
+Peter Royer,Frederick Gunn,F,2028,3/29/2009,1031354,Peter Royer,2009,648.5,0.972,HIGH
+Nathan Desanto,Frederick Gunn,F,2026,8/4/2008,933641,Nathan DeSanto,2008,1541.8,0.972,HIGH
+Ace Watson,Frederick Gunn,F,2026,5/24/2007,861316,Ace Watson,2007,518.58,0.972,HIGH
+Jack Giamou,Frederick Gunn,D,2027,4/20/2009,992021,Jack Giamou,2009,641.44,0.972,HIGH
+Billy Mascari,Frederick Gunn,F,2026,3/25/2007,934483,Billy Mascari,2007,518.97,0.9,HIGH
+Lukas Reisen,Frederick Gunn,F,2027,6/8/2008,876671,Lukas Reisen,2008,2089.8199999999997,0.972,HIGH
+Hudson Kinsler,Frederick Gunn,F,2028,6/5/2009,1018178,Hudson Kinsler,2009,359.15999999999997,0.9,HIGH
+Chris Paolone,Frederick Gunn,D,2026,11/8/2007,905965,Chris Paolone,2007,749.98,0.972,HIGH
+Ryan Tartaglione,Frederick Gunn,F,2026,8/8/2007,812512,Ryan Tartaglione,2007,2961.84,0.972,HIGH
+Michael Block,Frederick Gunn,D,2027,8/12/2008,862386,Michael Block,2008,644.0899999999999,0.972,HIGH
+Troy Hamelin,Frederick Gunn,F,2027,6/8/2009,1093186,Troy Hamelin,2009,789.03,0.972,HIGH
+William Wright,Frederick Gunn,F,2027,2/27/2008,897404,William Wright,2008,864.22,0.972,HIGH
+Tucker Mears,Frederick Gunn,F,2026,4/13/2007,844301,Tucker Mears,2007,1361.0,0.972,HIGH
+Ethan Lazdowsky,Frederick Gunn,G,2029,7/12/2010,1064903,Ethan Lazdowsky,2010,1886.23,0.9,HIGH
+Alex Schnarr,Frederick Gunn,G,2027,5/10/2008,861649,Alexander Schnarr,2008,507.2,0.9,HIGH
+Timmy Heaslip,Governors Academy,G,2027,6/6/2008,1005584,Tim Heaslip,2008,2977.05,0.83,MEDIUM
+Jack Couture,Governors Academy,D,2026,8/5/2007,816874,Jack Couture,2007,3079.31,0.987,HIGH
+Alan Jin,Governors Academy,D,2027,6/2/2008,1085801,Jialin Jin,2007,2045.67,0.688,LOW
+Adam Krogmeier,Governors Academy,D,2027,9/1/2007,1021283,Adam Krogmeier,2008,2659.37,0.887,HIGH
+Cooper Schuhwerk,Governors Academy,D,2026,6/22/2007,893606,Cooper Schuhwerk,2007,2578.15,0.987,HIGH
+Andrew Giguere,Governors Academy,F,2027,1/31/2008,937005,Andrew Giguere,2008,3159.75,0.987,HIGH
+Trent Digiovanni,Governors Academy,D,2027,6/21/2008,948933,Trent DiGiovanni,2008,2992.77,0.987,HIGH
+Nolan Nassar,Governors Academy,D,2027,4/18/2008,940934,Nolan Nassar,2008,3383.25,0.987,HIGH
+Trey Hanson,Governors Academy,F,2026,11/24/2006,880138,Ty Hanson,2007,225.95,0.707,LOW
+Jamie Calla,Governors Academy,F,2029,7/12/2010,1001618,Jamie Calla,2010,2079.7200000000003,0.987,HIGH
+Tripp Schuhwerk,Governors Academy,F,2026,6/22/2007,783174,Tripp Schuhwerk,2007,3081.05,0.987,HIGH
+Ford Sullivan,Governors Academy,F,2026,,,,,0,0,NO_MATCH
+Daniil Maiorov,Governors Academy,F,2026,1/4/2007,1035512,Daniil Maiorov,2007,2940.15,0.9,HIGH
+Brodie Donovan,Governors Academy,F,2026,8/1/2006,,,,0,0.564,NO_MATCH
+Austin Corbett,Governors Academy,F,2027,8/16/2008,1098589,Austin Corbett,2008,2556.55,0.9,HIGH
+Chip Catsman,Governors Academy,F,2028,7/29/2009,1096177,Chip Catsman,2009,1317.07,0.9,HIGH
+Mikey Mansfield,Governors Academy,D,2026,10/26/2006,,,,0,0,NO_MATCH
+Nico Potts,Governors Academy,F,2028,11/21/2008,1029325,Nicolas Potts,2008,2906.5,0.911,HIGH
+Cole Travaglini,Governors Academy,F,2029,8/8/2010,1087528,Cole Travaglini,2010,2668.25,0.987,HIGH
+Robbie Daley,Governors Academy,F,2027,10/4/2007,750564,Robbie Daley,2007,3009.7,0.987,HIGH
+Matteo Gil,Governors Academy,F,2028,7/2/2009,1081286,Mateo Gil,2009,1717.12,0.962,HIGH
+Dylan Potvin,Governors Academy,F,2028,10/6/2008,888332,Dylan Potvin,2008,3000.77,0.987,HIGH
+Will Sullivan,Governors Academy,F,2028,1/6/2009,1104939,Will Sullivan,2009,1098.0,0.9,HIGH
+Tyler Harrington,Governors Academy,F,2029,7/9/2010,1174466,Tyler Harrington,2010,1134.12,0.9,HIGH
+Graham Furness,Governors Academy,F,2029,5/27/2010,1087536,Graham Furness,2010,1639.94,0.9,HIGH
+Andrew Melly,Governors Academy,G,2026,4/26/2007,925845,Andrew Melly,2007,4100.4,0.9,HIGH
+Garrett McCollom,Governors Academy,G,2026,10/24/2006,,,,0,0,NO_MATCH
+Wes DiModica,Groton,G,2026,3/26/2007,862391,Wesley DiModica,2007,2380.04,0.807,MEDIUM
+Dean Butler,Groton,F,2028,4/10/2009,936940,Dean Butler,2009,1776.25,0.9,HIGH
+Elliot Wood,Groton,D,2026,8/5/2006,,,,0,0.513,NO_MATCH
+Alejandro Hassan,Groton,F/D,2026,2/10/2007,577117,Alejandro Hassan,2007,3134.81,0.963,HIGH
+Noah Wood,Groton,D,2028,3/7/2009,935527,Noah Wood,2009,2639.73,0.963,HIGH
+Mateo Delasobera,Groton,D,2029,7/25/2010,1003300,Mateo Delasobera,2010,2916.97,0.9,HIGH
+Kai Koeppel,Groton,F,2030,10/28/2011,,,,0,0,NO_MATCH
+Jacob Bellinger,Groton,F,2028,8/28/2009,935398,Jacob Bellinger,2009,499.2,0.963,HIGH
+Connor Wig,Groton,D,2026,4/12/2007,862379,Connor Wig,2007,2997.17,0.963,HIGH
+Bruce Li,Groton,D,2028,2/13/2009,987203,Bruce Li,2009,2123.66,0.963,HIGH
+Aiden Ahn,Groton,D,2029,2/14/2011,1157993,Aiden Ahn,2011,1021.27,0.9,HIGH
+Nick Peraza,Groton,F,2030,1/1/2011,1054891,Nicholas Pera-Hall,2010,910.67,0.68,LOW
+Davis Jamison,Groton,F,2027,9/24/2007,817501,Davis Jamison,2007,2817.07,0.963,HIGH
+Ettore Monson,Groton,D,2027,9/22/2007,945841,Ettore Monson,2007,2981.7,0.963,HIGH
+Will Bateman,Groton,F,2027,6/28/2008,978636,William Bateman,2008,1411.17,0.9,HIGH
+Raphael Aberbach,Groton,F,2027,3/18/2008,1005575,Raphael Aberbach,2008,2643.63,0.963,HIGH
+Sebastien Drouin,Groton,F,2027,6/18/2009,935401,Sebastien Drouin,2009,2125.08,0.9,HIGH
+Kaiden Donia,Groton,D,2026,1/16/2008,617457,Kaiden Donia,2008,4878.09,0.963,HIGH
+Nate Moons,Groton,F,2027,1/26/2008,876687,Nate Moons,2008,2683.68,0.963,HIGH
+Nolan Wilson,Groton,F,2026,5/30/2007,987674,Nolan Wilson,2007,2875.09,0.963,HIGH
+Daniel Chang,Groton,F,2028,,984033,Daniel Chang,2009,2147.45,0.863,HIGH
+Owen Cronan,Groton,F,2026,5/16/2008,862368,Owen Cronan,2008,2759.2,0.963,HIGH
+Brooks Lytle,Groton,D,2028,6/24/2009,956186,Brooks Lytle,2009,1571.17,0.9,HIGH
+Henry Lepri,Groton,F/D,2026,1/5/2007,869041,Henry Lepri,2007,3131.23,0.9,HIGH
+Gordie Gund,Groton,D,2028,4/21/2009,,,,0,0,NO_MATCH
+Leo Carvalho,Groton,G,2028,8/24/2009,836323,Leonardo Carvalho,2009,2078.58,0.773,MEDIUM
+,Hebron,Kiernan King,,,,,,0,0,NO_MATCH
+,Hebron,Jason Bertrand,,,,,,0,0,NO_MATCH
+,Hebron,Preston Johnstone,,,,,,0,0,NO_MATCH
+,Hebron,Koen Fairbanks,,,,,,0,0,NO_MATCH
+,Hebron,Zack Doray,,,,,,0,0,NO_MATCH
+,Hebron,Kyle Lepage,,,,,,0,0,NO_MATCH
+,Hebron,Lincoln Dawbin,,,,,,0,0,NO_MATCH
+,Hebron,Landon O'Grady,,,,,,0,0,NO_MATCH
+,Hebron,Artem Hundarenko,,,,,,0,0,NO_MATCH
+,Hebron,Collin Dyer,,,,,,0,0,NO_MATCH
+,Hebron,Caleb Bousquet,,,,,,0,0,NO_MATCH
+,Hebron,Nicolas Tountas,,,,,,0,0,NO_MATCH
+,Hebron,Josh Demasi,,,,,,0,0,NO_MATCH
+,Hebron,Nathan Sievers,,,,,,0,0,NO_MATCH
+,Hebron,Matteo Pani,,,,,,0,0,NO_MATCH
+,Hebron,Alexi Charron,,,,,,0,0,NO_MATCH
+,Hebron,Jack Angel,,,,,,0,0,NO_MATCH
+Andreas Sawoniak,Hebron,G,2027,8/28/2008,943789,Andreas Sawoniak,2008,2429.45,0.9,HIGH
+Payton Helt,Hebron,F/D,2029,5/14/2010,1080799,Payton Helt,2010,1736.06,0.96,HIGH
+Nolan Wellman,Hebron,F,2028,3/11/2009,954602,Nolan Wellman,2009,1342.81,0.96,HIGH
+Kevin Bertrand,Hebron,F,2027,3/12/2008,898790,Kevin Bertrand,2008,2386.53,0.96,HIGH
+Sammy Baymout,Hebron,D,2028,3/1/2009,888471,Sammy Baymout,2009,2340.35,0.96,HIGH
+Noah Romanelli,Hebron,D,2027,8/21/2008,943798,Noah Romanelli,2008,2907.09,0.9,HIGH
+Ronan Newell,Hebron,D,2026,7/17/2007,1041120,Ronan Newell,2007,2745.16,0.9,HIGH
+Manix Dupont,Hebron,D,2028,,936744,Manix Dupont,2010,1485.15,0.9,HIGH
+Cliff Hedges,Hebron,D,2026,,,,,0,0,NO_MATCH
+Jeremy Lavoie,Hebron,F,2026,,899257,Jeremy Lavoie,2008,2317.23,0.9,HIGH
+Nicholas Lapointe,Hebron,F,2027,,904210,Nicholas Lapointe,2008,2317.84,0.86,HIGH
+Chase Mallin,Hebron,F,2027,,907248,Chase Mallin,2008,2157.27,0.86,HIGH
+Laurent Normand,Hebron,F,2027,,982124,Laurent Normand,2008,1786.1100000000001,0.86,HIGH
+Isaac Gagne,Hebron,D,2028,,909695,Isaac Gagne,2009,2057.69,0.8,MEDIUM
+Luca Carlomusto,Hebron,F,2027,,904267,Luca Carlomusto,2008,1690.46,0.86,HIGH
+Gianluca Zappitelli,Hebron,F,2027,,888474,Gianluca Zapitelli,2009,2586.24,0.938,HIGH
+Alex Vogel,Hebron,F,2025,,888643,Alexander Vogel,2007,2877.65,0.96,HIGH
+Trey O'Keefe,Hebron,F,2028,,936871,Trey O'Keefe,2009,1800.24,0.86,HIGH
+Simon Duquette,Hebron,D,2028,,987167,Simon Duquette,2009,1635.92,0.8,MEDIUM
+Joey Gualtieri,Hebron,F,,,947030,Joey Gualtieri,2007,1428.03,0.7,LOW
+Brody Levering,Hebron,G,2027,,968716,Brody Levering,2008,2821.62,0.8,MEDIUM
+Davyd Jefferies,Hebron,F,2027,,902684,Davyd Jefferies,2008,2497.5,0.86,HIGH
+Dylan Mallgrave,Kent School,D,2027,5/3/2008,956438,Dylan Mallgrave,2008,2343.98,1.0,HIGH
+Chase Jelenic,Kent School,D,2026,8/18/2008,944062,Chase Jelenic,2008,984.88,1.0,HIGH
+Cal Gustafson,Kent School,D,2026,1/5/2007,755389,Cal Gustafson,2007,2776.13,1.0,HIGH
+Alex Chiesi,Kent School,D,2026,4/4/2007,757813,Alex Chiesi,2007,2744.91,1.0,HIGH
+Martyn Ogorodnikov,Kent School,D,2026,3/4/2007,763022,Martyn Ogorodnikov,2007,2675.74,1.0,HIGH
+Zachary Zusman,Kent School,F,2028,7/10/2009,935447,Zachary Zusman,2009,2021.85,1.0,HIGH
+Ethan Wang,Kent School,F,2028,5/8/2009,1147459,Ethan Wang,2009,1540.5,0.9,HIGH
+Richard Shin,Kent School,F,2026,1/17/2008,961411,Richard Shin,2008,2777.26,1.0,HIGH
+Jacob Ward,Kent School,D,2027,1/12/2008,978459,Jacob Ward,2008,2708.73,0.9,HIGH
+Jack Broderick,Kent School,F,2026,11/10/2007,934473,Jack Broderick,2007,4445.139999999999,1.0,HIGH
+Ryder Press,Kent School,D,2027,1/30/2009,954686,Ryder Press,2009,770.86,1.0,HIGH
+Xander Knauf,Kent School,F,2026,3/23/2007,,,,0,0,NO_MATCH
+Tittawin Piriyapinyo,Kent School,F,2027,5/5/2009,,,,0,0,NO_MATCH
+Noah Fitzsimons,Kent School,F,2026,3/24/2007,764166,Noah Fitzsimons,2007,2442.94,1.0,HIGH
+Will Schlechtweg,Kent School,F,2027,4/16/2008,783144,Will Schlechtweg,2008,3818.89,1.0,HIGH
+Maddox Boyle,Kent School,F,2026,3/1/2008,898381,Maddox Boyle,2008,3355.0,1.0,HIGH
+Aiden Grinshpun,Kent School,F,2026,5/8/2008,848729,Aiden Grinshpun,2008,4009.06,1.0,HIGH
+Keegan Sears,Kent School,F,2026,3/16/2007,749856,Keegan Sears,2007,2449.99,1.0,HIGH
+Parker Winn,Kent School,D,2026,12/21/2006,,,,0,0.589,NO_MATCH
+Lucas Husted-Edwards,Kent School,F,2026,1/25/2007,747405,Lucas Husted-Edwards,2007,2962.35,1.0,HIGH
+Dylan Rafail,Kent School,F,2027,7/4/2008,911536,Dylan Rafail,2008,2660.92,1.0,HIGH
+Jason Segal,Kent School,D,2027,1/2/2009,936925,Jason Segal,2009,2986.41,0.9,HIGH
+Cooper Ranawat,Kent School,G,2027,6/12/2008,911596,Cooper Ranawat,2008,2917.6800000000003,0.9,HIGH
+Donovan Dunlay,Kent School,G,2027,6/13/2008,860248,Donovan Dunlay,2008,3046.44,0.9,HIGH
+Tripp Stovall,Kent School,G,2028,9/15/2009,,,,0,0,NO_MATCH
+Luca Campo,Kimball Union,G,2026,,887390,Luca Campo,2008,4679.04,0.9,HIGH
+Anthony Leech,Kimball Union,D,2026,,865638,Anthony Leech,2007,3381.48,0.876,HIGH
+Jack Ross,Kimball Union,F,2026,,1007810,Jack Ross,2008,663.0,0.9,HIGH
+Thomas Ojard,Kimball Union,D,2027,,866760,Thomas Ojard,2008,3185.71,0.876,HIGH
+Charlie MacLeod,Kimball Union,F,2027,,958585,Charlie MacLeod,2009,2500.88,0.976,HIGH
+Jackson Kimelman,Kimball Union,F,2026,,916566,Jackson Kimelman,2008,3057.26,0.976,HIGH
+Nasean Faria,Kimball Union,D,2027,,628146,Nasean Faria,2008,3421.39,0.876,HIGH
+Carter Cowan,Kimball Union,F,2026,,987169,Carter Cowan,2008,2901.73,0.976,HIGH
+Aaron Sheck,Kimball Union,D,2027,,914683,Aaron Sheck,2009,3902.0,0.976,HIGH
+Conal Mulkerrin,Kimball Union,F,2027,,1004638,Conal Mulkerrin,2008,2332.1,0.876,HIGH
+Dawson Wood,Kimball Union,F,2028,,1122747,Dawson Wood,2009,2069.52,0.876,HIGH
+Xander Boutilier,Kimball Union,F,2026,,617453,Xander Boutilier,2008,3751.92,0.976,HIGH
+Alexis Gagne,Kimball Union,F,2027,,975458,Alexis Gagné,2009,2070.0,0.816,MEDIUM
+Christian Toma,Kimball Union,D,2027,,701497,Christian Toma,2009,2251.2,0.976,HIGH
+Josh Phillips,Kimball Union,F,2026,,755331,Joshua Phillips,2007,3802.24,0.876,HIGH
+Christopher Saint-Phard,Kimball Union,F,2027,,,,,0,0,NO_MATCH
+Misha Dormidontov,Kimball Union,F,2027,,,,,0,0.607,NO_MATCH
+Lucas Hannay,Kimball Union,D,2026,,889804,Lucas Hannay,2008,2814.19,0.976,HIGH
+Aiden Bean,Kimball Union,F,2026,,891670,Aiden Bean,2007,2862.78,0.876,HIGH
+Jackson Davies,Kimball Union,F,2026,,1066993,Matheson Davies,2008,1934.07,0.769,MEDIUM
+Ben Constantine,Kimball Union,D/F,2027,,933643,Benjamin Constantine,2008,2209.7,0.8,MEDIUM
+Reid Gueldenzoph,Kimball Union,D,2026,,,,,0,0,NO_MATCH
+Catcher Davis,Kimball Union,G,2026,,987461,Catcher Davis,2007,2408.54,0.8,MEDIUM
+Cam Ingram,Kimball Union,G,2026,,911641,Cameron Ingram,2008,4027.26,0.976,HIGH
+Aiden Emerick,Lawrence Academy,G,2026,10/20/2006,576989,Gabriel Emerick,2007,1628.31,0.66,LOW
+Chase Field,Lawrence Academy,F,2026,3/1/2008,930565,Chase Field,2008,2919.2799999999997,1.0,HIGH
+Thano Meimaris,Lawrence Academy,D,2026,10/19/2007,988016,Thano Meimaris,2007,2997.49,0.9,HIGH
+Matas Janulis,Lawrence Academy,D,2027,11/19/2008,951046,Matas Janulius,2008,3438.05,0.972,HIGH
+Cam Menhall,Lawrence Academy,F,2027,6/26/2008,1054309,Cam Menhall,2008,3045.26,1.0,HIGH
+Michael Battista,Lawrence Academy,F,2026,9/12/2007,929783,Michael Battista,2007,3014.33,1.0,HIGH
+Jacob Gathers,Lawrence Academy,F,2027,2/29/2008,756132,Jacob Gathers,2008,2132.37,1.0,HIGH
+Logan Cantele,Lawrence Academy,D,2026,7/27/2007,936198,Logan Cantele,2007,3098.92,1.0,HIGH
+Brady Ellis,Lawrence Academy,C,2026,3/19/2007,937506,Brady Ellis,2007,2795.61,1.0,HIGH
+Karolis Janulis,Lawrence Academy,F,2026,8/2/2007,893569,Karolis Janulis,2007,3245.8,1.0,HIGH
+Brennan Chau,Lawrence Academy,F,2027,8/29/2008,904911,Brennen Chau,2008,3045.94,0.86,HIGH
+Patrick Maguire,Lawrence Academy,F,2026,5/23/2007,,,,0,0.423,NO_MATCH
+John Mara,Lawrence Academy,D,2026,7/13/2007,835757,John Mara,2007,2586.54,1.0,HIGH
+Gavin Holland,Lawrence Academy,D,2027,3/20/2008,617459,Gavin Holland,2008,3580.74,1.0,HIGH
+Luke Allen,Lawrence Academy,RW,2027,5/20/2008,940933,Luke Allen,2008,3156.61,1.0,HIGH
+Owen Lundin,Lawrence Academy,C,2028,2/26/2010,999102,Owen Lundin,2010,1961.53,1.0,HIGH
+Cullen Gullott,Lawrence Academy,F,2029,4/20/2010,1003311,Cullen Gullott,2010,1797.52,1.0,HIGH
+Brady Prefontaine,Lawrence Academy,F,2026,5/3/2007,1084470,Brady Prefontaine,2007,2620.67,0.9,HIGH
+Gavin Thompson,Lawrence Academy,D,2026,2/6/2008,617465,Gavin Thompson,2008,3176.3,0.9,HIGH
+Colby Mara,Lawrence Academy,D,2026,7/13/2007,835756,Colby Mara,2007,2718.96,1.0,HIGH
+Michael Villani,Lawrence Academy,F,2026,1/10/2007,864961,Michael Villani,2007,2850.77,0.9,HIGH
+Jackie Zhao,Lawrence Academy,F,2028,6/4/2009,,,,0,0.56,NO_MATCH
+Riley Lincoln,Lawrence Academy,G,2028,3/5/2010,1080801,Riley Lincoln,2010,2653.86,0.9,HIGH
+Miles Tranquada,Lawrenceville School,G,2028,5/3/2009,1076533,Miles Tranquada,2009,882.81,0.9,HIGH
+Brady Lee,Lawrenceville School,D,2027,12/8/2008,911554,Brady Lee,2008,2537.65,0.991,HIGH
+Justin Blades,Lawrenceville School,D,2028,4/27/2009,1029893,Justin Blades,2009,484.67,0.9,HIGH
+Rick Cheng,Lawrenceville School,D,2026,3/30/2008,909271,Rick Cheng,2008,547.6600000000001,0.991,HIGH
+Dom Zabat,Lawrenceville School,D,2028,4/14/2009,942799,Dominic Zabat,2009,394.69,0.879,HIGH
+Jack Green,Lawrenceville School,D,2026,7/7/2007,845967,Jack Green,2007,559.55,0.991,HIGH
+Aaron Shen,Lawrenceville School,F,2028,8/25/2010,1001489,Aaron Shen,2010,263.01,0.9,HIGH
+Donovan Richards,Lawrenceville School,F,2027,1/27/2008,914166,Donovan Richards,2008,804.54,0.991,HIGH
+Thomas Hoh,Lawrenceville School,D,2028,7/2/2009,984028,Thomas Hoh,2009,707.71,0.991,HIGH
+Matty Nesterenko,Lawrenceville School,F,2029,5/10/2011,1076095,Matthew Nesterenko,2011,651.47,0.9,HIGH
+Andrei Lumezanu,Lawrenceville School,F,2028,6/18/2010,,,,0,0,NO_MATCH
+Vassar Tarumianz,Lawrenceville School,F,2026,8/5/2007,906152,Vassar Tarumianz,2007,663.74,0.9,HIGH
+Aiden Shou,Lawrenceville School,F,2028,5/1/2009,935440,Aiden Shou,2009,834.04,0.991,HIGH
+Teddy Smart,Lawrenceville School,D,2026,6/16/2007,1032270,Teddy Smart,2007,440.20000000000005,0.991,HIGH
+Ayden Heron,Lawrenceville School,F,2026,6/8/2007,869039,Ayden Heron,2007,650.73,0.991,HIGH
+Ethan Wei,Lawrenceville School,F/D,2026,11/2/2007,879170,Ethan Weir,2007,4189.38,0.84,MEDIUM
+Colton Stecchini,Lawrenceville School,F,2027,4/3/2009,936275,Colton Stecchini,2009,845.8399999999999,0.991,HIGH
+Alistair At. Hilaire,Lawrenceville School,F,2027,9/21/2008,911523,Alistair St. Hilaire,2008,529.6,0.9,HIGH
+Bryan Aquino,Lawrenceville School,F,2028,2/1/2009,960952,Bryan Aquino,2009,690.73,0.991,HIGH
+Dylan Kolcun,Lawrenceville School,F,2026,6/12/2008,911580,Dylan Kolcun,2008,2182.83,0.991,HIGH
+Andy Zhang,Lawrenceville School,F,2027,3/11/2008,911541,Andy Zhang,2008,767.1,0.991,HIGH
+Basil Hemberger,Lawrenceville School,G,2026,1/24/2007,856528,Basil Hemberger,2007,2651.2,0.991,HIGH
+Brian Bonia Jr,Holderness,G,2027,,988994,Brian Bonia Jr.,2008,2710.9,0.8,MEDIUM
+Christopher Kimmel,Holderness,D,2026,,830660,Christopher Kimmel,2007,2436.09,0.8,MEDIUM
+Logan Wood,Holderness,D,2026,,902119,Logan Wood,2008,2196.5,0.9,HIGH
+Matteo Sollazzo,Holderness,D,2027,,885480,Matteo Sollazzo,2008,2373.98,0.8,MEDIUM
+Jackson Gouveia,Holderness,F,2029,,1064901,Jackson Gouveia,2010,1814.0,0.8,MEDIUM
+Jonathan Dion,Holderness,D,2026,,866423,Jonathan Dion,2007,2538.92,0.8,MEDIUM
+Maxwell Rusov,Holderness,F,2026,,951602,Max Rusov,2007,2612.94,0.8,MEDIUM
+Noah Feingold,Holderness,F,2028,,1104943,Noah Feingold,2008,2618.0,0.7,LOW
+Evan Ashton,Holderness,F,2028,,1067040,Evan Ashton,2009,2281.35,0.8,MEDIUM
+Tyler Branch,Holderness,F,2027,,877983,Tyler Branch,2008,3046.21,0.8,MEDIUM
+Steven Burke,Holderness,F,2026,,920652,Steven Burke,2007,2474.8,0.8,MEDIUM
+Brayden McKenna,Holderness,F,2026,,,,,0,0.64,NO_MATCH
+William Brochu,Holderness,F,2026,,931219,William Brochu,2007,217.46,0.8,MEDIUM
+Gabriel Visnicky,Holderness,F,2026,,1021327,Gabe Visnicky,2008,2284.3,0.824,MEDIUM
+Mason Patriarca,Holderness,D,2027,,,,,0,0.464,NO_MATCH
+Luke Smolan,Holderness,D,2026,,951599,Luke Smolan,2007,2322.27,0.8,MEDIUM
+Conor Reilly,Holderness,F,2027,,930612,Connor Reilly,2008,2601.35,0.775,MEDIUM
+Otavio Haygert-Roxo,Holderness,D,2027,,1054037,Otavio Haygert-Roxo,2008,3103.66,0.8,MEDIUM
+Travis Gillen,Holderness,F,2026,,,,,0,0,NO_MATCH
+Simon Bellavigna,Holderness,G,2027,,903534,Simon Bellavigna,2008,2379.1,0.8,MEDIUM
+Charlie Abel,Hotchkiss School,G,2026,2/5/2007,747320,Charlie Abel,2007,2590.45,0.9,HIGH
+Brady Kim,Hotchkiss School,F,2026,6/9/2007,752393,Brady Kim,2007,496.05,0.9,HIGH
+Ryan Murray,Hotchkiss School,F,2027,9/10/2008,914155,Ryan Murray,2008,784.74,0.9,HIGH
+Jake Harrison,Hotchkiss School,F,2027,5/26/2008,1023475,Jacob Harris,2008,2482.0,0.84,MEDIUM
+Aidan Bujnicki,Hotchkiss School,D,2028,5/1/2009,988283,Aiden Bujnicki,2009,597.6800000000001,1.0,HIGH
+Issac Oberting,Hotchkiss School,F,2027,10/1/2007,851944,Isaac Oberting,2007,699.8,0.944,HIGH
+Vinnie Mercadante,Hotchkiss School,F,2027,10/9/2007,1029324,Vincent Mercadante,2007,2821.52,0.892,HIGH
+Justin L'Abbe,Hotchkiss School,F,2027,7/18/2008,907554,Justin L'Abbe,2008,571.99,1.0,HIGH
+Josh Cevera,Hotchkiss School,F,2028,8/12/2009,933928,Joshua Cevera,2009,647.44,0.9,HIGH
+Nico Swanson,Hotchkiss School,F,2028,9/9/2009,1083941,Nicolas Swanson,2009,644.65,0.824,MEDIUM
+John MacIntosh,Hotchkiss School,F,2028,2/26/2009,1055910,John MacIntosh,2009,641.61,0.9,HIGH
+Liam Conroy,Hotchkiss School,D,2026,9/15/2007,904276,Liam Conroy,2007,3059.49,0.9,HIGH
+Chris Chun,Hotchkiss School,D,2028,1/14/2009,978952,Christopher Chun,2009,1927.6,1.0,HIGH
+Beckett Stenz,Hotchkiss School,D,2026,9/26/2007,811769,Beckett Stenz,2007,2473.02,1.0,HIGH
+Ethan Hung,Hotchkiss School,D,2028,8/9/2009,978997,Ethan Hung,2009,903.29,1.0,HIGH
+Aidan Patton,Hotchkiss School,F,2026,5/26/2007,750954,Aidan Patton,2007,974.99,1.0,HIGH
+Jake Doherty,Hotchkiss School,F,2026,9/2/2007,893578,Jake Doherty,2007,792.14,0.9,HIGH
+Finley Walsh,Hotchkiss School,F,2027,12/16/2007,752407,Finley Walsh,2007,647.04,1.0,HIGH
+Evan Williams,Hotchkiss School,D,2027,9/1/2007,1001834,Evan Williams,2007,955.9300000000001,1.0,HIGH
+Matthew Wallace,Hotchkiss School,F,2026,4/2/2008,629363,Matthew Wallace,2008,3342.59,1.0,HIGH
+Austin Groves,Hotchkiss School,F,2027,5/21/2008,911504,Austin Groves,2008,602.79,1.0,HIGH
+Evan Seow,Hotchkiss School,D,2026,10/25/2007,893566,Evan Seow,2007,1090.51,1.0,HIGH
+Constantine Theocharis,Hotchkiss School,D,2028,1/9/2009,904206,Constantine Theocharis,2009,630.22,0.9,HIGH
+Ty Higginbotham,Hotchkiss School,F,2027,4/23/2008,1004916,Ty Higginbotham,2008,2928.25,1.0,HIGH
+Vincent Wen,Hotchkiss School,G,2028,11/28/2008,991570,Vincent Wen,2008,1049.62,0.9,HIGH
+Neilan Johnson,Hotchkiss School,G,2027,8/1/2008,905957,Neilan Johnson,2008,2165.06,0.9,HIGH
+Luca Campo,Kents Hill,G,2026,,887390,Luca Campo,2008,4679.04,0.9,HIGH
+Anthony Leech,Kents Hill,D,2026,,865638,Anthony Leech,2007,3381.48,0.8,MEDIUM
+Jack Ross,Kents Hill,F,2026,,1007810,Jack Ross,2008,663.0,0.9,HIGH
+Thomas Ojard,Kents Hill,D,2027,,866760,Thomas Ojard,2008,3185.71,0.8,MEDIUM
+Charlie MacLeod,Kents Hill,F,2027,,958585,Charlie MacLeod,2009,2500.88,0.9,HIGH
+Jackson Kimelman,Kents Hill,F,2026,,916566,Jackson Kimelman,2008,3057.26,0.9,HIGH
+Nasean Faria,Kents Hill,D,2027,,628146,Nasean Faria,2008,3421.39,0.8,MEDIUM
+Carter Cowan,Kents Hill,F,2026,,987169,Carter Cowan,2008,2901.73,0.9,HIGH
+Aaron Sheck,Kents Hill,D,2027,,914683,Aaron Sheck,2009,3902.0,0.9,HIGH
+Conal Mulkerrin,Kents Hill,F,2027,,1004638,Conal Mulkerrin,2008,2332.1,0.8,MEDIUM
+Dawson Wood,Kents Hill,F,2028,,1043228,Edison Wood,2010,1429.59,0.807,MEDIUM
+Xander Boutilier,Kents Hill,F,2026,,617453,Xander Boutilier,2008,3751.92,0.9,HIGH
+Alexis Gagne,Kents Hill,F,2027,,975458,Alexis Gagné,2009,2070.0,0.816,MEDIUM
+Christian Toma,Kents Hill,D,2027,,701497,Christian Toma,2009,2251.2,0.9,HIGH
+Josh Phillips,Kents Hill,F,2026,,755331,Joshua Phillips,2007,3802.24,0.8,MEDIUM
+Christopher Saint-Phard,Kents Hill,F,2027,,,,,0,0,NO_MATCH
+Misha Dormidontov,Kents Hill,F,2027,,,,,0,0.607,NO_MATCH
+Lucas Hannay,Kents Hill,D,2026,,889804,Lucas Hannay,2008,2814.19,0.9,HIGH
+Aiden Bean,Kents Hill,F,2026,,891670,Aiden Bean,2007,2862.78,0.8,MEDIUM
+Jackson Davies,Kents Hill,F,2026,,1066993,Matheson Davies,2008,1934.07,0.769,MEDIUM
+Ben Constantine,Kents Hill,D/F,2027,,933643,Benjamin Constantine,2008,2209.7,0.8,MEDIUM
+Reid Gueldenzoph,Kents Hill,D,2026,,,,,0,0,NO_MATCH
+Catcher Davis,Kents Hill,G,2026,,987461,Catcher Davis,2007,2408.54,0.8,MEDIUM
+Cam Ingram,Kents Hill,G,2026,,911641,Cameron Ingram,2008,4027.26,0.9,HIGH
+Topher Jones,Loomis Chaffee,D,2026,5/19/2008,941623,Topher Jones,2008,782.94,0.9,HIGH
+Cullen Tully,Loomis Chaffee,D,2026,8/24/2007,809250,Cullen Tully,2007,662.59,0.9,HIGH
+Lincoln Durfee,Loomis Chaffee,D,2026,4/3/2007,950531,Lincoln Durfee,2007,484.65,0.9,HIGH
+Carson Lowry,Loomis Chaffee,F,2026,4/12/2007,804886,Carson Lowry,2007,629.22,0.9,HIGH
+Tommy Drienik,Loomis Chaffee,D,2026,8/14/2007,893567,Tommy Drienik,2007,689.87,0.9,HIGH
+Daniel Kim,Loomis Chaffee,F,2027,7/4/2008,984044,Daniel Kim,2008,457.12,0.9,HIGH
+Dylan Chery,Loomis Chaffee,F,2026,2/29/2008,886800,Dylan-Alec Chery,2008,1520.27,0.82,MEDIUM
+Owen Covington,Loomis Chaffee,F,2028,12/24/2009,953732,Owen Covington,2009,681.3299999999999,0.9,HIGH
+Thomas Hamilton,Loomis Chaffee,D,2027,1/20/2008,939849,Thomas Hamilton,2008,1058.4,0.9,HIGH
+Jackson Tucker,Loomis Chaffee,F,2026,5/8/2007,763312,Jackson Tucker,2007,492.12,0.9,HIGH
+Thomas Wimsatt,Loomis Chaffee,D,2027,3/20/2008,914249,Thomas Wimsatt,2008,663.3299999999999,0.9,HIGH
+Brady Smith,Loomis Chaffee,D,2026,6/12/2007,752421,Brady Smith,2007,3736.49,0.9,HIGH
+Logan Smith,Loomis Chaffee,D,2027,12/26/2008,911494,Logan Smith,2008,2896.4700000000003,0.9,HIGH
+Matty Ferrante,Loomis Chaffee,F,2029,5/8/2010,1001504,Matthew Ferrante,2010,1896.37,0.9,HIGH
+Joe Gannon,Loomis Chaffee,F,2026,4/14/2008,888319,Joe Gannon,2008,1050.93,0.9,HIGH
+Henning Reinnprecht,Loomis Chaffee,F,2027,7/15/2008,959964,Henning Reinprecht,2008,966.6,0.88,HIGH
+Will Busconi,Loomis Chaffee,F,2028,5/2/2009,939702,William Busconi,2009,822.1800000000001,0.9,HIGH
+Domenico Clarizio,Loomis Chaffee,F,2026,4/30/2007,877186,Domenico Clarizio,2007,3273.98,0.9,HIGH
+Charlie Stevens,Loomis Chaffee,F,2027,6/21/2008,950536,Charles Stevens,2008,437.47,0.9,HIGH
+Tyler Um,Loomis Chaffee,G,2027,4/29/2008,724268,Tyler Um,2008,273.19,0.9,HIGH
+Hunter Dryden,Loomis Chaffee,G,2027,7/5/2007,689950,Hunter Dryden,2007,1039.95,0.9,HIGH
+Charlie Rodrigue,Loomis Chaffee,G,2028,4/8/2009,1032151,Charlie Rodrigue,2009,745.05,0.9,HIGH
+Jason Rothstein,Loomis Chaffee,F,2026,1/19/2008,,,,0,0.327,NO_MATCH
+Dylan Rothstein,Loomis Chaffee,F,2028,7/6/2010,997688,Dylan Rothstein,2010,1843.37,0.9,HIGH
+Jason Danahy,Middlesex,G,2026,5/21/2007,919123,Jason Danahy,2007,2261.49,0.9,HIGH
+Matt Palmer,Middlesex,D,2027,9/18/2007,979670,Matthew Palmer,2007,2243.59,0.9,HIGH
+Luke Sardone,Middlesex,F,2027,6/11/2008,1021280,Luke Sardone,2008,2448.68,0.972,HIGH
+Dom Parisi,Middlesex,D,2028,7/11/2009,1032190,Dominic Parisi,2009,1771.08,0.788,MEDIUM
+Leo Packard,Middlesex,F,2027,2/8/2008,1065767,Leonardo Packard,2008,2560.75,0.773,MEDIUM
+Kota Shinozaki,Middlesex,F,2027,2/23/2008,1059686,Kota Shinozaki,2008,2430.59,0.9,HIGH
+Milo Conlin,Middlesex,F,2027,12/30/2007,1011226,Milo Conlin,2007,2307.78,0.972,HIGH
+Giuseppe Moriello,Middlesex,D,2027,2/8/2008,904508,Giuseppe Moriello,2008,2240.4700000000003,0.972,HIGH
+Parker Boyce,Middlesex,F,2028,5/5/2009,1092227,Parker Boyce,2009,1611.24,0.972,HIGH
+Will Alexander,Middlesex,D,2028,9/15/2009,1219130,Liam Alexander,2010,1011.0,0.724,LOW
+Hex Packard,Middlesex,F,2029,9/28/2009,,,,0,0,NO_MATCH
+Max Liang,Middlesex,F,2028,9/7/2008,1038793,Maxwell Liang,2008,2613.65,0.9,HIGH
+Cam Bartfield,Middlesex,D,2029,12/8/2009,,,,0,0.6,NO_MATCH
+Roark Licks,Middlesex,F,2028,4/7/2009,,,,0,0,NO_MATCH
+Ben Loucks,Middlesex,D,2028,6/4/2009,,,,0,0.565,NO_MATCH
+Ian King,Middlesex,D,2027,3/5/2008,989167,Ian King,2008,2210.41,0.972,HIGH
+Jamison Nicosia,Middlesex,F,,,1011531,Jameson Nicosia,2009,1581.08,0.732,LOW
+Lucas Lian,Middlesex,F,2028,5/28/2009,991561,Lucas Lian,2009,1789.41,0.9,HIGH
+Connor O'Malley,Middlesex,D,2028,9/9/2009,1104948,Connor O'Malley,2009,2474.0,0.9,HIGH
+David Moroz,Middlesex,F,2027,11/28/2007,1056238,David Moroz,2007,3232.69,0.972,HIGH
+Charlie Brand,Middlesex,F,2026,1/31/2007,996153,Charlie Brand,2007,2660.57,0.972,HIGH
+Riley Caples,Middlesex,F,2028,5/13/2009,1040583,Riley Caples,2009,2619.8,0.9,HIGH
+Steven Shen,Middlesex,F,2028,1/2/2009,1098254,Steven Shen,2010,1210.17,0.8,MEDIUM
+Matt Cloutier,Middlesex,G,2026,12/25/2006,900091,Mathys Cloutier,2007,1605.76,0.692,LOW
+Andrew Moawad,Millbrook,G,2028,12/19/2009,956052,Andrew Moawad,2009,400.25,0.972,HIGH
+Michael Rutledge,Millbrook,D,2026,3/6/2007,883057,Michael Rutledge,2007,699.28,0.972,HIGH
+Gavin Bishop,Millbrook,D,2026,1/27/2007,908232,Gavin Bishop,2007,481.37,0.972,HIGH
+Brody Baum,Millbrook,F,2027,4/11/2008,911624,Broden Baum,2008,538.98,0.896,HIGH
+Matt Brooks,Millbrook,D,2027,6/21/2008,911600,Matthew Brooks,2008,2835.22,0.972,HIGH
+Brett Kohut,Millbrook,F,2026,4/28/2007,827251,Brett Kohut,2007,490.55,0.972,HIGH
+Colin O'Grady,Millbrook,D,2027,12/20/2007,875882,Colin O'Grady,2007,283.14,0.9,HIGH
+CJ List,Millbrook,F,2027,5/8/2008,,,,0,0,NO_MATCH
+Adam Fraser,Millbrook,F,2027,7/28/2008,1209197,Adam Fraser,2008,66.5,0.972,HIGH
+Mason Serafin,Millbrook,D,2026,7/20/2007,750755,Mason Serafin,2007,634.99,0.972,HIGH
+Chris Gannon,Millbrook,F,2026,8/9/2007,869715,Chris Gannon,2007,512.5699999999999,0.972,HIGH
+Logan Melillo,Millbrook,D,2028,5/30/2009,1031353,Logan Melillo,2009,1787.54,0.972,HIGH
+Finn Gatta,Millbrook,F,2028,5/11/2009,1029829,Finn Gatta,2009,2164.51,0.972,HIGH
+Jack Grahling,Millbrook,F,2026,10/29/2006,,,,0,0.555,NO_MATCH
+Malkin Pierre,Millbrook,F,2027,2/24/2008,903356,Malkin Pierre,2008,514.5699999999999,0.972,HIGH
+Artie Ambuhl,Millbrook,F,2027,4/22/2009,1009808,Arthur Ambuhl,2009,746.6800000000001,0.845,MEDIUM
+Esref Erkmen,Millbrook,D,2027,3/28/2008,783141,Esref Erkmen,2008,554.8299999999999,0.972,HIGH
+Sam Gero,Millbrook,F,2026,7/12/2007,931426,Sam Gero,2007,3129.38,0.972,HIGH
+Donovan Ramos,Millbrook,D,2029,10/25/2009,938285,Donovan Ramos,2009,379.9,0.9,HIGH
+Justin Fernandez,Millbrook,F,2027,1/14/2009,988276,Justin Fernandez,2009,573.72,0.972,HIGH
+Matthew Shay,Millbrook,F,2026,4/9/2007,869564,Matthew Shay,2007,247.49,0.9,HIGH
+Casey Berninger,Millbrook,F,2027,11/12/2007,705657,Casey Berninger,2007,512.7,0.972,HIGH
+Aspen Charow,Millbrook,F,2027,3/15/2009,968619,Aspen Charow,2009,603.31,0.9,HIGH
+Michael Contino,Millbrook,F,2026,7/19/2006,,,,0,0.61,NO_MATCH
+Brandon Remppel,Millbrook,F,2026,2/8/2008,968381,Brandon Remppel,2008,493.62,0.972,HIGH
+Dean Repaci,Millbrook,G,2026,7/26/2007,763290,Dean Repaci,2007,284.95,0.9,HIGH
+Eli Zucker,Milton Academy,G,2027,9/19/2008,914259,Eli Zucker,2008,3264.5299999999997,1.0,HIGH
+Logan Smith,Milton Academy,D,2028,4/22/2010,1001624,Logan Smith,2010,1761.25,0.9,HIGH
+Chance Bolton,Milton Academy,D,2027,7/9/2008,868122,Chance Bolton,2008,2921.49,1.0,HIGH
+Blake Wilichoski,Milton Academy,F,2029,4/18/2010,1001615,Blake Wilichoski,2010,1875.23,0.9,HIGH
+Cam Doull,Milton Academy,F,2027,5/2/2008,951047,Cam Doull,2008,2760.13,0.9,HIGH
+Michael Shaw,Milton Academy,D,2027,5/8/2008,964225,Michael Shaw,2008,2641.0299999999997,1.0,HIGH
+Joe Feinberg,Milton Academy,F,2026,1/10/2007,788019,Joe Feinberg,2007,2979.7,1.0,HIGH
+TJ Petropoulos,Milton Academy,F,2029,7/16/2010,1104671,T.J. Petropoulos,2010,2317.7,1.0,HIGH
+Cooper Hosmer,Milton Academy,F,2027,11/7/2007,991350,Cooper Hosmer,2007,3018.07,1.0,HIGH
+Max Colosimo,Milton Academy,F,2027,2/11/2008,617408,Max Colosimo,2008,3513.85,1.0,HIGH
+Noah Keeler,Milton Academy,F,2027,8/12/2008,1093517,Noah Keeler,2008,3325.9,1.0,HIGH
+Marco Linton,Milton Academy,F,2027,9/9/2007,864770,Marco Linton,2007,524.38,1.0,HIGH
+Brody Sharpe,Milton Academy,F,2026,10/23/2006,743075,Brody Sharpe,2007,2611.5299999999997,0.8,MEDIUM
+Reed Enders,Milton Academy,F,2027,6/7/2008,1004635,Reed Enders,2008,2250.36,1.0,HIGH
+Justin Garvey,Milton Academy,D,2026,3/2/2007,747407,Justin Garvey,2007,2879.56,1.0,HIGH
+Chase Collins,Milton Academy,F,2028,7/24/2008,1037979,Chase Collins,2008,2365.18,1.0,HIGH
+Reed Garrett,Milton Academy,D/F,2027,8/18/2007,877348,Reed Garrett,2007,2226.69,0.9,HIGH
+Patrick Viano,Milton Academy,D,2030,12/2/2010,998505,Patrick Viano,2010,1729.42,1.0,HIGH
+Josh Levy,Milton Academy,D,2026,3/14/2008,906005,Josh Levy,2008,3061.27,1.0,HIGH
+Jeremy Polzer,Milton Academy,F,2026,8/12/2007,876132,Jeremy Polzer,2007,2681.37,1.0,HIGH
+Brayden Robinson,Milton Academy,D,2027,1/26/2008,996320,Brayden Robinson,2008,2479.13,1.0,HIGH
+Carter Backus,Milton Academy,G,2027,11/13/2008,1004643,Carter Backus,2008,2259.8,0.9,HIGH
+Gabe Koerner-Imas,Milton Academy,G,2026,10/8/2008,,,,0,0,NO_MATCH
+Gavin Marcotte,Mount St. Charles,F,2026,2/28/2008,963103,Antoine Marcotte,2009,2311.24,0.66,LOW
+Salvatore Henault,Mount St. Charles,D,2027,2/9/2009,1213089,Salvatore Henault,2009,1864.3,0.9,HIGH
+Ollie Haynes,Mount St. Charles,F,2026,3/19/2007,946419,Oliver Haynes,2007,2899.95,0.905,HIGH
+Declan Moran,Mount St. Charles,D,2026,6/13/2008,1023971,Danny Moran,2008,2491.0,0.773,MEDIUM
+Aidan Quinn,Mount St. Charles,D,2026,6/13/2008,1013458,Vincent Quinn,2008,1371.09,0.76,MEDIUM
+Jordan Pallof,Mount St. Charles,F,2027,7/18/2009,1094556,Jordan Pallof,2009,1992.58,0.981,HIGH
+Mike Tober,Mount St. Charles,F,2026,2/18/2007,966110,Michael Tober,2007,3161.96,0.981,HIGH
+Ethan Figueiredo,Mount St. Charles,F,2026,5/30/2007,893555,Ethan Figueiredo,2007,3131.42,0.981,HIGH
+Graham Phinney,Mount St. Charles,D,2028,3/27/2009,1041085,Graham Phinney,2009,1949.13,0.981,HIGH
+Nicholiah Montano Rodriguez,Mount St. Charles,F,2028,3/19/2010,1051712,Noah Rodriguez,2010,1841.54,0.792,MEDIUM
+Jimmy Carrara,Mount St. Charles,F,2026,1/12/2007,893575,Jimmy Carrara,2007,3024.0299999999997,0.981,HIGH
+Cam Reed,Mount St. Charles,F,2026,5/16/2007,1029153,Cameron Reed,2007,2389.2,0.981,HIGH
+Hayden Wennerstrom,Mount St. Charles,F,2028,7/21/2009,1133011,Hayden Wennerstrom,2009,2025.73,0.9,HIGH
+Brady Lecuyer,Mount St. Charles,D,2026,11/1/2007,958539,Grady LeCouter,2008,1916.86,0.66,LOW
+Jack Devlin,Mount St. Charles,D,2026,9/23/2007,1024327,Jack Devlin,2007,2944.06,0.981,HIGH
+Maxx Lemek,Mount St. Charles,D,2026,3/21/2007,934845,Maxx Lemek,2007,613.1,0.9,HIGH
+Andy Kelly,Mount St. Charles,F,2026,2/21/2008,1114157,Andy Kelly,2008,1473.0,0.9,HIGH
+Devlin Thomas,Mount St. Charles,F,2028,12/3/2009,1197082,Devlin Thomas,2009,2841.31,0.981,HIGH
+Carter Balducci,Mount St. Charles,F,2026,4/26/2007,929785,Carter Balducci,2007,871.99,0.981,HIGH
+Cooper Fitzpatrick,Mount St. Charles,G,2027,10/23/2008,979698,Cooper Fitzpatrick,2009,3939.87,0.8,MEDIUM
+Alex Tarves,Mount St. Charles,G,2026,9/18/2007,987302,Alex Tarves,2007,4089.13,0.9,HIGH
+Gabe McCue,Mount St. Charles,G,2027,9/11/2008,1098584,Gabe McCue,2008,4064.27,0.9,HIGH
+. .,New Hampton,,,,,,,0,0,NO_MATCH
+Greer Difani,New Hampton,D,2028,4/22/2009,1014118,Gregory Difani,2009,1690.42,0.883,HIGH
+Phil Groeling,New Hampton,F,2029,2/18/2010,,,,0,0,NO_MATCH
+Andrew Marcucci,New Hampton,D,2026,7/12/2007,933293,Andrew Marcucci,2007,2754.95,0.976,HIGH
+Preston Abbott,New Hampton,D,2027,4/5/2009,701461,Preston Abbott,2009,1724.2,0.976,HIGH
+Michael Ronan,New Hampton,F,2027,8/26/2008,1012536,Michael Ronan,2008,2281.7,0.976,HIGH
+Richard Jenkins,New Hampton,D,2026,1/3/2007,866422,Richard Jenkins,2007,3012.2799999999997,0.976,HIGH
+Dylan Podergois,New Hampton,F,2026,7/27/2007,845972,Dylan Podergois,2007,3189.11,0.976,HIGH
+Johnny Niemela,New Hampton,F,2026,7/17/2007,845622,John Niemela,2007,3548.19,0.976,HIGH
+Harry Rubin,New Hampton,F,2026,1/5/2007,865636,Harry Rubin,2007,2944.25,0.976,HIGH
+Josh Ness,New Hampton,F,2026,10/4/2007,908010,Joshua Ness,2007,2652.74,0.9,HIGH
+Brody Merrick,New Hampton,F,2026,2/1/2007,853683,Brody Merrick,2007,3144.9700000000003,0.9,HIGH
+Jake Cabral,New Hampton,F,2027,8/13/2008,1010697,Jake Cabral,2008,3209.68,0.976,HIGH
+George Kavanaugh,New Hampton,D,2026,9/11/2006,,,,0,0,NO_MATCH
+Keegan Hunt,New Hampton,D,2027,1/16/2008,933275,Keegan Hunt,2008,2804.2,0.976,HIGH
+Chase Fitch,New Hampton,F,2027,3/31/2007,750756,Cameron Fitch,2007,2755.79,0.76,MEDIUM
+Gavin Burley,New Hampton,F,2027,8/16/2008,1018992,Gavin Burley,2008,2436.53,0.976,HIGH
+Griffin Taylor,New Hampton,F,2026,9/15/2007,1041168,Griffin Taylor,2007,2420.83,0.976,HIGH
+Ray MacDougall,New Hampton,F,2026,10/28/2007,803838,Ray MacDougall,2007,3129.6,0.976,HIGH
+Sam Zygulski,New Hampton,G,2026,4/11/2007,987404,Samuel Zygulski,2007,4224.34,0.9,HIGH
+Drew Johnson,New Hampton,G,2026,3/20/2007,914390,Andrew Johnson,2007,3090.12,0.9,HIGH
+Oliver Quong,New Hampton,F,2027,5/30/2008,,,,0,0,NO_MATCH
+Rupert Ingram,New Hampton,F,2027,6/12/2008,1186879,Trevor Ingham,2008,2410.0,0.69,LOW
+Harry Stubbert,New Hampton,D,2026,1/13/2007,946417,Harry Stubbert,2007,2909.89,0.976,HIGH
+Matt Homer,New Hampton,F,2026,8/4/2007,901044,Matthew Homer,2007,3328.75,0.976,HIGH
+Nick Cabana,New Hampton,D,2029,2/2/2010,1011241,Nicholas Cabana,2010,1483.46,0.9,HIGH
+Kellen Ceraldi,NMH,G,2026,11/27/2008,996587,Kellen Ceraldi,2008,521.9300000000001,0.9,HIGH
+Marek Oboril,NMH,D,2026,1/3/2007,874022,Marek Oboril,2007,995.3814387681343,0.9,HIGH
+Charlie Logan,NMH,D,2028,4/15/2009,1032205,Charles Logan,2009,418.02,0.9,HIGH
+Tadeas Liska,NMH,D,2027,3/30/2008,958760,Tadeas Liska,2008,642.62,0.9,HIGH
+Rene Krytinar,NMH,F,2026,7/29/2007,938454,Rene Krytinar,2007,941.26,0.9,HIGH
+Marko Huo,NMH,D,2026,11/2/2008,992099,Marko Yifan Huo,2008,712.83,0.9,HIGH
+Blake Abramson,NMH,F,2027,10/25/2008,1114649,Blake Abramson,2008,441.76,0.9,HIGH
+Eli Youmans,NMH,F,2026,12/23/2006,,,,0,0,NO_MATCH
+Joey Dellacroce,NMH,F,2027,7/29/2007,750764,Joseph Dellacroce,2007,867.9300000000001,0.9,HIGH
+Miroslav Fedor,NMH,D,2026,8/2/2007,891165,Miroslav Fedor,2007,989.97,0.9,HIGH
+Isaac Hutchinson,NMH,F,2027,2/21/2008,914202,Isaac Hutchinson,2008,859.89,0.9,HIGH
+Mason Stults,NMH,D,2026,11/28/2007,957648,Mason Stults,2007,2479.06,0.9,HIGH
+Dan Tracy,NMH,F,2027,5/5/2008,961767,Daniel Tracy,2008,329.72,0.9,HIGH
+Liam Newell,NMH,D,2026,9/1/2006,,,,0,0.583,NO_MATCH
+Jonas Marek,NMH,F,2028,6/29/2009,986085,Jonas Marek,2009,248.23,0.9,HIGH
+Henry Hao,NMH,F,2026,1/20/2007,,,,0,0,NO_MATCH
+Andy Haban,NMH,F,2027,4/5/2009,978113,Andreas Haban,2009,596.0799999999999,0.835,MEDIUM
+Teddy Farren,NMH,F,2027,5/23/2008,1004641,Teddy Farren,2008,1000.17,0.9,HIGH
+Hayden Addison,NMH,F,2027,10/10/2008,999284,Hayden Addison,2008,408.86,0.9,HIGH
+Karl Warren,NMH,F,2028,2/22/2009,1043706,Karl Warren,2009,269.81,0.9,HIGH
+Jack Smith,NMH,D,2027,9/17/2007,821955,Jack Smith,2007,478.8,0.9,HIGH
+Layne London,NMH,G,2027,7/15/2008,887565,Layne London,2008,415.63,0.9,HIGH
+Eddie Chen,NMH,D/F,2026,5/24/2008,898663,Edward Chen,2008,1408.03,0.9,HIGH
+Tucker Monroe,Noble & Greenough,G,2027,12/5/2007,852942,Tucker Monroe,2007,3024.74,0.9,HIGH
+Alex Munoz,Noble & Greenough,D/F,2027,1/4/2008,1005580,Alexander Munoz,2008,1847.88,0.983,HIGH
+Kasen Walsh,Noble & Greenough,D,2028,,1135772,Kasen Walsh,2010,3098.8,0.983,HIGH
+Tuck Gilbane,Noble & Greenough,D,2026,1/23/2007,750569,Tuck Gilbane,2007,2574.74,0.983,HIGH
+Billy MacAusland,Noble & Greenough,F,2026,8/4/2007,576993,Billy MacAusland,2007,3800.17,0.983,HIGH
+Alex Zaneski,Noble & Greenough,F,2028,1/22/2009,1057674,Alexander Zaneski,2009,1888.76,0.983,HIGH
+Ryan MacCurtain,Noble & Greenough,F,2027,5/23/2008,1005312,Ryan MacCurtain,2008,2536.49,0.983,HIGH
+Eben Alden,Noble & Greenough,D,2028,6/25/2009,978964,Eben Alden,2009,1974.2,0.983,HIGH
+Jack Hartwell,Noble & Greenough,D,2026,1/11/2007,929792,Jack Hartwell,2007,2714.78,0.983,HIGH
+Kris Soja,Noble & Greenough,D,2027,3/11/2008,936996,Kristofer Soja,2008,2834.88,0.875,HIGH
+Charles Dlugosch,Noble & Greenough,F,2028,,1060940,Charlie Dlugosch,2008,2534.18,0.7,LOW
+Will Lavelle,Noble & Greenough,F,2028,,1144324,William Lavelle,2009,1617.26,0.8,MEDIUM
+Tommy Zine,Noble & Greenough,F,2028,,988288,Tommy Zine,2009,1864.28,0.883,HIGH
+Lucas Keefe,Noble & Greenough,D/F,2027,,,,,0,0,NO_MATCH
+Alec Albers,Noble & Greenough,F,2027,5/23/2008,1071678,Alec Albers,2008,2913.44,0.9,HIGH
+Connor Callahan,Noble & Greenough,F,2029,,1191934,Connor Callahan,2010,1164.38,0.883,HIGH
+Ben Levering,Noble & Greenough,F,2027,11/16/2007,1022541,Ben Levering,2007,2696.3,0.983,HIGH
+Sebi Soussou,Noble & Greenough,F,2029,,1085627,Sebastian Soussou,2010,1432.44,0.692,LOW
+Zach Mohamed,Noble & Greenough,F,2029,,1098016,Zachary Mohamed,2010,2111.5299999999997,0.883,HIGH
+Deniz Unal,Noble & Greenough,D,2029,,1114079,Deniz Unal,2010,2256.1400000000003,0.883,HIGH
+Justin Lee,Noble & Greenough,G,2028,6/28/2009,701470,Justin Lee,2009,3077.67,0.9,HIGH
+Andy Baeck,Noble & Greenough,G,2026,,984191,Sean Bae,2008,1856.5,0.655,LOW
+Milan Angyalfi,North Yarmouth,G,2026,,982568,Milan Angyalfi,2008,2519.05,0.9,HIGH
+Matt Lumia,North Yarmouth,F,2027,8/5/2008,1010699,Matthew Lumia,2008,2320.17,0.9,HIGH
+Zach Broccolo,North Yarmouth,F,2026,,852910,Zach Broccolo,2007,3339.6,0.8,MEDIUM
+Avin Rodovsky,North Yarmouth,F,2027,,1010277,Avin Rodovsky,2008,2262.48,0.8,MEDIUM
+Liam Welsh,North Yarmouth,F,2026,5/22/2007,752416,Liam Welsh,2007,3215.19,0.9,HIGH
+Nathan Roy,North Yarmouth,D,2026,,890473,Ethan Roy,2008,1881.93,0.824,MEDIUM
+Tim Jia,North Yarmouth,F,2028,,,,,0,0,NO_MATCH
+Shamil Sitdkov,North Yarmouth,F,2026,6/16/2007,1016860,Shamil Sitdikov,2007,2974.28,0.872,HIGH
+Liam Ross,North Yarmouth,F,2028,,1123650,Liam Ross,2010,1410.57,0.9,HIGH
+Phil Skoczylas,North Yarmouth,F,2026,10/28/2006,,,,0,0,NO_MATCH
+Emilien Goudreault,North Yarmouth,F,2026,6/2/2007,899774,Émilien Goudreault,2007,2778.31,0.86,HIGH
+Gehrig White,North Yarmouth,D,2027,,868183,Gehrig White,2008,2243.4300000000003,0.8,MEDIUM
+Parfen Adbin,North Yarmouth,D,2028,,,,,0,0,NO_MATCH
+Declan Dupre,North Yarmouth,D,2026,,868055,Declan Dupre,2007,2770.87,0.8,MEDIUM
+Benicio McCauley,North Yarmouth,D,2026,6/11/2007,904087,Benicio McCauley,2007,2845.05,0.9,HIGH
+Spencer Grazon,North Yarmouth,D,2027,,1044152,Kasper Grahn,2009,2716.96,0.678,LOW
+Chas Camp,North Yarmouth,F,2026,,887390,Luca Campo,2008,4679.04,0.713,LOW
+Antoine Morin,North Yarmouth,F,2026,,1022481,Antoine Morin,2008,645.0,0.9,HIGH
+Alex Wang,North Yarmouth,F,2028,,938342,Alex Wang,2009,2398.15,0.8,MEDIUM
+Matyas Matl,North Yarmouth,D,2026,2/2/2007,917726,Matyas Matl,2007,2918.92,0.9,HIGH
+Alex Gadbois,North Yarmouth,F,2026,,816742,Alex Gadbois,2007,2367.69,0.8,MEDIUM
+Matt Toomey,North Yarmouth,G,2026,1/5/2007,306189,Matthew Toomey,2007,3466.14,0.9,HIGH
+Tristan Bourassa,North Yarmouth,G,2026,2/19/2007,816741,Tristan Bourassa,2007,3983.14,0.9,HIGH
+Mathis Moreau,North Yarmouth,F,2026,,816734,Mathis Moreau,2007,2124.17,0.8,MEDIUM
+Nick Iozza,North Yarmouth,D,2026,,1022892,Nick Iozza,2007,1911.51,0.8,MEDIUM
+Lucas Dolan,Pingree,G,2028,,1041263,Luke Dolan,2009,2396.85,0.8,MEDIUM
+Tanner Oberg,Pingree,D,2027,,,,,0,0.558,NO_MATCH
+Chris Lovett,Pingree,D/F,2026,,1202524,Cooper Love,2008,1705.0,0.701,LOW
+Ryan Molloy,Pingree,D,2026,,1080139,Ryan Molloy,2008,2207.16,0.9,HIGH
+Cole Gustie,Pingree,D,2026,,,,,0,0.591,NO_MATCH
+Shane McGoldrick,Pingree,D,2026,,914127,Shane McGoldrick,2008,2239.4,0.9,HIGH
+Joe Meade,Pingree,F,2027,,1001524,Cole Mead,2009,2986.0,0.733,LOW
+TJ Thornton,Pingree,F,2027,,988026,TJ Thornton,2008,2430.05,0.8,MEDIUM
+Kevin Greene,Pingree,F,2028,,1197899,Kevin Greene,2009,1777.47,0.8,MEDIUM
+Dylan Pan,Pingree,F,2026,,874466,Alan Pan,2007,1616.79,0.707,LOW
+James Hamlin,Pingree,F,2030,11/10/2010,1079244,James Hamlin,2010,1780.09,0.9,HIGH
+Luke Campanella,Pingree,F,2026,3/5/2008,988027,Luke Campanella,2008,2341.81,0.9,HIGH
+Thomas Mattera,Pingree,F,2027,5/18/2009,1057559,Thomas Mattera,2009,1639.73,0.9,HIGH
+Bruce Ghostlaw,Pingree,F,2029,4/26/2010,1064440,Bruce Ghostlaw,2010,1795.76,0.9,HIGH
+Cam Cataruzolo,Pingree,F,2028,5/18/2009,988292,Cam Cataruzolo,2009,1643.75,0.9,HIGH
+Peter Shaughnessy,Pingree,D,2028,,933930,Peter Shaughnessy,2009,1680.91,0.8,MEDIUM
+Brian Whitecross,Pingree,F,2028,,988291,Brian Whitecross,2009,1621.14,0.8,MEDIUM
+Thomas Stanton,Pingree,F,2027,,754508,Thomas Stanton,2007,2405.7,0.7,LOW
+Will Archibald,Pingree,D,2026,3/1/2007,923971,Will Archibald,2007,2308.44,0.9,HIGH
+Ryan Guden,Pingree,D,2029,4/12/2010,1001619,Ryan Guden,2010,1413.44,0.9,HIGH
+Nolan Cahill,Pingree,F,2027,,987629,Nolan Cahill,2008,2241.81,0.8,MEDIUM
+Cam Franzosa,Pingree,F,2029,7/3/2010,1098090,Cam Franzosa,2010,1419.93,0.9,HIGH
+Cam Brown,Pingree,D/F,2028,,1159409,Sam Brown,2010,894.0,0.807,MEDIUM
+John Devine,Pingree,G,2027,,1019066,Jack Devine,2008,1072.0,0.8,MEDIUM
+Robert Flaherty,Pingree,G,2029,9/3/2009,,,,0,0.463,NO_MATCH
+Fischer Rogers,Pomfret,G,2028,10/22/2008,1202930,Richard Rogers,2008,1708.0,0.78,MEDIUM
+Brody Dorian,Pomfret,D,2027,2/25/2008,,,,0,0,NO_MATCH
+Lincoln Smith,Pomfret,F,2029,8/3/2010,1004309,Lincoln Smith,2010,624.86,0.967,HIGH
+TJ Swinson,Pomfret,F,2026,7/19/2007,852909,TJ Swinson,2007,1352.05,0.967,HIGH
+Ian Sherman,Pomfret,D,2026,5/13/2008,1005576,Ian Sherman,2008,3198.14,0.967,HIGH
+Nolan Wrenn,Pomfret,D,2027,9/6/2007,1021282,Nolan Wrenn,2007,477.67,0.967,HIGH
+Giacomo Caliri,Pomfret,F,2026,6/24/2007,893573,Giacomo Caliri,2007,1092.58,0.967,HIGH
+Will Norton,Pomfret,F,2026,5/11/2006,,,,0,0.588,NO_MATCH
+Sammy Rivet,Pomfret,D,2028,8/28/2008,890480,Samuel Rivet,2008,2202.9700000000003,0.9,HIGH
+Cam Peltz,Pomfret,F,2026,9/6/2007,752622,Cameron Peltz,2007,942.13,0.967,HIGH
+Aidan Norton,Pomfret,D,2026,5/4/2006,1102750,Claire Norton,2007,115.45,0.673,LOW
+Cole Schindler,Pomfret,D,2027,1/14/2008,944469,Cole Schindler,2008,436.96,0.9,HIGH
+Nathan Dono,Pomfret,F,2027,4/17/2008,1021208,Nathan Dono,2008,2731.12,0.967,HIGH
+James Hayward,Pomfret,F,2027,3/8/2008,949302,James Hayward,2008,567.28,0.967,HIGH
+Frank Fan,Pomfret,F,2027,11/17/2008,1074065,Brayden Fang,2008,2612.0,0.7,LOW
+Logan Venne,Pomfret,D/F,2026,6/9/2007,987390,Logan Venne,2007,680.73,0.9,HIGH
+Colby Goldstein,Pomfret,F,,5/9/2007,893544,Colby Goldstein,2007,546.9200000000001,0.967,HIGH
+Rich Cavanagh,Pomfret,F,2026,5/21/2007,893579,Richie Cavanagh,2007,1193.8,0.911,HIGH
+Max Gerum,Pomfret,D,2028,4/13/2009,936965,Max Gerum,2009,2095.55,0.967,HIGH
+Jake Glickman,Pomfret,F,2026,6/23/2007,812502,Jake Glickman,2007,528.5,0.967,HIGH
+Brady Grislis,Pomfret,F,2027,10/22/2007,822024,Brandon Grisafi,2007,1907.69,0.687,LOW
+Brayden Bowes,Pomfret,F,2028,4/2/2009,941339,Brayden Bowes,2009,236.65,0.967,HIGH
+Tei Lee,Pomfret,F,2027,7/21/2007,892010,Tei Lee,2007,1120.8200000000002,0.967,HIGH
+Sean Farrell,Pomfret,D,2026,8/7/2007,856499,Sean Farrell,2007,2666.4,0.967,HIGH
+Ben Schwarz,Pomfret,G,2027,3/31/2008,1043466,Benjamin Schwarz,2008,1638.68,0.9,HIGH
+Joey Mitchell,Pomfret,G,2026,2/3/2007,851930,Joseph Mitchell,2007,839.03,0.9,HIGH
+Christian Capone,Portsmouth Abbey,G,2028,9/18/2009,936941,Christian Capone,2009,729.24,0.9,HIGH
+Dakota Downs,Portsmouth Abbey,F,2028,5/16/2009,1109804,Dakota Downs,2009,473.09000000000003,0.9,HIGH
+Landon Klein,Portsmouth Abbey,F,2027,1/22/2009,1022455,Landon Klein,2009,912.8,0.9,HIGH
+Lawson Kearns,Portsmouth Abbey,D,2027,3/7/2009,1019530,Lawson Kearns,2009,845.28,0.9,HIGH
+Tyler Roccas,Portsmouth Abbey,D,2026,8/7/2008,941637,Tyler Roccas,2008,3005.84,0.9,HIGH
+Caden Creech,Portsmouth Abbey,F,2026,4/6/2007,576968,Caden Creech,2007,708.3199999999999,0.9,HIGH
+Parker Tumelty,Portsmouth Abbey,F,2027,9/17/2008,911573,Parker Tumelty,2008,751.33,0.9,HIGH
+Riley Slovis,Portsmouth Abbey,F,2026,7/6/2007,873671,Riley Slovis,2007,651.03,0.9,HIGH
+Luca Desjardins,Portsmouth Abbey,F,2027,8/29/2009,905248,Luca Desjardins,2009,2094.66,0.9,HIGH
+Rhett duPont,Portsmouth Abbey,F,2027,12/4/2008,1148017,Rhett DuPont,2008,581.01,0.9,HIGH
+Zachary Gill,Portsmouth Abbey,D,2026,5/7/2008,889798,Zachary Gill,2008,1756.0,0.9,HIGH
+Oliver Pzynski,Portsmouth Abbey,D,2027,4/19/2008,987402,Oliver Pzynski,2008,709.5699999999999,0.9,HIGH
+Michael Halvorsen,Portsmouth Abbey,D,2027,8/27/2008,911603,Michael Halvorsen,2008,714.72,0.9,HIGH
+Rowan Kornylak,Portsmouth Abbey,F,2026,7/11/2007,944045,Rowan Kornylak,2007,793.71,0.9,HIGH
+Avery Tymus,Portsmouth Abbey,D,2026,2/2/2008,961415,Avery Tymus,2008,735.92,0.9,HIGH
+Luke Walkauskas,Portsmouth Abbey,F,2026,12/23/2007,935059,Luke Walkauskas,2007,1004.66,0.9,HIGH
+Jack Mazzella,Portsmouth Abbey,D,2027,3/21/2008,783147,Jack Mazzella,2008,734.06,0.9,HIGH
+Elliot Bibeau-Rivard,Portsmouth Abbey,F,2027,8/27/2009,938698,Elliot Bibeau-Rivard,2009,578.49,0.9,HIGH
+Elliot Watson,Portsmouth Abbey,D,2028,4/5/2009,701453,Elliott Watson,2009,2949.6099999999997,0.878,HIGH
+Jordan Rittenberg,Portsmouth Abbey,G,2026,2/24/2008,876288,Jordan Rittenberg,2008,1008.03,0.9,HIGH
+Vaughn McAuliffe,Portsmouth Abbey,G,2027,9/16/2008,1220119,Vaughn McAuliffe,2008,339.0,0.9,HIGH
+Grayson Espenshade,Portsmouth Abbey,F,2027,2/14/2009,936920,Grayson Espenshade,2009,1063.08,0.9,HIGH
+Ethan Tucker,Proctor Academy,G,2026,1/1/2008,1092224,Ethan Tucker,2008,3225.06,0.9,HIGH
+Alex Bourque,Proctor Academy,D,2026,1/1/2007,1037961,Alex Bourque,2007,2557.74,1.0,HIGH
+Sam Gerst,Proctor Academy,D,2028,,1137936,Samuel Gerosa,2011,1133.38,0.685,LOW
+Miles Sobky,Proctor Academy,F,2027,1/1/2008,888531,Miles Sobky,2008,2675.86,1.0,HIGH
+Guthrie Gatewood,Proctor Academy,D,2027,,1060741,Guthrie Gatewood,2008,2943.4700000000003,0.8,MEDIUM
+Justin Baxter,Proctor Academy,F,2027,1/1/2007,746869,Justin Baxter,2007,1678.1100000000001,0.9,HIGH
+Owen Dutton,Proctor Academy,D,2027,,1040736,Owen Dutton,2008,1950.13,0.9,HIGH
+Tim Sullivan,Proctor Academy,F,2026,1/1/2007,862003,Timothy Sullivan,2007,2773.52,1.0,HIGH
+Luke Long,Proctor Academy,F,2026,,1093159,Luke Long,2007,2963.12,0.9,HIGH
+Édouard Belval-Turmel,Proctor Academy,D,2026,1/1/2006,,,,0,0,NO_MATCH
+Garrett Aceto,Proctor Academy,F,2026,,1001320,Brett Aceto,2008,2339.13,0.807,MEDIUM
+Adam Boys,Proctor Academy,F,2028,,,,,0,0,NO_MATCH
+Luke Kelley,Proctor Academy,D,2027,1/1/2007,993600,Luke Kelley,2007,2406.11,1.0,HIGH
+Sam O'Connell,Proctor Academy,D,2028,1/1/2009,1155192,Sam O'Connell,2009,2355.0699999999997,0.9,HIGH
+Will Gerst,Proctor Academy,F,2027,,,,,0,0.545,NO_MATCH
+Dylan Jordan,Proctor Academy,F,2027,1/1/2008,911492,Dylan Jordan,2008,2750.48,0.9,HIGH
+Axel Black,Proctor Academy,F,2026,1/1/2007,758110,Axel Black,2007,2816.27,1.0,HIGH
+Brodie Farren,Proctor Academy,G,2026,1/1/2007,1129172,Brodie Farren,2007,2344.2,0.9,HIGH
+Colin Gall,Proctor Academy,G,2028,,984019,Colin Gall,2009,1623.79,0.8,MEDIUM
+Drake Bekar,Proctor Academy,G,2028,,1048548,Drake Bekar,2008,1743.93,0.7,LOW
+Wes DiModica,Rivers School,G,2026,3/26/2007,862391,Wesley DiModica,2007,2380.04,0.807,MEDIUM
+Dean Butler,Rivers School,F,2028,4/10/2009,936940,Dean Butler,2009,1776.25,0.9,HIGH
+Elliot Wood,Rivers School,D,2026,8/5/2006,,,,0,0.513,NO_MATCH
+Alejandro Hassan,Rivers School,F/D,2026,2/10/2007,577117,Alejandro Hassan,2007,3134.81,0.962,HIGH
+Noah Wood,Rivers School,D,2028,3/7/2009,935527,Noah Wood,2009,2639.73,0.962,HIGH
+Mateo Delasobera,Rivers School,D,2029,7/25/2010,1003300,Mateo Delasobera,2010,2916.97,0.9,HIGH
+Kai Koeppel,Rivers School,F,2030,10/28/2011,,,,0,0,NO_MATCH
+Jacob Bellinger,Rivers School,F,2028,8/28/2009,935398,Jacob Bellinger,2009,499.2,0.962,HIGH
+Connor Wig,Rivers School,D,2026,4/12/2007,862379,Connor Wig,2007,2997.17,0.962,HIGH
+Bruce Li,Rivers School,D,2028,2/13/2009,987203,Bruce Li,2009,2123.66,0.962,HIGH
+Aiden Ahn,Rivers School,D,2029,2/14/2011,1157993,Aiden Ahn,2011,1021.27,0.9,HIGH
+Nick Peraza,Rivers School,F,2030,1/1/2011,1054891,Nicholas Pera-Hall,2010,910.67,0.68,LOW
+Davis Jamison,Rivers School,F,2027,9/24/2007,817501,Davis Jamison,2007,2817.07,0.962,HIGH
+Ettore Monson,Rivers School,D,2027,9/22/2007,945841,Ettore Monson,2007,2981.7,0.962,HIGH
+Will Bateman,Rivers School,F,2027,6/28/2008,978636,William Bateman,2008,1411.17,0.9,HIGH
+Raphael Aberbach,Rivers School,F,2027,3/18/2008,1005575,Raphael Aberbach,2008,2643.63,0.962,HIGH
+Sebastien Drouin,Rivers School,F,2027,6/18/2009,935401,Sebastien Drouin,2009,2125.08,0.9,HIGH
+Kaiden Donia,Rivers School,D,2026,1/16/2008,617457,Kaiden Donia,2008,4878.09,0.962,HIGH
+Nate Moons,Rivers School,F,2027,1/26/2008,876687,Nate Moons,2008,2683.68,0.962,HIGH
+Nolan Wilson,Rivers School,F,2026,5/30/2007,987674,Nolan Wilson,2007,2875.09,0.962,HIGH
+Daniel Chang,Rivers School,F,2028,,984033,Daniel Chang,2009,2147.45,0.862,HIGH
+Owen Cronan,Rivers School,F,2026,5/16/2008,862368,Owen Cronan,2008,2759.2,0.962,HIGH
+Brooks Lytle,Rivers School,D,2028,6/24/2009,956186,Brooks Lytle,2009,1571.17,0.9,HIGH
+Henry Lepri,Rivers School,F/D,2026,1/5/2007,869041,Henry Lepri,2007,3131.23,0.9,HIGH
+Gordie Gund,Rivers School,D,2028,4/21/2009,,,,0,0,NO_MATCH
+Leo Carvalho,Rivers School,G,2028,8/24/2009,836323,Leonardo Carvalho,2009,2078.58,0.773,MEDIUM
+Kiernan King,Salisbury School,F,2026,,989167,Ian King,2008,2210.41,0.788,MEDIUM
+Jason Bertrand,Salisbury School,F,2028,7/7/2009,891110,Simon Bertrand,2009,2492.19,0.788,MEDIUM
+Preston Johnstone,Salisbury School,G,2028,11/25/2009,1096742,Preston Johnstone,2009,1697.13,0.9,HIGH
+Koen Fairbanks,Salisbury School,F,2029,7/21/2010,1148062,Koen Fairbanks,2010,1688.16,0.9,HIGH
+Zack Doray,Salisbury School,F,2027,,927960,Zack Doray,2008,2328.4,0.8,MEDIUM
+Kyle Lepage,Salisbury School,F,2026,,872803,Kyle LePage,2008,1961.3,0.9,HIGH
+Lincoln Dawbin,Salisbury School,F/D,2026,,872790,Lincoln Dawbin,2007,2048.15,0.8,MEDIUM
+Landon O'Grady,Salisbury School,F,2027,,876280,Landon O'Grady,2008,2636.37,0.8,MEDIUM
+Artem Hundarenko,Salisbury School,F/D,2026,,961234,Artem Hundarenko,2008,2802.49,0.9,HIGH
+Collin Dyer,Salisbury School,G,2028,,938978,Collin Dyer,2009,2360.34,0.8,MEDIUM
+Caleb Bousquet,Salisbury School,F,2026,,1024238,Caleb Bousquet,2007,2615.65,0.8,MEDIUM
+Nicolas Tountas,Salisbury School,F,2028,,988315,Nicolas Tountas,2009,3080.31,0.8,MEDIUM
+Josh Demasi,Salisbury School,F,2026,,,,,0,0,NO_MATCH
+Nathan Sievers,Salisbury School,F/D,2027,,907798,Nathan Sievers,2008,2276.12,0.8,MEDIUM
+Matteo Pani,Salisbury School,,2026,,837469,Matteo Pani,2007,2689.57,0.8,MEDIUM
+Alexi Charron,Salisbury School,F,2026,,901133,Alexi Charron,2007,2687.83,0.8,MEDIUM
+Jack Angel,Salisbury School,D,2026,,899429,Jack Angel,2007,2820.64,0.8,MEDIUM
+Andreas Sawoniak,Salisbury School,G,2027,8/28/2008,943789,Andreas Sawoniak,2008,2429.45,0.9,HIGH
+Payton Helt,Salisbury School,F/D,2029,5/14/2010,1080799,Payton Helt,2010,1736.06,0.9,HIGH
+Nolan Wellman,Salisbury School,F,2028,3/11/2009,954602,Nolan Wellman,2009,1342.81,0.9,HIGH
+Kevin Bertrand,Salisbury School,F,2027,3/12/2008,898790,Kevin Bertrand,2008,2386.53,0.9,HIGH
+Sammy Baymout,Salisbury School,D,2028,3/1/2009,888471,Sammy Baymout,2009,2340.35,0.9,HIGH
+Noah Romanelli,Salisbury School,D,2027,8/21/2008,943798,Noah Romanelli,2008,2907.09,0.9,HIGH
+Ronan Newell,Salisbury School,D,2026,7/17/2007,1041120,Ronan Newell,2007,2745.16,0.9,HIGH
+Manix Dupont,Salisbury School,D,2028,,936744,Manix Dupont,2010,1485.15,0.9,HIGH
+Cliff Hedges,Salisbury School,D,2026,,,,,0,0,NO_MATCH
+Jeremy Lavoie,Salisbury School,F,2026,,899257,Jeremy Lavoie,2008,2317.23,0.9,HIGH
+Nicholas Lapointe,Salisbury School,F,2027,,904210,Nicholas Lapointe,2008,2317.84,0.8,MEDIUM
+Chase Mallin,Salisbury School,F,2027,,907248,Chase Mallin,2008,2157.27,0.8,MEDIUM
+Laurent Normand,Salisbury School,F,2027,,982124,Laurent Normand,2008,1786.1100000000001,0.8,MEDIUM
+Isaac Gagne,Salisbury School,D,2028,,909695,Isaac Gagne,2009,2057.69,0.8,MEDIUM
+Luca Carlomusto,Salisbury School,F,2027,,904267,Luca Carlomusto,2008,1690.46,0.8,MEDIUM
+Gianluca Zappitelli,Salisbury School,F,2027,,888474,Gianluca Zapitelli,2009,2586.24,0.878,HIGH
+Alex Vogel,Salisbury School,F,2025,,888643,Alexander Vogel,2007,2877.65,0.9,HIGH
+Trey O'Keefe,Salisbury School,F,2028,,936871,Trey O'Keefe,2009,1800.24,0.8,MEDIUM
+Simon Duquette,Salisbury School,D,2028,,987167,Simon Duquette,2009,1635.92,0.8,MEDIUM
+Joey Gualtieri,Salisbury School,F,,,947030,Joey Gualtieri,2007,1428.03,0.7,LOW
+Brody Levering,Salisbury School,G,2027,,968716,Brody Levering,2008,2821.62,0.8,MEDIUM
+Davyd Jefferies,Salisbury School,F,2027,,902684,Davyd Jefferies,2008,2497.5,0.8,MEDIUM
+Cole Cassidy,St. Georges,D,2029,9/24/2010,1016059,Cole Cassidy,2010,1516.44,0.9,HIGH
+Justin Dupuis,St. Georges,D,2026,11/16/2006,1228415,Simon Dupuis,2007,1413.0,0.673,LOW
+Paul Stearns,St. Georges,D,2026,7/24/2007,757827,Paul Stearns,2007,2595.93,0.9,HIGH
+Jacob BriseBois,St. Georges,D,2028,5/20/2009,988284,Jacob BriseBois,2009,2184.11,0.9,HIGH
+Liam Oliver,St. Georges,D,2027,5/19/2008,1057385,Liam Oliver,2008,2225.2200000000003,0.9,HIGH
+Grady Glandorf,St. Georges,F,2027,10/18/2007,754061,Grady Glandorf,2007,2709.7,0.9,HIGH
+Greg Najda,St. Georges,F,2026,1/17/2008,999250,Gregory Najda,2008,4043.3,0.824,MEDIUM
+Jack Kang,St. Georges,F,2027,7/29/2009,938279,Jack Kang,2009,1973.34,0.9,HIGH
+Yoshiki Chitose,St. Georges,F,2027,3/24/2007,740254,Yoshiki Chitose,2007,2445.18,0.9,HIGH
+Brayden Young,St. Georges,D,2029,7/29/2009,1006124,Brayden Young,2009,1713.83,0.9,HIGH
+Ethan Russo,St. Georges,D,2028,11/25/2009,1020887,Ethan Russo,2009,1777.82,0.9,HIGH
+Jalen Carter,St. Georges,F,2028,2/12/2008,897776,Jalen Carter,2008,2746.39,0.9,HIGH
+Miles Bronson,St. Georges,F,2026,9/26/2006,,,,0,0.624,NO_MATCH
+Easton Kinsler,St. Georges,F,2026,7/12/2007,790866,Easton Kinsler,2007,3080.51,0.9,HIGH
+Owen Morris,St. Georges,F,2026,7/3/2007,434177,Owen Morris,2007,2350.07,0.9,HIGH
+Lexi Kert,St. Georges,D,2026,12/12/2007,803139,Leo Kern,2007,1353.34,0.675,LOW
+Ryan Zobeidat,St. Georges,F,2026,7/15/2007,812133,Ryan Zobeidat,2007,2483.19,0.9,HIGH
+Cameron Hunchak,St. Georges,F,2027,1/11/2008,888185,Cameron Hunchak,2008,3429.52,0.9,HIGH
+Mikey Dossier,St. Georges,F,2027,5/24/2008,974713,Michael Dossier,2008,2674.16,0.9,HIGH
+Andy Xu,St. Georges,F,2028,9/17/2008,1232719,Andrew Xu,2010,531.61,0.7,LOW
+Keenan Hauser,St. Georges,F,2027,6/8/2008,888343,Keenan Hauser,2008,2904.18,0.9,HIGH
+Cameron Conklin,St. Georges,F,2027,12/21/2007,886793,Cameron Conklin,2007,2798.81,0.9,HIGH
+Tyler Donroe,St. Georges,G,2027,2/23/2008,809473,Tyler Donroe,2008,3637.77,0.9,HIGH
+Jacob Saldanha,St. Georges,G,2026,6/9/2008,888200,Jacob Saldanha,2008,2558.44,0.9,HIGH
+Payton Tracy,St. Marks,D,2026,6/22/2007,865633,Payton Tracy,2007,2710.47,0.9,HIGH
+Joel Thompson,St. Marks,D,2027,10/28/2008,903352,Joel Thompson,2008,2910.01,0.9,HIGH
+Ethan Goodrich,St. Marks,F,2026,6/29/2007,851364,Ethan Goodrich,2007,2793.3,0.9,HIGH
+Jake Donatelli,St. Marks,D,2028,1/4/2010,998587,Jake Donatelli,2010,3169.52,0.9,HIGH
+Ryan Magaletta,St. Marks,F,2026,2/4/2007,877342,Ryan Magaletta,2007,2927.26,0.9,HIGH
+Max Donatelli,St. Marks,F,2026,6/15/2007,893576,Max Donatelli,2007,3019.61,0.9,HIGH
+Shaan Kessler,St. Marks,D,2028,3/29/2009,1083919,Shaan Kessler,2009,1764.41,0.9,HIGH
+Aiden Ferreira,St. Marks,F,2026,1/17/2007,750955,Aiden Ferreira,2007,2781.19,0.9,HIGH
+Owen LaCamera,St. Marks,F,2028,3/13/2009,983696,Owen LaCamera,2009,3237.21,0.9,HIGH
+Will Carosi,St. Marks,F,2027,6/24/2008,1005578,Will Carosi,2008,2328.37,0.9,HIGH
+Cameron Daigle,St. Marks,F,2028,2/5/2010,936975,Cameron Daigle,2010,2378.29,0.9,HIGH
+Matthew Bowolick,St. Marks,F,2028,6/21/2009,1011503,Matthew Bowolick,2009,2092.3,0.9,HIGH
+Luke Wood,St. Marks,D,2028,11/23/2009,1057672,Luke Wood,2009,1695.66,0.9,HIGH
+Brayden Erickson,St. Marks,F,2029,1/20/2010,999105,Brayden Erickson,2010,1776.35,0.9,HIGH
+Asher Goldsmith,St. Marks,F,2027,11/3/2008,953810,Asher Goldsmith,2008,821.81,0.9,HIGH
+Andrew Howard,St. Marks,F,2027,7/8/2008,911496,Andrew Howard,2008,2645.15,0.9,HIGH
+Cole Longfield,St. Marks,F,2027,9/10/2008,755423,Cole Longfield,2008,3196.76,0.9,HIGH
+Owen Draddy,St. Marks,D,2026,9/27/2006,,,,0,0,NO_MATCH
+Luke Fox,St. Marks,D,2028,8/12/2009,953803,Luke Fox,2009,1483.91,0.9,HIGH
+Cam Martish,St. Marks,F,2028,11/2/2008,918234,Cameron Martin,2007,3875.39,0.703,LOW
+Tyler King,St. Marks,G,2027,4/7/2008,1014554,Tyler King,2008,1107.47,0.9,HIGH
+Jackson Toscano,St. Marks,G,2028,5/28/2010,1002972,Jackson Toscano,2010,4041.45,0.9,HIGH
+Alex Wang,St. Marks,G,2027,1/28/2009,938342,Alex Wang,2009,2398.15,0.9,HIGH
+Matteo Vessella,St. Paul's School,G,2027,6/5/2008,903849,Matteo Vessella,2008,2878.44,0.9,HIGH
+Elijah Nacht,St. Paul's School,D,2026,1/18/2007,816879,Elijah Nacht,2007,2914.08,1.0,HIGH
+Max Romano,St. Paul's School,F,2027,12/23/2007,851948,Max Romano,2007,2969.0,1.0,HIGH
+Jaden Ficek,St. Paul's School,F,2026,12/5/2006,,,,0,0.391,NO_MATCH
+Luke Michaud,St. Paul's School,F,2028,11/26/2008,1003658,Luke Michaud,2008,2943.73,0.9,HIGH
+Quinn Brandell,St. Paul's School,D,2026,1/4/2007,1037768,Quinn Brandell,2007,3114.04,1.0,HIGH
+Max O'Regan,St. Paul's School,F,2028,7/28/2009,988275,Max O'Regan,2009,2130.14,1.0,HIGH
+Mitchell Smith,St. Paul's School,F,2027,11/9/2008,959913,Mitch Smith,2008,3549.71,0.935,HIGH
+Carter Doherty,St. Paul's School,F,2026,1/28/2008,861713,Caroline Doherty,2008,839.87,0.78,MEDIUM
+Jack Bruning,St. Paul's School,D,2020,5/1/2009,936917,Jack Bruning,2009,1832.6599999999999,1.0,HIGH
+James Buchan,St. Paul's School,D,2027,1/31/2009,1033411,James Buchan,2009,1570.76,0.9,HIGH
+Whit Fusting,St. Paul's School,D,2028,1/5/2009,953915,Whitaker Fusting,2009,2872.86,0.907,HIGH
+Colin O'Leary,St. Paul's School,D,2027,3/8/2008,1104220,Colin O'Leary,2008,2693.93,1.0,HIGH
+Finian Kilbourne,St. Paul's School,F,2027,9/9/2008,1032789,Finian Kilbourne,2008,3306.01,1.0,HIGH
+John Bentley,St. Paul's School,F,2028,9/27/2009,1023531,Jack Bentley,2009,1878.49,0.9,HIGH
+Jai Perry-Pereira,St. Paul's School,F,2029,3/16/2010,1003290,Jai Perry-Pereira,2010,1331.43,1.0,HIGH
+Ryan Vohra,St. Paul's School,F,2027,6/27/2008,876358,Ryan Vohra,2008,3318.8,1.0,HIGH
+Anderson Kilbourne,St. Paul's School,F,2026,7/27/2007,929781,Anderson Kilbourne,2007,3388.2,1.0,HIGH
+Callum Green,St. Paul's School,F,2027,6/18/2008,889751,Callum Green,2008,1925.47,1.0,HIGH
+Harry Dermody,St. Paul's School,F,2026,8/15/2006,,,,0,0.295,NO_MATCH
+Chay Simons,St. Paul's School,D,2027,3/7/2008,869640,Chay Simons,2008,3112.85,1.0,HIGH
+Gavin Code,St. Paul's School,F,2026,3/17/2007,752404,Gavin Code,2007,2818.59,1.0,HIGH
+Blake Truchon,St. Paul's School,G,2026,11/30/2006,,,,0,0,NO_MATCH
+Brady Hall,St. Paul's School,D,2026,3/12/2007,867918,Brady Hall,2007,3311.32,1.0,HIGH
+William Birks,St. Paul's School,G,2026,8/4/2007,904077,William Birks,2007,2629.83,0.9,HIGH
+Tommy Saulnier,St. Sebastian's,G,2027,2/15/2008,617468,Thomas Saulnier,2008,4449.66,0.9,HIGH
+Gavin Wainwright,St. Sebastian's,D,2027,12/13/2007,929789,Gavin Wainwright,2007,2689.63,0.981,HIGH
+Sam Fishbone,St. Sebastian's,D,2029,4/5/2010,998465,Samuel Fishbone,2010,2978.91,0.981,HIGH
+Jimmy Harney,St. Sebastian's,D,2027,12/5/2008,1065766,Jimmy Harney,2008,1440.92,0.9,HIGH
+Jack Kelleher,St. Sebastian's,D,2026,9/18/2007,801759,Jack Kelleher,2007,2362.19,0.9,HIGH
+Brian Burke,St. Sebastian's,D,2026,4/18/2007,750562,Brian Burke,2007,2659.73,0.9,HIGH
+Noah Meyers,St. Sebastian's,D,2027,10/8/2007,957233,Noah Meyers,2007,2678.82,0.981,HIGH
+Ollie Manning,St. Sebastian's,D,2026,1/24/2008,1005577,Oliver Manning,2008,2740.05,0.905,HIGH
+Jared Hughes,St. Sebastian's,F,2026,8/3/2007,1156681,Jared Hughes,2007,2495.83,0.981,HIGH
+Ty Curry,St. Sebastian's,F,2026,2/28/2007,877344,Tyler Curry,2007,2807.69,0.981,HIGH
+Matt Spalla,St. Sebastian's,F,2028,7/29/2009,978965,Matthew Spalla,2009,1233.31,0.9,HIGH
+Cade Noonan,St. Sebastian's,F,2028,8/21/2009,978963,Cade Noonan,2009,2508.2799999999997,0.981,HIGH
+Jameson Needham,St. Sebastian's,F,2029,1/6/2010,1001617,Jameson Needham,2010,1369.46,0.981,HIGH
+Chris Welby,St. Sebastian's,F,2030,3/14/2011,951656,Chris Welby,2011,1831.96,0.981,HIGH
+Charlie Delay,St. Sebastian's,F,2026,9/21/2007,893593,Charlie Delay,2007,627.56,0.981,HIGH
+Ryan Merrill,St. Sebastian's,D,2029,10/10/2009,1057661,Ryan Merrill,2009,2055.36,0.981,HIGH
+Gavin Joyce,St. Sebastian's,F,2026,7/18/2007,750568,Gavin Joyce,2007,2596.23,0.9,HIGH
+Jack Queally,St. Sebastian's,F,2028,7/27/2010,1060378,Jack Queally,2010,3585.84,0.981,HIGH
+Will Hulbig,St. Sebastian's,F,2028,12/16/2008,1005581,William Hulbig,2008,1660.67,0.9,HIGH
+Brendan Matthews,St. Sebastian's,F,2026,1/9/2007,750567,Brendan Matthews,2007,3131.5099999999998,0.981,HIGH
+Brendan Martin,St. Sebastian's,D,2029,1/20/2010,1098089,Brendan Martin,2010,3025.94,0.981,HIGH
+Gavin Feyler,St. Sebastian's,F,2026,6/11/2007,,,,0,0,NO_MATCH
+Danny Porter,St. Sebastian's,F,2027,6/17/2008,1015321,Daniel Porter,2007,989.62,0.8,MEDIUM
+Ryan Walsh,St. Sebastian's,G,2027,1/2/2009,1057565,Ryan Walsh,2009,1643.81,0.9,HIGH
+Vinnie D'Urso,Tabor,G,2027,3/7/2008,933294,Vincenzo D'Urso,2008,2897.89,0.836,MEDIUM
+Ares Miller,Tabor,F,2027,2/11/2008,919392,Ares Miller,2008,1098.44,0.956,HIGH
+Marcello Martinelli,Tabor,D,2026,10/29/2006,,,,0,0.612,NO_MATCH
+Connor Wright,Tabor,D,2027,6/13/2009,978962,Connor Wright,2009,2305.02,0.956,HIGH
+Owen Carter,Tabor,D,2026,5/22/2007,750761,Owen Carter,2007,623.84,0.956,HIGH
+James Wu,Tabor,F,2028,1/9/2009,938700,James Wu,2009,1900.33,0.956,HIGH
+Heyden Hildebrandt,Tabor,F,2026,9/25/2007,893595,Heyden Hildebrandt,2007,2599.78,0.956,HIGH
+Colvin Callahan,Tabor,F,2026,2/2/2007,929782,Colvin Callahan,2007,2945.7799999999997,0.956,HIGH
+Chase McCoy,Tabor,F,2027,7/18/2008,869525,Chase McCoy,2008,662.9,0.956,HIGH
+Liam Kailher,Tabor,F,2027,9/25/2007,893543,Liam Kailher,2007,2853.97,0.9,HIGH
+Nolan Sweeney,Tabor,D,2028,3/9/2009,1057667,Nolan Sweeney,2009,1896.3,0.956,HIGH
+Ethan Travis,Tabor,F,2027,4/22/2008,949297,Ethan Travis,2008,3705.05,0.956,HIGH
+London McDonald,Tabor,F,2027,4/16/2008,1010281,London McDonald,2008,341.53999999999996,0.956,HIGH
+Colton McNamara,Tabor,D,2026,9/28/2006,993599,Colman McNamara,2007,2607.63,0.707,LOW
+Leo Kavey,Tabor,F,2026,2/21/2007,1160450,Leo Kavey,2007,2500.0,0.956,HIGH
+Alec Dzavik,Tabor,D,2026,6/25/2007,893553,Alec Dzavik,2007,2395.43,0.9,HIGH
+John Shaughnessy,Tabor,F,2028,3/12/2009,933931,John Shaughnessy,2009,1922.45,0.956,HIGH
+Grant Solomon,Tabor,F,2026,4/1/2007,763310,Grant Solomon,2007,688.4399999999999,0.956,HIGH
+Chase Watts,Tabor,F,2026,10/3/2006,,,,0,0.623,NO_MATCH
+Olivier Benoit,Tabor,D,2026,12/3/2007,843287,Olivier Benoit,2007,3317.44,0.956,HIGH
+James Capozzi,Tabor,G,2028,11/30/2009,935438,James Capozzi,2009,873.5699999999999,0.9,HIGH
+Mason Dolch,Taft,G,2028,4/4/2009,1098130,Mason Dolch,2009,2137.73,0.9,HIGH
+Julien Watts,Taft,D/F,2027,4/4/2008,932990,Julien Watts,2008,2871.49,0.9,HIGH
+Jack Daly 'C',Taft,D,2026,3/6/2007,,,,0,0,NO_MATCH
+Joe Orszulak,Taft,F,2027,8/2/2007,1037833,Joe Orszulak,2007,2527.41,0.9,HIGH
+Hayden Meskin,Taft,D,2028,5/23/2009,1018182,Hayden Meskin,2009,1841.44,0.9,HIGH
+Bryce Mastriano,Taft,F,2027,4/8/2008,1025943,Bryce Mastriano,2008,2229.29,0.9,HIGH
+Nick Ferrie,Taft,F,2028,5/31/2009,1031347,Nicholas Ferrie,2009,1772.99,0.9,HIGH
+Nikita Agafanov,Taft,F,2027,2/15/2008,867915,Nikita Agafonov,2008,2277.79,0.847,MEDIUM
+Owen Schwarz,Taft,F,2026,1/27/2007,763311,Owen Schwarz,2007,3073.71,0.9,HIGH
+Ryder Tremblay,Taft,D,2026,2/13/2007,851947,Ryder Tremblay,2007,2411.83,0.9,HIGH
+Joey Burke,Taft,F,2027,8/14/2008,978460,Joseph Burke,2008,3259.45,0.9,HIGH
+Nikolai Bazalitski,Taft,F,2027,3/7/2008,978458,Nikolai Bazalitski,2008,3351.99,0.9,HIGH
+Giovanni Ferrucci,Taft,F,2027,9/9/2008,,,,0,0,NO_MATCH
+Max Hu,Taft,D,2027,9/29/2008,,,,0,0.43,NO_MATCH
+CJ Tombaugh,Taft,D/F,2028,1/7/2009,,,,0,0,NO_MATCH
+Logan Ferrara,Taft,F,2027,7/8/2008,941325,Logan Ferrara,2008,3554.13,0.9,HIGH
+Finn Mills-Hall,Taft,D,2028,8/16/2009,1169421,Finnegan Mills-Hall,2009,1643.38,0.807,MEDIUM
+Will Watson 'C',Taft,F,2026,3/27/2007,,,,0,0,NO_MATCH
+Carson Woolcott 'C',Taft,F,2026,8/14/2007,,,,0,0,NO_MATCH
+Shane Fraser,Taft,F,2027,3/22/2008,936776,Shane Fraser,2008,3265.27,0.9,HIGH
+Jake Paasch,Taft,F/D,2026,10/12/2006,,,,0,0,NO_MATCH
+Markus Weber,Taft,G,2027,6/14/2008,904200,Markus Weber,2008,2572.07,0.9,HIGH
+Quinn Devin,Thayer Academy,G,2026,,893602,Quinn Devin,2007,3969.9,0.8,MEDIUM
+Shane Devin,Thayer Academy,D,2028,,1105484,Shane Devin,2009,1703.26,0.9,HIGH
+Tommy Lally,Thayer Academy,F,2028,,1113653,Tommy Lally,2009,1435.53,0.9,HIGH
+David O'Brien,Thayer Academy,D,2027,,913526,David O'Brien,2008,2251.85,0.9,HIGH
+Nick Apostol,Thayer Academy,F,2027,,1081354,Nick Apostol,2008,2631.09,0.9,HIGH
+Adam Beltrami,Thayer Academy,D,2027,,1081347,Adam Beltrami,2008,2242.7799999999997,0.9,HIGH
+Cooper Shea,Thayer Academy,D,2026,,954186,Christopher Shea,2008,3114.39,0.785,MEDIUM
+Michael Federico,Thayer Academy,F,2027,,1009904,Michael Federico,2008,3083.92,0.9,HIGH
+Jonah Frattasio,Thayer Academy,F,2026,,658762,Jonah Frattasio,2007,2271.18,0.9,HIGH
+Jack Funk,Thayer Academy,F,2028,,701465,Jack Funk,2009,2159.95,0.9,HIGH
+Nick Sumner,Thayer Academy,F,2027,,617464,Nick Sumner,2008,3014.53,0.9,HIGH
+Rory Brosnan,Thayer Academy,D,2028,,1120196,Rory Brosnan,2009,1611.84,0.8,MEDIUM
+Daniel Pratt,Thayer Academy,F,2026,,956610,Daniel Pratt,2007,2332.2,0.9,HIGH
+Tommy Wilkinson,Thayer Academy,F,2027,,998355,Tommy Wilkinson,2008,3207.63,0.9,HIGH
+Nathan Rooney,Thayer Academy,D,2027,,754513,Nathan Rooney,2007,2361.36,0.8,MEDIUM
+Ty Hymovitz,Thayer Academy,F,2027,,617460,Ty Hymovitz,2008,3870.31,0.9,HIGH
+Brian McFadden,Thayer Academy,D,2027,,1011188,Brian McFadden,2008,4820.25,0.9,HIGH
+Sean Sweeney,Thayer Academy,F,2028,,1021558,Sean Sweeney,2009,2078.46,0.9,HIGH
+Shane Tattan,Thayer Academy,F/D,2029,,,,,0,0,NO_MATCH
+Charlie Vernazza,Thayer Academy,D,2029,,,,,0,0,NO_MATCH
+Conor O'Brien,Thayer Academy,F,2029,,1104543,Conor O'Brien,2010,1390.69,0.8,MEDIUM
+Charlie Ness,Thayer Academy,F,2028,,1023342,Charlie Ness,2009,1985.64,0.9,HIGH
+Tyler Moschella,Thayer Academy,G,2026,,916312,Tyler Moschella,2007,2342.14,0.8,MEDIUM
+Chris Williams,Thayer Academy,F,2026,,752386,Chris Williams,2007,2307.88,0.9,HIGH
+Wil DeMan,The Hill School,D,2027,1/17/2008,908233,William DeMan,2008,2076.5299999999997,0.888,HIGH
+Braydon Swarr,The Hill School,D,2026,3/9/2007,856490,Braydon Swarr,2007,1877.77,1.0,HIGH
+Rahmi Moazzez,The Hill School,D,2029,11/16/2009,956184,Rahmi Moazzez,2009,1806.65,1.0,HIGH
+Samuel Brebner,The Hill School,D,2026,8/4/2007,826048,Samuel Brebner,2007,1645.13,1.0,HIGH
+Ash Smith,The Hill School,F,2028,,1034532,Cashton Smith,2010,1590.49,0.788,MEDIUM
+Jeb Granberry,The Hill School,D/F,2027,1/28/2009,1147200,Jeb Granberry,2009,1610.3,0.9,HIGH
+John Michael Mugavero,The Hill School,F,2028,1/28/2009,1066405,Jonathan Mugavero,2009,1783.1399999999999,0.807,MEDIUM
+Gabriel Auger,The Hill School,F,2027,4/24/2008,755826,Gabriel Auger,2008,2736.06,1.0,HIGH
+Chase Himes,The Hill School,F,2028,4/22/2009,945903,Chase Himes,2009,1447.49,0.9,HIGH
+James Small,The Hill School,F,2028,11/17/2008,956180,James Small,2009,1608.4,0.9,HIGH
+Zach Greenlund,The Hill School,F,2026,3/1/2007,805446,Zach Greenlund,2007,2206.51,1.0,HIGH
+Felix Menard,The Hill School,F,2027,6/14/2008,914185,Felix Menard,2008,1549.08,0.9,HIGH
+Zach Boss,The Hill School,F,2027,10/8/2007,995915,Zach Boss,2007,2629.0,1.0,HIGH
+Troy Brannen,The Hill School,D,2027,11/13/2007,830657,Troy Brannen,2007,2476.55,0.9,HIGH
+Shane Flanagan,The Hill School,F,2027,6/19/2008,964233,Shane Flanagan,2008,1741.88,1.0,HIGH
+Henry Zidek,The Hill School,F,2026,3/8/2007,925127,Henry Zidek,2007,1756.09,1.0,HIGH
+Dash Levy,The Hill School,F,2029,8/4/2009,859454,Noah Levy,2009,2885.51,0.76,MEDIUM
+Liam Wachob,The Hill School,F,2028,1/11/2009,1023573,Liam Wachob,2009,1666.2,1.0,HIGH
+Nao Dutil,The Hill School,D,2026,1/9/2007,851264,Nao Dutil,2007,1858.63,1.0,HIGH
+Ryan Barlow,The Hill School,F,2028,7/8/2009,1022492,Ryan Barlow,2009,2938.5,1.0,HIGH
+Alex Khamichonak,The Hill School,F,2027,5/14/2008,941987,Alexander Khamichonak,2008,2864.54,1.0,HIGH
+Max Menkowitz,The Hill School,F,2026,7/20/2007,848617,Max Menkowitz,2007,1689.26,1.0,HIGH
+Micheal Kealey,The Hill School,G,2026,2/3/2007,812585,Michael Kealey,2007,1707.16,0.86,HIGH
+Zane Proul,The Hill School,G,2027,11/8/2007,845975,Zane Proul,2007,1728.03,0.9,HIGH
+Hunter Marshall,Tilton,G,2026,3/19/2007,851355,Hunter Marshall,2007,3120.56,0.9,HIGH
+Max Gagnon,Tilton,F,2026,6/14/2007,577003,Maxwell Gagnon,2007,2949.15,0.963,HIGH
+Michael Nerich,Tilton,D,2027,9/27/2008,1007684,Michael Nerich,2008,2648.27,0.963,HIGH
+Evan Gardner,Tilton,D,2027,1/28/2009,966265,Evan Gardner,2009,1997.87,0.963,HIGH
+Colin Reilly,Tilton,D,2008,5/2/2008,1010705,Colin Reilly,2008,2253.33,0.963,HIGH
+Connor Long,Tilton,F,2026,1/1/2007,752425,Connor Long,2007,2960.09,0.963,HIGH
+Ryan Shanahan,Tilton,F,2027,11/28/2008,964234,Ryan Shanahan,2008,3054.22,0.963,HIGH
+Matthew McLellan,Tilton,F,2026,1/1/2007,834564,Matt McLellan,2007,2582.17,0.9,HIGH
+Bryce Turmel,Tilton,F,2026,6/12/2008,,,,0,0.558,NO_MATCH
+Zach Gay,Tilton,F,2026,2/18/2007,814827,Zach Gay,2007,2443.51,0.963,HIGH
+Brady Guenther,Tilton,D,2026,2/17/2007,865630,Brady Guenther,2007,2620.1,0.963,HIGH
+Christopher Marques,Tilton,D,2027,11/20/2008,1051313,Christopher Marques,2008,2263.47,0.963,HIGH
+Max Troubh,Tilton,D,2028,8/12/2009,1076177,Max Troubh,2009,1813.57,0.963,HIGH
+Tristan Murgo,Tilton,D,2028,2/14/2009,991566,Tristan Murgo,2009,1696.67,0.963,HIGH
+Tedy Hannon,Tilton,F,2026,6/20/2007,964984,Tedy Hannon,2007,2278.29,0.963,HIGH
+Alex Reed,Tilton,F,2026,2/26/2007,756226,Alex Reed,2007,2914.62,0.963,HIGH
+Griffin Halecki,Tilton,F,2026,9/6/2006,,,,0,0,NO_MATCH
+Hayden Hunter,Tilton,F,2026,4/23/2007,895026,Hayden Hunter,2007,2675.34,0.963,HIGH
+Cazimir Wotkowicz,Tilton,F,2027,3/1/2008,1022897,Cazmir Wotkowicz,2008,2570.23,0.942,HIGH
+Wesley Huft,Tilton,F,2027,9/29/2007,880356,Wesley Huft,2007,2257.46,0.9,HIGH
+Ryan Johnson,Tilton,F,2027,3/24/2008,951049,Ryan Johnson,2008,2337.47,0.9,HIGH
+Alex Mitza,Tilton,F,2028,9/25/2009,1037988,Alex Mitza,2009,1899.77,0.963,HIGH
+Eddie Hannan,Tilton,D,2026,11/22/2006,,,,0,0.372,NO_MATCH
+Tyler Roy,Tilton,G,2026,,1024244,Tucker Roy,2008,2119.2,0.773,MEDIUM
+Sam Graceffa,Tilton,G,2028,1/18/2009,988296,Sam Graceffa,2009,2529.37,0.9,HIGH
+Travis Zachary,Vermont Academy,G,2029,4/13/2010,988362,Travis Zachary,2010,1784.54,0.9,HIGH
+Harrison Ooten,Vermont Academy,D,2026,4/18/2007,1031429,Harrison Ooten,2007,490.21,1.0,HIGH
+Avery Gaudioso,Vermont Academy,F/D,2028,2/8/2010,1155688,Avery Gaudioso,2010,1410.5,0.9,HIGH
+Hayden Postles,Vermont Academy,D,2027,9/7/2008,1003665,Hayden Postles,2008,2663.95,1.0,HIGH
+Maddox Larocque,Vermont Academy,F,2027,12/20/2008,1104121,Maddox Larocque,2008,2374.1,1.0,HIGH
+Jeremy Acrobati,Vermont Academy,F,2027,10/29/2007,907504,Jeremy Acrobati,2007,2271.08,1.0,HIGH
+Blake Postles,Vermont Academy,F,2026,2/3/2007,816880,Blake Postles,2007,2519.41,1.0,HIGH
+Xander Robertson,Vermont Academy,F,2026,1/29/2007,750673,Xander Robertson,2007,2793.44,1.0,HIGH
+Kevin Summers,Vermont Academy,D/F,2026,1/15/2007,904272,Kevin Summers,2007,3079.39,1.0,HIGH
+Levi Jones,Vermont Academy,F,2026,4/22/2007,963568,Levi Jones,2007,2610.09,1.0,HIGH
+Raphael Ouimet,Vermont Academy,F,2027,3/2/2008,891084,Raphael Ouimet,2008,2330.95,1.0,HIGH
+Brady Mulloy,Vermont Academy,D,2027,8/15/2008,1023979,Brady Mulloy,2008,2411.09,1.0,HIGH
+Mathys Paradis,Vermont Academy,F,2027,10/20/2006,902976,Mathys Paradis,2007,2529.13,0.9,HIGH
+Leyton Riendeau,Vermont Academy,D,2027,8/25/2008,,,,0,0.624,NO_MATCH
+Leeo Cote-Tardif,Vermont Academy,F,2026,4/28/2007,,,,0,0,NO_MATCH
+Jack Morley,Vermont Academy,D,2027,7/7/2008,972564,Jack Morley,2008,2213.1800000000003,0.9,HIGH
+Conrad Clegg,Vermont Academy,F,2027,6/6/2009,,,,0,0.56,NO_MATCH
+Jake Hedman,Vermont Academy,G,2026,4/16/2007,961808,Jake Hedman,2007,2913.13,0.9,HIGH
+Cade Dumser,Vermont Academy,G,2028,9/18/2010,1029871,Cade Dumser,2010,1767.49,0.9,HIGH
+Charlie Carroll,Vermont Academy,G,2027,9/7/2006,1024291,Charlie Carroll,2008,2841.12,0.7,LOW
+Drake Esquer,Westminster,G,2028,12/8/2008,888339,Drake Esquer,2008,478.57,0.9,HIGH
+Quinn Peterson,Westminster,D,2027,11/9/2007,1157116,Quinn Peterson,2008,1824.71,0.8,MEDIUM
+Harry Holland,Westminster,D,2027,3/28/2008,617411,Harry Holland,2008,879.8499999999999,0.9,HIGH
+Billy Weller,Westminster,D,2026,1/12/2007,786603,William Weller,2007,445.69,0.9,HIGH
+Lucas Ward,Westminster,D,2028,10/7/2009,992075,Lucas Ward,2009,539.94,0.9,HIGH
+Nathan Caples,Westminster,D,2027,12/27/2007,764361,Nathan Caples,2007,711.9100000000001,0.9,HIGH
+Ezra Jones,Westminster,D,2027,1/5/2008,861643,Ezra Jones,2008,587.94,0.9,HIGH
+Michael McGrath,Westminster,F,2026,3/14/2007,1016389,Michael McGrath,2007,765.13,0.9,HIGH
+Caleb Regner,Westminster,F,2027,1/5/2008,859660,Caleb Regner,2008,513.8,0.9,HIGH
+William Kertesz,Westminster,F,2027,1/21/2008,887374,William Kertesz,2008,697.99,0.9,HIGH
+Lukas Royko,Westminster,F,2027,9/7/2008,907095,Lukas Royko,2008,720.89,0.9,HIGH
+Kellar Kelusky,Westminster,F,2027,5/26/2008,890438,Kellar Kelusky,2008,582.0699999999999,0.9,HIGH
+Owen Hannah,Westminster,F,2029,11/29/2010,1135778,Owen Hannah,2010,2010.51,0.9,HIGH
+Owen Andrews,Westminster,F,2028,1/16/2009,1021065,Owen Andrews,2009,913.9000000000001,0.9,HIGH
+Lukas Machan,Westminster,F,2026,4/17/2007,903358,Lukas Machan,2007,3021.69,0.9,HIGH
+Connor Mudd,Westminster,F,2026,7/16/2007,877349,Connor Mudd,2007,625.95,0.9,HIGH
+Nate Watson,Westminster,D,2026,3/16/2007,577058,Nathan Watson,2007,1779.16,0.9,HIGH
+Colton Simas,Westminster,F,2028,3/22/2009,1021048,Colton Simas,2009,2569.77,0.9,HIGH
+Jack Welch,Westminster,F,2026,5/15/2007,750766,Jack Welch,2007,2775.77,0.9,HIGH
+James Bellig,Westminster,F,2027,4/6/2008,888346,James Bellig,2008,619.54,0.9,HIGH
+Trey Sanford,Westminster,D,2027,1/10/2008,941660,Trey Sanford,2008,399.88,0.9,HIGH
+Alex Strug,Westminster,F,2028,5/1/2009,701324,Alexander Strug,2009,2177.86,0.9,HIGH
+Johan Wilkerson,Westminster,D,2027,4/5/2008,971525,Johan Wilkerson,2008,511.77,0.9,HIGH
+Matteo Alvarez,Westminster,F,2026,7/20/2007,845962,Matteo Alvarez,2007,2873.54,0.9,HIGH
+Elliot Lennon,Westminster,G,2026,3/5/2008,617451,Elliot Lennon,2008,4256.23,0.9,HIGH
+Frank Antonacci,Wilbraham & Monson,,,,,,,0,0.56,NO_MATCH
+Maxime Labelle- Lavallee,Wilbraham & Monson,G,2026,,,,,0,0.62,NO_MATCH
+Clyde Spaeth,Wilbraham & Monson,D,2026,,,,,0,0,NO_MATCH
+Trey Ledoux,Wilbraham & Monson,F,2027,,1096001,Trey Ledoux,2007,2906.36,0.7,LOW
+Austin Briggs,Wilbraham & Monson,F,2030,,,,,0,0.41,NO_MATCH
+Brodie St. Laurent,Wilbraham & Monson,D,2028,,1069896,Brodie St. Laurent,2009,2562.64,0.8,MEDIUM
+Brody Gouin,Wilbraham & Monson,D,2026,,1037832,Brody Gouin,2007,2768.2,0.8,MEDIUM
+John Lovell,Wilbraham & Monson,F,2026,,943828,Jack Loveland,2007,1726.53,0.68,LOW
+SEUNGHYUN Lee,Wilbraham & Monson,,2027,,1140470,Seong Min Lee,2009,923.0,0.78,MEDIUM
+Matthew Munsell,Wilbraham & Monson,C,2026,2/22/2008,869457,Matthew Munsell,2008,3148.85,0.9,HIGH
+Brendon Carroll,Wilbraham & Monson,F,2030,,1128258,Bryce Carroll,2011,1007.15,0.66,LOW
+Jaxon Dwyer,Wilbraham & Monson,,2029,,,,,0,0.41,NO_MATCH
+Benjamin Boudreau,Wilbraham & Monson,F,2029,,1095653,Ben Boudreau,2011,1863.66,0.9,HIGH
+Nick Burns,Wilbraham & Monson,C,2026,,1229866,Nick Burns,2010,2003.0,0.7,LOW
+Indiana Billing,Wilbraham & Monson,G,2026,,1046224,Indiana Billing,2007,2368.84,0.8,MEDIUM
+Kinabe Dana,Wilbraham & Monson,G,2028,,,,,0,0.337,NO_MATCH
+Kamden Jackson,Williston-Northampton,G,2029,3/4/2009,701435,Kamden Jackson,2009,2324.84,0.9,HIGH
+Cal Hoyt,Williston-Northampton,F,2025,4/8/2007,880955,Cal Hoyt,2007,2576.96,0.982,HIGH
+Easton Anello,Williston-Northampton,D,2027,1/19/2009,1057663,Easton Anello,2009,2560.64,0.982,HIGH
+Sam Chartier,Williston-Northampton,D,2029,1/30/2009,975563,Sam Chartier,2009,2284.81,0.982,HIGH
+Maddox Pemrick,Williston-Northampton,D/F,2027,12/20/2007,955671,Maddox Pemrick,2007,2647.9,0.9,HIGH
+Sawyer Berzins,Williston-Northampton,D,2028,6/11/2008,941646,Sawyer Berzins,2008,2739.33,0.982,HIGH
+Landon Brawn,Williston-Northampton,F,2029,11/30/2009,1021555,Landon Brawn,2009,1927.1,0.982,HIGH
+Jack Nolan,Williston-Northampton,F,2026,1/25/2007,815014,Jack Nolan,2007,2525.14,0.9,HIGH
+Camden Tabb,Williston-Northampton,F,2026,5/14/2007,755390,Camden Tabb,2007,3064.99,0.982,HIGH
+Rees Combres,Williston-Northampton,F,2027,1/22/2008,911625,Rees Combres,2008,3138.14,0.9,HIGH
+Hayden Hutner,Williston-Northampton,F,2026,1/26/2007,747324,Hayden Hutner,2007,3092.48,0.982,HIGH
+William Nadeau,Williston-Northampton,D,2029,11/8/2008,910835,William Nadeau,2008,2496.13,0.982,HIGH
+Owen Converse,Williston-Northampton,F,2026,7/1/2007,868137,Owen Converse,2007,3173.25,0.9,HIGH
+Ethen Fines,Williston-Northampton,F,2026,,897594,Ethen Fines,2007,3468.44,0.882,HIGH
+Declan Grenache,Williston-Northampton,F,2026,2/4/2007,1000197,Declan Grenache,2007,2885.3,0.982,HIGH
+Daniel Raff Cohen,Williston-Northampton,F,2027,9/16/2008,924714,Ariel Cohen,2008,1317.71,0.824,MEDIUM
+Brayden White,Williston-Northampton,F,2028,2/16/2009,936963,Brayden White,2009,2410.17,0.982,HIGH
+Luca Fantasia,Williston-Northampton,D,2026,10/17/2006,,,,0,0,NO_MATCH
+Cole Ryan,Williston-Northampton,D,,2/20/2009,1057673,Cole Ryan,2009,1917.87,0.9,HIGH
+Ryan Hanford,Williston-Northampton,F,2028,9/29/2009,,,,0,0,NO_MATCH
+Siwoo Lee,Williston-Northampton,F,2027,9/11/2008,879103,Siwoo Lee,2008,2442.5099999999998,0.9,HIGH
+Matthew Rodriguez,Williston-Northampton,D,2026,9/30/2007,897703,Matthew Rodriguez,2007,2971.44,0.982,HIGH
+Cam Sadak,Williston-Northampton,F,2029,9/2/2009,1031355,Camden Sadak,2009,1724.48,0.917,HIGH
+Alain Iglesias,Williston-Northampton,G,,5/24/2007,,,,0,0,NO_MATCH
+Casey Connor,Williston-Northampton,G,2026,5/7/2006,968783,Clare Connors,2007,127.25,0.656,LOW
+Brady Knode,Winchendon,G,2026,9/18/2007,856511,Brady Knode,2007,2276.9700000000003,0.9,HIGH
+Benjamin Short,Winchendon,F,2026,5/14/2008,952704,Ben Short,2008,3088.9,0.965,HIGH
+RJ Grace,Winchendon,D,2028,8/9/2009,,,,0,0,NO_MATCH
+Jack Ducharme,Winchendon,D,2028,1/2/2009,1025414,Jack Ducharme,2009,1936.32,0.9,HIGH
+Kaiden Sahajpal,Winchendon,F,2026,9/11/2008,617412,Kaidan Sahajpal,2008,3083.14,0.918,HIGH
+Laz Giardina,Winchendon,F,2026,6/29/2006,,,,0,0,NO_MATCH
+Matthew Macinnis,Winchendon,D,2027,7/8/2008,757828,Matt Macinnis,2008,2727.33,0.965,HIGH
+drew short,Winchendon,F,2028,3/14/2010,1025442,Drew Short,2010,1837.75,0.9,HIGH
+Edouard Cantin,Winchendon,F,2026,9/24/2008,886819,Édouard Cantin,2008,2605.77,0.925,HIGH
+Coen Bassler,Winchendon,F,2028,11/19/2009,1093200,Coen Bassler,2009,1817.81,0.965,HIGH
+Jake West,Winchendon,F,2026,6/2/2007,877346,Jake West,2007,2486.73,0.965,HIGH
+cooper ludwar,Winchendon,F,2026,8/2/2007,689943,Cooper Ludwar,2007,2542.6,0.965,HIGH
+Kaden Kern,Winchendon,F,2026,,860682,Kaden Kern,2007,2404.83,0.865,HIGH
+Steven Khonroo,Winchendon,F,2026,1/16/2008,888326,Steven Khonroo,2008,2575.76,0.965,HIGH
+Tyler Poti,Winchendon,D,2028,5/20/2010,1095756,Tyler Poti,2010,1949.37,0.965,HIGH
+Daniel Maglathlin,Winchendon,D,2027,3/7/2008,911556,Danny Maglathlin,2008,2412.3900000000003,0.965,HIGH
+Mackinely Dumais,Winchendon,G,2027,10/25/2008,994748,Mackinley Dumais,2008,2694.39,0.869,HIGH
+Anthony Pomarico,Winchendon,D,2026,3/7/2007,783221,Anthony Pomarico,2007,2401.89,0.965,HIGH
+Jack Connole,Winchendon,G,2028,1/14/2009,1057686,Jack Connole,2009,1638.66,0.9,HIGH
+Jacob Turcotte,Winchendon,D,2027,5/12/2009,1021559,Jacob Turcotte,2009,2324.79,0.965,HIGH
+Georges Vergnion,Winchendon,F,2026,1/1/2008,980795,Georges Vergnion,2008,2511.11,0.961,HIGH
+Jackson Smail,Winchendon,F,2026,5/31/2008,946127,Jackson Smail,2008,2976.86,0.965,HIGH
+Liam Carlin,Winchendon,F,2028,2/1/2010,1046211,Liam Carlin,2010,1892.65,0.9,HIGH
+Thomas Sibley,Winchendon,F,2026,4/24/2008,1054306,Thomas Sibley,2008,2252.82,0.965,HIGH
+Charlie Puglisi,Winchendon,F,2026,4/16/2008,617416,Charlie Puglisi,2008,3831.0,0.965,HIGH
+Alex Marottolo,Worcester Academy,F,2028,4/21/2009,1031352,Alex Marottolo,2009,1711.51,0.9,HIGH
+Connor Emens,Worcester Academy,D,2026,,758116,Connor Emens,2007,2691.8,0.8,MEDIUM
+Noah Indes,Worcester Academy,F,2027,,911633,Noah Indes,2008,2668.51,0.8,MEDIUM
+Caleb North,Worcester Academy,F,2026,,,,,0,0.645,NO_MATCH
+Mason Kuchinski,Worcester Academy,F,2026,8/26/2007,869068,Mason Kuchinski,2007,1834.81,0.9,HIGH
+Matthew Patko,Worcester Academy,D,2027,2/7/2008,888337,Matthew Patko,2008,3260.23,0.9,HIGH
+Jace Knopp,Worcester Academy,D,2027,6/27/2008,932991,Jace Knopp,2008,2495.57,0.9,HIGH
+Thomas Heslin,Worcester Academy,F,2028,3/30/2009,954685,Thomas Heslin,2009,260.43,0.9,HIGH
+Seamus McMakin,Worcester Academy,F,2026,,930991,Seamus McMakin,2007,2567.98,0.8,MEDIUM
+Jonathan Chon,Worcester Academy,F,2026,,845969,Jonathan Chon,2007,2548.69,0.8,MEDIUM
+Andrew Martineau,Worcester Academy,F,2029,4/26/2010,998589,Andrew Martineau,2010,1947.08,0.9,HIGH
+Joseph Mallette,Worcester Academy,D,2027,,974724,Joseph Mallette,2008,3041.96,0.8,MEDIUM
+Logan Martel,Worcester Academy,D,2026,11/20/2006,902343,Nelian Martel,2007,1503.92,0.673,LOW
+Parker Farnham,Worcester Academy,F,2026,,852905,Parker Farnham,2007,2757.99,0.8,MEDIUM
+Jack Mceleney,Worcester Academy,F,2026,7/7/2007,924243,Jack McEleney,2007,2632.99,0.9,HIGH
+Jack Lee,Worcester Academy,F,2026,8/18/2007,750563,Jack Lee,2007,2266.42,0.9,HIGH
+Micheal O'Sullivan,Worcester Academy,F,2028,9/1/2009,,,,0,0,NO_MATCH
+Gino LaRusso,Worcester Academy,F,2026,6/5/2007,817477,Giovanni LaRusso,2007,3558.51,0.76,MEDIUM
+Tommy Browne,Worcester Academy,D,2026,,750741,Tommy Browne,2007,3180.23,0.8,MEDIUM
+James Levell-Lynch,Worcester Academy,D,2027,,991571,James Levell-Lynch,2008,2660.94,0.8,MEDIUM
+Britton Bethard,Worcester Academy,F,2026,,885195,Britton Bethard,2007,2575.63,0.8,MEDIUM
+Gaines Clonts,Worcester Academy,F,2026,,816873,Gaines Clonts,2007,2774.59,0.8,MEDIUM
+Wilson Szydlo,Worcester Academy,G,2027,10/30/2008,947528,Wilson Szydlo,2008,2767.28,0.9,HIGH
+Cody Hew,Worcester Academy,G,2026,9/16/2008,949295,Cody Hew,2008,2804.0299999999997,0.9,HIGH

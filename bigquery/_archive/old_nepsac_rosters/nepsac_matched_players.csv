@@ -1,0 +1,984 @@
+nepsac_rank,player_name,first_name,last_name,team,position,games_played,goals,assists,points,ppg,matched,match_confidence,match_reason,player_id,birth_year,nationality,ep_views,prodigy_points,prodigy_team,prodigy_league
+1,Caiden Pellegrino,Caiden,Pellegrino,St. Marks,C,12,13,25,38,3.17,True,1.0,exact_name+exact_lastname+exact_firstname+team_match,701311,2009,USA,1272.44,4497.4400000000005,St. Mark's School,USHS-Prep
+2,James McMurray,James,McMurray,Berkshire School,F,17,14,19,33,1.94,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,897623,2007,Canada,304.01,3340.41,Berkshire School,USHS-Prep
+3,Josh Phillips,Josh,Phillips,Kimball Union,F,20,10,20,30,1.5,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,755331,2007,USA,280.07,3684.19,Kimball Union Academy,USHS-Prep
+4,Evan Nee,Evan,Nee,St. Marks,F,12,19,11,30,2.5,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,750560,2007,USA,425.08,2797.08,Boston Jr. Eagles 18U AAA,18U AAA
+5,Rich Cavanagh,Rich,Cavanagh,Pomfret,F,16,13,17,30,1.88,True,0.78,close_name+exact_lastname+similar_firstname+position_match,893579,2007,USA,112.17,1050.05,Team Crimson,PPP
+6,Will Manchuso,Will,Manchuso,St. Marks,F,12,14,16,30,2.5,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1050343,2008,USA,398.86,4365.82,NV River Rats 18U AAA National,18U AAA
+7,Myles Brosnan,Myles,Brosnan,Dexter,D,16,5,24,29,1.81,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,750559,2007,USA,708.36,4494.79,Brookline Whalers 18U AAA,18U AAA
+8,Matthew Lacombe,Matthew,Lacombe,Berkshire School,F,17,8,21,29,1.71,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,748889,2007,USA,531.84,3728.8999999999996,Berkshire School,USHS-Prep
+9,Giacomo Caliri,Giacomo,Caliri,Pomfret,F,16,12,17,29,1.81,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,893573,2007,USA,274.58,1484.25,Team Crimson,PPP
+10,Jack Broderick,Jack,Broderick,Kent School,F,13,11,17,28,2.15,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,934473,2007,USA,998.06,3972.06,Yale Jr. Bulldogs 18U AAA,18U AAA
+11,Cam Mcpherson,Cam,Mcpherson,St. Marks,F,12,6,18,24,2.0,False,0.44000000000000006,similar_name+exact_lastname+position_match,,,,0,0,,
+12,Keith Olympia,Keith,Olympia,St. Marks,F,12,6,18,24,2.0,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,978957,2009,USA,91.97,1930.97,Boston Jr. Eagles 16U AAA,16U AAA
+13,Jonah Rainisch,Jonah,Rainisch,Berkshire School,F,17,13,10,23,1.35,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,962126,2007,USA,237.12,3362.12,Berkshire School,USHS-Prep
+14,Max Donatelli,Max,Donatelli,St. Georges,F,14,9,14,23,1.64,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,893576,2007,USA,369.9,2881.9700000000003,NV River Rats 18U AAA National,18U AAA
+15,Charlie Puglisi,Charlie,Puglisi,Winchendon,F,16,9,14,23,1.44,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,617416,2008,USA,711.77,3515.37,Islanders Hockey Club Prep East,EHF 18U
+16,Seamus McMakin,Seamus,McMakin,Canterbury,F,15,8,15,23,1.53,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,930991,2007,USA,34.65,2234.65,Springfield Thunderbirds 18U AAA,BEAST 18U
+17,Billy MacAusland,Billy,MacAusland,Noble & Greenough,F,13,10,13,23,1.77,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,576993,2007,USA,957.86,3407.86,Boston Jr. Eagles 18U AAA,18U AAA
+18,Noah Poinsett-Yoshida,Noah,Poinsett-Yoshida,Exeter,F,14,8,14,22,1.57,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,888672,2007,USA,150.84,2628.84,NV River Rats 19U AAA,BEAST 18U
+19,CJ List,CJ,List,Millbrook,F,19,10,12,22,1.16,True,0.55,similar_name+exact_lastname+position_match,1053282,2010,Canada,10.9,1856.9,Upper Canada College U16 AAA,U16 AAA
+20,Lucas Husted-Edwards,Lucas,Husted-Edwards,Kent School,F,12,10,12,22,1.83,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,747405,2007,USA,265.02,2554.02,Yale Jr. Bulldogs 18U AAA,18U AAA
+21,Logan Ferrara,Logan,Ferrara,Loomis Chaffee,F,12,8,14,22,1.83,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,941325,2008,USA,278.13,3274.13,The Loomis Chaffee School,USHS-Prep
+22,Nick Dolympio,Nick,Dolympio,Dexter,F,16,6,16,22,1.38,False,0,no_match,,,,0,0,,
+23,Johnny Niemela,Johnny,Niemela,New Hampton,F,17,9,13,22,1.29,True,1.0,exact_name+exact_lastname+similar_firstname+team_match+position_match,845622,2007,USA,161.54,3356.83,New Hampton School,USHS-Prep
+24,Sam Gero,Sam,Gero,Millbrook,F,19,6,15,21,1.11,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,931426,2007,USA,520.54,2892.54,Northern CT Nor'Easters 18U AAA,18U AAA
+25,Conal Mulkerrin,Conal,Mulkerrin,Kimball Union,F,20,15,6,21,1.05,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1004638,2008,USA,54.25,2258.51,Cape Cod Whalers 16U AAA,16U AAA
+26,Will Schlechtweg,Will,Schlechtweg,Kent School,F,10,8,13,21,2.1,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,783144,2008,USA,725.89,3358.89,Yale Jr. Bulldogs 18U AAA,18U AAA
+27,Jack Fitzpatrick,Jack,Fitzpatrick,Dexter,F,16,13,8,21,1.31,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,877345,2007,USA,277.86,3073.45,Brookline Whalers 18U AAA,18U AAA
+28,Ryan Mogielnicki,Ryan,Mogielnicki,Austin Prep,F,17,14,7,21,1.24,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1011526,2009,USA,59.67,1913.67,Islanders Hockey Club 16U AAA,16U AAA
+29,Nathan Dono,Nathan,Dono,Pomfret,F,16,6,15,21,1.31,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1021208,2008,USA,99.87,2449.87,East Coast Militia 18U AAA,18U AAA
+30,Tommy Browne,Tommy,Browne,Canterbury,D,15,7,14,21,1.4,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,750741,2007,USA,361.0,2894.41,NV River Rats 18U AAA National,18U AAA
+31,Jackson Kimelman,Jackson,Kimelman,Kimball Union,F,20,8,12,20,1.0,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,916566,2008,Canada,139.26,2837.26,Toronto Nationals U18 AAA,GTHL U18
+32,Lucas Hannay,Lucas,Hannay,Kimball Union,D,20,5,15,20,1.0,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,889804,2008,Canada,556.86,2580.86,Edmundston Blizzard,MJAHL
+33,Aiden Ferreira,Aiden,Ferreira,St. Georges,F,14,10,9,19,1.36,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,750955,2007,USA,135.05,2604.82,NV River Rats 18U AAA National,18U AAA
+34,Sam Lee,Sam,Lee,Belmont Hill,F,16,9,10,19,1.19,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,998453,2010,USA,224.35,2394.9800000000005,Boston Jr. Eagles 14U AAA,14U AAA
+35,Mason McGovern,Mason,McGovern,Austin Prep,F,17,10,9,19,1.12,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1083095,2011,USA,173.04,1373.04,Islanders Hockey Club 14U AAA,14U AAA
+36,Luke Long,Luke,Long,Proctor Academy,F,16,9,10,19,1.19,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1093159,2007,USA,35.99,2799.99,Catholic Memorial School,USHS-MA
+37,Jack Mceleney,Jack,Mceleney,Canterbury,F,15,7,12,19,1.27,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,924243,2007,USA,33.71,2560.67,Assabet Valley Patriots 18U AAA,18U AAA
+38,Patrick Woods,Patrick,Woods,Belmont Hill,F,16,8,10,18,1.13,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,576996,2007,USA,844.21,3286.21,Boston Jr. Eagles 18U AAA,18U AAA
+39,Owen McHale,Owen,McHale,Dexter,F,15,13,5,18,1.2,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,617463,2008,USA,815.92,4057.92,Dexter Southfield School,USHS-Prep
+40,Nate Kreppner,Nate,Kreppner,Andover,F,15,6,12,18,1.2,True,0.7,close_name+exact_lastname+position_match,987158,2008,Canada,109.57,2463.41,East Coast Militia 18U AAA,18U AAA
+41,Laz Giardina,Laz,Giardina,Winchendon,F,16,9,9,18,1.13,True,0.55,similar_name+exact_lastname+position_match,1064691,2009,USA,73.65,2158.12,Seacoast Performance Academy 16U,16U AAA
+42,Danny Patch,Danny,Patch,Pingree,F,13,7,11,18,1.38,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1011500,2009,USA,142.68,2210.6800000000003,Boston Jr. Eagles 16U AAA,16U AAA
+43,Deagan Nadeau,Deagan,Nadeau,North Yarmouth,F,20,9,8,17,0.85,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,957284,2008,USA,123.14,2428.14,Top Gun/NE Prep 18U AAA,NEFPHL 18U
+44,Grady Bishop,Grady,Bishop,St. Marks,F,12,8,9,17,1.42,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,937421,2007,USA,205.08,3093.75,Minuteman Flames 18U AAA,18U AAA
+45,Teddy Drury,Teddy,Drury,St. Marks,F,12,6,11,17,1.42,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,867298,2007,USA,716.79,4028.13,St. Mark's School,USHS-Prep
+46,TJ Swinson,TJ,Swinson,Pomfret,F,16,7,10,17,1.06,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,852909,2007,USA,460.67,1433.3,Team Crimson,PPP
+47,Zach Boss,Zach,Boss,The Hill School,F,16,10,7,17,1.06,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,995915,2007,USA,337.59,2463.03,The Hill School,TNPHL
+48,Tommy Egan,Tommy,Egan,Austin Prep,F,17,5,12,17,1.0,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1084111,2010,USA,18.46,2816.86,Billerica High,USHS-MA
+49,Viktor Samal,Viktor,Samal,Holderness,F,11,8,9,17,1.55,False,0,no_match,,,,0,0,,
+50,Jack Goodrich,Jack,Goodrich,Berwick,F,15,8,9,17,1.13,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,938349,2009,USA,68.76,1854.76,Islanders Hockey Club 16U AAA,16U AAA
+51,Cam Peltz,Cam,Peltz,Pomfret,F,16,9,8,17,1.06,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,752622,2007,USA,110.5,843.1700000000001,Team Crimson,PPP
+52,Nate Moons,Nate,Moons,Groton,F,13,4,13,17,1.31,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,876687,2008,Canada,206.76,2406.76,East Coast Militia 18U AAA,18U AAA
+53,Cam Lathrop,Cam,Lathrop,North Yarmouth,F,11,8,8,16,1.45,True,0.7,close_name+exact_lastname+position_match,763814,2007,USA,143.21,2765.04,The Frederick Gunn School,USHS-Prep
+54,Jacob Colaluca,Jacob,Colaluca,North Yarmouth,F,19,6,10,16,0.84,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1001811,2007,USA,37.73,2432.73,Casco Bay Mariners 18U AA,UT1HL 18U
+55,Jake West,Jake,West,Winchendon,F,16,9,7,16,1.0,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,877346,2007,USA,160.6,2258.6,Islanders Hockey Club Prep East,EHF 18U
+56,Nasean Faria,Nasean,Faria,Kimball Union,D,19,6,10,16,0.84,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,628146,2008,Canada,281.87,3260.87,Kimball Union Academy,USHS-Prep
+57,Jack Lee,Jack,Lee,Canterbury,F,15,9,7,16,1.07,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,1047659,2010,Canada,138.06,2072.2200000000003,Barrie Colts U16 AAA,OMHA U16
+58,Evan Jones,Evan,Jones,Belmont Hill,D,15,9,7,16,1.07,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,750565,2007,USA,542.47,3129.4700000000003,Boston Jr. Eagles 18U AAA,18U AAA
+59,Joe Feinberg,Joe,Feinberg,Milton Academy,F,16,10,6,16,1.0,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,788019,2007,USA,334.45,2876.2200000000003,East Coast Militia 18U AAA,18U AAA
+60,AJ Oliveri,AJ,Oliveri,Worcester Academy,F,13,10,6,16,1.23,False,0.36000000000000004,similar_name+close_lastname+position_match,,,,0,0,,
+61,Garrett Aceto,Garrett,Aceto,Proctor Academy,F,16,7,9,16,1.0,True,0.55,similar_name+exact_lastname+position_match,1001320,2008,USA,5.75,2579.76,York High,USHS-ME
+62,Max Colosimo,Max,Colosimo,Milton Academy,F,16,7,9,16,1.0,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,617408,2008,USA,869.97,3507.35,East Coast Militia 18U AAA,18U AAA
+63,Alex Small,Alex,Small,Andover,F,15,4,12,16,1.07,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,577170,2007,USA,588.7,3326.2,NV River Rats 19U AAA,18U AAA
+64,Matt Homer,Matt,Homer,New Hampton,F,12,10,6,16,1.33,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,901044,2007,USA,172.78,3176.48,New Hampton School,USHS-Prep
+65,Jack Queally,Jack,Queally,St. Sebastian's,F,12,9,7,16,1.33,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,1060378,2010,USA,251.17,3539.17,St. Sebastian's School,USHS-Prep
+66,Sawyer Graubins,Sawyer,Graubins,Holderness,F,12,6,10,16,1.33,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,752423,2007,USA,251.91,2630.91,Islanders Hockey Club Prep West,18U AAA
+67,Ryan MacCurtain,Ryan,MacCurtain,Noble & Greenough,F,13,9,7,16,1.23,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1005312,2008,USA,55.72,2255.72,Brookline Whalers 18U AAA,18U AAA
+68,Colvin Callahan,Colvin,Callahan,Tabor,F,13,9,7,16,1.23,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,929782,2007,USA,204.01,2738.08,NV River Rats 18U AAA National,18U AAA
+69,Kellan Kissane,Kellan,Kissane,Worcester Academy,F,10,7,9,16,1.6,True,0.78,close_name+exact_lastname+similar_firstname+team_match+position_match,914237,2008,USA,188.09,3630.65,Shady Side Academy,USHS-Prep
+70,Cade Noonan,Cade,Noonan,St. Sebastian's,F,12,7,9,16,1.33,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,978963,2009,USA,134.45,2212.45,Boston Jr. Eagles 16U AAA,16U AAA
+71,Justin Garvey,Justin,Garvey,Milton Academy,D,16,2,14,16,1.0,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,747407,2007,USA,205.89,2749.17,East Coast Militia 18U AAA,18U AAA
+72,Joey Dellacroce,Joey,Dellacroce,NMH,F,17,9,6,15,0.88,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,750764,2007,USA,277.99,664.99,Islanders Hockey Club 19U AAA,19U AAA
+73,Shamil Sitdkov,Shamil,Sitdkov,Kents Hill,F,16,5,10,15,0.94,True,1.0,exact_name+close_lastname+exact_firstname+team_match+position_match,1016860,2007,Russia,45.15,2871.15,Kents Hill School,USHS-Prep
+74,Carter Balducci,Carter,Balducci,Mount St. Charles,F,10,7,8,15,1.5,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,929785,2007,USA,77.99,736.99,Team Jr Blues,PPP
+75,Brandon Remppel,Brandon,Remppel,Millbrook,F,19,4,11,15,0.79,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,968381,2008,USA,100.2,509.81,Team Grey,PPP
+76,Owen Cronan,Owen,Cronan,Groton,F,13,7,8,15,1.15,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,862368,2008,USA,150.5,2501.5,East Coast Militia 18U AAA,18U AAA
+77,Michael Delaney,Michael,Delaney,Holderness,F,12,5,10,15,1.25,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,964230,2008,USA,301.2,2677.2,Islanders Hockey Club Prep West,18U AAA
+78,Tripp Schuhwerk,Tripp,Schuhwerk,Governors Academy,F,14,9,6,15,1.07,True,1.0,exact_name+exact_lastname+exact_firstname+team_match,783174,2007,USA,94.38,2925.49,The Governor's Academy,USHS-Prep
+79,Mitchell Smith,Mitchell,Smith,St. Paul's School,F,16,7,8,15,0.94,True,0.98,close_name+exact_lastname+similar_firstname+team_match+position_match,959913,2008,Canada,220.33,3502.0,St. Paul's School,USHS-Prep
+80,Ford Sullivan,Ford,Sullivan,Governors Academy,F,14,6,9,15,1.07,False,0.44000000000000006,similar_name+exact_lastname+position_match,,,,0,0,,
+81,Robbie Daley,Robbie,Daley,Governors Academy,F,14,8,7,15,1.07,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,750564,2007,USA,211.84,3081.54,East Coast Militia 18U AAA,18U AAA
+82,Matt Carolan,Matt,Carolan,Belmont Hill,F,16,9,6,15,0.94,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,979668,2007,USA,78.86,3053.86,Belmont Hill School,USHS-Prep
+83,Dylan Podergois,Dylan,Podergois,New Hampton,F,14,3,12,15,1.07,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,845972,2007,USA,193.11,2964.11,New Hampshire Mountain Kings,NAHL
+84,Hayden Hutner,Hayden,Hutner,Williston-Northampton,F,15,6,9,15,1.0,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,747324,2007,USA,323.48,2872.48,Springfield Thunderbirds 18U AAA,BEAST 18U
+85,Jackson Smail,Jackson,Smail,Winchendon,F,15,5,10,15,1.0,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,946127,2008,USA,361.2,2760.2,Islanders Hockey Club Prep East,EHF 18U
+86,Ty Hymovitz,Ty,Hymovitz,Thayer Academy,F,10,5,10,15,1.5,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,617460,2008,USA,340.2,3682.17,Thayer Academy,USHS-Prep
+87,Noah Survilas,Noah,Survilas,Dexter,F,16,6,8,14,0.88,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,914125,2008,USA,566.15,3943.15,Dexter Southfield School,USHS-Prep
+88,Teddy Farren,Teddy,Farren,NMH,F,17,4,10,14,0.82,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1004641,2008,USA,190.7,973.7,Islanders Hockey Club 19U AAA,19U AAA
+89,Max Gagnon,Max,Gagnon,Tilton,F,15,5,9,14,0.93,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,577003,2007,USA,284.82,2856.94,Northern Cyclones 18U AAA Prep 4,18U AAA
+90,Kaiden Sahajpal,Kaiden,Sahajpal,Winchendon,F,12,6,8,14,1.17,True,0.78,close_name+exact_lastname+similar_firstname+position_match,617412,2008,Canada,722.81,2824.81,Islanders Hockey Club Prep East,EHF 18U
+91,Jaxon Sabataso,Jaxon,Sabataso,North Yarmouth,F,20,7,7,14,0.7,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,617923,2007,USA,77.26,1814.76,Vegas Jr. Golden Knights 16U AAA,NAT1HL 16U
+92,Maddox Boyle,Maddox,Boyle,Kent School,F,13,5,9,14,1.08,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,898381,2008,USA,276.39,3405.69,CT Nor'Easters Lions 18U AAA,18U AAA
+93,Carson Woolcott,Carson,Woolcott,Loomis Chaffee,F,12,3,11,14,1.17,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,577126,2007,USA,206.89,3036.22,The Loomis Chaffee School,USHS-Prep
+94,Jack Funk,Jack,Funk,Thayer Academy,F,14,9,5,14,1.0,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,701465,2009,USA,101.81,2184.06,Cape Cod Whalers 16U AAA,16U AAA
+95,Phin Howard,Phin,Howard,St. Marks,D,12,1,13,14,1.17,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,940902,2008,USA,130.23,2849.2,NV River Rats 18U AAA National,18U AAA
+96,Axel Black,Axel,Black,Proctor Academy,F,16,9,5,14,0.88,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,758110,2007,USA,109.43,2631.0,FP Hornets 19U,NEFPHL 19U
+97,Blake Cash,Blake,Cash,Cushing Academy,F,15,7,7,14,0.93,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,895018,2008,USA,455.45,2868.36,Seacoast Performance Academy 16U AAA National,16U AAA
+98,Finian Kilbourne,Finian,Kilbourne,St. Paul's School,F,16,4,10,14,0.88,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,1032789,2008,USA,44.75,3256.44,St. Paul's School,USHS-Prep
+99,Nico Ciardiello,Nico,Ciardiello,Avon Old Farms,F,11,7,7,14,1.27,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,969822,2008,USA,390.23,2316.23,Mid Fairfield Rangers 16U AAA,16U AAA
+100,Carter Felt,Carter,Felt,Rivers School,F,10,7,7,14,1.4,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,999100,2010,USA,273.71,2605.21,South Shore Kings 14U AAA 3,14U AAA
+101,Jack Ross,Jack,Ross,Kimball Union,F,20,3,11,14,0.7,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,885665,2008,Canada,64.21,2627.62,Winnipeg Wild U18 AAA,MU18HL
+102,JP Messuri,JP,Messuri,Dexter,F,16,3,11,14,0.88,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1005572,2008,USA,246.49,2933.26,Brookline Whalers 18U AAA,18U AAA
+103,Ben Romer,Ben,Romer,BB&N,F,11,4,10,14,1.27,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,872050,2007,USA,120.2,2878.37,GBL Bruins 18U AAA,18U AAA
+104,Dawson Wood,Dawson,Wood,Kimball Union,F,19,7,7,14,0.74,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1122747,2009,USA,15.85,2131.86,95 Giants 15U AAA,15U AAA
+105,Anthony Brunetti,Anthony,Brunetti,St. Marks,F,12,6,8,14,1.17,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1032185,2009,USA,98.46,2663.96,Providence Capitals 16U AAA,16U AAA
+106,Liam Welsh,Liam,Welsh,Kents Hill,F,15,6,8,14,0.93,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,752416,2007,USA,127.83,3179.68,Kents Hill School,USHS-Prep
+107,Joe Sasso,Joe,Sasso,Exeter,F,14,6,7,13,0.93,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,1081630,2008,USA,25.22,2675.22,Phillips Exeter Academy,USHS-Prep
+108,Cam Fiasconaro,Cam,Fiasconaro,Exeter,D,14,5,8,13,0.93,False,0,no_match,,,,0,0,,
+109,Tyler Hamilton,Tyler,Hamilton,Dexter,F,16,7,6,13,0.81,True,0.52,close_name+exact_lastname,966556,2009,Canada,158.26,2253.8199999999997,Calgary Flames U18 AAA,AEHL U18
+110,Erion Milla,Erion,Milla,Berkshire School,F,17,5,8,13,0.76,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,869032,2007,USA,327.09,3608.42,Berkshire School,USHS-Prep
+111,Cooper Ludwar,Cooper,Ludwar,Winchendon,F,10,7,6,13,1.3,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,689943,2007,USA,179.6,2247.6,Islanders Hockey Club Prep East,EHF 18U
+112,Dominic Somma,Dominic,Somma,Berkshire School,D,17,3,10,13,0.76,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,690477,2007,USA,542.07,3720.6099999999997,Berkshire School,USHS-Prep
+113,Jonathan Rivard,Jonathan,Rivard,Rivers School,F,10,4,9,13,1.3,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,893598,2007,USA,70.03,3032.8,The Rivers School,USHS-Prep
+114,Michael Federico,Michael,Federico,Thayer Academy,F,14,8,5,13,0.93,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1009904,2008,USA,369.63,3004.24,NV River Rats 18U AAA National,18U AAA
+115,Jake Assad,Jake,Assad,Dexter,F,16,3,10,13,0.81,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,893577,2007,USA,274.65,2946.94,Brookline Whalers 18U AAA,18U AAA
+116,Nick Ranaldi,Nick,Ranaldi,Austin Prep,F,17,11,2,13,0.76,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,764360,2007,USA,3.88,3261.88,Middlesex Islanders Black,QC Int PW
+117,Liam Conley,Liam,Conley,Austin Prep,F,17,5,8,13,0.76,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,951053,2008,USA,36.99,2327.99,Islanders Hockey Club West 18U,18U AA
+118,Ian Sherman,Ian,Sherman,Pomfret,D,16,5,8,13,0.81,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1005576,2008,USA,190.97,3096.53,NV River Rats 18U AAA National,18U AAA
+119,Axel Favreau,Axel,Favreau,Cushing Academy,C,15,2,11,13,0.87,True,0.93,exact_name+exact_lastname+exact_firstname,904910,2007,USA,481.07,3255.74,Central Mass Penguins 18U AAA,18U AAA
+120,Noah Keeler,Noah,Keeler,Milton Academy,F,16,8,5,13,0.81,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1093517,2008,USA,781.4,3985.06,Vermont Jr. Catamounts 16U AAA,16U AAA
+121,Mason Serafin,Mason,Serafin,Millbrook,D,19,3,10,13,0.68,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,750755,2007,USA,129.1,497.93,Team Grey,PPP
+122,Tommy Wilkinson,Tommy,Wilkinson,Thayer Academy,F,14,8,5,13,0.93,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,998355,2008,USA,342.34,3252.96,East Coast Militia 18U AAA,18U AAA
+123,Robert DeKleine,Robert,DeKleine,Belmont Hill,F,16,4,9,13,0.81,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1046763,2010,USA,188.63,1713.63,Minuteman Flames 14U AAA,14U AAA
+124,Kieran McIntosh,Kieran,McIntosh,Andover,F,15,3,10,13,0.87,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,871548,2008,Canada,331.71,3046.17,East Coast Militia 18U AAA,18U AAA
+125,Ethan Travis,Ethan,Travis,Tabor,F,12,8,5,13,1.08,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,949297,2008,USA,696.05,3716.59,NV River Rats 18U AAA National,18U AAA
+126,Gaines Clonts,Gaines,Clonts,Canterbury,F,15,3,10,13,0.87,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,816873,2007,USA,177.26,2591.26,Springfield Thunderbirds 18U AAA,BEAST 18U
+127,Hunter Barone,Hunter,Barone,BB&N,F,11,5,8,13,1.18,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1012535,2008,USA,38.06,2704.06,GBL Bruins 18U AAA,18U AAA
+128,Casey Berninger,Casey,Berninger,Millbrook,F,19,6,7,13,0.68,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,705657,2007,USA,120.07,500.07,Team Grey,PPP
+129,Alexis Gagne,Alexis,Gagne,Kimball Union,F,20,5,8,13,0.65,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1138371,2011,Canada,0,1404.0,Ulysse Académie M15 D2,RSEQ M15 D2
+130,Ethan Gingeleskie,Ethan,Gingeleskie,Avon Old Farms,F,9,8,5,13,1.44,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,978994,2009,USA,280.67,2779.67,Northern CT Nor'Easters 18U AAA,18U AAA
+131,Blake Grislis,Blake,Grislis,St. Marks,D/F,12,1,12,13,1.08,True,0.9,exact_name+exact_lastname+exact_firstname,893572,2007,USA,114.18,2519.94,NV River Rats 19U AAA,18U AAA
+132,Andrew Giguere,Andrew,Giguere,Governors Academy,F,14,3,10,13,0.93,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,937005,2008,USA,195.32,3046.65,NV River Rats 18U AAA National,18U AAA
+133,Aiden Goodwin,Aiden,Goodwin,Austin Prep,F,17,3,10,13,0.76,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1011527,2009,USA,32.84,1715.84,Islanders Hockey Club 16U AAA,16U AAA
+134,Nick Sumner,Nick,Sumner,Thayer Academy,F,14,3,10,13,0.93,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,617464,2008,USA,371.1,2976.1,East Coast Militia 18U AAA,18U AAA
+135,Cal Gustafson,Cal,Gustafson,Kent School,D,13,2,11,13,1.0,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,755389,2007,USA,205.62,2733.4,CT Nor'Easters Lions 18U AAA,18U AAA
+136,David O'Neill,David,O'Neill,Andover,F,15,2,10,12,0.8,False,0,no_match,,,,0,0,,
+137,Isaac Hutchinson,Isaac,Hutchinson,NMH,F,17,4,8,12,0.71,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,914202,2008,USA,83.95,706.95,Islanders Hockey Club 19U AAA,19U AAA
+138,Jason Rothstein,Jason,Rothstein,Taft,F,10,2,10,12,1.2,False,0.44000000000000006,similar_name+exact_lastname+position_match,,,,0,0,,
+139,Stephen Rousell,Stephen,Rousell,Rivers School,F,10,6,6,12,1.2,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,987628,2008,USA,112.98,2605.98,East Coast Militia 18U AAA,18U AAA
+140,Gavin Wainwright,Gavin,Wainwright,St. Sebastian's,D,12,4,8,12,1.0,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,929789,2007,USA,98.19,2445.19,East Coast Militia 18U AAA,18U AAA
+141,Tom Ford,Tom,Ford,Austin Prep,F,17,6,6,12,0.71,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,951048,2008,USA,15.32,1915.32,Islanders Hockey Club West 18U,18U AA
+142,Max Santos,Max,Santos,St. Marks,F,7,4,8,12,1.71,True,0.56,close_name+exact_lastname+position_match,967558,2007,Canada,72.71,2470.71,Viking VC Hockey U18,NAPrepHL U18
+143,Bruce Zhong,Bruce,Zhong,St. Marks,F,12,6,6,12,1.0,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,933953,2009,Canada,95.25,3076.58,Minuteman Flames 18U AAA,18U AAA
+144,Tucker Harris,Tucker,Harris,Avon Old Farms,F,11,5,7,12,1.09,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,577035,2007,USA,443.61,2732.61,Northern CT Nor'Easters 18U AAA,18U AAA
+145,Will Norton,Will,Norton,Pomfret,F,16,9,3,12,0.75,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1160066,2010,USA,0,1055.0,Pittsburgh Predators 14U AAA,14U AAA
+146,Jake Pandolfo,Jake,Pandolfo,Austin Prep,F,17,5,7,12,0.71,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,991638,2008,USA,243.81,2143.81,Islanders Hockey Club West 18U,18U AA
+147,Jason Faith,Jason,Faith,Andover,F,15,4,8,12,0.8,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,904505,2008,Canada,362.14,3209.37,NV River Rats 18U AAA National,18U AAA
+148,Drew Gallucci,Drew,Gallucci,Pingree,F,12,6,6,12,1.0,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1001620,2010,USA,70.23,1661.9,Islanders Hockey Club Prep 15U,EHF 15U Elite
+149,Dylan Chery,Dylan,Chery,Taft,F,10,8,4,12,1.2,True,0.55,similar_name+exact_lastname+position_match,886800,2008,Canada,340.27,1573.6,Team Red,CEM
+150,Dylan Hall,Dylan,Hall,Frederick Gunn,D,15,6,6,12,0.8,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,993846,2007,Canada,0,0,,
+151,Jackson Davies,Jackson,Davies,Kimball Union,F,20,2,10,12,0.6,True,0.68,close_name+close_lastname+similar_firstname+position_match,817146,2007,USA,2.34,1337.34,Columbus Chill 16U AA,16U AA
+152,Brendan Matthews,Brendan,Matthews,St. Sebastian's,F,12,3,9,12,1.0,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,750567,2007,USA,56.79,3056.05,St. Sebastian's School,USHS-Prep
+153,Declan Grenache,Declan,Grenache,Williston-Northampton,F,15,7,5,12,0.8,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1000197,2007,USA,208.96,2976.96,East Coast Militia 18U AAA,18U AAA
+154,Joseph Covelluzzi,Joseph,Covelluzzi,Cushing Academy,F,15,8,4,12,0.8,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,701462,2009,USA,575.32,5271.92,Newfoundland Regiment,QMJHL
+155,Anderson Kilbourne,Anderson,Kilbourne,St. Paul's School,F,14,4,8,12,0.86,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,929781,2007,USA,152.64,3410.54,St. Paul's School,USHS-Prep
+156,Liam Donnelly,Liam,Donnelly,Avon Old Farms,D,11,5,7,12,1.09,True,0.9,exact_name+exact_lastname+exact_firstname,961408,2008,USA,652.64,3547.64,Northern CT Nor'Easters 18U AAA,18U AAA
+157,Jamie Calla,Jamie,Calla,Governors Academy,F,13,7,5,12,0.92,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1001618,2010,USA,153.18,2058.1800000000003,Islanders Hockey Club Prep 15U,EHF 15U Elite
+158,Zach Greenlund,Zach,Greenlund,The Hill School,F,16,1,11,12,0.75,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,805446,2007,USA,278.13,2197.13,The Hill School,TNPHL
+159,Matthew Macinnis,Matthew,Macinnis,Winchendon,D,16,4,8,12,0.75,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,757828,2008,USA,139.0,2544.0,Islanders Hockey Club Prep East,EHF 18U
+160,Carter Johnson,Carter,Johnson,Berkshire School,F,17,1,11,12,0.71,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,783220,2007,USA,327.09,3190.59,Berkshire School,USHS-Prep
+161,Justin Fernandez,Justin,Fernandez,Millbrook,F,19,3,8,11,0.58,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,988276,2009,USA,113.04,543.79,Team Grey,PPP
+162,Charlie MacLeod,Charlie,MacLeod,Kimball Union,F,19,5,6,11,0.58,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,958585,2009,Canada,337.93,2371.9300000000003,Strait Pirates,NSJHL
+163,Marko Huo,Marko,Huo,NMH,D,17,2,9,11,0.65,False,0,no_match,,,,0,0,,
+164,Anthony Pomarico,Anthony,Pomarico,Winchendon,D,16,1,10,11,0.69,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,783221,2007,USA,337.06,2256.06,Islanders Hockey Club Prep East,EHF 18U
+165,Kaden Kern,Kaden,Kern,Winchendon,F,16,1,10,11,0.69,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,860682,2007,USA,241.2,2264.2,Islanders Hockey Club Prep East,EHF 18U
+166,Richard Shin,Richard,Shin,Kent School,F,13,5,6,11,0.85,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,961411,2008,USA,338.8,2799.32,CT Nor'Easters Lions 18U AAA,18U AAA
+167,Jack Welby,Jack,Welby,Holderness,F,11,9,2,11,1.0,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1001809,2007,USA,219.87,2687.87,Islanders Hockey Club Prep West,18U AAA
+168,Felix Menard,Felix,Menard,The Hill School,F,16,5,6,11,0.69,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,1239289,2011,USA,0,0,,
+169,Ryan Magaletta,Ryan,Magaletta,St. Georges,F,14,3,8,11,0.79,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,877342,2007,USA,241.4,2824.7799999999997,NV River Rats 18U AAA National,18U AAA
+170,Ethan Figueiredo,Ethan,Figueiredo,Mount St. Charles,F,8,5,6,11,1.38,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,893555,2007,USA,152.71,3209.26,95 Giants 18U AAA,18U AAA
+171,Harry Dermody,Harry,Dermody,St. Paul's School,F,16,6,5,11,0.69,False,0,no_match,,,,0,0,,
+172,Ryan Vohra,Ryan,Vohra,St. Paul's School,F,16,5,6,11,0.69,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,876358,2008,Canada,126.22,3256.41,St. Paul's School,USHS-Prep
+173,Henry Colbert,Henry,Colbert,Holderness,F,12,3,8,11,0.92,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,888668,2008,USA,538.06,2973.06,Islanders Hockey Club Prep West,18U AAA
+174,Britton Bethard,Britton,Bethard,Canterbury,F,15,6,5,11,0.73,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,885195,2007,USA,166.96,2408.96,Springfield Thunderbirds 18U AAA,BEAST 18U
+175,Owen Schwarz,Owen,Schwarz,Loomis Chaffee,F,12,6,5,11,0.92,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,763311,2007,USA,217.66,2944.92,The Loomis Chaffee School,USHS-Prep
+176,Alex Stahl,Alex,Stahl,Exeter,D/F,14,4,7,11,0.79,True,0.5,similar_name+exact_lastname,1106967,2011,USA,0,827.45,Team North Dakota 13U AAA,MNHP 13O
+177,Tucker Mears,Tucker,Mears,Frederick Gunn,F,15,3,8,11,0.73,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,844301,2007,USA,559.33,1500.9900000000002,Team Blue,CEM
+178,Nathan Desanto,Nathan,Desanto,Frederick Gunn,F,15,8,3,11,0.73,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,933641,2008,USA,708.63,1598.3400000000001,Team Green,CEM
+179,Greg Najda,Greg,Najda,Choate Rosemary Hall,F,11,5,6,11,1.0,True,0.78,close_name+exact_lastname+similar_firstname+position_match,999250,2008,Canada,730.57,3970.57,Yale Jr. Bulldogs 18U AAA,18U AAA
+180,Luke Allen,Luke,Allen,Lawrence Academy,RW,13,8,3,11,0.85,True,1.0,exact_name+exact_lastname+exact_firstname+team_match,940933,2008,USA,243.61,2956.61,Lawrence Academy,USHS-Prep
+181,Brayden White,Brayden,White,Williston-Northampton,F,15,4,7,11,0.73,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,936963,2009,USA,250.17,2250.17,NV River Rats 16U AAA National,BEAST 16U
+182,Owen Carter,Owen,Carter,Tabor,D,13,4,7,11,0.85,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,750761,2007,USA,95.59,533.59,Team Jr Blues,PPP
+183,Austin Wu,Austin,Wu,Dexter,F,16,5,6,11,0.69,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,997050,2010,USA,363.81,3758.65,St. Sebastian's School,USHS-Prep
+184,Joseph Marchi,Joseph,Marchi,Dexter,F,13,1,10,11,0.85,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,783078,2007,USA,712.37,3367.37,Brookline Whalers 18U AAA,18U AAA
+185,John Williams,John,Williams,BB&N,F,11,6,5,11,1.0,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,982915,2008,USA,16.99,2763.0299999999997,GBL Bruins 18U AAA,18U AAA
+186,Cameron Daigle,Cameron,Daigle,St. Georges,F,13,5,6,11,0.85,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,936975,2010,USA,527.76,2543.2799999999997,Mount St. Charles Acad 14U AAA,14U AAA
+187,Parker Murch,Parker,Murch,Cushing Academy,F,14,5,6,11,0.79,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,851361,2007,USA,394.98,2996.58,Central Mass Penguins 18U AAA,18U AAA
+188,Jack Grahling,Jack,Grahling,Millbrook,F,19,6,5,11,0.58,False,0,no_match,,,,0,0,,
+189,AJ Jones,AJ,Jones,Holderness,F,12,4,7,11,0.92,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,941629,2008,USA,304.75,2797.75,Islanders Hockey Club Prep West,18U AAA
+190,Chase Watts,Chase,Watts,Tabor,F,13,4,7,11,0.85,True,0.6,close_name+exact_firstname+position_match,1232524,2011,Canada,0,1003.0,Grand River Raiders U14,NAPrepHL U14
+191,Anthony Leech,Anthony,Leech,Kimball Union,D,19,2,9,11,0.58,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,865638,2007,USA,362.54,3320.17,Kimball Union Academy,USHS-Prep
+192,Camden Tabb,Camden,Tabb,Williston-Northampton,F,15,5,6,11,0.73,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,755390,2007,USA,497.66,2901.66,Springfield Thunderbirds 18U AAA,BEAST 18U
+193,Reed Kenney,Reed,Kenney,Berwick,F,15,5,6,11,0.73,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,936875,2009,USA,41.74,655.21,Team Royal,PPP
+194,Jake Donatelli,Jake,Donatelli,St. Georges,D,14,1,10,11,0.79,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,998587,2010,USA,114.18,3047.29,St. George's School,USHS-Prep
+195,Harry Seely,Harry,Seely,North Yarmouth,F,20,2,9,11,0.55,True,0.55,similar_name+exact_lastname+position_match,1041177,2008,USA,124.21,2540.21,Top Gun/NE Prep 18U AAA,NEFPHL 18U
+196,Max Prudovsky,Max,Prudovsky,Dexter,F,16,2,9,11,0.69,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,951652,2011,USA,464.55,1839.55,Boston Jr. Eagles 14U AAA,14U AAA
+197,Ben Marcolini,Ben,Marcolini,Cushing Academy,F,15,4,7,11,0.73,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,914170,2008,USA,357.66,2654.41,New Jersey Rockets 16U AAA,16U AAA
+198,Edouard Cantin,Edouard,Cantin,Winchendon,F,16,2,9,11,0.69,True,0.78,close_name+exact_lastname+similar_firstname+position_match,886819,2008,Canada,86.02,2462.02,Islanders Hockey Club Prep East,EHF 18U
+199,Zachary Fedele,Zachary,Fedele,Andover,D,15,4,7,11,0.73,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,755227,2007,Canada,205.75,2778.0,NV River Rats 19U AAA,18U AAA
+200,Steven Khonroo,Steven,Khonroo,Winchendon,F,16,1,10,11,0.69,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,888326,2008,USA,319.13,2435.13,Islanders Hockey Club Prep East,EHF 18U
+201,Zach Gay,Zach,Gay,Tilton,F,15,5,5,10,0.67,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,814827,2007,USA,93.51,2335.18,Northern Cyclones 18U AAA Prep 4,18U AAA
+202,Carter Cowan,Carter,Cowan,Kimball Union,F,20,4,6,10,0.5,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,987169,2008,Canada,110.37,2969.0,Toronto Nationals U18 AAA,GTHL U18
+203,Mason St. Louis,Mason,St. Louis,Brunswick,F,14,4,6,10,0.71,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,617403,2008,USA,2000.0,4202.0,Mid Fairfield Rangers 16U AAA,16U AAA
+204,Ethan Goodrich,Ethan,Goodrich,St. Georges,F,13,5,5,10,0.77,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,851364,2007,USA,269.23,2723.56,NV River Rats 19U AAA,18U AAA
+205,Liam Hewins,Liam,Hewins,Worcester Academy,F,11,7,3,10,0.91,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1209204,2009,USA,0,105.63,Team Rams,PPP
+206,Preston Kelly-Paquet,Preston,Kelly-Paquet,Berkshire School,F,17,5,5,10,0.59,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,879239,2008,Canada,211.91,2677.91,RINK HA Kelowna U18 Prep,CSSHL U18
+207,Elliot Wood,Elliot,Wood,Groton,D,13,4,6,10,0.77,False,0,no_match,,,,0,0,,
+208,Ryan Murray,Ryan,Murray,Hotchkiss School,F,10,6,4,10,1.0,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,1049428,2009,Canada,121.81,2862.81,St. Andrew's College,U18 AAA
+209,Graham Luskin,Graham,Luskin,Pingree,D,13,3,7,10,0.77,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1011529,2009,USA,107.29,1903.15,Top Gun/NE Prep 16U AAA,EHF 16U
+210,Tim Sullivan,Tim,Sullivan,Proctor Academy,F,16,2,8,10,0.63,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,862003,2007,USA,442.27,2642.27,FP Hornets 19U,NEFPHL 19U
+211,Gus Lambert,Gus,Lambert,Berwick,F,15,5,5,10,0.67,True,0.9,exact_name+exact_lastname+exact_firstname,967859,2009,USA,23.68,614.27,Team Royal,PPP
+212,Jack Galvin,Jack,Galvin,Austin Prep,D,17,2,8,10,0.59,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,861998,2008,USA,112.58,2265.58,Islanders Hockey Club West 18U,18U AA
+213,Gavin Holland,Gavin,Holland,Lawrence Academy,D,12,1,9,10,0.83,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,617459,2008,USA,206.96,3402.96,Lawrence Academy,USHS-Prep
+214,Matteo Alvarez,Matteo,Alvarez,Deerfield Academy,F,12,6,4,10,0.83,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,845962,2007,USA,239.87,2681.87,Northern CT Nor'Easters 18U AAA,18U AAA
+215,Alex Strug,Alex,Strug,Deerfield Academy,F,12,5,5,10,0.83,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,701324,2009,USA,168.36,2252.86,Yale Jr. Bulldogs 16U AAA,BEAST 16U
+216,Easton Kinsler,Easton,Kinsler,Choate Rosemary Hall,F,11,5,5,10,0.91,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,790866,2007,USA,208.96,2875.96,Choate Rosemary Hall,USHS-Prep
+217,Kane Mori,Kane,Mori,Holderness,F,12,6,4,10,0.83,False,0.36000000000000004,similar_name+exact_firstname+position_match,,,,0,0,,
+218,Stephen Connolly,Stephen,Connolly,North Yarmouth,F,20,8,2,10,0.5,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1032199,2009,USA,13.91,2508.19,Gorham High,USHS-ME
+219,Alex Reed,Alex,Reed,Tilton,F,15,5,5,10,0.67,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,756226,2007,USA,246.62,2857.47,Northern Cyclones 18U AAA Prep 4,18U AAA
+220,Chance Bolton,Chance,Bolton,Milton Academy,D,16,2,8,10,0.63,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,868122,2008,USA,325.82,2938.79,East Coast Militia 18U AAA,18U AAA
+221,Dylan Chernoff,Dylan,Chernoff,Berkshire School,F,17,6,4,10,0.59,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,764159,2007,USA,315.05,3455.35,Berkshire School,USHS-Prep
+222,Sam Fishbone,Sam,Fishbone,St. Sebastian's,D,12,1,9,10,0.83,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,998465,2010,USA,173.31,2847.51,St. Sebastian's School,USHS-Prep
+223,Timothy Donohue,Timothy,Donohue,Westminster,F,11,3,7,10,0.91,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,1026016,2008,USA,225.42,2310.42,Mid Fairfield Rangers 16U AAA,16U AAA
+224,Bryan Aquino,Bryan,Aquino,Lawrenceville School,F,11,3,7,10,0.91,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,960952,2009,USA,183.28,601.95,Team Red,PPP
+225,Cam Potter,Cam,Potter,Worcester Academy,D,13,1,9,10,0.77,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,946418,2007,USA,22.74,316.74,Team Rams,PPP
+226,Gus Chong,Gus,Chong,Berkshire School,D,17,0,10,10,0.59,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,812500,2007,USA,448.23,3301.46,Berkshire School,USHS-Prep
+227,Nick Ware,Nick,Ware,Belmont Hill,D,16,0,10,10,0.63,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1098093,2010,USA,58.39,3031.39,Catholic Memorial School,USHS-MA
+228,Jake Harrison,Jake,Harrison,Hotchkiss School,F,10,0,10,10,1.0,True,0.62,close_name+exact_lastname+similar_firstname+position_match,884028,2007,Canada,10.7,1610.7,St. Albert Crusaders U18 AA,AEHL U18 AA
+229,Thomas Wilson,Thomas,Wilson,Exeter,D,14,1,8,9,0.64,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1154437,2007,USA,9.7,2506.7,FP Lions 19U,NEFPHL 19U
+230,Owen Cheever,Owen,Cheever,North Yarmouth,D,12,1,8,9,0.75,True,0.9,exact_name+exact_lastname+exact_firstname,1032194,2009,USA,13.58,1743.58,Casco Bay Mariners 16U AA,16U AA
+231,Alex Theodore,Alex,Theodore,Andover,F,13,7,2,9,0.69,True,0.6,close_name+exact_firstname+position_match,923345,2007,USA,0,1746.0,Quad City Blues,USHS-IA
+232,Tanner Smith,Tanner,Smith,Albany Academy,F,18,5,4,9,0.5,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,897353,2007,USA,63.08,720.54,Team Cadets,PPP
+233,Thomas Ojard,Thomas,Ojard,Kimball Union,D,20,4,5,9,0.45,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,866760,2008,USA,132.04,3102.37,Kimball Union Academy,USHS-Prep
+234,Mike Tober,Mike,Tober,Mount St. Charles,F,8,8,1,9,1.13,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,966110,2007,USA,70.77,3050.6,Mount St. Charles Academy,USHS-Prep
+235,Quinn Brandell,Quinn,Brandell,St. Paul's School,D,16,4,5,9,0.56,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,1037768,2007,USA,87.02,3058.5299999999997,St. Paul's School,USHS-Prep
+236,Will Watson,Will,Watson,Loomis Chaffee,F,11,4,5,9,0.82,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,747330,2007,USA,222.68,3285.88,The Loomis Chaffee School,USHS-Prep
+237,Oliver Svoboda,Oliver,Svoboda,Cushing Academy,D,15,1,8,9,0.6,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,914257,2008,USA,221.34,2586.14,Central Mass Penguins 18U AAA,18U AAA
+238,Edouard Belval-Turmel,Edouard,Belval-Turmel,Proctor Academy,D,16,1,8,9,0.56,False,0,no_match,,,,0,0,,
+239,William Wright,William,Wright,Frederick Gunn,F,15,2,7,9,0.6,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,897404,2008,Canada,146.56,851.85,Team Green,CEM
+240,Adam Lopashanski,Adam,Lopashanski,Berwick,F,15,2,7,9,0.6,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,1025415,2009,USA,25.75,1625.75,Islanders Hockey Club 16U AAA,16U AAA
+241,Callum Green,Callum,Green,St. Paul's School,F,16,6,3,9,0.56,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,889751,2008,Canada,65.89,2008.1100000000001,Weeks Major Midgets U18,NSU18MHL
+242,Nick Dias,Nick,Dias,Brooks School,F,11,5,4,9,0.82,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,851358,2007,USA,429.57,2945.57,East Coast Wizards 18U AAA,18U AAA
+243,Cameron Roof,Cameron,Roof,BB&N,D,11,2,7,9,0.82,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1022845,2008,USA,10.7,2335.15,GBL Bruins 18U AAA,18U AAA
+244,Nolan Roberts,Nolan,Roberts,Andover,F,15,3,6,9,0.6,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,861648,2008,USA,449.43,3224.3500000000004,East Coast Militia 18U AAA,18U AAA
+245,Hampus Vandenberg,Hampus,Vandenberg,Brunswick,D,14,2,7,9,0.64,False,0.44000000000000006,similar_name+exact_lastname+position_match,,,,0,0,,
+246,Cameron Clark,Cameron,Clark,Berwick,D,15,5,4,9,0.6,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,895024,2008,USA,46.35,489.37,Team Royal,PPP
+247,Gino LaRusso,Gino,LaRusso,Canterbury,F,15,2,7,9,0.6,True,0.75,similar_name+exact_lastname+team_match+position_match,817477,2007,USA,314.85,3505.1800000000003,Canterbury School,USHS-Prep
+248,Lukas Machan,Lukas,Machan,Deerfield Academy,F,12,4,5,9,0.75,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,903358,2007,Canada,350.03,2855.0299999999997,Northern CT Nor'Easters 18U AAA,18U AAA
+249,Jeff Swartz,Jeff,Swartz,Cushing Academy,C,15,5,4,9,0.6,True,0.96,close_name+exact_lastname+similar_firstname+team_match,911524,2008,USA,248.96,3136.96,Cushing Academy,USHS-Prep
+250,Alistair At. Hilaire,Alistair,At. Hilaire,Lawrenceville School,F,11,4,5,9,0.82,False,0,no_match,,,,0,0,,
+251,Owen Connolly,Owen,Connolly,Avon Old Farms,F,11,3,5,8,0.73,False,0.44000000000000006,similar_name+exact_lastname+position_match,,,,0,0,,
+252,Chris Thompson,Chris,Thompson,Deerfield Academy,F,12,5,3,8,0.67,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,959483,2009,USA,3.28,1852.28,Watertown/Pomperaug High,USHS-CT
+253,Jake Speck,Jake,Speck,Milton Academy,F,16,4,4,8,0.5,True,0.6,close_name+exact_firstname+position_match,1127213,2011,Canada,3.28,1416.03,KC Voyageurs U15 AA,AEHL U15 AA
+254,Sam Farrell,Sam,Farrell,Middlesex,F,10,4,4,8,0.8,True,0.56,close_name+exact_lastname+position_match,943627,2007,USA,9.57,2533.78,West Chester East High,USHS-PA
+255,Jack Dahill,Jack,Dahill,Brooks School,F,11,5,3,8,0.73,False,0,no_match,,,,0,0,,
+256,Ryan Quirk,Ryan,Quirk,St. Georges,F,14,5,3,8,0.57,False,0.44000000000000006,similar_name+exact_lastname+position_match,,,,0,0,,
+257,Alex Nolan,Alex,Nolan,Hotchkiss School,F,10,2,6,8,0.8,False,0.44000000000000006,similar_name+exact_lastname+position_match,,,,0,0,,
+258,George Gritsenko,George,Gritsenko,New Hampton,F,17,3,5,8,0.47,False,0.4,similar_name+exact_firstname,,,,0,0,,
+259,Will Burr,Will,Burr,Loomis Chaffee,F,12,3,5,8,0.67,False,0.48,close_name+exact_firstname+position_match,,,,0,0,,
+260,Jack Schaal,Jack,Schaal,Salisbury School,F,12,6,2,8,0.67,False,0.36000000000000004,similar_name+exact_firstname+position_match,,,,0,0,,
+261,Kevin Mannix,Kevin,Mannix,Westminster,F,11,2,6,8,0.73,False,0,no_match,,,,0,0,,
+262,Marek Hrnciar,Marek,Hrnciar,Canterbury,F,15,4,4,8,0.53,False,0,no_match,,,,0,0,,
+263,James Levis,James,Levis,Andover,F,15,2,6,8,0.53,False,0,no_match,,,,0,0,,
+264,Garrett Kohler,Garrett,Kohler,Andover,F,15,3,5,8,0.53,False,0,no_match,,,,0,0,,
+265,Evan Benoit,Evan,Benoit,Albany Academy,F,18,2,6,8,0.44,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,884969,2007,Canada,349.5,3184.09,Fort McMurray Oil Barons,AJHL
+266,Finn Dorrity,Finn,Dorrity,Brunswick,D,14,2,6,8,0.57,False,0,no_match,,,,0,0,,
+267,Jake Crowley,Jake,Crowley,Exeter,F,14,2,6,8,0.57,False,0.44000000000000006,similar_name+exact_lastname+position_match,,,,0,0,,
+268,Will Frain,Will,Frain,Lawrence Academy,F,13,3,5,8,0.62,False,0.44000000000000006,close_name+exact_firstname,,,,0,0,,
+269,John Crowley,John,Crowley,Groton,F,13,2,6,8,0.62,True,0.9,exact_name+exact_lastname+exact_firstname,933566,2007,USA,0,2500.0,Lynn High,USHS-MA
+270,Jack Daly,Jack,Daly,Salisbury School,F,12,4,4,8,0.67,True,1.0,exact_name+exact_lastname+exact_firstname+team_match,752628,2007,USA,111.71,2871.31,The Loomis Chaffee School,USHS-Prep
+271,Caleb Howe,Caleb,Howe,Millbrook,F,19,2,6,8,0.42,True,0.85,exact_name+close_lastname+exact_firstname+position_match,1045072,2009,Canada,1.67,1385.34,GPAC Storm U16 AA,AEHL U16 AA
+272,Braden Marshall,Braden,Marshall,Westminster,D,11,1,7,8,0.73,True,0.58,close_name+exact_lastname+similar_firstname,921803,2007,Canada,59.4,359.4,Beaumont Braves U16 AA,NAHL U16
+273,Alek Geffken,Alek,Geffken,Proctor Academy,D,16,4,4,8,0.5,False,0,no_match,,,,0,0,,
+274,Isaac Lavoie,Isaac,Lavoie,North Yarmouth,F,20,3,5,8,0.4,False,0.44000000000000006,similar_name+exact_lastname+position_match,,,,0,0,,
+275,Charlie Blake,Charlie,Blake,Andover,F,15,4,4,8,0.53,False,0.48,close_name+exact_firstname+position_match,,,,0,0,,
+276,Ollie Haynes,Ollie,Haynes,Mount St. Charles,F,10,4,4,8,0.8,True,0.78,close_name+exact_lastname+similar_firstname+position_match,946419,2007,USA,203.95,2719.95,East Coast Wizards,EHL
+277,Matthew Patko,Matthew,Patko,Canterbury,D,14,3,5,8,0.57,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,888337,2008,USA,591.37,3117.37,Springfield Thunderbirds 18U AAA,BEAST 18U
+278,Logan Martel,Logan,Martel,Canterbury,D,15,2,6,8,0.53,True,0.65,close_name+exact_lastname,1004993,2009,Canada,0,1539.71,La Sarre Conquérants M18 AA,QM18AA
+279,Gavin Burley,Gavin,Burley,New Hampton,F,17,2,6,8,0.47,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1018992,2008,Canada,59.53,2336.53,Don Mills Flyers U18 AAA,GTHL U18
+280,Ryan Tartaglione,Ryan,Tartaglione,Frederick Gunn,F,15,3,5,8,0.53,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,812512,2007,USA,431.17,2845.17,Yale Jr. Bulldogs 18U AAA,18U AAA
+281,James Ferreira,James,Ferreira,BB&N,F,11,2,6,8,0.73,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,957766,2007,USA,25.08,2606.91,GBL Bruins 18U AAA,18U AAA
+282,Andrew Martin,Andrew,Martin,Brooks School,F,10,4,4,8,0.8,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,1022779,2008,USA,222.07,3048.84,NV River Rats 18U AAA National,18U AAA
+283,Oliver Quong,Oliver,Quong,New Hampton,F,16,1,7,8,0.5,False,0,no_match,,,,0,0,,
+284,Brady Grislis,Brady,Grislis,Pomfret,F,16,2,6,8,0.5,False,0.36000000000000004,similar_name+exact_firstname+position_match,,,,0,0,,
+285,Maks Morgoslepov,Maks,Morgoslepov,Avon Old Farms,F,11,4,4,8,0.73,True,0.78,close_name+exact_lastname+similar_firstname+position_match,1008959,2009,USA,257.39,2308.39,Northern CT Nor'Easters 16U AAA,16U AAA
+286,Jonas Marek,Jonas,Marek,NMH,F,16,3,5,8,0.5,False,0.45,similar_name+exact_firstname+position_match,,,,0,0,,
+287,Owen Andrews,Owen,Andrews,Deerfield Academy,F,12,4,4,8,0.67,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,1021065,2009,USA,28.9,828.9,Team Yellow,CEM
+288,Nick Ferrie,Nick,Ferrie,Loomis Chaffee,F,12,3,5,8,0.67,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1031347,2009,USA,27.16,1822.4,Yale Jr. Bulldogs 16U AAA,BEAST 16U
+289,Cam Joinville,Cam,Joinville,Worcester Academy,F,13,3,5,8,0.62,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,952717,2008,USA,78.33,2868.65,Worcester Academy,USHS-Prep
+290,Tegan Gregory,Tegan,Gregory,Holderness,D,12,1,7,8,0.67,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,899837,2008,USA,384.28,2708.2799999999997,Islanders Hockey Club Prep West,18U AAA
+291,Kris Soja,Kris,Soja,Noble & Greenough,D,13,1,7,8,0.62,True,0.55,similar_name+exact_lastname+position_match,936996,2008,USA,303.55,2930.12,East Coast Militia 18U AAA,18U AAA
+292,Zach Mohamed,Zach,Mohamed,Noble & Greenough,F,13,4,4,8,0.62,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1098016,2010,USA,81.07,2681.4,East Coast Militia 15U AAA,15U AAA
+293,Marcello Martinelli,Marcello,Martinelli,Tabor,D,13,1,7,8,0.62,True,0.7,close_name+exact_lastname+position_match,1027757,2009,USA,45.55,699.21,Lovell Academy 16U AAA,16U AAA (W)
+294,Michael Rutledge,Michael,Rutledge,Millbrook,D,19,3,5,8,0.42,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,883057,2007,Canada,246.02,814.54,Team Grey,PPP
+295,Evan Handler,Evan,Handler,Rivers School,D,10,2,6,8,0.8,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,929790,2007,USA,133.18,2499.74,NV River Rats 18U AAA National,18U AAA
+296,Cam Swank,Cam,Swank,St. Marks,D,12,5,3,8,0.67,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1005642,2009,USA,51.04,2812.15,Minuteman Flames 18U AAA,18U AAA
+297,Jake Cabral,Jake,Cabral,New Hampton,F,17,6,2,8,0.47,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,1010697,2008,USA,108.63,3160.03,New Hampton School,USHS-Prep
+298,Matt Lumia,Matt,Lumia,Kents Hill,F,15,2,6,8,0.53,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1010699,2008,USA,90.84,2387.4,Maine Moose 18U AA,18U AA
+299,Jack O'Dell,Jack,O'Dell,Andover,D,15,4,4,8,0.53,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,979011,2009,USA,112.58,2083.58,NV River Rats 16U AAA National,BEAST 16U
+300,Harry Holland,Harry,Holland,Deerfield Academy,D,11,1,7,8,0.73,True,0.9,exact_name+exact_lastname+exact_firstname,617411,2008,USA,153.85,840.96,Team Yellow,CEM
+301,Cameron Conklin,Cameron,Conklin,Choate Rosemary Hall,F,11,2,6,8,0.73,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,886793,2007,Canada,262.27,2644.27,Springfield Thunderbirds 18U AAA,BEAST 18U
+302,Aiden Grinshpun,Aiden,Grinshpun,Kent School,F,8,4,4,8,1.0,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,848729,2008,USA,1053.91,3871.91,CT Nor'Easters Lions 18U AAA,18U AAA
+303,Alex Bourque,Alex,Bourque,Proctor Academy,D,16,1,7,8,0.5,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,1037961,2007,USA,43.41,2449.41,FP Hornets 19U,NEFPHL 19U
+304,Logan Cotter,Logan,Cotter,St. Marks,D,12,3,5,8,0.67,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,999106,2010,USA,193.51,2552.0699999999997,East Coast Militia 15U AAA,15U AAA
+305,Will Cooney,Will,Cooney,St. Marks,F,12,1,7,8,0.67,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,953290,2007,USA,187.63,2522.63,Minuteman Flames 18U AAA,18U AAA
+306,Tavian Mandeville,Tavian,Mandeville,Rivers School,D,10,2,6,8,0.8,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,861646,2008,USA,351.51,2852.0699999999997,East Coast Militia 18U AAA,18U AAA
+307,Austin Groves,Austin,Groves,Hotchkiss School,F,10,5,3,8,0.8,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,911504,2008,USA,217.79,417.78999999999996,Woodbridge Wolfpack 18U AAA,NEPACK 18U
+308,Chase Green,Chase,Green,Austin Prep,F,17,2,6,8,0.47,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,1103078,2009,USA,45.42,1645.42,Islanders Hockey Club 16U AAA,16U AAA
+309,Cooper Hosmer,Cooper,Hosmer,Milton Academy,F,16,3,5,8,0.5,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,991350,2007,USA,132.04,3024.76,Milton Academy,USHS-Prep
+310,Cooper Schuhwerk,Cooper,Schuhwerk,Governors Academy,D,11,1,7,8,0.73,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,893606,2007,USA,74.58,2420.58,East Coast Militia 18U AAA,18U AAA
+311,Cullen Gullott,Cullen,Gullott,Lawrence Academy,F,13,4,4,8,0.62,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1003311,2010,USA,117.06,1659.06,Philadelphia Jr. Flyers 14U AAA,T1EHL 14U
+312,Griffin Halecki,Griffin,Halecki,Tilton,F,15,3,5,8,0.53,False,0,no_match,,,,0,0,,
+313,Brian McFadden,Brian,McFadden,Thayer Academy,D,14,1,7,8,0.57,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,1011188,2008,USA,375.65,4820.25,Thayer Academy,USHS-Prep
+314,Heyden Hildebrandt,Heyden,Hildebrandt,Tabor,F,13,0,8,8,0.62,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,893595,2007,USA,30.7,2476.7,East Coast Militia 18U AAA,18U AAA
+315,Jack Couture,Jack,Couture,Governors Academy,D,14,0,8,8,0.57,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,816874,2007,USA,125.02,2985.02,The Governor's Academy,USHS-Prep
+316,Brendan McCarthy,Brendan,McCarthy,Exeter,D,14,2,5,7,0.5,True,0.85,exact_name+close_lastname+exact_firstname+position_match,1121251,2010,USA,0,1738.0,Nest Hockey Academy 15U AAA,EP Cup Series 15O
+317,Matt Hines,Matt,Hines,Dexter,D,13,2,5,7,0.54,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1004636,2008,USA,184.82,2725.84,Brookline Whalers 18U AAA,18U AAA
+318,Joey Riganti,Joey,Riganti,Albany Academy,F,18,2,5,7,0.39,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1075947,2011,USA,19.46,1620.46,New Jersey Rockets 14U AAA,THF 14U
+319,Aiden Craft,Aiden,Craft,Exeter,F,14,4,3,7,0.5,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,893574,2007,USA,131.37,537.6800000000001,Cape Cod Whalers 19U,19U AAA
+320,Tristan Dandel,Tristan,Dandel,Hoosac,F,9,5,2,7,0.78,False,0,no_match,,,,0,0,,
+321,Zach Broccolo,Zach,Broccolo,Kents Hill,F,16,3,4,7,0.44,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,852910,2007,USA,75.72,3577.7200000000003,Webster Schroeder High,USHS-NY
+322,Cole Longfield,Cole,Longfield,St. Georges,F,14,4,3,7,0.5,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,755423,2008,USA,221.47,3134.14,St. George's School,USHS-Prep
+323,Harrison McLean,Harrison,McLean,Berkshire School,D,17,2,5,7,0.41,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,577214,2007,Canada,264.48,3067.44,Berkshire School,USHS-Prep
+324,Connor Wig,Connor,Wig,Groton,D,13,1,6,7,0.54,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,862379,2007,USA,134.85,2963.17,Groton School,USHS-Prep
+325,Davis Jamison,Davis,Jamison,Groton,F,13,6,1,7,0.54,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,817501,2007,USA,67.42,2717.79,Groton School,USHS-Prep
+326,Sebastien Drouin,Sebastien,Drouin,Groton,F,13,3,4,7,0.54,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,1036642,2007,Canada,3.68,2045.35,ESC Champlain,CAHS
+327,Maddox Larocque,Maddox,Larocque,Vermont Academy,F,16,5,2,7,0.44,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1104121,2008,USA,30.97,2576.85,Northern Cyclones 18U AAA Prep,18U AAA
+328,Blake Postles,Blake,Postles,Vermont Academy,F,16,5,2,7,0.44,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,816880,2007,USA,64.28,2648.7799999999997,Northern Cyclones 18U AAA Prep,18U AAA
+329,Logan McGovern,Logan,McGovern,Austin Prep,D,17,4,3,7,0.41,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1011528,2009,USA,33.04,1845.04,Islanders Hockey Club 16U AAA,16U AAA
+330,Jaden Ficek,Jaden,Ficek,St. Paul's School,F,16,4,3,7,0.44,True,0.55,similar_name+exact_lastname+position_match,1136362,2010,USA,0,1125.19,NH Mountain Kings 14U AAA,14U AAA
+331,Aidan McNeal,Aidan,McNeal,Worcester Academy,D,13,2,5,7,0.54,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1091760,2008,USA,11.91,260.39,Team Rams,PPP
+332,Owen Burke,Owen,Burke,Westminster,F,11,5,2,7,0.64,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,1092261,2009,USA,0,1039.0,Crimson HC 14U AAA White,14U AAA
+333,Will Derbyshire,Will,Derbyshire,Westminster,F,11,4,3,7,0.64,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,888246,2007,Canada,486.22,1400.22,Team Orange,CEM
+334,Michael Barrett,Michael,Barrett,Andover,F,15,6,1,7,0.47,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,999095,2010,USA,345.42,2723.3100000000004,South Shore Kings 14U AAA 3,14U AAA
+335,Owen Gibbons,Owen,Gibbons,Brunswick,F,14,3,4,7,0.5,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,763308,2007,USA,199.13,3104.13,Brunswick School,USHS-Prep
+336,Keegan Kazan,Keegan,Kazan,Brunswick,F,14,2,5,7,0.5,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,931609,2008,USA,372.04,2207.04,Mid Fairfield Rangers 16U AAA,16U AAA
+337,Luke Morin,Luke,Morin,Rivers School,F,10,4,3,7,0.7,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,752388,2007,USA,52.78,2739.18,The Rivers School,USHS-Prep
+338,Ryan Collins,Ryan,Collins,Frederick Gunn,D,15,2,5,7,0.47,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,759636,2008,USA,107.89,2580.89,Yale Jr. Bulldogs 18U AAA,18U AAA
+339,Chris Paolone,Chris,Paolone,Frederick Gunn,D,15,2,5,7,0.47,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,905965,2007,Canada,239.87,899.9799999999999,Team Green,CEM
+340,Preston Abbott,Preston,Abbott,New Hampton,D,17,1,6,7,0.41,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,701461,2009,USA,0,1634.0,South Shore Kings 15U AAA,15U AAA
+341,Noah Fitzsimons,Noah,Fitzsimons,Kent School,F,13,2,5,7,0.54,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,764166,2007,USA,127.56,2417.04,CT Nor'Easters Lions 18U AAA,18U AAA
+342,Luca Didio,Luca,Didio,Albany Academy,F,18,3,4,7,0.39,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1004174,2008,USA,161.34,647.95,Team Cadets,PPP
+343,Maxx Corradi,Maxx,Corradi,Avon Old Farms,F,11,2,5,7,0.64,False,0,no_match,,,,0,0,,
+344,Will Pratt,Will,Pratt,Rivers School,D,9,2,5,7,0.78,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,914128,2008,USA,65.62,2265.62,East Coast Wizards 18U AAA,18U AAA
+345,Quaye MacDonald,Quaye,MacDonald,Holderness,F,12,2,5,7,0.58,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,958534,2009,Canada,366.76,2836.76,Islanders Hockey Club Prep West,18U AAA
+346,Ares Miller,Ares,Miller,Tabor,F,13,4,3,7,0.54,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,919392,2008,USA,471.37,1233.0700000000002,Team Jr Blues,PPP
+347,Sebastian Mogull,Sebastian,Mogull,Cushing Academy,F,15,3,4,7,0.47,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,920251,2008,USA,190.23,2868.83,Central Mass Penguins 18U AAA,18U AAA
+348,Avin Rodovsky,Avin,Rodovsky,Kents Hill,F,16,2,5,7,0.44,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1010277,2008,USA,18.73,2383.02,Maine Moose 18U AA,18U AA
+349,Tommy Moore,Tommy,Moore,Dexter,F,16,5,2,7,0.44,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,701471,2009,USA,102.61,2258.5299999999997,Cape Cod Whalers 16U AAA,16U AAA
+350,Frank Fan,Frank,Fan,Pomfret,F,16,3,4,7,0.44,False,0,no_match,,,,0,0,,
+351,Nikolai Bazalitski,Nikolai,Bazalitski,Loomis Chaffee,F,11,4,3,7,0.64,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,978458,2008,USA,119.33,3258.5299999999997,The Loomis Chaffee School,USHS-Prep
+352,Martyn Ogorodnikov,Martyn,Ogorodnikov,Kent School,D,12,2,5,7,0.58,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,763022,2007,USA,215.85,2607.02,CT Nor'Easters Lions 18U AAA,18U AAA
+353,Colton Simas,Colton,Simas,Deerfield Academy,F,10,2,5,7,0.7,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1021048,2009,USA,171.77,2661.15,Providence Capitals 16U AAA,16U AAA
+354,Ty Curry,Ty,Curry,St. Sebastian's,F,12,1,6,7,0.58,True,0.75,similar_name+exact_lastname+team_match+position_match,877344,2007,USA,56.86,2736.86,St. Sebastian's School,USHS-Prep
+355,Kaiden Donia,Kaiden,Donia,Groton,D,13,2,5,7,0.54,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,617457,2008,USA,687.49,4949.889999999999,East Coast Militia 18U AAA,18U AAA
+356,Levi Jones,Levi,Jones,Vermont Academy,F,16,2,5,7,0.44,True,0.9,exact_name+exact_lastname+exact_firstname,963568,2007,USA,156.92,2739.25,Northern Cyclones 18U AAA Prep,18U AAA
+357,Coen Bassler,Coen,Bassler,Winchendon,F,11,3,4,7,0.64,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1093200,2009,USA,29.9,1676.9,Islanders Hockey Club 16U AAA,16U AAA
+358,Payton Tracy,Payton,Tracy,St. Georges,D,10,1,6,7,0.7,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,865633,2007,USA,181.14,2644.32,NV River Rats 18U AAA National,18U AAA
+359,James Hayward,James,Hayward,Pomfret,F,16,3,4,7,0.44,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,949302,2008,USA,140.4,720.4,Team Crimson,PPP
+360,Wil DeMan,Wil,DeMan,The Hill School,D,16,2,5,7,0.44,True,0.78,close_name+exact_lastname+similar_firstname+position_match,908233,2008,USA,86.69,2033.47,Carolina Jr. Hurricanes 16U AAA,T1EHL 16U
+361,Aidan Norton,Aidan,Norton,Pomfret,D,16,2,5,7,0.44,False,0.44000000000000006,similar_name+exact_lastname+position_match,,,,0,0,,
+362,Domenico Clarizio,Domenico,Clarizio,Taft,F,10,4,3,7,0.7,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,877186,2007,Canada,574.98,3113.98,Yale Jr. Bulldogs 18U AAA,18U AAA
+363,Dennis Klimashov,Dennis,Klimashov,Austin Prep,F,17,1,6,7,0.41,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1001621,2010,USA,25.55,1925.55,Islanders Hockey Club West 18U,18U AA
+364,Ryan Porter,Ryan,Porter,Dexter,D,16,1,6,7,0.44,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,839948,2010,USA,40.94,1240.94,Boston Jr. Eagles 14U AAA,14U AAA
+365,Michael McGrath,Michael,McGrath,Deerfield Academy,F,9,1,6,7,0.78,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,1016389,2007,USA,85.02,794.02,Team Yellow,CEM
+366,Olivier Tellier,Olivier,Tellier,Albany Academy,D,18,0,7,7,0.39,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,903482,2008,Canada,177.79,775.35,Team Cadets,PPP
+367,Ben English,Ben,English,Worcester Academy,D,13,0,7,7,0.54,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1183838,2008,USA,0.74,238.1,Team Rams,PPP
+368,Owen Hughes,Owen,Hughes,Austin Prep,D,17,0,7,7,0.41,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,938347,2009,USA,43.95,1643.95,Islanders Hockey Club 16U AAA,16U AAA
+369,Lucas Smith,Lucas,Smith,Berkshire School,D,17,0,7,7,0.41,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,805950,2008,USA,860.87,3788.87,Berkshire School,USHS-Prep
+370,Michael Mosher,Michael,Mosher,Holderness,D,12,0,7,7,0.58,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,880344,2007,USA,92.64,2339.64,Islanders Hockey Club Prep West,18U AAA
+371,Joel Thompson,Joel,Thompson,St. Georges,D,14,0,7,7,0.5,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,903352,2008,Canada,342.01,2810.01,East Coast Militia 18U AAA,18U AAA
+372,Cazimir Wotkowicz,Cazimir,Wotkowicz,Tilton,F,15,4,2,6,0.4,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1022897,2008,USA,27.89,2501.89,Northern Cyclones 18U AAA Prep 4,18U AAA
+373,Ryan Shanahan,Ryan,Shanahan,Tilton,F,15,2,4,6,0.4,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,964234,2008,USA,168.56,3084.23,Northern Cyclones 18U AAA Prep 4,18U AAA
+374,Eddie Hannan,Eddie,Hannan,Tilton,D,15,2,4,6,0.4,True,0.5,similar_name+exact_lastname,1033244,2010,USA,29.16,1812.47,San Jose Jr. Sharks 15U AAA,15U AAA
+375,Matthew McLellan,Matthew,McLellan,Tilton,F,15,4,2,6,0.4,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,1045100,2009,Canada,1.94,1491.3600000000001,Bolts Hockey Academy U15,PHL U15
+376,Bryce Turmel,Bryce,Turmel,Tilton,F,15,4,2,6,0.4,False,0,no_match,,,,0,0,,
+377,Max Monroe,Max,Monroe,Berkshire School,D,17,2,4,6,0.35,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,940901,2008,USA,142.14,1912.75,NV River Rats 16U AAA National,16U AAA
+378,James Jackson,James,Jackson,Brunswick,F,14,3,3,6,0.43,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,701316,2009,USA,189.57,2413.5699999999997,Mid Fairfield Rangers 16U AAA,BEAST 16U
+379,Ben Lombardi,Ben,Lombardi,Brunswick,F,14,4,2,6,0.43,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,617405,2008,USA,179.53,2188.5299999999997,Mid Fairfield Rangers 16U AAA,16U AAA
+380,Jack Thompson,Jack,Thompson,Brunswick,F,14,5,1,6,0.43,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,1126687,2011,Canada,0,945.15,Upper OV Aces U14 AA,HEO U14 AA
+381,Brayden Erickson,Brayden,Erickson,St. Georges,F,13,3,3,6,0.46,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,999105,2010,USA,93.51,1672.51,Minuteman Flames 14U AAA,14U AAA
+382,Thomas Birks,Thomas,Birks,St. Marks,F,9,2,4,6,0.67,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,904195,2008,Canada,113.78,3090.7799999999997,Minuteman Flames 18U AAA,18U AAA
+383,Jimmy Carrara,Jimmy,Carrara,Mount St. Charles,F,10,2,4,6,0.6,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,893575,2007,USA,57.53,3001.5299999999997,Mount St. Charles Academy,USHS-Prep
+384,John Bentley,John,Bentley,St. Paul's School,F,16,1,5,6,0.38,False,0,no_match,,,,0,0,,
+385,Grover Henderson,Grover,Henderson,Avon Old Farms,F,10,2,4,6,0.6,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,788691,2007,USA,179.46,2911.46,Northern CT Nor'Easters 18U AAA,18U AAA
+386,Matthew Wallace,Matthew,Wallace,Hotchkiss School,F,10,4,2,6,0.6,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,629363,2008,USA,615.92,3175.92,Mid Fairfield Rangers 18U AAA,18U AAA
+387,Brenden Gilooly,Brenden,Gilooly,Westminster,F,11,3,3,6,0.55,True,0.73,close_name+exact_lastname+similar_firstname,752630,2007,USA,92.51,872.51,Team Orange,CEM
+388,Cole Cournoyer,Cole,Cournoyer,Berwick,F,15,3,3,6,0.4,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1011501,2009,USA,76.19,398.07,Team Royal,PPP
+389,Dylan Kolcun,Dylan,Kolcun,Lawrenceville School,F,11,3,3,6,0.55,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,911580,2008,USA,199.6,2172.6,The Lawrenceville School,TNPHL
+390,Hudson Wood,Hudson,Wood,Brooks School,F,11,2,4,6,0.55,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,1105856,2008,USA,14.11,2644.88,Brooks School,USHS-Prep
+391,Easton Anello,Easton,Anello,Williston-Northampton,D,15,1,5,6,0.4,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1057663,2009,USA,284.75,2471.75,NV River Rats 16U AAA National,BEAST 16U
+392,Michael Block,Michael,Block,Frederick Gunn,D,15,1,5,6,0.4,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,862386,2008,USA,259.2,581.87,Team Blue,CEM
+393,Mikey Dossier,Mikey,Dossier,Choate Rosemary Hall,F,10,3,3,6,0.6,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,974713,2008,USA,109.16,2539.16,Yale Jr. Bulldogs 18U AAA,18U AAA
+394,Carter Watson,Carter,Watson,Dexter,F,16,3,3,6,0.38,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,951654,2011,USA,378.86,1578.8600000000001,Boston Jr. Eagles 14U AAA,14U AAA
+395,Giovanni Ferrucci,Giovanni,Ferrucci,Loomis Chaffee,F,12,4,2,6,0.5,False,0,no_match,,,,0,0,,
+396,Ryan Holmes,Ryan,Holmes,Westminster,F,11,4,2,6,0.55,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1031349,2009,USA,170.5,2330.38,Yale Jr. Bulldogs 16U AAA,BEAST 16U
+397,Max O'Regan,Max,O'Regan,St. Paul's School,F,10,4,2,6,0.6,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,988275,2009,Canada,67.56,2379.42,Gulf Coast Flames 16U AA,16U AA
+398,Bruce Li,Bruce,Li,Groton,D,13,1,5,6,0.46,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,987203,2009,Canada,151.1,2021.1,East Coast Militia 16U AAA,16U AAA
+399,Donovan Richards,Donovan,Richards,Lawrenceville School,F,11,3,3,6,0.55,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,914166,2008,USA,161.81,771.81,Team Red,PPP
+400,Jan Mrnavy,Jan,Mrnavy,Hoosac,D,9,1,5,6,0.67,False,0,no_match,,,,0,0,,
+401,Malkin Pierre,Malkin,Pierre,Millbrook,F,13,4,2,6,0.46,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,903356,2008,Canada,103.88,572.51,Team Grey,PPP
+402,Alex Gadbois,Alex,Gadbois,Kents Hill,F,16,2,4,6,0.38,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,816742,2007,Canada,69.77,2814.22,Kents Hill School Varsity,USHS-ME
+403,Max Yakub,Max,Yakub,Avon Old Farms,D,11,1,5,6,0.55,True,0.55,similar_name+exact_lastname+position_match,936267,2009,USA,602.88,3148.88,Northern CT Nor'Easters 18U AAA,18U AAA
+404,Jack Devlin,Jack,Devlin,Mount St. Charles,D,10,1,5,6,0.6,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,1024327,2007,USA,62.01,2931.94,Mount St. Charles Academy,USHS-Prep
+405,Cam Reed,Cam,Reed,Mount St. Charles,F,10,2,4,6,0.6,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1029153,2007,USA,59.2,2259.2,East Coast Militia 18U AAA,18U AAA
+406,Jeremy Lavoie,Jeremy,Lavoie,Hebron,F,15,3,3,6,0.4,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,898888,2007,USA,108.09,3315.4700000000003,Hebron Academy,USHS-Prep
+407,Phil Skoczylas,Phil,Skoczylas,Kents Hill,F,16,2,4,6,0.38,True,0.55,similar_name+exact_lastname+position_match,980961,2011,Canada,153.38,2509.38,Lac St-Louis Lions M17 AAA,QM17AAA
+408,Matas Janulis,Matas,Janulis,Lawrence Academy,D,13,1,5,6,0.46,True,1.0,exact_name+close_lastname+exact_firstname+team_match+position_match,951046,2008,USA,206.49,3335.49,Lawrence Academy,USHS-Prep
+409,London McDonald,London,McDonald,Tabor,F,13,2,4,6,0.46,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1010281,2008,USA,41.54,394.87,Team Jr Blues,PPP
+410,Leo Kavey,Leo,Kavey,Tabor,F,13,2,4,6,0.46,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1160450,2007,USA,0,0,,
+411,Colton Cleaves,Colton,Cleaves,Brunswick,F,12,4,2,6,0.5,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1019521,2009,USA,101.0,2122.0,Mid Fairfield Rangers 16U AAA,BEAST 16U
+412,Will Carosi,Will,Carosi,St. Georges,F,14,2,4,6,0.43,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1005578,2008,USA,35.52,2235.52,Brookline Whalers 18U AAA,18U AAA
+413,Ryan Clay,Ryan,Clay,BB&N,D,9,1,5,6,0.67,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,800740,2007,USA,60.94,2793.02,GBL Bruins 18U AAA,18U AAA
+414,Logan Smith,Logan,Smith,Taft,D,10,1,5,6,0.6,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,1001601,2010,Canada,31.1,1231.1,Toronto Titans U16 AAA,GTHL U16
+415,Paul Smith,Paul,Smith,Austin Prep,D,17,1,5,6,0.35,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1037974,2008,USA,14.92,3192.81,Bishop Fenwick High,USHS-MA
+416,Brodie Donovan,Brodie,Donovan,Governors Academy,F,14,1,5,6,0.43,False,0.44000000000000006,similar_name+exact_lastname+position_match,,,,0,0,,
+417,Daniel Chang,Daniel,Chang,Groton,F,13,1,5,6,0.46,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,984033,2009,USA,229.3,2051.3,East Coast Militia 16U AAA,16U AAA
+418,Brody Latkin,Brody,Latkin,Avon Old Farms,D,11,0,6,6,0.55,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,757829,2008,USA,405.48,2754.48,Springfield Thunderbirds 18U AAA,BEAST 18U
+419,Bruce Danaher,Bruce,Danaher,Pingree,F,13,0,6,6,0.46,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,987430,2008,USA,74.45,2861.88,Pingree School,USHS-Prep
+420,Tyler Poti,Tyler,Poti,Winchendon,D,16,0,6,6,0.38,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1095756,2010,USA,71.37,1941.04,Islanders Hockey Club Prep 15U,EHF 15U Elite
+421,Liam Carlin,Liam,Carlin,Winchendon,F,15,0,6,6,0.4,True,0.6,close_name+exact_firstname+position_match,1159310,2008,Canada,0,1803.18,Murdoch MacKay Collegiate,CAHS
+422,Jack Daly,Jack,Daly,Loomis Chaffee,D,12,0,6,6,0.5,True,0.55,close_name+exact_firstname,871957,2007,USA,0.94,1814.94,Frederick Freeze 18U AA,18U AA
+423,Brett Kohut,Brett,Kohut,Millbrook,F,15,3,2,5,0.33,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,827251,2007,Canada,62.88,447.21,Team Grey,PPP
+424,Xander Boutilier,Xander,Boutilier,Kimball Union,F,3,2,3,5,1.67,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,617453,2008,Canada,514.92,3911.92,Kimball Union Academy,USHS-Prep
+425,James Reilly,James,Reilly,Berkshire School,D,17,3,2,5,0.29,True,0.8,close_name+exact_firstname+team_match+position_match,911508,2008,USA,225.62,3181.26,Berkshire School,USHS-Prep
+426,Nolan Wilson,Nolan,Wilson,Groton,F,13,3,2,5,0.38,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,987674,2007,USA,22.74,2834.78,Groton School,USHS-Prep
+427,Gehrig White,Gehrig,White,Kents Hill,D,16,3,2,5,0.31,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,868183,2008,USA,98.93,2372.6,Maine Moose 18U AA,18U AA
+428,James Albers,James,Albers,Holderness,F,12,4,1,5,0.42,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,991569,2007,USA,75.65,2375.65,Islanders Hockey Club Prep West,18U AAA
+429,Travis Gillen,Travis,Gillen,Brewster,F,7,4,1,5,0.71,False,0,no_match,,,,0,0,,
+430,Rahmi Moazzez,Rahmi,Moazzez,The Hill School,D,16,3,2,5,0.31,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,956184,2009,USA,113.65,1814.98,Washington Little Caps 15U AAA,AYHL 15U
+431,Hayden Addison,Hayden,Addison,NMH,F,14,1,4,5,0.36,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,999284,2008,Canada,58.86,333.86,Islanders Hockey Club 19U AAA,19U AAA
+432,Aiden Ayojiak,Aiden,Ayojiak,Hoosac,F,9,2,3,5,0.56,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,853678,2007,USA,267.56,790.73,Team Purple,PPP
+433,Graham Phinney,Graham,Phinney,Mount St. Charles,D,10,2,3,5,0.5,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1041085,2009,USA,99.46,1822.46,South Shore Kings 16U AAA,16U AAA
+434,Hunter Henderson,Hunter,Henderson,Holderness,F,12,3,2,5,0.42,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1011502,2009,USA,177.79,2760.79,Islanders Hockey Club Prep West,18U AAA
+435,Nick Burns,Nick,Burns,Wilbraham & Monson,C,5,5,0,5,1.0,True,0.93,exact_name+exact_lastname+exact_firstname,1229866,2010,USA,0,2003.0,Sewickley Academy,USHS-PA
+436,Jack Cannon,Jack,Cannon,Andover,F,15,2,3,5,0.33,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1057675,2009,USA,37.93,1997.93,East Coast Militia 16U AAA,16U AAA
+437,Mason Keramidas,Mason,Keramidas,Albany Academy,F,18,3,2,5,0.28,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,986570,2007,USA,39.26,323.03,Team Cadets,PPP
+438,Aiden Bean,Aiden,Bean,Kimball Union,F,20,2,3,5,0.25,True,1.0,exact_name+exact_lastname+exact_firstname+team_match,891670,2007,USA,48.96,2810.26,Kimball Union Academy,USHS-Prep
+439,Aidan Lally,Aidan,Lally,Berwick,F,15,2,3,5,0.33,True,0.9,exact_name+exact_lastname+exact_firstname,866431,2007,USA,135.85,737.97,Team Royal,PPP
+440,Joe Gannon,Joe,Gannon,Taft,F,10,2,3,5,0.5,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,888319,2008,USA,398.93,1413.66,Team Red,CEM
+441,Brady Smith,Brady,Smith,Taft,D,10,1,4,5,0.5,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,890508,2008,Canada,630.1,4817.1,Sudbury Wolves,OHL
+442,Andy Xu,Andy,Xu,Choate Rosemary Hall,F,10,4,1,5,0.5,True,0.9,exact_name+exact_lastname+exact_firstname,1232719,2010,USA,0,572.63,Mercer Chiefs 14U B,14U B
+443,Landon Brawn,Landon,Brawn,Williston-Northampton,F,15,3,2,5,0.33,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1021555,2009,USA,89.43,1850.43,NV River Rats 16U AAA National,BEAST 16U
+444,Logan Melillo,Logan,Melillo,Millbrook,D,19,1,4,5,0.26,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1031353,2009,USA,26.89,1800.9,Yale Jr. Bulldogs 16U AAA,BEAST 16U
+445,Jack McCullough,Jack,McCullough,Brunswick,D,14,1,4,5,0.36,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,893565,2007,USA,226.76,3040.76,New Jersey Jr. Titans,NAHL
+446,Liam Walker,Liam,Walker,BB&N,F,11,3,2,5,0.45,True,0.56,close_name+exact_lastname+position_match,922854,2009,Canada,183.28,2257.39,Cornwall Colts,CCHL
+447,Danny Porter,Danny,Porter,St. Sebastian's,F,11,4,1,5,0.45,True,0.56,close_name+exact_lastname+position_match,1139329,2010,USA,0.07,1248.25,USA Eagles 14U AA,14U AA
+448,Chris Gannon,Chris,Gannon,Millbrook,F,19,2,3,5,0.26,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,869715,2007,USA,40.67,564.05,Team Grey,PPP
+449,Artie Ambuhl,Artie,Ambuhl,Millbrook,F,17,2,3,5,0.29,True,0.55,similar_name+exact_lastname+position_match,1009808,2009,USA,114.98,710.11,Team Grey,PPP
+450,Cooper Shea,Cooper,Shea,Thayer Academy,D,14,2,3,5,0.36,True,0.55,similar_name+exact_lastname+position_match,1129161,2011,Canada,0,1295.0,Sarnia-Lambton Jr. Sting U16 AAA,ALLIANCE U16
+451,Jack Oliver,Jack,Oliver,Albany Academy,F,18,2,3,5,0.28,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1022719,2008,USA,37.73,318.5,Team Cadets,PPP
+452,Olivier Benoit,Olivier,Benoit,Tabor,D,13,2,3,5,0.38,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,843287,2007,Canada,240.87,3333.59,Tabor Academy,USHS-Prep
+453,Cam Plourde,Cam,Plourde,North Yarmouth,F,20,1,4,5,0.25,True,0.56,close_name+exact_lastname+position_match,922386,2007,Canada,1.34,1653.34,Mauricie Dynamos M18 AA,QM18AA
+454,John Shaughnessy,John,Shaughnessy,Tabor,F,13,4,1,5,0.38,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,933931,2009,USA,44.15,1830.15,NV River Rats 16U AAA National,BEAST 16U
+455,Dan Tracy,Dan,Tracy,NMH,F,17,2,3,5,0.29,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,961767,2008,USA,65.02,265.02,Islanders Hockey Club 19U AAA,19U AAA
+456,Alex Khamichonak,Alex,Khamichonak,The Hill School,F,16,2,3,5,0.31,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,941987,2008,USA,115.79,2795.79,West Chester Wolves 18U AAA,18U AAA
+457,Max Hu,Max,Hu,Loomis Chaffee,D,12,1,4,5,0.42,False,0.4,similar_name+exact_lastname,,,,0,0,,
+458,Andrew Dunleavy,Andrew,Dunleavy,St. Marks,RW,12,3,2,5,0.42,True,1.0,exact_name+exact_lastname+exact_firstname+team_match,1057558,2009,USA,42.68,3135.51,St. Mark's School,USHS-Prep
+459,Jared Hughes,Jared,Hughes,St. Sebastian's,F,12,3,2,5,0.42,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1156681,2007,USA,0,0,,
+460,TJ Petropoulos,TJ,Petropoulos,Milton Academy,F,16,2,3,5,0.31,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1104671,2010,USA,224.95,2670.1,East Coast Militia 15U AAA,15U AAA
+461,Aidan Patton,Aidan,Patton,Hotchkiss School,F,10,2,3,5,0.5,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,750954,2007,USA,157.99,1218.12,Team Navy,PPP
+462,Talon Beyer,Talon,Beyer,Berwick,F,15,3,2,5,0.33,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1051308,2008,USA,15.32,674.3199999999999,Team Royal,PPP
+463,Gavin Bishop,Gavin,Bishop,Millbrook,D,19,1,4,5,0.26,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,908232,2007,USA,96.72,546.16,Team Grey,PPP
+464,Phil Groeling,Phil,Groeling,New Hampton,F,16,2,3,5,0.31,False,0,no_match,,,,0,0,,
+465,Tynan Moses,Tynan,Moses,Pingree,D,13,1,4,5,0.38,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,801623,2007,USA,50.77,2858.49,Pingree School,USHS-Prep
+466,Will Sheehan,Will,Sheehan,Pingree,RW,13,2,3,5,0.38,True,1.0,exact_name+exact_lastname+exact_firstname+team_match,1032200,2009,USA,58.86,2864.57,Pingree School,USHS-Prep
+467,Xander Robertson,Xander,Robertson,Vermont Academy,F,16,4,1,5,0.31,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,750673,2007,Canada,153.44,2975.11,Northern Cyclones 18U AAA Prep,18U AAA
+468,Leyton Riendeau,Leyton,Riendeau,Vermont Academy,D,16,2,3,5,0.31,True,0.65,close_name+exact_lastname,1150089,2010,Canada,0,858.34,É. Sec La Frontalière M15 D3,RSEQ M15 D3
+469,Michael Ronan,Michael,Ronan,New Hampton,F,16,2,3,5,0.31,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1012536,2008,USA,85.95,2212.95,Maine Jr. Mariners 18U AA,UT1HL 18U
+470,Alex Robbins,Alex,Robbins,BB&N,F,10,1,4,5,0.5,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,930989,2007,USA,26.62,2612.97,GBL Bruins 18U AAA,18U AAA
+471,Thomas Mattera,Thomas,Mattera,Roxbury Latin,F,9,3,2,5,0.56,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1057559,2009,USA,39.73,1639.73,Boston Jr. Eagles 16U AAA,16U AAA
+472,Chay Simons,Chay,Simons,St. Paul's School,D,16,1,4,5,0.31,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,869640,2008,USA,66.69,3117.57,St. Paul's School,USHS-Prep
+473,Carter Doherty,Carter,Doherty,St. Paul's School,F,15,2,3,5,0.33,False,0.44000000000000006,similar_name+exact_lastname+position_match,,,,0,0,,
+474,Brodie Anderson,Brodie,Anderson,Cushing Academy,D,15,1,4,5,0.33,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,999108,2010,USA,118.46,1824.91,Minuteman Flames 14U AAA,14U AAA
+475,Louis Marobella,Louis,Marobella,Belmont Hill,D,16,1,4,5,0.31,True,0.98,close_name+exact_lastname+similar_firstname+team_match+position_match,752620,2007,USA,59.8,2669.8,Belmont Hill School,USHS-Prep
+476,Matthew Bowolick,Matthew,Bowolick,St. Georges,F,14,2,3,5,0.36,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1011503,2009,USA,217.73,2013.73,NV River Rats 16U AAA National,BEAST 16U
+477,Michael Battista,Michael,Battista,Lawrence Academy,F,13,4,1,5,0.38,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,929783,2007,USA,110.03,2922.03,Lawrence Academy,USHS-Prep
+478,Patrick Maguire,Patrick,Maguire,Lawrence Academy,F,13,2,3,5,0.38,False,0.4,similar_name+exact_lastname,,,,0,0,,
+479,Sam Chartier,Sam,Chartier,Williston-Northampton,D,15,1,4,5,0.33,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,975563,2009,USA,257.26,2209.26,NV River Rats 16U AAA National,BEAST 16U
+480,Conor Reilly,Conor,Reilly,Brewster,F,7,2,3,5,0.71,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,1052111,2008,USA,0,2084.0,Plum High,USHS-PA
+481,RJ Grace,RJ,Grace,Winchendon,D,16,1,4,5,0.31,False,0.44000000000000006,similar_name+exact_lastname+position_match,,,,0,0,,
+482,George Kavanaugh,George,Kavanaugh,New Hampton,D,17,1,4,5,0.29,True,0.5,similar_name+exact_lastname,1046546,2008,Canada,2.27,1143.6799999999998,Cabot Highlanders U16 AAA,NSU16AAAHL
+483,Jameson Needham,Jameson,Needham,St. Sebastian's,F,10,2,3,5,0.5,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1001617,2010,USA,59.46,1259.46,Boston Jr. Eagles 14U AAA,14U AAA
+484,Jamison Nicosia,Jamison,Nicosia,Middlesex,F,10,1,4,5,0.5,True,0.78,close_name+exact_lastname+similar_firstname+position_match,1011531,2009,USA,5.08,1581.08,East Coast Wizards 16U AAA,BEAST 16U
+485,Harrison Ooten,Harrison,Ooten,Vermont Academy,D,16,1,4,5,0.31,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1031429,2007,USA,94.38,419.38,Team Red,CEM
+486,Josh Levy,Josh,Levy,Milton Academy,D,16,2,3,5,0.31,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,906005,2008,Canada,269.1,3082.1,East Coast Militia 18U AAA,18U AAA
+487,Jalen Carter,Jalen,Carter,Choate Rosemary Hall,F,10,2,3,5,0.5,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,897776,2008,Canada,218.39,2636.39,Yale Jr. Bulldogs 18U AAA,18U AAA
+488,Kurt Beck,Kurt,Beck,Dexter,D,16,1,4,5,0.31,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,978968,2009,USA,420.13,3518.83,Brookline Whalers 18U AAA,18U AAA
+489,Nolan Wrenn,Nolan,Wrenn,Pomfret,D,16,1,4,5,0.31,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1021282,2007,USA,50.84,484.62,Team Crimson,PPP
+490,Michael Nerich,Michael,Nerich,Tilton,D,15,0,5,5,0.33,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1007684,2008,USA,59.6,2629.22,Northern Cyclones 18U AAA Prep 4,18U AAA
+491,Ethan Wang,Ethan,Wang,Kent School,F,6,0,5,5,0.83,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1142740,2010,Canada,4.08,1356.08,Vaughan Panthers U15 AA,GTHL U15 AA
+492,Owen Draddy,Owen,Draddy,St. Georges,D,14,0,5,5,0.36,False,0,no_match,,,,0,0,,
+493,Stephen Pinette,Stephen,Pinette,Worcester Academy,F,13,0,5,5,0.38,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,938351,2009,USA,157.93,845.02,Team Rams,PPP
+494,Gabriel Auger,Gabriel,Auger,The Hill School,F,13,0,5,5,0.38,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,755826,2008,Canada,48.36,2855.44,Académie St-Louis M18 D1,RSEQ M18 D1
+495,John Lovell,John,Lovell,Wilbraham & Monson,F,5,0,5,5,1.0,False,0.44000000000000006,similar_name+exact_lastname+position_match,,,,0,0,,
+496,Alex Zinman,Alex,Zinman,Brunswick,D,14,0,5,5,0.36,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,911511,2008,USA,237.86,2068.9700000000003,North Jersey Avalanche 16U AAA,T1EHL 16U
+497,Nathan Caples,Nathan,Caples,Deerfield Academy,D,9,0,5,5,0.56,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,764361,2007,USA,199.8,807.47,Team Yellow,CEM
+498,Marek Oboril,Marek,Oboril,NMH,D,17,0,5,5,0.29,False,0,no_match,,,,0,0,,
+499,Carson Craig,Carson,Craig,Westminster,D,11,0,5,5,0.45,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,145447,2007,USA,336.99,794.33,Team Orange,CEM
+500,Aaron Sheck,Aaron,Sheck,Kimball Union,D,20,0,5,5,0.25,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,914683,2009,Canada,539.0,3852.0,Mississauga Chargers,OJHL
+501,Alex Guo,Alex,Guo,Belmont Hill,D,16,0,5,5,0.31,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,998451,2010,USA,194.31,3245.98,Belmont Hill School,USHS-Prep
+502,Chase McCoy,Chase,McCoy,Tabor,F,13,0,5,5,0.38,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,869525,2008,USA,173.98,693.12,Team Jr Blues,PPP
+503,Landon Roe,Landon,Roe,Belmont Hill,F,16,0,5,5,0.31,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,997686,2010,USA,149.9,1732.9,Minuteman Flames 14U AAA,14U AAA
+504,George Tsatas,George,Tsatas,Westminster,D,11,0,5,5,0.45,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,904199,2007,Canada,198.73,590.62,Team Orange,CEM
+505,Eric Bagg,Eric,Bagg,Exeter,F,14,3,1,4,0.29,False,0,no_match,,,,0,0,,
+506,Michael Contino,Michael,Contino,Millbrook,F,19,1,3,4,0.21,False,0.36000000000000004,similar_name+exact_firstname+position_match,,,,0,0,,
+507,Tyler Callander,Tyler,Callander,Exeter,F,14,1,3,4,0.29,True,0.9,close_name+exact_lastname+team_match+position_match,895017,2008,USA,60.47,2760.47,Phillips Exeter Academy,USHS-Prep
+508,Josh Dietz,Josh,Dietz,Albany Academy,F,14,3,1,4,0.29,False,0.4,similar_name+exact_firstname,,,,0,0,,
+509,Jan Hlavka,Jan,Hlavka,Hoosac,F,9,3,1,4,0.44,False,0,no_match,,,,0,0,,
+510,Hunter Hanford,Hunter,Hanford,Brunswick,F,13,4,0,4,0.31,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,979000,2009,USA,54.52,2672.81,Brunswick School,USHS-Prep
+511,Jonathan Chon,Jonathan,Chon,Canterbury,F,15,1,3,4,0.27,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,845969,2007,USA,225.02,2492.02,Springfield Thunderbirds 18U AAA,BEAST 18U
+512,Max Menkowitz,Max,Menkowitz,The Hill School,F,16,4,0,4,0.25,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,848617,2007,USA,26.76,1626.76,The Hill School,TNPHL
+513,Brady Lecuyer,Brady,Lecuyer,Mount St. Charles,D,10,1,3,4,0.4,False,0,no_match,,,,0,0,,
+514,Robbie Mcphee,Robbie,Mcphee,Worcester Academy,F,13,3,1,4,0.31,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,931189,2008,USA,10.1,228.28,Team Rams,PPP
+515,Massimo Guarnieri,Massimo,Guarnieri,Westminster,F,11,3,1,4,0.36,False,0,no_match,,,,0,0,,
+516,Ethan Machado,Ethan,Machado,Cushing Academy,F,15,2,2,4,0.27,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,999109,2010,USA,403.55,1978.55,Minuteman Flames 14U AAA,14U AAA
+517,Thomas Broderick,Thomas,Broderick,Dexter,D,16,2,2,4,0.25,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,949303,2008,USA,109.7,2822.05,Brookline Whalers 18U AAA,18U AAA
+518,Henning Reinnprecht,Henning,Reinnprecht,Taft,F,7,3,1,4,0.57,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,959964,2008,USA,347.89,1157.8200000000002,Team Red,CEM
+519,Cam Menhall,Cam,Menhall,Lawrence Academy,F,13,1,3,4,0.31,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,1054309,2008,USA,43.88,2979.88,Lawrence Academy,USHS-Prep
+520,Keenan Hauser,Keenan,Hauser,Choate Rosemary Hall,F,4,2,2,4,1.0,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,888343,2008,USA,335.18,2904.18,Yale Jr. Bulldogs 18U AAA,18U AAA
+521,Owen Hannah,Owen,Hannah,Deerfield Academy,F,12,3,1,4,0.33,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1135778,2010,USA,63.34,1990.72,Yale Jr. Bulldogs 16U AAA,BEAST 16U
+522,William Kertesz,William,Kertesz,Deerfield Academy,F,12,3,1,4,0.33,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,887374,2008,Canada,84.82,758.8199999999999,Team Yellow,CEM
+523,Justin Dupuis,Justin,Dupuis,Choate Rosemary Hall,D,11,2,2,4,0.36,False,0.4,similar_name+exact_lastname,,,,0,0,,
+524,Charlie Delay,Charlie,Delay,St. Sebastian's,F,5,1,3,4,0.8,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,893593,2007,USA,71.24,768.0899999999999,Cape Cod Whalers 19U,19U AAA
+525,Dylan Jordan,Dylan,Jordan,Proctor Academy,F,16,2,2,4,0.25,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,944170,2007,Canada,6.56,1851.23,Outaouais Royal M18 AA,QM18AA
+526,Finn Gatta,Finn,Gatta,Millbrook,F,17,3,1,4,0.24,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1029829,2009,USA,89.63,2108.63,Northern CT Nor'Easters 16U AAA,16U AAA
+527,Owen Lundin,Owen,Lundin,Lawrence Academy,C,12,2,2,4,0.33,True,0.93,exact_name+exact_lastname+exact_firstname,999102,2010,USA,218.53,1886.53,Minuteman Flames 14U AAA,14U AAA
+528,Jacob Turcotte,Jacob,Turcotte,Winchendon,D,15,1,3,4,0.27,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1021559,2009,USA,149.57,2262.5699999999997,Islanders Hockey Club Prep East,EHF 18U
+529,Jonah Lindsay,Jonah,Lindsay,Albany Academy,D,18,2,2,4,0.22,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,890451,2008,Canada,561.74,1156.1999999999998,Team Cadets,PPP
+530,Grant Solomon,Grant,Solomon,Tabor,F,13,2,2,4,0.31,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,763310,2007,USA,83.21,659.21,Team Jr Blues,PPP
+531,Rick Cheng,Rick,Cheng,Lawrenceville School,D,11,2,2,4,0.36,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,909271,2008,USA,225.69,530.69,Team Red,PPP
+532,Brody Nies,Brody,Nies,Holderness,D,8,1,3,4,0.5,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,964231,2008,USA,194.78,2554.7799999999997,Islanders Hockey Club Prep West,18U AAA
+533,Kevin Summers,Kevin,Summers,Vermont Academy,D/F,16,3,1,4,0.25,True,1.0,exact_name+exact_lastname+exact_firstname+team_match,904272,2007,Canada,79.87,3073.58,Vermont Academy,USHS-Prep
+534,Caleb Keyes,Caleb,Keyes,Worcester Academy,F,13,4,0,4,0.31,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1005579,2008,USA,14.52,2473.52,Assabet Valley Patriots 18U AAA,18U AAA
+535,Colin Celiberti,Colin,Celiberti,Worcester Academy,F,13,2,2,4,0.31,False,0,no_match,,,,0,0,,
+536,Joey Burke,Joey,Burke,Loomis Chaffee,F,12,2,2,4,0.33,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,978460,2008,USA,56.45,3264.45,The Loomis Chaffee School,USHS-Prep
+537,Miles Sobky,Miles,Sobky,Proctor Academy,F,16,1,3,4,0.25,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,888531,2008,USA,179.73,2577.73,FP Hornets 19U,NEFPHL 19U
+538,Cameron Hunchak,Cameron,Hunchak,Choate Rosemary Hall,F,11,1,3,4,0.36,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,888185,2008,Canada,213.24,3352.24,Oakville Blades,OJHL
+539,Chris Welby,Chris,Welby,St. Sebastian's,F,12,2,2,4,0.33,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,951656,2011,USA,166.96,1906.96,Islanders Hockey Club 14U AAA,14U AAA
+540,Emilien Goudreault,Emilien,Goudreault,Kents Hill,F,16,3,1,4,0.25,True,0.98,close_name+exact_lastname+similar_firstname+team_match+position_match,899774,2007,Canada,58.93,2818.93,Kents Hill School,USHS-Prep
+541,Dylan Rafail,Dylan,Rafail,Kent School,F,13,1,3,4,0.31,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,911536,2008,USA,201.54,2700.8,CT Nor'Easters Lions 18U AAA,18U AAA
+542,Shane Fraser,Shane,Fraser,Loomis Chaffee,F,12,2,2,4,0.33,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,936776,2008,USA,138.39,3443.4,The Loomis Chaffee School,USHS-Prep
+543,Luke Walkauskas,Luke,Walkauskas,Salisbury School,F,12,3,1,4,0.33,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,935059,2007,USA,698.66,1198.4099999999999,Team White,CEM
+544,Keegan Sears,Keegan,Sears,Kent School,F,13,3,1,4,0.31,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,749856,2007,USA,176.92,2460.26,CT Nor'Easters Lions 18U AAA,18U AAA
+545,Connor Emens,Connor,Emens,Canterbury,D,15,1,3,4,0.27,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,758116,2007,USA,134.58,2629.58,Springfield Thunderbirds 18U AAA,BEAST 18U
+546,Hayden Meskin,Hayden,Meskin,Loomis Chaffee,D,12,2,2,4,0.33,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1018182,2009,USA,65.55,1808.1100000000001,Yale Jr. Bulldogs 16U AAA,BEAST 16U
+547,Colton Stecchini,Colton,Stecchini,Lawrenceville School,F,11,1,3,4,0.36,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,936275,2009,USA,166.56,961.89,Team Red,PPP
+548,Evan Seow,Evan,Seow,Hotchkiss School,D,10,1,3,4,0.4,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,893566,2007,USA,635.18,1354.32,Team Navy,PPP
+549,James Connor,James,Connor,Berwick,D,15,1,3,4,0.27,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,904474,2007,USA,46.56,2392.56,Top Gun/NE Prep 18U AAA,NEFPHL 18U
+550,Dylan Potvin,Dylan,Potvin,Governors Academy,F,14,2,2,4,0.29,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,888332,2008,USA,106.49,2936.49,The Governor's Academy,USHS-Prep
+551,Blake Abramson,Blake,Abramson,NMH,F,17,2,2,4,0.24,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1114649,2008,Canada,65.82,388.82,Islanders Hockey Club 19U AAA,19U AAA
+552,Chase Warsofsky,Chase,Warsofsky,Cushing Academy,F,14,1,3,4,0.29,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,1034818,2009,USA,341.74,3368.74,Cushing Academy,USHS-Prep
+553,Will Archibald,Will,Archibald,Roxbury Latin,D,10,2,2,4,0.4,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,923971,2007,USA,53.44,2308.44,East Coast Militia 18U AAA,18U AAA
+554,Brian Yandle,Brian,Yandle,Cushing Academy,F,15,1,3,4,0.27,True,0.55,similar_name+exact_lastname+position_match,1075979,2011,USA,81.0,3461.0,Boston Junior Terriers,QC Int PW
+555,Jai Perry-Pereira,Jai,Perry-Pereira,St. Paul's School,F,16,2,2,4,0.25,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1003290,2010,USA,75.18,1275.18,Philadelphia Jr. Flyers 14U AAA,T1EHL 14U
+556,James Hamlin,James,Hamlin,Roxbury Latin,F,10,2,2,4,0.4,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1079244,2010,USA,87.09,1905.0900000000001,Islanders Hockey Club Prep 15U,EHF 15U Elite
+557,Tucker O'Neil,Tucker,O'Neil,Holderness,D,12,1,3,4,0.33,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,949305,2008,USA,99.93,2427.93,Islanders Hockey Club Prep West,18U AAA
+558,Trey Hanson,Trey,Hanson,Governors Academy,F,14,1,3,4,0.29,True,0.65,close_name+exact_lastname,880138,2007,Canada,25.95,304.52,Medicine Hat Hounds U16 AA,SCAHL U16
+559,Alex Taylor,Alex,Taylor,Frederick Gunn,F,15,2,2,4,0.27,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,992074,2009,Canada,350.97,842.11,Team Green,CEM
+560,Brady Harris,Brady,Harris,Austin Prep,D,17,1,3,4,0.24,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1011535,2009,USA,43.68,1643.68,Islanders Hockey Club 16U AAA,16U AAA
+561,Brady Ellis,Brady,Ellis,Lawrence Academy,C,13,2,2,4,0.31,True,1.0,exact_name+exact_lastname+exact_firstname+team_match,937506,2007,USA,55.38,2726.38,Lawrence Academy,USHS-Prep
+562,Luke Sardone,Luke,Sardone,Middlesex,F,10,2,2,4,0.4,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1021280,2008,USA,83.68,2607.01,Brookline Whalers 18U AAA,18U AAA
+563,Jacob Jett,Jacob,Jett,Avon Old Farms,F,11,1,3,4,0.36,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,783134,2008,USA,811.51,3176.51,Northern CT Nor'Easters 18U AAA,18U AAA
+564,Joey Carpentieri,Joey,Carpentieri,Austin Prep,D,17,2,2,4,0.24,False,0.44000000000000006,similar_name+exact_lastname+position_match,,,,0,0,,
+565,Chace Kivlehan,Chace,Kivlehan,Austin Prep,F,17,1,3,4,0.24,False,0,no_match,,,,0,0,,
+566,Patrick Quill,Patrick,Quill,Austin Prep,F,17,1,3,4,0.24,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,980375,2008,USA,18.66,1918.66,Islanders Hockey Club West 18U,18U AA
+567,Raphael Aberbach,Raphael,Aberbach,Groton,F,13,1,3,4,0.31,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1005575,2008,USA,36.25,2578.25,East Coast Militia 18U AAA,18U AAA
+568,Cal Hoyt,Cal,Hoyt,Williston-Northampton,F,15,1,3,4,0.27,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,880955,2007,USA,106.29,2520.29,East Coast Wizards 18U AAA,18U AAA
+569,Gleb Kokorin,Gleb,Kokorin,Cushing Academy,D,14,0,4,4,0.29,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,888562,2008,USA,75.79,2686.46,Cushing Academy,USHS-Prep
+570,Matteo Di Marzo,Matteo,Di Marzo,Westminster,D,9,0,4,4,0.44,False,0,no_match,,,,0,0,,
+571,Russell Louie,Russell,Louie,Andover,F,15,0,4,4,0.27,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,888344,2008,USA,900.54,3326.54,East Coast Wizards 18U AAA,18U AAA
+572,Tayvin Frongello,Tayvin,Frongello,Dexter,D,16,0,4,4,0.25,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1005573,2008,USA,96.25,2602.76,Brookline Whalers 18U AAA,18U AAA
+573,Cliff Hedges,Cliff,Hedges,Hebron,D,15,0,4,4,0.27,False,0,no_match,,,,0,0,,
+574,Curtis Brown,Curtis,Brown,North Yarmouth,F,20,0,4,4,0.2,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,902681,2007,Canada,47.76,2750.26,North Yarmouth Academy,USHS-Prep
+575,Travis Chatwin,Travis,Chatwin,Albany Academy,D,18,0,4,4,0.22,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,948824,2008,USA,199.33,746.12,Team Cadets,PPP
+576,Esref Erkmen,Esref,Erkmen,Millbrook,D,19,0,4,4,0.21,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,783141,2008,USA,175.72,583.55,Team Grey,PPP
+577,Nicholas Lapointe,Nicholas,Lapointe,Hebron,F,15,0,4,4,0.27,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,904210,2008,Canada,122.01,2622.01,Heritage Regional High School M18 D2,RSEQ M18 D2
+578,Colin O'Leary,Colin,O'Leary,St. Paul's School,D,16,0,4,4,0.25,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,1104220,2008,USA,9.1,2702.0,St. Paul's School,USHS-Prep
+579,Gavin Code,Gavin,Code,St. Paul's School,F,16,0,4,4,0.25,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,752404,2007,USA,89.3,2854.07,St. Paul's School,USHS-Prep
+580,Frank Tillinghast,Frank,Tillinghast,Worcester Academy,D,13,0,4,4,0.31,False,0,no_match,,,,0,0,,
+581,Matyas Matl,Matyas,Matl,Kents Hill,D,16,0,4,4,0.25,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,917726,2007,Czechia,121.4,2951.46,Kents Hill School,USHS-Prep
+582,Tyler Beaudoin,Tyler,Beaudoin,Westminster,F,11,0,4,4,0.36,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,978993,2009,USA,218.39,2219.86,Yale Jr. Bulldogs 16U AAA,BEAST 16U
+583,Michael Shaw,Michael,Shaw,Milton Academy,D,16,0,4,4,0.25,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,964225,2008,USA,130.03,2632.05,Cape Cod Whalers 18U AAA 2,18U AAA
+584,Cam Cataruzolo,Cam,Cataruzolo,Roxbury Latin,F,10,0,4,4,0.4,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,988292,2009,USA,43.75,1643.75,Boston Jr. Eagles 16U AAA,16U AAA
+585,Sean Farrell,Sean,Farrell,Pomfret,D,16,0,4,4,0.25,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,856499,2007,USA,119.4,2647.17,NV River Rats 18U AAA National,18U AAA
+586,Matthew Koch,Matthew,Koch,Avon Old Farms,D,11,0,4,4,0.36,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,701320,2009,USA,535.92,3387.92,Northern CT Nor'Easters 18U AAA,18U AAA
+587,Keegan Hunt,Keegan,Hunt,New Hampton,D,17,0,4,4,0.24,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,933275,2008,USA,63.14,2757.14,Central Catholic High,USHS-Prep
+588,Nathan Roy,Nathan,Roy,Kents Hill,D,16,0,4,4,0.25,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,973810,2010,Canada,108.49,2798.16,Collège Charles-Lemoyne Riverains,QM18AAA
+589,Christopher Saint-Phard,Christopher,Saint-Phard,Kimball Union,F,20,3,0,3,0.15,True,0.5,similar_name+exact_lastname,907260,2008,Canada,177.86,2897.86,Magog Cantonniers,QM18AAA
+590,Patrick Cerullo,Patrick,Cerullo,Frederick Gunn,F,15,2,1,3,0.2,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,868110,2008,USA,170.9,662.8199999999999,Team Blue,CEM
+591,Connor Leminen,Connor,Leminen,Pingree,D,13,2,1,3,0.23,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,988295,2009,USA,93.91,2041.91,Islanders Hockey Club 16U AAA,16U AAA
+592,Cam McDonough,Cam,McDonough,Cushing Academy,C,15,2,1,3,0.2,True,0.54,close_name+exact_lastname,1076921,2007,USA,0,2018.0,Somerset High,USHS-WI
+593,Tommy Nicolopolous,Tommy,Nicolopolous,St. Marks,D,12,1,2,3,0.25,True,0.75,close_name+close_lastname+exact_firstname+position_match,902687,2008,Canada,168.23,3043.17,Minuteman Flames 18U AAA,18U AAA
+594,Steven Burke,Steven,Burke,Brewster,F,7,2,1,3,0.43,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,920652,2007,USA,119.8,2374.8,Northern Cyclones 18U AAA Prep 3,18U AAA
+595,Matteo Sollazzo,Matteo,Sollazzo,Brewster,D,7,2,1,3,0.43,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,885480,2008,Canada,50.17,2342.77,Northern Cyclones 18U AAA Prep 3,18U AAA
+596,Peter Gilraine,Peter,Gilraine,Austin Prep,F,17,1,2,3,0.18,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,993271,2009,USA,21.61,1921.61,Islanders Hockey Club West 18U,18U AA
+597,Charlie Davis,Charlie,Davis,Westminster,F,9,1,2,3,0.33,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,1006636,2009,USA,98.19,705.62,Team Orange,CEM
+598,Henry Zidek,Henry,Zidek,The Hill School,F,16,2,1,3,0.19,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,925127,2007,USA,60.0,1784.56,The Hill School,TNPHL
+599,Tyler Branch,Tyler,Branch,Brewster,F,7,2,1,3,0.43,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,877983,2008,USA,64.21,2946.21,Brewster Academy,USHS-Prep
+600,Kevin Bertrand,Kevin,Bertrand,Hebron,F,15,3,0,3,0.2,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,898790,2008,Canada,39.53,2498.2,Collège Bourget M18 D1,RSEQ M18 D1
+601,Matty Hanrahan,Matty,Hanrahan,Westminster,F,11,2,1,3,0.27,False,0.44000000000000006,similar_name+exact_lastname+position_match,,,,0,0,,
+602,Whit Denzin,Whit,Denzin,Frederick Gunn,F,15,2,1,3,0.2,True,0.55,similar_name+exact_lastname+position_match,887208,2007,USA,141.0,951.0,Team Blue,CEM
+603,Brady Lee,Brady,Lee,Lawrenceville School,D,11,2,1,3,0.27,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,911554,2008,USA,138.86,2458.86,Mercer Chiefs 18U AAA,18U AAA
+604,Caden Desjardins,Caden,Desjardins,Berwick,F,15,2,1,3,0.2,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1087530,2010,USA,27.69,1626.69,Islanders Hockey Club Prep 15U,EHF 15U Elite
+605,Yoshiki Chitose,Yoshiki,Chitose,Choate Rosemary Hall,F,11,2,1,3,0.27,False,0,no_match,,,,0,0,,
+606,Cole Bradford,Cole,Bradford,Brooks School,F,11,2,1,3,0.27,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,1051309,2008,USA,54.92,2958.62,Brooks School,USHS-Prep
+607,Karolis Janulis,Karolis,Janulis,Lawrence Academy,F,13,2,1,3,0.23,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,893569,2007,USA,148.96,3191.96,Lawrence Academy,USHS-Prep
+608,Alejandro Hassan,Alejandro,Hassan,Groton,F/D,13,3,0,3,0.23,True,1.0,exact_name+exact_lastname+exact_firstname+team_match,577117,2007,USA,195.59,3151.71,Groton School,USHS-Prep
+609,Christopher Marques,Christopher,Marques,Tilton,D,15,1,2,3,0.2,True,0.9,exact_name+exact_lastname+exact_firstname,1051313,2008,USA,20.13,2270.13,Northern Cyclones 18U AAA Prep 4,18U AAA
+610,Dylan Rothstein,Dylan,Rothstein,Taft,F,10,1,2,3,0.3,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,997688,2010,USA,132.37,1778.37,Yale Jr. Bulldogs 15U AAA,15U AAA
+611,Will Gerst,Will,Gerst,Proctor Academy,F,16,2,1,3,0.19,False,0.32000000000000006,similar_name+exact_firstname,,,,0,0,,
+612,Braiden Moriarty,Braiden,Moriarty,Worcester Academy,F,13,1,2,3,0.23,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1209205,2008,USA,0,489.63,Team Rams,PPP
+613,Kai Bara,Kai,Bara,Brooks School,F,11,2,1,3,0.27,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,845963,2007,USA,0,0,,
+614,Joe Meade,Joe,Meade,Roxbury Latin,F,10,3,0,3,0.3,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,893596,2007,USA,70.1,2270.1,East Coast Militia 18U AAA,18U AAA
+615,Deniz Unal,Deniz,Unal,Noble & Greenough,D,13,1,2,3,0.23,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1114079,2010,USA,17.73,2356.14,East Coast Militia 15U AAA,15U AAA
+616,Cam Sadak,Cam,Sadak,Williston-Northampton,F,15,1,2,3,0.2,True,0.7,close_name+exact_lastname+position_match,1031355,2009,USA,81.14,1742.25,Yale Jr. Bulldogs 16U AAA,BEAST 16U
+617,Aiden Shou,Aiden,Shou,Lawrenceville School,F,11,1,2,3,0.27,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,935440,2009,USA,203.95,898.03,Team Red,PPP
+618,Joey Gualtieri,Joey,Gualtieri,Hebron,F,15,1,2,3,0.2,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,1011187,2008,Canada,48.23,2744.23,Hebron Academy,USHS-Prep
+619,Caleb North,Caleb,North,Canterbury,F,15,3,0,3,0.2,True,0.55,similar_name+exact_lastname+position_match,1198977,2011,USA,0,605.0,Genesis Hockey 14U A 2,EJEPL 14U
+620,Ryan Hecker,Ryan,Hecker,Avon Old Farms,D,11,1,2,3,0.27,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,617473,2008,USA,363.61,2926.61,Northern CT Nor'Easters 18U AAA,18U AAA
+621,Richard Jenkins,Richard,Jenkins,New Hampton,D,17,1,2,3,0.18,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,866422,2007,USA,189.63,3021.66,New Hampton School,USHS-Prep
+622,Chase Mallin,Chase,Mallin,Hebron,F,15,2,1,3,0.2,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,907248,2008,Canada,14.25,2437.88,Howard S. Billings Blazers M18 D2,RSEQ M18 D2
+623,Andy Haban,Andy,Haban,NMH,F,15,2,1,3,0.2,False,0,no_match,,,,0,0,,
+624,Davyd Jefferies,Davyd,Jefferies,Hebron,F,15,2,1,3,0.2,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,902684,2008,Canada,49.03,2787.2,John Rennie High School M18 D1 R,RSEQ M18 D1 R
+625,Tedy Hannon,Tedy,Hannon,Tilton,F,14,2,1,3,0.21,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,964984,2007,USA,28.29,2311.63,Northern Cyclones 18U AAA Prep 4,18U AAA
+626,Jack Kang,Jack,Kang,Choate Rosemary Hall,F,11,1,2,3,0.27,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,938279,2009,USA,75.25,1914.25,Northern CT Nor'Easters 16U AAA,16U AAA
+627,Bear Tang,Bear,Tang,BB&N,F,11,2,1,3,0.27,False,0,no_match,,,,0,0,,
+628,Nolan Sweeney,Nolan,Sweeney,Tabor,D,11,1,2,3,0.27,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1057667,2009,USA,51.64,1926.86,Cape Cod Whalers 16U AAA,16U AAA
+629,Nao Dutil,Nao,Dutil,The Hill School,D,15,1,2,3,0.2,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,851264,2007,Canada,100.74,1809.74,The Hill School,TNPHL
+630,Daniel Raff Cohen,Daniel,Raff Cohen,Williston-Northampton,F,15,1,2,3,0.2,True,0.85,exact_name+close_lastname+exact_firstname+position_match,961795,2008,USA,79.53,2290.05,Connecticut Jr. Rangers 16U AAA,THF 16U
+631,Ollie Manning,Ollie,Manning,St. Sebastian's,D,12,2,1,3,0.25,True,0.98,close_name+exact_lastname+similar_firstname+team_match+position_match,1005577,2008,USA,36.52,2719.99,St. Sebastian's School,USHS-Prep
+632,Andrew Marcucci,Andrew,Marcucci,New Hampton,D,11,2,1,3,0.27,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,933293,2007,USA,24.55,2762.19,New Hampton School,USHS-Prep
+633,Shane Flanagan,Shane,Flanagan,The Hill School,F,16,2,1,3,0.19,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,964233,2008,USA,98.13,1698.13,Seacoast Performance Acad. 16U 2,EP Cup Series 16U
+634,Evan Williams,Evan,Williams,Hotchkiss School,D,10,2,1,3,0.3,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,1001834,2007,USA,98.26,935.9300000000001,Team Navy,PPP
+635,Nico Potts,Nico,Potts,Governors Academy,F,14,1,2,3,0.21,True,0.98,close_name+exact_lastname+similar_firstname+team_match+position_match,1029325,2008,Mexico,181.07,2860.07,The Governor's Academy,USHS-Prep
+636,Andrew Martineau,Andrew,Martineau,Canterbury,F,15,1,2,3,0.2,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,998589,2010,USA,202.74,1903.74,Woodbridge Wolfpack 15U AAA,THF 15U
+637,Nolan Hartman,Nolan,Hartman,BB&N,F,11,2,1,3,0.27,False,0.44000000000000006,similar_name+exact_lastname+position_match,,,,0,0,,
+638,Daniel Maglathlin,Daniel,Maglathlin,Winchendon,D,16,2,1,3,0.19,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,911556,2008,USA,286.22,2358.2200000000003,Islanders Hockey Club Prep East,EHF 18U
+639,Brian Whitecross,Brian,Whitecross,Roxbury Latin,F,10,2,1,3,0.3,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,988291,2009,USA,21.14,1621.14,Boston Jr. Eagles 16U AAA,16U AAA
+640,Eben Alden,Eben,Alden,Noble & Greenough,D,13,1,2,3,0.23,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,978964,2009,USA,136.79,1917.79,NV River Rats 16U AAA National,BEAST 16U
+641,Ben Levering,Ben,Levering,Noble & Greenough,F,13,1,2,3,0.23,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,1022541,2007,USA,40.74,2655.56,Noble & Greenough School,USHS-Prep
+642,Parfen Adbin,Parfen,Adbin,Kents Hill,D,16,2,1,3,0.19,False,0,no_match,,,,0,0,,
+643,Zach Noxon,Zach,Noxon,Rivers School,F,10,1,2,3,0.3,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,988293,2009,USA,73.58,1673.58,Boston Jr. Eagles 16U AAA,16U AAA
+644,Leo Packard,Leo,Packard,Middlesex,F,10,2,1,3,0.3,False,0.44000000000000006,similar_name+exact_lastname+position_match,,,,0,0,,
+645,Ryan Kiyonaga,Ryan,Kiyonaga,Albany Academy,F,15,1,2,3,0.2,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1022499,2009,USA,33.85,333.85,Team Cadets,PPP
+646,Carson Lowry,Carson,Lowry,Taft,F,10,1,2,3,0.3,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,804886,2007,USA,246.22,857.07,Team Red,CEM
+647,Marcus Pukel,Marcus,Pukel,Brooks School,,11,1,2,3,0.27,True,0.9,exact_name+exact_lastname+exact_firstname,1019223,2008,USA,170.3,2980.58,95 Giants 18U AAA,18U AAA
+648,Ethen Fines,Ethen,Fines,Williston-Northampton,F,14,1,2,3,0.21,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,897594,2007,Canada,342.01,3422.01,Aurora Tigers,OJHL
+649,Colby Mara,Colby,Mara,Lawrence Academy,D,13,1,2,3,0.23,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,835756,2007,USA,263.55,2662.55,Boston Little Bruins 18U AAA,EHF 18U Elite
+650,Emmett Aufiero,Emmett,Aufiero,Belmont Hill,D,15,1,2,3,0.2,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,951660,2011,USA,106.15,1741.15,Islanders Hockey Club 14U AAA,14U AAA
+651,Wyatt Langway,Wyatt,Langway,Pingree,D,13,1,2,3,0.23,True,0.9,exact_name+exact_lastname+exact_firstname,1155792,2007,USA,0,0,,
+652,William Lefebvre,William,Lefebvre,Exeter,D,14,0,3,3,0.21,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1012945,2008,Canada,124.41,2016.56,Vegas Jr. Golden Knights 16U AAA,NAT1HL 16U
+653,Zennon Turnovitski,Zennon,Turnovitski,Berkshire School,D,17,0,3,3,0.18,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,805246,2008,Canada,381.0,3183.33,Berkshire School,USHS-Prep
+654,Carter Rowles,Carter,Rowles,Hoosac,F,9,0,3,3,0.33,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1044356,2008,Canada,60.0,694.0,Team Purple,PPP
+655,Patrick Benson,Patrick,Benson,Rivers School,F,10,0,3,3,0.3,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1032285,2009,USA,76.66,2276.66,East Coast Militia 18U AAA,18U AAA
+656,Cam Daley,Cam,Daley,Dexter,D,16,0,3,3,0.19,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,893601,2007,USA,115.99,2425.82,Brookline Whalers 18U AAA,18U AAA
+657,Maxwell Rusov,Maxwell,Rusov,Brewster,F,7,0,3,3,0.43,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,951602,2007,USA,50.23,2656.64,Northern Cyclones 18U AAA Prep 3,18U AAA
+658,Liam Wachob,Liam,Wachob,The Hill School,F,16,0,3,3,0.19,True,0.9,exact_name+exact_lastname+exact_firstname,1023573,2009,USA,28.7,1628.7,Carolina Jr. Hurricanes 15U AAA,EP Cup Series 15O
+659,Nicholas Denon,Nicholas,Denon,Hoosac,D,9,0,3,3,0.33,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,946691,2008,USA,247.29,615.96,Team Purple,PPP
+660,Gavin Smith,Gavin,Smith,Westminster,D,11,0,3,3,0.27,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,1091771,2009,USA,0,1252.0,Golden Ring U15,WSI U15
+661,Christian Marsh,Christian,Marsh,Pingree,F,13,0,3,3,0.23,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1155793,2009,USA,5.35,1185.35,North Shore Shamrocks 15U AA,UT1HL 15U
+662,Ian Beauparlant,Ian,Beauparlant,Brooks School,F,10,0,3,3,0.3,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,961768,2008,USA,73.78,1738.79,Philadelphia Jr. Flyers 16U AAA,T1EHL 16U
+663,Joe Orszulak,Joe,Orszulak,Loomis Chaffee,F,12,0,3,3,0.25,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1037833,2007,USA,23.41,2477.41,Springfield Thunderbirds 19U AAA,BEAST 18U
+664,Matt Brooks,Matt,Brooks,Millbrook,D,19,0,3,3,0.16,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,911600,2008,USA,250.64,2803.64,Yale Jr. Bulldogs 18U AAA,18U AAA
+665,Max Sullivan,Max,Sullivan,Holderness,D,10,0,3,3,0.3,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1004633,2008,USA,150.57,2412.57,Islanders Hockey Club Prep West,18U AAA
+666,Cody Hew,Cody,Hew,Canterbury,G,15,0,3,3,0.2,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,949295,2008,USA,195.32,2804.0299999999997,NV River Rats 18U AAA National,18U AAA
+667,Jacob Bellinger,Jacob,Bellinger,Groton,F,13,0,3,3,0.23,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,935398,2009,USA,68.23,467.76,Top Gun/NE Prep 15U AAA,NEFPHL Selects
+668,Nolan Nassar,Nolan,Nassar,Governors Academy,D,14,0,3,3,0.21,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,940934,2008,USA,255.72,3371.5,The Governor's Academy,USHS-Prep
+669,Karl Warren,Karl,Warren,NMH,F,16,0,3,3,0.19,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1043706,2009,USA,32.31,232.31,Islanders Hockey Club 19U AAA,19U AAA
+670,Harry Jackson,Harry,Jackson,Brooks School,D,10,0,3,3,0.3,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,914123,2008,USA,257.99,2457.99,East Coast Wizards 18U AAA,18U AAA
+671,Mikey Covelluzzi,Mikey,Covelluzzi,Pingree,D,13,0,3,3,0.23,True,1.0,exact_name+exact_lastname+exact_firstname+team_match,754512,2007,USA,58.13,2778.13,Pingree School,USHS-Prep
+672,Andy Zhang,Andy,Zhang,Lawrenceville School,F,11,0,3,3,0.27,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,911541,2008,USA,303.55,862.55,Team Red,PPP
+673,Lexi Kert,Lexi,Kert,Choate Rosemary Hall,D,11,0,3,3,0.27,True,0.98,close_name+exact_lastname+similar_firstname+team_match+position_match,690099,2007,Canada,481.4,3501.4,Choate Rosemary Hall,USHS-Prep
+674,Brayden Robinson,Brayden,Robinson,Milton Academy,D,16,0,3,3,0.19,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,996320,2008,USA,49.63,2513.42,Cape Cod Whalers 18U AAA 2,18U AAA
+675,Zachary Gill,Zachary,Gill,Salisbury School,D,12,0,3,3,0.25,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,889798,2008,Canada,859.0,1937.8200000000002,Team White,CEM
+676,Shane Devin,Shane,Devin,Thayer Academy,D,14,0,3,3,0.21,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1105484,2009,USA,20.4,1707.62,Cape Cod Whalers 16U AAA,16U AAA
+677,Dylan Mallgrave,Dylan,Mallgrave,Kent School,D,12,0,3,3,0.25,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,956438,2008,USA,93.98,2391.75,CT Nor'Easters Lions 18U AAA,18U AAA
+678,Harrison Freelove,Harrison,Freelove,Holderness,F,11,0,3,3,0.27,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,946892,2008,USA,92.24,2468.24,East Coast Militia 18U AAA,18U AAA
+679,Brady Andrews,Brady,Andrews,Austin Prep,D,17,0,3,3,0.18,True,0.9,exact_name+exact_lastname+exact_firstname,1003725,2008,USA,0,895.67,Wilmette Jr. Trevians 14U AA,CSDHL 14U
+680,Adam Pelletier,Adam,Pelletier,North Yarmouth,D,20,0,3,3,0.15,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,902628,2007,Canada,35.99,2540.68,Collège Durocher St-Lambert M18 D1 R,RSEQ M18 D1 R
+681,Max Gerum,Max,Gerum,Pomfret,D,16,0,3,3,0.19,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,936965,2009,USA,55.05,2105.27,Providence Capitals 16U AAA,16U AAA
+682,Owen Morris,Owen,Morris,Choate Rosemary Hall,F,11,0,3,3,0.27,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,434177,2007,USA,95.52,2295.52,Hartford Jr. Wolfpack 18U AAA,18U AAA
+683,Tyler Miocevich,Tyler,Miocevich,Andover,D,15,0,3,3,0.2,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,577183,2007,Canada,139.93,2779.93,Phillips Academy Andover,USHS-Prep
+684,Josh Freeman,Josh,Freeman,Brooks School,D,11,0,3,3,0.27,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,898795,2008,Canada,92.04,2981.27,NEFPHL Bishops 18U,NEFPHL 18U
+685,Niko Tzouganatos,Niko,Tzouganatos,St. Marks,D,12,0,3,3,0.25,True,0.7,close_name+exact_lastname+position_match,1025413,2009,USA,62.14,1860.14,Islanders Hockey Club 16U AAA,16U AAA
+686,Ned Akashian,Ned,Akashian,Exeter,F,14,1,1,2,0.14,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,933281,2008,USA,84.88,2891.88,Lowell High,USHS-MA
+687,Josh Timone,Josh,Timone,Berkshire School,F,17,1,1,2,0.12,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,978457,2008,USA,145.75,2442.24,Black Bear Academy 16U AAA,16U AAA
+688,Leo Chen,Leo,Chen,Berkshire School,F,17,2,0,2,0.12,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,991559,2008,China,145.75,2930.76,Berkshire School,USHS-Prep
+689,Jeremy See,Jeremy,See,Albany Academy,D,18,1,1,2,0.11,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1102609,2009,USA,0,2630.93,Capital District Jets,USHS-NY
+690,Harry Stubbert,Harry,Stubbert,New Hampton,D,17,2,0,2,0.12,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,946417,2007,USA,71.91,2896.93,New Hampton School,USHS-Prep
+691,Liam Miga,Liam,Miga,Pingree,F,13,2,0,2,0.15,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1174471,2010,USA,2.07,1393.67,Top Gun 14U AAA,14U AAA
+692,Declan Dupre,Declan,Dupre,Kents Hill,D,16,1,1,2,0.13,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,868055,2007,USA,41.54,2742.54,Cushing Academy Varsity B,USHS-MA
+693,Hayden Hunter,Hayden,Hunter,Tilton,F,13,2,0,2,0.15,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,895026,2007,USA,222.88,2725.77,Northern Cyclones 18U AAA Prep 4,18U AAA
+694,Miroslav Fedor,Miroslav,Fedor,NMH,D,16,1,1,2,0.13,False,0,no_match,,,,0,0,,
+695,Jeremy Polzer,Jeremy,Polzer,Milton Academy,F,15,1,1,2,0.13,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,876132,2007,USA,190.37,2757.14,East Coast Militia 18U AAA,18U AAA
+696,Benjamin Short,Benjamin,Short,Winchendon,F,6,1,1,2,0.33,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,952704,2008,USA,570.9,3013.9,Islanders Hockey Club Prep East,EHF 18U
+697,Topher Jones,Topher,Jones,Taft,D,10,2,0,2,0.2,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,941623,2008,USA,120.27,911.8299999999999,Team Red,CEM
+698,Tucker Montecalvo,Tucker,Montecalvo,Berwick,F,15,1,1,2,0.13,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1011530,2009,USA,11.57,582.8199999999999,Team Royal,PPP
+699,Daniel Peate,Daniel,Peate,Avon Old Farms,F,11,2,0,2,0.18,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,888316,2008,USA,458.86,2838.86,CT Nor'Easters Lions 18U AAA,18U AAA
+700,Sean Millen,Sean,Millen,Avon Old Farms,F,4,1,1,2,0.5,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,941636,2008,USA,199.26,2644.26,Northern CT Nor'Easters 18U AAA,18U AAA
+701,Henry Hao,Henry,Hao,NMH,F,13,1,1,2,0.15,False,0,no_match,,,,0,0,,
+702,Jorden Marzi,Jorden,Marzi,Rivers School,D,10,1,1,2,0.2,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1046764,2010,USA,53.24,1253.24,Minuteman Flames 14U AAA,14U AAA
+703,Colin Driscoll,Colin,Driscoll,Pingree,F,12,2,0,2,0.17,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,957271,2009,USA,2.88,1145.88,Islanders Hockey Club 14U AAA,14U AAA
+704,Dylan Ness,Dylan,Ness,Westminster,F,7,1,1,2,0.29,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,908011,2007,USA,127.42,506.76,Team Orange,CEM
+705,Brody Baum,Brody,Baum,Millbrook,F,15,1,1,2,0.13,True,0.78,close_name+exact_lastname+similar_firstname+position_match,911624,2008,USA,73.98,537.11,Team Grey,PPP
+706,Alex Zaneski,Alex,Zaneski,Noble & Greenough,F,13,1,1,2,0.15,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1057674,2009,USA,104.15,1854.15,East Coast Militia 16U AAA,16U AAA
+707,Nathan Rooney,Nathan,Rooney,Thayer Academy,D,10,1,1,2,0.2,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,754513,2007,USA,108.03,2308.03,East Coast Militia 18U AAA,18U AAA
+708,Bauer Gammill,Bauer,Gammill,Berkshire School,F,17,1,1,2,0.12,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1071690,2008,USA,14.85,2005.85,New Canaan High,USHS-CT
+709,Alex Chiesi,Alex,Chiesi,Kent School,D,13,1,1,2,0.15,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,757813,2007,USA,267.89,2774.06,CT Nor'Easters Lions 18U AAA,18U AAA
+710,Adam Krogmeier,Adam,Krogmeier,Governors Academy,D,14,1,1,2,0.14,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,1021283,2008,USA,21.27,2621.27,The Governor's Academy,USHS-Prep
+711,Jake Pleau,Jake,Pleau,Westminster,F,11,1,1,2,0.18,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,785872,2008,Canada,16.59,2521.93,É. Sec. Pointe-Lévy M18 D1,RSEQ M18 D1
+712,Scott Crabtree,Scott,Crabtree,BB&N,D,10,1,1,2,0.2,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,982916,2008,USA,25.48,2362.48,GBL Bruins 18U AAA,18U AAA
+713,Ryder Tremblay,Ryder,Tremblay,Loomis Chaffee,D,12,1,1,2,0.17,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,851947,2007,USA,73.38,2367.38,Boston Advantage 18U AAA 2,18U AAA
+714,Alex Vogel,Alex,Vogel,Hebron,F,15,1,1,2,0.13,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,888643,2007,USA,113.65,2847.65,Hebron Academy,USHS-Prep
+715,Luca Desjardins,Luca,Desjardins,Salisbury School,F,12,2,0,2,0.17,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,905248,2009,Canada,1171.44,1822.44,Team White,CEM
+716,Jake Doherty,Jake,Doherty,Hotchkiss School,F,10,1,1,2,0.2,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,1099271,2011,USA,0,627.0,Rochester Aces 13U AA Black,13U AA
+717,Colin Yandle,Colin,Yandle,Cushing Academy,D,15,2,0,2,0.13,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,988290,2009,USA,567.56,3274.56,Catholic Memorial School,USHS-MA
+718,Marco Linton,Marco,Linton,Milton Academy,F,16,1,1,2,0.13,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,864770,2007,USA,60.67,548.88,Cape Cod Whalers 19U,19U AAA
+719,Tommy Zine,Tommy,Zine,Noble & Greenough,F,13,1,1,2,0.15,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,988288,2009,USA,79.67,1829.67,NV River Rats 16U AAA National,BEAST 16U
+720,Harry Rubin,Harry,Rubin,New Hampton,F,17,1,1,2,0.12,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,865636,2007,USA,89.23,2942.02,New Hampton School,USHS-Prep
+721,Charlie Ness,Charlie,Ness,Thayer Academy,F,14,2,0,2,0.14,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1023342,2009,USA,78.93,1949.93,Boston Jr. Eagles 16U AAA,16U AAA
+722,Jack Green,Jack,Green,Lawrenceville School,D,11,2,0,2,0.18,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,845967,2007,USA,142.94,614.5,Team Red,PPP
+723,Chase Field,Chase,Field,Lawrence Academy,F,12,1,1,2,0.17,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,930565,2008,USA,253.78,2881.7799999999997,Lawrence Academy,USHS-Prep
+724,Ryan Barlow,Ryan,Barlow,The Hill School,F,16,1,1,2,0.13,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1022492,2009,USA,30.37,3127.0299999999997,Saratoga Springs High,USHS-NY
+725,John Michael Mugavero,John Michael,Mugavero,The Hill School,F,13,1,1,2,0.15,False,0,no_match,,,,0,0,,
+726,Finley Walsh,Finley,Walsh,Hotchkiss School,F,10,2,0,2,0.2,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,752407,2007,USA,113.04,625.1700000000001,Team Navy,PPP
+727,Georges Vergnion,Georges,Vergnion,Winchendon,F,8,1,1,2,0.25,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,980795,2008,USA,194.11,2661.11,Islanders Hockey Club Prep East,EHF 18U
+728,Thomas Sibley,Thomas,Sibley,Winchendon,F,9,1,1,2,0.22,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1054306,2008,USA,20.67,2220.67,Assabet Valley Patriots 18U AAA,18U AAA
+729,Nate Cook,Nate,Cook,Brunswick,F,14,1,1,2,0.14,True,0.78,close_name+exact_lastname+similar_firstname+position_match,1088288,2009,Canada,0,76.5,Western Flames U18 AAA,MMGHL U18 (W)
+730,Riley Slovis,Riley,Slovis,Salisbury School,F,12,2,0,2,0.17,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,873671,2007,USA,190.03,807.28,Team White,CEM
+731,Caden Creech,Caden,Creech,Salisbury School,F,12,1,1,2,0.17,True,0.9,exact_name+exact_lastname+exact_firstname,576968,2007,USA,255.32,736.89,Team White,CEM
+732,Ian King,Ian,King,Middlesex,D,10,1,1,2,0.2,True,0.9,exact_name+exact_lastname+exact_firstname,989167,2008,USA,23.41,2210.41,Monument Hockey Club 18U AA,18U AA
+733,Christian Toma,Christian,Toma,Kimball Union,D,20,1,1,2,0.1,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,701497,2009,Canada,252.31,2284.8900000000003,Toronto Titans U16 AAA,U16 AAA
+734,Chris Williams,Chris,Williams,Thayer Academy,F,14,2,0,2,0.14,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,752386,2007,USA,72.17,2272.17,East Coast Militia 18U AAA,18U AAA
+735,Charlie Brand,Charlie,Brand,Middlesex,F,10,1,1,2,0.2,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,996153,2007,USA,30.57,2660.57,East Coast Wizards 18U AAA,18U AAA
+736,Shane McGoldrick,Shane,McGoldrick,Roxbury Latin,D,10,1,1,2,0.2,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,914127,2008,USA,39.4,2239.4,East Coast Militia 18U AAA,18U AAA
+737,Cole Travaglini,Cole,Travaglini,Governors Academy,F,14,2,0,2,0.14,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1087528,2010,USA,21.74,2650.54,Berwick Academy,USHS-Prep
+738,Mathys Paradis,Mathys,Paradis,Vermont Academy,F,16,1,1,2,0.13,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,902976,2007,Canada,41.0,2620.23,Northern Cyclones 18U AAA Prep,18U AAA
+739,Raphael Ouimet,Raphael,Ouimet,Vermont Academy,F,16,2,0,2,0.13,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,891084,2008,Canada,49.7,2519.7,Northern Cyclones 18U AAA Prep,18U AAA
+740,Ray MacDougall,Ray,MacDougall,New Hampton,F,17,1,1,2,0.12,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,803838,2007,Canada,273.38,3209.38,New Hampton School,USHS-Prep
+741,Justin Baxter,Justin,Baxter,Proctor Academy,F,16,1,1,2,0.13,False,0.4,exact_lastname+team_match+position_match,,,,0,0,,
+742,Elliot Bibeau-Rivard,Elliot,Bibeau-Rivard,Salisbury School,F,12,1,1,2,0.17,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,938698,2009,Canada,226.49,1013.1000000000001,Team Black,CEM
+743,Miles Mireault,Miles,Mireault,Cushing Academy,F,12,1,1,2,0.17,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,936999,2008,USA,230.37,2943.9700000000003,Central Mass Penguins 18U AAA,18U AAA
+744,Liam Newell,Liam,Newell,NMH,D,17,1,1,2,0.12,True,0.5,similar_name+exact_lastname,1004273,2010,USA,21.87,1541.87,Vegas Jr. Golden Knights 15U AAA,NAT1HL 15U
+745,Mathis Moreau,Mathis,Moreau,Kents Hill,F,16,1,1,2,0.13,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,816734,2007,Canada,27.29,2377.29,Kents Hill School Varsity,USHS-ME
+746,Noah Feingold,Noah,Feingold,Brewster,F,7,1,1,2,0.29,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1104943,2008,USA,74.72,2689.83,Northern Cyclones 18U AAA Prep 3,18U AAA
+747,Amir Makdad,Amir,Makdad,Berwick,F,15,1,1,2,0.13,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,920353,2008,Canada,113.85,835.97,Team Royal,PPP
+748,Gavin Dibble,Gavin,Dibble,Albany Academy,F,18,1,1,2,0.11,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1029157,2008,USA,167.96,653.19,Team Cadets,PPP
+749,Parker Farnham,Parker,Farnham,Canterbury,F,8,1,1,2,0.25,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,852905,2007,USA,162.74,2701.74,Springfield Thunderbirds 18U AAA,BEAST 18U
+750,Colby Goldstein,Colby,Goldstein,Pomfret,F,16,1,1,2,0.13,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,893544,2007,USA,76.79,568.79,Team Crimson,PPP
+751,Lukas Royko,Lukas,Royko,Deerfield Academy,F,12,1,1,2,0.17,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,907095,2008,Canada,216.39,898.39,Team Yellow,CEM
+752,Henry Prowse,Henry,Prowse,Holderness,D,9,1,1,2,0.22,False,0,no_match,,,,0,0,,
+753,Alex Mitza,Alex,Mitza,Tilton,F,14,0,2,2,0.14,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1037988,2009,USA,161.2,2158.04,Northern Cyclones 16U AAA Prep,16U AAA
+754,Thierry Vigneault,Thierry,Vigneault,Hoosac,F,9,0,2,2,0.22,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,902362,2007,Canada,57.39,759.27,Team Purple,PPP
+755,Eli Youmans,Eli,Youmans,NMH,F,17,0,2,2,0.12,False,0,no_match,,,,0,0,,
+756,Sean Sweeney,Sean,Sweeney,Thayer Academy,F,14,0,2,2,0.14,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1021558,2009,USA,126.89,2049.89,Boston Jr. Eagles 16U AAA,16U AAA
+757,Nate Daly,Nate,Daly,Pingree,F,13,0,2,2,0.15,False,0.44000000000000006,close_name+exact_firstname,,,,0,0,,
+758,Braydon Swarr,Braydon,Swarr,The Hill School,D,13,0,2,2,0.15,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,856490,2007,USA,141.0,1847.0,The Hill School,TNPHL
+759,Evan Gardner,Evan,Gardner,Tilton,D,14,0,2,2,0.14,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,966265,2009,Canada,149.3,1993.1100000000001,Northern Cyclones 16U AAA Prep,16U AAA
+760,Jordan Pallof,Jordan,Pallof,Mount St. Charles,F,10,0,2,2,0.2,True,0.9,exact_name+exact_lastname+exact_firstname,1094556,2009,USA,93.58,1952.58,95 Giants 16U AAA,THF 16U
+761,Evan Ashton,Evan,Ashton,Brewster,F,7,0,2,2,0.29,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1067040,2009,USA,24.21,2224.21,Northern Cyclones 18U AAA Prep 3,18U AAA
+762,Ben Agrodnia,Ben,Agrodnia,Holderness,D,12,0,2,2,0.17,False,0,no_match,,,,0,0,,
+763,Aidan Dougherty,Aidan,Dougherty,Brunswick,D,14,0,2,2,0.14,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,808505,2007,USA,84.75,2833.61,Brunswick School,USHS-Prep
+764,Grady Glandorf,Grady,Glandorf,Choate Rosemary Hall,F,10,0,2,2,0.2,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,754061,2007,USA,69.7,2669.7,Choate Rosemary Hall,USHS-Prep
+765,Matt Piotrowski,Matt,Piotrowski,Andover,D,15,0,2,2,0.13,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,783146,2008,USA,187.16,2513.93,NV River Rats 18U AAA National,18U AAA
+766,Jake Power,Jake,Power,Avon Old Farms,D,11,0,2,2,0.18,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,906002,2008,Canada,218.06,2701.06,Northern CT Nor'Easters 18U AAA,18U AAA
+767,Cullen Tully,Cullen,Tully,Taft,D,10,0,2,2,0.2,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,809250,2007,USA,155.59,773.7,Team Red,CEM
+768,Will Lavelle,Will,Lavelle,Noble & Greenough,F,13,0,2,2,0.15,True,0.9,exact_name+exact_lastname+exact_firstname,1144324,2009,USA,17.26,1617.26,Butte Irish,NA3HL
+769,Tuck Gilbane,Tuck,Gilbane,Noble & Greenough,D,13,0,2,2,0.15,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,750569,2007,USA,189.97,2543.97,Boston Jr. Eagles 18U AAA,18U AAA
+770,Owen Frick,Owen,Frick,Cushing Academy,F,15,0,2,2,0.13,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,999110,2010,USA,121.47,1764.47,Minuteman Flames 14U AAA,14U AAA
+771,Ayden Heron,Ayden,Heron,Lawrenceville School,F,11,0,2,2,0.18,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,869039,2007,USA,231.37,614.37,Woodbridge Wolfpack 18U AAA,NEPACK 18U
+772,Marshall Paul,Marshall,Paul,Avon Old Farms,D,11,0,2,2,0.18,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,955410,2009,USA,193.98,2270.98,Northern CT Nor'Easters 16U AAA,16U AAA
+773,Holden Sandner,Holden,Sandner,Berkshire School,F,15,0,2,2,0.13,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,947209,2009,USA,119.33,1670.45,Chicago Mission 15U AAA,15U AAA
+774,Ryan Merrill,Ryan,Merrill,St. Sebastian's,D,9,0,2,2,0.22,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1057661,2009,USA,55.92,2066.48,Cape Cod Whalers 16U AAA,16U AAA
+775,Declan Moran,Declan,Moran,Mount St. Charles,D,10,0,2,2,0.2,True,0.68,exact_name+close_lastname+exact_firstname+position_match,1117023,2011,Canada,3.41,954.41,Mississauga Senators U15 AAA,GTHL U15
+776,Issac Oberting,Issac,Oberting,Hotchkiss School,F,10,0,2,2,0.2,True,0.78,close_name+exact_lastname+similar_firstname+position_match,851944,2007,USA,99.8,834.8,Team Navy,PPP
+777,Ezra Jones,Ezra,Jones,Deerfield Academy,D,12,0,2,2,0.17,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,861643,2008,USA,82.61,681.28,Team Yellow,CEM
+778,Michael Buscaino,Michael,Buscaino,Brooks School,D,10,0,2,2,0.2,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,998506,2010,USA,37.79,2637.79,Brooks School,USHS-Prep
+779,Tommy Lally,Tommy,Lally,Thayer Academy,F,14,0,2,2,0.14,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,1113653,2009,USA,6.96,1406.96,Cape Cod Whalers 15U AAA,15U AAA
+780,George Karayiannis,George,Karayiannis,Brunswick,F,10,0,2,2,0.2,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,950526,2008,USA,199.6,2809.01,Brunswick School,USHS-Prep
+781,Grayson Espenshade,Grayson,Espenshade,Salisbury School,F,12,0,2,2,0.17,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,936920,2009,USA,463.08,1063.08,Team White,CEM
+782,Aidan Bujnicki,Aidan,Bujnicki,Hotchkiss School,D,10,0,2,2,0.2,True,0.78,close_name+exact_lastname+similar_firstname+position_match,988283,2009,USA,102.68,795.1800000000001,Team Navy,PPP
+783,Ethan Hung,Ethan,Hung,Hotchkiss School,D,10,0,2,2,0.2,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,978997,2009,USA,186.29,1000.79,Team Navy,PPP
+784,Mikey Mansfield,Mikey,Mansfield,Governors Academy,D,14,0,2,2,0.14,True,0.5,similar_name+exact_lastname,876399,2008,Canada,64.21,1664.21,South Shore Schooners,NSRJHL
+785,Lance Toland,Lance,Toland,Belmont Hill,F/D,16,0,2,2,0.13,True,0.9,exact_name+exact_lastname+exact_firstname,937002,2008,USA,76.59,2549.59,Assabet Valley Patriots 18U AAA,18U AAA
+786,Connor Wright,Connor,Wright,Tabor,D,13,0,2,2,0.15,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,978962,2009,USA,296.25,2274.25,NV River Rats 16U AAA National,BEAST 16U
+787,Jack Hartwell,Jack,Hartwell,Noble & Greenough,D,13,0,2,2,0.15,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,929792,2007,USA,75.12,2698.82,Noble & Greenough School,USHS-Prep
+788,Jonah Frattasio,Jonah,Frattasio,Thayer Academy,F,14,0,2,2,0.14,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,658762,2007,USA,42.61,2242.6099999999997,East Coast Militia 18U AAA,18U AAA
+789,Nolan Cahill,Nolan,Cahill,Roxbury Latin,F,10,0,2,2,0.2,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,987629,2008,USA,41.81,2241.81,Cape Cod Whalers 18U AAA 2,18U AAA
+790,Jacob Gathers,Jacob,Gathers,Lawrence Academy,F,13,0,2,2,0.15,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,756132,2008,USA,299.6,2101.6,Nashville Jr. Predators 16U AAA,NAT1HL 16U
+791,Samuel Brebner,Samuel,Brebner,The Hill School,D,16,0,2,2,0.13,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,826048,2007,Canada,20.13,1620.13,The Hill School,TNPHL
+792,Jonathan Dion,Jonathan,Dion,Brewster,D,7,0,2,2,0.29,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,866423,2007,USA,112.78,2572.69,Northern Cyclones 18U AAA Prep 3,18U AAA
+793,Avery Tymus,Avery,Tymus,Salisbury School,D,12,0,2,2,0.17,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,961415,2008,USA,174.92,1016.8799999999999,Team Black,CEM
+794,Nick Apostol,Nick,Apostol,Thayer Academy,F,13,0,2,2,0.15,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1081354,2008,USA,36.32,2765.7,Cape Cod Whalers 18U AAA 2,18U AAA
+795,Matthew Mott,Matthew,Mott,North Yarmouth,D,20,0,2,2,0.1,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,887322,2008,Canada,117.19,629.19,Draft Prospects USA,Montreal Meltdown U19
+796,Timmy Peracchi,Timmy,Peracchi,Berwick,D/F,15,0,2,2,0.13,True,0.73,close_name+exact_lastname+similar_firstname,1114197,2010,USA,2.27,1336.27,Valley Jr. Warriors 15U AAA,THF 15U
+797,Alex Yankopoulos,Alex,Yankopoulos,Berwick,D,15,0,2,2,0.13,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1001814,2007,USA,42.54,334.3,Team Royal,PPP
+798,Brody Dorian,Brody,Dorian,Pomfret,D,16,0,2,2,0.13,False,0,no_match,,,,0,0,,
+799,Oliver Graves,Oliver,Graves,Hoosac,D,9,0,2,2,0.22,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,936896,2009,USA,162.07,2919.07,Hoosac School,USHS-Prep
+800,Sebastien Mackson,Sebastien,Mackson,Albany Academy,F,18,0,2,2,0.11,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,851945,2007,USA,70.77,594.61,Team Cadets,PPP
+801,Cam Simon,Cam,Simon,St. Marks,D,12,0,2,2,0.17,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,936962,2009,USA,155.85,1936.85,NV River Rats 16U AAA National,BEAST 16U
+802,Elijah Nacht,Elijah,Nacht,St. Paul's School,D,12,0,2,2,0.17,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,816879,2007,USA,82.01,2893.65,St. Paul's School,USHS-Prep
+803,Gabriel Visnicky,Gabriel,Visnicky,Brewster,F,7,0,2,2,0.29,True,0.73,close_name+exact_lastname+similar_firstname,1021327,2008,USA,27.16,2298.59,Northern Cyclones 18U AAA Prep 3,18U AAA
+804,Chase Jelenic,Chase,Jelenic,Kent School,D,7,0,2,2,0.29,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,944062,2008,USA,362.88,904.88,Victory Honda 18U AAA,MAHA 18U
+805,Liam Connelly,Liam,Connelly,Rivers School,D,10,0,2,2,0.2,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,933926,2009,USA,359.8,2417.8,Boston Jr. Eagles 16U AAA,16U AAA
+806,Michael Rossi,Michael,Rossi,Westminster,D,11,0,2,2,0.18,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,962270,2007,USA,93.44,2883.49,Westminster Prep,USHS-Prep
+807,James Wu,James,Wu,Tabor,F,10,0,2,2,0.2,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,938700,2009,USA,260.33,1860.33,NV River Rats 16U AAA National,BEAST 16U
+808,Trent Digiovanni,Trent,Digiovanni,Governors Academy,D,14,0,2,2,0.14,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,948933,2008,USA,140.2,2964.2,Brewster Academy,USHS-Prep
+809,Josh Zifcak,Josh,Zifcak,Worcester Academy,F,13,0,2,2,0.15,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1075845,2008,USA,10.1,351.01,Team Rams,PPP
+810,Finn Mills-Hall,Finn,Mills-Hall,Loomis Chaffee,D,11,0,2,2,0.18,True,0.7,close_name+exact_lastname+position_match,1169421,2009,USA,7.02,1607.02,Northern CT Nor'Easters 16U AAA,16U AAA
+811,Noah Meyers,Noah,Meyers,St. Sebastian's,D,12,0,2,2,0.17,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,957233,2007,USA,146.49,2645.49,East Coast Militia 18U AAA,18U AAA
+812,Brady Guenther,Brady,Guenther,Tilton,D,15,0,2,2,0.13,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,865630,2007,USA,208.43,2626.76,Northern Cyclones 18U AAA Prep 4,18U AAA
+813,Kevin Greene,Kevin,Greene,Roxbury Latin,F,10,0,2,2,0.2,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1197899,2009,USA,0.47,1934.0,South Shore Kings 16U AAA,16U AAA
+814,Kasen Walsh,Kasen,Walsh,Noble & Greenough,D,13,0,2,2,0.15,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,1135772,2010,USA,67.36,3112.4700000000003,Noble & Greenough School,USHS-Prep
+815,Nicholas Hand,Nicholas,Hand,Belmont Hill,F,16,0,2,2,0.13,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,951054,2008,USA,41.14,2577.14,Assabet Valley Patriots 18U AAA,18U AAA
+816,Zachary Zusman,Zachary,Zusman,Kent School,F,13,0,2,2,0.15,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,935447,2009,USA,104.08,2172.0299999999997,Yale Jr. Bulldogs 16U AAA,BEAST 16U
+817,Spencer Grazon,Spencer,Grazon,Kents Hill,D,16,0,2,2,0.13,False,0,no_match,,,,0,0,,
+818,Jacob BriseBois,Jacob,BriseBois,Choate Rosemary Hall,D,10,0,2,2,0.2,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,988284,2009,USA,213.11,2169.5,Yale Jr. Bulldogs 16U AAA,BEAST 16U
+819,Brady Leonard,Brady,Leonard,Albany Academy,F,7,1,0,1,0.14,True,0.62,close_name+exact_lastname+similar_firstname+position_match,1146870,2009,USA,6.15,1922.78,Queen City Royals 16U AAA,16U AAA
+820,Justin L'Abbe,Justin,L'Abbe,Hotchkiss School,F,10,1,0,1,0.1,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,907554,2008,Canada,97.99,575.12,Team Navy,PPP
+821,Duncan Vittands,Duncan,Vittands,Austin Prep,F,17,1,0,1,0.06,False,0,no_match,,,,0,0,,
+822,Brayden McKenna,Brayden,McKenna,Brewster,F,7,1,0,1,0.14,False,0,no_match,,,,0,0,,
+823,Nicholas Jakowiw,Nicholas,Jakowiw,Hoosac,F,9,1,0,1,0.11,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1061129,2009,USA,33.31,613.06,Team Purple,PPP
+824,Nicholiah Montano Rodriguez,Nicholiah,Montano Rodriguez,Mount St. Charles,F,10,1,0,1,0.1,True,0.78,exact_name+close_lastname+similar_firstname+position_match,1238733,2010,USA,0,0,,
+825,Liam Guilderson,Liam,Guilderson,Dexter,F,12,1,0,1,0.08,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1085277,2009,USA,117.79,2473.29,Cape Cod Whalers 16U AAA,16U AAA
+826,Payton Helt,Payton,Helt,Hebron,F/D,15,1,0,1,0.07,True,0.9,exact_name+exact_lastname+exact_firstname,1080799,2010,USA,77.39,1719.3899999999999,Boston Imperials 15U AAA,15U AAA
+827,Matteo Pani,Matteo,Pani,Hebron,,15,1,0,1,0.07,True,1.0,exact_name+exact_lastname+exact_firstname+team_match,837469,2007,Canada,89.57,2689.57,Hebron Academy,USHS-Prep
+828,Cam Wilkinson,Cam,Wilkinson,North Yarmouth,F,20,1,0,1,0.05,True,0.56,close_name+exact_lastname+position_match,1040612,2009,USA,24.75,2004.27,Maine Evolution 16U AA,16U AA
+829,Ethan Wei,Ethan,Wei,Lawrenceville School,F/D,11,1,0,1,0.09,True,0.7,close_name+close_lastname+exact_firstname,879170,2007,Canada,2000.0,4105.0,St. Marys Lincolns,GOJHL
+830,Luca Carlomusto,Luca,Carlomusto,Hebron,F,15,1,0,1,0.07,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,904267,2008,Canada,37.79,1733.79,Kuper Academy U17,CSSHLE U17
+831,James Foster,James,Foster,Rivers School,D,10,1,0,1,0.1,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,978967,2009,USA,30.64,1630.64,Boston Jr. Eagles 16U AAA,16U AAA
+832,Brooks Armstrong,Brooks,Armstrong,Avon Old Farms,F,11,1,0,1,0.09,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,788013,2007,USA,486.15,2824.15,Northern CT Nor'Easters 18U AAA,18U AAA
+833,Tim Jia,Tim,Jia,Kents Hill,F,16,1,0,1,0.06,False,0,no_match,,,,0,0,,
+834,Chase Collins,Chase,Collins,Milton Academy,F,16,1,0,1,0.06,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,1037979,2008,USA,44.55,2349.55,East Coast Militia 18U AAA,18U AAA
+835,Miles Bronson,Miles,Bronson,Choate Rosemary Hall,F,5,1,0,1,0.2,False,0.45,similar_name+exact_firstname+position_match,,,,0,0,,
+836,Bryce Mastriano,Bryce,Mastriano,Loomis Chaffee,F,12,1,0,1,0.08,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1025943,2008,USA,38.46,2208.46,North Haven High,USHS-CT
+837,Colton McNamara,Colton,McNamara,Tabor,D,9,1,0,1,0.11,True,0.65,close_name+exact_lastname,993599,2007,USA,7.63,2607.63,The Winchendon School 2,USHS-Prep
+838,Trey O'Keefe,Trey,O'Keefe,Hebron,F,15,1,0,1,0.07,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,936871,2009,USA,52.24,1889.12,North Shore Academy 15U AAA,UT1HL 15U
+839,Markus Gentile,Markus,Gentile,Berkshire School,F,11,1,0,1,0.09,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,914260,2008,USA,118.93,3065.93,Berkshire School,USHS-Prep
+840,Chris D'Alleva,Chris,D'Alleva,Pingree,F,13,1,0,1,0.08,True,0.9,exact_name+exact_lastname+exact_firstname,754505,2007,USA,4.82,2576.82,Burlington High,USHS-MA
+841,Laurent Normand,Laurent,Normand,Hebron,F,15,1,0,1,0.07,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,982124,2008,Canada,151.44,1769.44,Boston Hockey Academy 16U Prep,UT1HL 16U
+842,Adam Boys,Adam,Boys,Proctor Academy,F,16,1,0,1,0.06,False,0,no_match,,,,0,0,,
+843,Daniel Pratt,Daniel,Pratt,Thayer Academy,F,7,1,0,1,0.14,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,956610,2007,USA,27.49,2296.49,Boston Advantage 18U AAA 2,18U AAA
+844,Joseph Mallette,Joseph,Mallette,Canterbury,D,9,1,0,1,0.11,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,974724,2008,USA,56.92,3229.92,Portside Royals,USHS-NY
+845,Mason Kuchinski,Mason,Kuchinski,Canterbury,F,15,1,0,1,0.07,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,869068,2007,USA,1.14,1818.14,New Milford High,USHS-CT
+846,William Raymond,William,Raymond,Belmont Hill,F,16,1,0,1,0.06,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,947644,2008,USA,24.21,2233.21,Assabet Valley Patriots 18U AAA,18U AAA
+847,Jonathan Clark,Jonathan,Clark,Brooks School,F,11,1,0,1,0.09,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,1037976,2008,USA,48.16,2754.47,Brooks School,USHS-Prep
+848,Alex Munoz,Alex,Munoz,Noble & Greenough,D/F,13,1,0,1,0.08,True,0.9,exact_name+exact_lastname+exact_firstname,1005580,2008,USA,39.06,1909.2,Cape Cod Whalers 16U AAA,16U AAA
+849,Jake Glickman,Jake,Glickman,Pomfret,F,16,1,0,1,0.06,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,812502,2007,USA,100.87,537.87,Team Crimson,PPP
+850,Logan Cantele,Logan,Cantele,Lawrence Academy,D,13,1,0,1,0.08,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,936198,2007,USA,263.28,3117.72,Thunder Hockey Club,USPHL Premier
+851,John Mara,John,Mara,Lawrence Academy,D,13,1,0,1,0.08,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,835757,2007,USA,170.9,2560.9,Boston Little Bruins 18U AAA,EHF 18U Elite
+852,Leeo Cote-Tardif,Leeo,Cote-Tardif,Vermont Academy,F,16,1,0,1,0.06,False,0,no_match,,,,0,0,,
+853,Whit Fusting,Whit,Fusting,St. Paul's School,D,16,1,0,1,0.06,True,0.9,close_name+exact_lastname+team_match+position_match,953915,2009,USA,82.74,2859.17,St. Paul's School,USHS-Prep
+854,Ty Higginbotham,Ty,Higginbotham,Hotchkiss School,F,10,1,0,1,0.1,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1004916,2008,USA,294.25,2903.25,East Coast Militia 18U AAA,18U AAA
+855,Max Romano,Max,Romano,St. Paul's School,F,15,1,0,1,0.07,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,851948,2007,USA,95.05,2984.48,Pomfret School,USHS-Prep
+856,Chase Kopley,Chase,Kopley,Worcester Academy,D,13,1,0,1,0.08,False,0,no_match,,,,0,0,,
+857,Elliot Watson,Elliot,Watson,Salisbury School,D,12,1,0,1,0.08,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,701453,2009,Canada,1063.61,2949.6099999999997,Northern CT Nor'Easters 16U AAA,16U AAA
+858,Connor Mudd,Connor,Mudd,Deerfield Academy,F,12,1,0,1,0.08,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,877349,2007,USA,96.12,710.12,Team Yellow,CEM
+859,Kota Shinozaki,Kota,Shinozaki,Middlesex,F,10,1,0,1,0.1,False,0,no_match,,,,0,0,,
+860,David Moroz,David,Moroz,Middlesex,F,10,1,0,1,0.1,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,1056238,2007,Canada,127.69,3312.69,Middlesex School,USHS-Prep
+861,Griffin Taylor,Griffin,Taylor,New Hampton,F,12,1,0,1,0.08,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1041168,2007,USA,0,0,,
+862,John Donohue,John,Donohue,Westminster,D,11,1,0,1,0.09,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,978708,2007,USA,264.08,3171.31,Westminster Prep,USHS-Prep
+863,Troy Hamelin,Troy,Hamelin,Frederick Gunn,F,15,1,0,1,0.07,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1093186,2009,USA,229.03,866.31,Team Blue,CEM
+864,Vassar Tarumianz,Vassar,Tarumianz,Lawrenceville School,F,10,1,0,1,0.1,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,906152,2007,USA,80.07,663.74,Team Red,PPP
+865,William Nadeau,William,Nadeau,Williston-Northampton,D,15,1,0,1,0.07,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,910835,2008,Canada,139.13,2496.13,Springfield Thunderbirds 18U AAA,BEAST 18U
+866,Sawyer Berzins,Sawyer,Berzins,Williston-Northampton,D,15,1,0,1,0.07,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,941646,2008,USA,338.33,2739.33,Springfield Thunderbirds 18U AAA,BEAST 18U
+867,Luke Kelley,Luke,Kelley,Proctor Academy,D,16,1,0,1,0.06,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,993600,2007,USA,32.71,2399.57,FP Hornets 19U,NEFPHL 19U
+868,Jake Thompson,Jake,Thompson,North Yarmouth,F,9,0,1,1,0.11,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,904254,2007,Canada,44.55,2824.55,North Yarmouth Academy,USHS-Prep
+869,Dave Cho,Dave,Cho,Berkshire School,D,9,0,1,1,0.11,False,0,no_match,,,,0,0,,
+870,Max Troubh,Max,Troubh,Tilton,D,15,0,1,1,0.07,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1076177,2009,USA,73.24,1850.24,Northern Cyclones 16U AAA Prep,16U AAA
+871,Owen Giles,Owen,Giles,Brunswick,F,14,0,1,1,0.07,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,978996,2009,USA,63.68,1938.68,Mid Fairfield Rangers 16U AAA,BEAST 16U
+872,Hunter Harper,Hunter,Harper,Brunswick,F,13,0,1,1,0.08,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,961467,2008,USA,48.36,1946.1399999999999,Connecticut Jr. Rangers 16U AAA,THF 16U
+873,Cooper Bell,Cooper,Bell,Austin Prep,D,17,0,1,1,0.06,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1076229,2011,USA,37.93,1237.93,Islanders Hockey Club 14U AAA,14U AAA
+874,Connor Long,Connor,Long,Tilton,F,13,0,1,1,0.08,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,752425,2007,USA,572.71,2994.71,Northern Cyclones 18U AAA Prep 4,18U AAA
+875,Brady Hall,Brady,Hall,St. Paul's School,D,7,0,1,1,0.14,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,867918,2007,USA,274.31,3290.16,St. Paul's School,USHS-Prep
+876,Logan Wood,Logan,Wood,Brewster,D,7,0,1,1,0.14,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,758115,2007,USA,112.37,2529.37,Northern Cyclones 18U AAA Prep 3,18U AAA
+877,Thomas Hoh,Thomas,Hoh,Lawrenceville School,D,9,0,1,1,0.11,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,984028,2009,USA,88.49,738.8199999999999,Team Red,PPP
+878,Reed Enders,Reed,Enders,Milton Academy,F,16,0,1,1,0.06,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1004635,2008,USA,37.86,2237.8599999999997,East Coast Militia 18U AAA,18U AAA
+879,Keegan Norton,Keegan,Norton,Berwick,D/F,15,0,1,1,0.07,True,0.9,exact_name+exact_lastname+exact_firstname,764363,2007,USA,43.28,499.89,Team Royal,PPP
+880,Devlin Thomas,Devlin,Thomas,Mount St. Charles,F,9,0,1,1,0.11,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1197082,2009,USA,0,0,,
+881,Matthew Rodriguez,Matthew,Rodriguez,Williston-Northampton,D,15,0,1,1,0.07,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,897703,2007,Canada,140.27,3014.52,Williston Northampton School,USHS-Prep
+882,Peter Royer,Peter,Royer,Frederick Gunn,F,15,0,1,1,0.07,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1031354,2009,USA,90.17,781.0,Team Blue,CEM
+883,Curtis Savage,Curtis,Savage,Berwick,D,15,0,1,1,0.07,True,0.55,similar_name+exact_lastname+position_match,876143,2007,Canada,138.46,2012.46,Rockland Nationals,CCHL
+884,Kellar Kelusky,Kellar,Kelusky,Deerfield Academy,F,10,0,1,1,0.1,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,890438,2008,Canada,120.07,645.4,Team Yellow,CEM
+885,Caleb Regner,Caleb,Regner,Deerfield Academy,F,12,0,1,1,0.08,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,859660,2008,USA,139.13,572.13,Team Yellow,CEM
+886,Carsen Cunningham,Carsen,Cunningham,Worcester Academy,D,13,0,1,1,0.08,True,0.62,close_name+exact_lastname+similar_firstname+position_match,1075848,2007,USA,4.41,1692.64,MDHL Blue,MDHL
+887,Christian Renaud,Christian,Renaud,Pingree,F,12,0,1,1,0.08,True,0.73,close_name+exact_lastname+similar_firstname,940333,2009,Canada,10.17,1936.84,Académie Sainte-Thérèse M18 D2,RSEQ M18 D2
+888,Adam Fraser,Adam,Fraser,Millbrook,F,16,0,1,1,0.06,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1209197,2008,USA,0,135.25,Team Grey,PPP
+889,Luca Damian,Luca,Damian,Brooks School,,11,0,1,1,0.09,True,0.9,exact_name+exact_lastname+exact_firstname,951055,2008,USA,48.9,3018.33,Austin Prep,USHS-Prep
+890,Liam Boyle,Liam,Boyle,Belmont Hill,F,16,0,1,1,0.06,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1004642,2008,USA,102.61,2532.61,Assabet Valley Patriots 18U AAA,18U AAA
+891,Vincent Vitale,Vincent,Vitale,Holderness,G,12,0,1,1,0.08,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,888434,2008,USA,585.62,2891.62,Islanders Hockey Club Prep West,18U AAA
+892,Evan Waden,Evan,Waden,St. Marks,F,10,0,1,1,0.1,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,949301,2008,USA,52.84,2580.34,Minuteman Flames 18U AAA,18U AAA
+893,Sammy Baymout,Sammy,Baymout,Hebron,D,15,0,1,1,0.07,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,888471,2009,Canada,105.02,2393.69,Laval/Montréal Rousseau M17 AAA,QM17AAA
+894,Gianluca Zappitelli,Gianluca,Zappitelli,Hebron,F,15,0,1,1,0.07,True,0.85,exact_name+close_lastname+exact_firstname+position_match,888474,2009,Canada,121.14,2707.52,Laval/Montréal Rousseau M17 AAA,QM17AAA
+895,Brady Hanlon,Brady,Hanlon,Dexter,F,16,0,1,1,0.06,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,929784,2007,USA,125.89,2534.42,Cape Cod Whalers 18U AAA 2,18U AAA
+896,AJ Haas,AJ,Haas,Cushing Academy,D,15,0,1,1,0.07,False,0.4,similar_name+exact_lastname,,,,0,0,,
+897,Jack Morley,Jack,Morley,Vermont Academy,D,16,0,1,1,0.06,True,0.78,close_name+exact_lastname+similar_firstname+team_match+position_match,790623,2007,USA,28.16,2729.49,Albany Academy Vars,USHS-NY
+898,James Bellig,James,Bellig,Deerfield Academy,F,12,0,1,1,0.08,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,888346,2008,USA,200.87,727.87,Team Yellow,CEM
+899,Chris Chun,Chris,Chun,Hotchkiss School,D,10,0,1,1,0.1,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,978952,2009,USA,159.6,2166.4300000000003,Yale Jr. Bulldogs 16U AAA,BEAST 16U
+900,Cam Gardiner,Cam,Gardiner,North Yarmouth,D,19,0,1,1,0.05,True,0.7,close_name+exact_lastname+position_match,997094,2008,USA,19.0,2301.67,Maine Wild 18U,NEPHL 18U
+901,Nolan Boyle,Nolan,Boyle,Belmont Hill,F,16,0,1,1,0.06,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,951657,2011,USA,63.48,1256.48,Islanders Hockey Club 13U AAA,13U AAA
+902,Connor Callahan,Connor,Callahan,Noble & Greenough,F,13,0,1,1,0.08,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,1191934,2010,USA,0,1149.0,Boston Jr. Eagles 14U AAA 2,14U AAA
+903,Vinnie Mercadante,Vinnie,Mercadante,Hotchkiss School,F,8,0,1,1,0.13,True,0.9,close_name+exact_lastname+team_match+position_match,1029324,2007,USA,14.52,2796.52,Eaglebrook School,USHS-Prep
+904,Ryder Press,Ryder,Press,Kent School,D,13,0,1,1,0.08,True,0.9,exact_name+exact_lastname+exact_firstname,954686,2009,USA,3.48,872.15,Northwest CT Icehawks 14U A,EJEPL 14U
+905,Julian Ikeda-Thew,Julian,Ikeda-Thew,Brunswick,F,12,0,1,1,0.08,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,957678,2009,USA,212.51,2159.51,Mid Fairfield Rangers 16U AAA,BEAST 16U
+906,Lukas Reisen,Lukas,Reisen,Frederick Gunn,F,15,0,1,1,0.07,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,876671,2008,Canada,407.49,2076.49,Gilmour Academy,MPHL
+907,Tyler Roccas,Tyler,Roccas,Salisbury School,D,12,0,1,1,0.08,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,941637,2008,USA,251.84,3005.84,Yale Jr. Bulldogs 18U AAA,18U AAA
+908,Milo Conlin,Milo,Conlin,Middlesex,F,10,0,1,1,0.1,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1011226,2007,USA,54.78,2307.78,East Coast Wizards 18U AAA,18U AAA
+909,Giuseppe Moriello,Giuseppe,Moriello,Middlesex,D,10,0,1,1,0.1,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,904508,2008,Canada,40.47,2240.4700000000003,East Coast Wizards 18U AAA,18U AAA
+910,Hayden Postles,Hayden,Postles,Vermont Academy,D,16,0,1,1,0.06,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1003665,2008,USA,216.45,2651.45,Northern Cyclones 18U AAA Prep,18U AAA
+911,Stephen King,Stephen,King,Avon Old Farms,F,11,0,1,1,0.09,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,861982,2008,USA,914.18,3727.18,Northern CT Nor'Easters 18U AAA,18U AAA
+912,Jace Knopp,Jace,Knopp,Canterbury,D,15,0,1,1,0.07,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,932991,2008,USA,33.24,2482.24,Hartford Jr. Wolfpack 18U AAA,18U AAA
+913,Brayden Bowes,Brayden,Bowes,Pomfret,F,16,0,1,1,0.06,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,941339,2009,USA,24.15,313.04,Team Crimson,PPP
+914,Escher Briere,Escher,Briere,Exeter,F,14,0,1,1,0.07,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,936893,2009,USA,60.67,1460.67,NV River Rats 15U AAA,15U AAA
+915,Thomas Hamilton,Thomas,Hamilton,Taft,D,10,0,1,1,0.1,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,939849,2008,Canada,239.4,1236.17,Team Red,CEM
+916,Ettore Monson,Ettore,Monson,Groton,D,13,0,1,1,0.08,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,945841,2007,USA,202.54,2995.95,Groton School,USHS-Prep
+917,Bhaveeth Vemulapalli,Bhaveeth,Vemulapalli,Exeter,F,14,0,1,1,0.07,True,0.78,close_name+exact_lastname+similar_firstname+position_match,945482,2007,USA,27.16,2343.49,FP Lions 19U,NEFPHL 19U
+918,Max Froeschl,Max,Froeschl,Exeter,D,14,0,1,1,0.07,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,884552,2007,Canada,29.43,1629.43,Kemptville 73's U18 AAA,HEO U18
+919,Beckham Gould,Beckham,Gould,Exeter,F,14,0,1,1,0.07,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1038805,2008,USA,22.81,2898.81,Wellesley High,USHS-MA
+920,Colin Reilly,Colin,Reilly,Tilton,D,15,0,1,1,0.07,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1010705,2008,USA,40.0,2240.0,Northern Cyclones 18U AAA Prep 4,18U AAA
+921,Will Booth,Will,Booth,Albany Academy,D,15,0,1,1,0.07,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1022495,2009,USA,52.17,374.55,Team Cadets,PPP
+922,Tristan Murgo,Tristan,Murgo,Tilton,D,6,0,1,1,0.17,True,0.9,exact_name+exact_lastname+exact_firstname,991566,2009,USA,63.34,1856.19,Northern Cyclones 16U AAA Prep,16U AAA
+923,Soja Russell,Soja,Russell,Berkshire School,F/D,15,0,1,1,0.07,False,0.4,similar_name+exact_lastname,,,,0,0,,
+924,Zai Ferraro,Zai,Ferraro,Brunswick,G,14,0,1,1,0.07,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,617417,2008,USA,1135.12,3709.12,Mid Fairfield Rangers 18U AAA,18U AAA
+925,Trevor DiMaio,Trevor,DiMaio,Brunswick,D,14,0,1,1,0.07,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1024723,2009,USA,50.37,1933.37,Mid Fairfield Rangers 16U AAA,BEAST 16U
+926,Hunter Dryden,Hunter,Dryden,Taft,G,10,0,1,1,0.1,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,689950,2007,USA,483.95,1039.95,Team Red,CEM
+927,Cam Ingram,Cam,Ingram,Kimball Union,G,20,0,1,1,0.05,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,911641,2008,Canada,497.26,4027.26,Georgetown Raiders,OJHL
+928,Noah Wood,Noah,Wood,Groton,D,13,0,1,1,0.08,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,935527,2009,USA,24.35,2624.35,Newton South High,USHS-MA
+929,Owen Ma,Owen,Ma,St. Marks,F,12,0,1,1,0.08,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1120194,2009,USA,11.04,2091.04,South Shore Kings 16U AAA,16U AAA
+930,Christopher Kimmel,Christopher,Kimmel,Brewster,D,7,0,1,1,0.14,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,830660,2007,USA,94.52,2451.96,Northern Cyclones 18U AAA Prep 3,18U AAA
+931,James Small,James,Small,The Hill School,F,16,0,1,1,0.06,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,956180,2009,USA,21.2,1787.07,Providence Capitals 16U AA 5,16U AA
+932,Brody Gouin,Brody,Gouin,Wilbraham & Monson,D,5,0,1,1,0.2,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,1037832,2007,USA,46.09,2853.39,Wilbraham & Monson Academy,USHS-Prep
+933,Owen Dutton,Owen,Dutton,Proctor Academy,D,16,0,1,1,0.06,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1040736,2008,USA,28.63,2087.63,New Hampshire Avalanche 16U AAA,UT1HL 16U
+934,Greer Difani,Greer,Difani,New Hampton,D,16,0,1,1,0.06,True,0.55,similar_name+exact_lastname+position_match,1014118,2009,USA,16.25,1739.03,Atlanta Fire 16U AA,SESCL 16U
+935,Matt Rioux,Matt,Rioux,Berwick,F,11,0,1,1,0.09,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1148606,2010,USA,66.09,507.72,Team Royal,PPP
+936,Aidan Quinn,Aidan,Quinn,Mount St. Charles,D,8,0,1,1,0.13,False,0.44000000000000006,similar_name+exact_lastname+position_match,,,,0,0,,
+937,Johan Wilkerson,Johan,Wilkerson,Deerfield Academy,D,9,0,1,1,0.11,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,971525,2008,USA,45.55,529.55,Team Yellow,CEM
+938,Anton Kabanov,Anton,Kabanov,Berwick,D,15,0,1,1,0.07,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,938353,2009,USA,330.43,2345.4300000000003,East Coast Militia 16U AAA,16U AAA
+939,Andrew Moawad,Andrew,Moawad,Millbrook,G,13,0,1,1,0.08,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,956052,2009,USA,97.39,400.25,Team Grey,PPP
+940,Reid Gueldenzoph,Reid,Gueldenzoph,Kimball Union,D,20,0,1,1,0.05,False,0,no_match,,,,0,0,,
+941,David O'Brien,David,O'Brien,Thayer Academy,D,4,0,1,1,0.25,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,913526,2008,USA,471.57,2372.31,Long Island Gulls 16U AAA,16U AAA
+942,Nolan Wellman,Nolan,Wellman,Hebron,F,15,0,1,1,0.07,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,954602,2009,USA,66.15,1435.03,North Shore Academy 15U AAA,UT1HL 15U
+943,Ethan Bauer,Ethan,Bauer,Belmont Hill,G,16,0,1,1,0.06,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1085288,2008,USA,34.98,2540.98,East Coast Wizards 18U AAA,18U AAA
+944,Sam Gerst,Sam,Gerst,Proctor Academy,D,16,0,1,1,0.06,False,0.36000000000000004,similar_name+exact_firstname+position_match,,,,0,0,,
+945,MIchael Phelan,MIchael,Phelan,Albany Academy,D,18,0,1,1,0.06,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,1100890,2008,USA,0,2642.0,Albany Academy Vars,USHS-NY
+946,Brendan Martin,Brendan,Martin,St. Sebastian's,D,12,0,1,1,0.08,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1098089,2010,USA,42.27,3029.27,Catholic Memorial School,USHS-MA
+947,Noah Indes,Noah,Indes,Canterbury,F,15,0,1,1,0.07,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,911633,2008,USA,55.18,2655.18,Canterbury School,USHS-Prep
+948,Joe Mascari,Joe,Mascari,St. Marks,F,11,0,1,1,0.09,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,991393,2009,USA,97.19,2972.19,Minuteman Flames 18U AAA,18U AAA
+949,Evan Alifieris,Evan,Alifieris,St. Marks,F,12,0,1,1,0.08,True,0.85,exact_name+close_lastname+exact_firstname+position_match,1040579,2009,USA,11.3,2668.58,Minuteman Flames 18U AAA,18U AAA
+950,Caleb Guthrie,Caleb,Guthrie,Pingree,LW,13,0,1,1,0.08,False,0,no_match,,,,0,0,,
+951,Alessandro Dolder,Alessandro,Dolder,Brunswick,D,14,0,1,1,0.07,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1019527,2009,USA,28.03,1701.36,Mid Fairfield Rangers 16U AAA,BEAST 16U
+952,Declan Minella,Declan,Minella,Brunswick,D,14,0,1,1,0.07,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,950530,2008,USA,60.6,1763.6,Mid Fairfield Rangers 16U AAA,16U AAA
+953,Beckett Stenz,Beckett,Stenz,Hotchkiss School,D,10,0,1,1,0.1,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,811769,2007,USA,106.02,2453.02,East Coast Militia 18U AAA,18U AAA
+954,Landon Nickulas,Landon,Nickulas,Cushing Academy,D,9,0,1,1,0.11,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,701472,2009,USA,164.68,2784.68,Cardigan Mountain School,USHS-Prep
+955,Patrick Viano,Patrick,Viano,Milton Academy,D,16,0,1,1,0.06,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,998505,2010,USA,54.92,1716.92,Cape Cod Whalers 15U AAA,EHF 15U Elite
+956,Luke Fox,Luke,Fox,St. Georges,D,12,0,1,1,0.08,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,953803,2009,USA,45.02,1504.27,Yale Jr. Bulldogs 15U AAA,15U AAA
+957,Vinnie D'Urso,Vinnie,D'Urso,Tabor,G,13,0,1,1,0.08,True,0.55,similar_name+exact_lastname+position_match,933294,2008,USA,240.6,2897.89,NV River Rats 18U AAA National,18U AAA
+958,Adam Beltrami,Adam,Beltrami,Thayer Academy,D,14,0,1,1,0.07,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1081347,2008,USA,28.49,2228.49,Cape Cod Whalers 18U AAA 2,18U AAA
+959,Matteo Gil,Matteo,Gil,Governors Academy,F,13,0,1,1,0.08,True,0.85,close_name+exact_lastname+exact_firstname+position_match,1081286,2009,USA,62.74,1701.74,Top Gun/NE Prep 16U AAA,EHF 16U
+960,Dom Zabat,Dom,Zabat,Lawrenceville School,D,11,0,1,1,0.09,True,0.55,similar_name+exact_lastname+position_match,942799,2009,USA,53.51,412.06,Team Red,PPP
+961,Teddy Smart,Teddy,Smart,Lawrenceville School,D,11,0,1,1,0.09,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,1032270,2007,USA,47.02,435.35,Team Red,PPP
+962,Ace Watson,Ace,Watson,Frederick Gunn,F,15,0,1,1,0.07,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,861316,2007,USA,116.25,561.9200000000001,Team Blue,CEM
+963,Tiger Tang,Tiger,Tang,BB&N,D,11,0,1,1,0.09,False,0.44000000000000006,similar_name+exact_lastname+position_match,,,,0,0,,
+964,Brady Mulloy,Brady,Mulloy,Vermont Academy,D,16,0,1,1,0.06,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1023979,2008,USA,16.59,2580.41,Northern Cyclones 18U AAA Prep,18U AAA
+965,Eli Zucker,Eli,Zucker,Milton Academy,G,16,0,1,1,0.06,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,914259,2008,USA,477.39,3264.5299999999997,East Coast Militia 18U AAA,18U AAA
+966,Lucas Lian,Lucas,Lian,Middlesex,F,10,0,1,1,0.1,False,0,no_match,,,,0,0,,
+967,Parker Boyce,Parker,Boyce,Middlesex,F,10,0,1,1,0.1,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1092227,2009,USA,11.24,1611.24,East Coast Wizards 16U AAA,BEAST 16U
+968,Tei Lee,Tei,Lee,Pomfret,F,16,0,1,1,0.06,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,892010,2007,USA,575.32,1174.9900000000002,Team Crimson,PPP
+969,Jeremy Acrobati,Jeremy,Acrobati,Vermont Academy,F,16,0,1,1,0.06,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,907504,2007,Canada,33.58,2361.36,Northern Cyclones 18U AAA Prep,18U AAA
+970,Jack Giamou,Jack,Giamou,Frederick Gunn,D,15,0,1,1,0.07,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,992021,2009,Canada,92.11,756.6800000000001,Team Green,CEM
+971,Lincoln Durfee,Lincoln,Durfee,Taft,D,5,0,1,1,0.2,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,950531,2007,USA,73.65,552.3399999999999,Team Red,CEM
+972,Liam TenHarmsel,Liam,TenHarmsel,Andover,D,15,0,1,1,0.07,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,861980,2007,USA,247.29,2742.05,NV River Rats 19U AAA,18U AAA
+973,Jack Bruning,Jack,Bruning,St. Paul's School,D,9,0,1,1,0.11,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,936917,2009,USA,113.78,1810.44,Top Gun/NE Prep 16U AAA,EHF 16U
+974,Trey Ledoux,Trey,Ledoux,Wilbraham & Monson,F,5,0,1,1,0.2,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,1096001,2007,USA,7.36,2916.36,Wilbraham & Monson Academy,USHS-Prep
+975,Alex Wang,Alex,Wang,Kents Hill,F,16,0,1,1,0.06,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,1098583,2008,USA,104.62,1822.62,Black Bear Academy 16U AAA,THF 16U
+976,Billy Weller,Billy,Weller,Deerfield Academy,D,12,0,1,1,0.08,True,1.0,exact_name+exact_lastname+exact_firstname+team_match+position_match,921092,2007,USA,92.84,2914.84,Deerfield Academy,USHS-Prep
+977,Matthew Ingersoll,Matthew,Ingersoll,Berwick,D,15,0,1,1,0.07,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,936881,2009,USA,84.08,794.68,Team Royal,PPP
+978,Luca Fantasia,Luca,Fantasia,Williston-Northampton,D,15,0,1,1,0.07,False,0,no_match,,,,0,0,,
+979,Lincoln Smith,Lincoln,Smith,Pomfret,F,16,0,1,1,0.06,True,0.76,exact_name+exact_lastname+exact_firstname+position_match,1004309,2010,USA,87.36,726.25,Team Crimson,PPP
+980,Tommy Drienik,Tommy,Drienik,Taft,D,9,0,1,1,0.11,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,893567,2007,USA,140.87,785.11,Team Red,CEM
+981,Charlie Stevens,Charlie,Stevens,Taft,F,10,0,1,1,0.1,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,950536,2008,USA,21.47,531.9200000000001,Team Red,CEM
+982,Basil Hemberger,Basil,Hemberger,Lawrenceville School,G,11,0,1,1,0.09,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,856528,2007,USA,160.2,2651.2,Brookline Whalers 18U AAA,18U AAA
+983,Matt Haley,Matt,Haley,Worcester Academy,D,13,0,1,1,0.08,True,0.95,exact_name+exact_lastname+exact_firstname+position_match,1075844,2008,USA,12.31,260.79,Team Rams,PPP
