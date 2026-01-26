@@ -1214,17 +1214,21 @@ functions.http('getNepsacTopPerformers', withCors(async (req, res) => {
           : row.away_short_name;
       }
 
-      // Construct EP image URL from player ID if available
-      // Format: https://files.eliteprospects.com/layout/players/{ep_id}.jpg
-      const imageUrl = row.player_id
-        ? `https://files.eliteprospects.com/layout/players/${row.player_id}.jpg`
-        : (row.image_url || null);
+      // Use the actual stored imageUrl from Elite Prospects (if available)
+      // Note: EP blocks hotlinking with 403, so frontend should use proxiedImageUrl
+      const imageUrl = row.image_url || null;
+
+      // Generate proxy URL that bypasses EP's hotlink protection
+      const proxiedImageUrl = row.player_id
+        ? `https://us-central1-prodigy-ranking.cloudfunctions.net/proxyPlayerImage?playerId=${row.player_id}`
+        : null;
 
       return {
         playerId: row.player_id,
         name: row.roster_name,
         position: row.position,
-        imageUrl: imageUrl,
+        imageUrl: imageUrl,  // Direct EP URL (may be blocked)
+        proxiedImageUrl: proxiedImageUrl,  // Use this for reliable image loading
         ovr: calculateOVR(points, maxPoints),
         prodigyPoints: Math.round(points * 100) / 100,
         teamId: row.team_id,
@@ -1396,3 +1400,115 @@ functions.http('addNepsacGamePerformers', withCors(async (req, res) => {
     return errorResponse(res, 500, error.message);
   }
 }));
+
+/**
+ * GET /proxyPlayerImage
+ * Proxies player images from Elite Prospects to bypass CORS/hotlinking restrictions
+ *
+ * Query params:
+ * - playerId: number (required) - Elite Prospects player ID
+ *
+ * Returns: The actual image binary with proper content-type
+ */
+functions.http('proxyPlayerImage', async (req, res) => {
+  try {
+    // Enable CORS
+    res.set('Access-Control-Allow-Origin', '*');
+    res.set('Access-Control-Allow-Methods', 'GET');
+    res.set('Access-Control-Allow-Headers', 'Content-Type');
+
+    if (req.method === 'OPTIONS') {
+      return res.status(204).send('');
+    }
+
+    const { playerId } = req.query;
+
+    if (!playerId) {
+      return res.status(400).json({ error: 'playerId is required' });
+    }
+
+    // First, look up the actual image URL from the database
+    const query = `
+      SELECT imageUrl
+      FROM \`prodigy-ranking.algorithm_core.player_stats\`
+      WHERE id = ${parseInt(playerId)}
+      LIMIT 1
+    `;
+
+    const rows = await executeQuery(query);
+
+    if (rows.length === 0 || !rows[0].imageUrl) {
+      // Return a 1x1 transparent pixel as fallback
+      const transparentPixel = Buffer.from(
+        'R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7',
+        'base64'
+      );
+      res.set('Content-Type', 'image/gif');
+      res.set('Cache-Control', 'public, max-age=86400'); // Cache 1 day
+      return res.send(transparentPixel);
+    }
+
+    const imageUrl = rows[0].imageUrl;
+
+    // Fetch the image from EP
+    const https = require('https');
+    const http = require('http');
+
+    const fetchImage = (url) => {
+      return new Promise((resolve, reject) => {
+        const protocol = url.startsWith('https') ? https : http;
+        const request = protocol.get(url, {
+          headers: {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+            'Accept': 'image/*',
+            'Referer': 'https://www.eliteprospects.com/'
+          }
+        }, (response) => {
+          // Handle redirects
+          if (response.statusCode >= 300 && response.statusCode < 400 && response.headers.location) {
+            fetchImage(response.headers.location).then(resolve).catch(reject);
+            return;
+          }
+
+          if (response.statusCode !== 200) {
+            reject(new Error(`Failed to fetch image: ${response.statusCode}`));
+            return;
+          }
+
+          const chunks = [];
+          response.on('data', chunk => chunks.push(chunk));
+          response.on('end', () => {
+            resolve({
+              buffer: Buffer.concat(chunks),
+              contentType: response.headers['content-type'] || 'image/jpeg'
+            });
+          });
+          response.on('error', reject);
+        });
+
+        request.on('error', reject);
+        request.setTimeout(10000, () => {
+          request.destroy();
+          reject(new Error('Request timeout'));
+        });
+      });
+    };
+
+    const { buffer, contentType } = await fetchImage(imageUrl);
+
+    res.set('Content-Type', contentType);
+    res.set('Cache-Control', 'public, max-age=604800'); // Cache for 1 week
+    res.send(buffer);
+
+  } catch (error) {
+    console.error('proxyPlayerImage error:', error);
+    // Return transparent pixel on any error
+    const transparentPixel = Buffer.from(
+      'R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7',
+      'base64'
+    );
+    res.set('Content-Type', 'image/gif');
+    res.set('Cache-Control', 'public, max-age=3600'); // Cache error for 1 hour
+    res.send(transparentPixel);
+  }
+});
