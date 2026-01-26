@@ -1208,7 +1208,17 @@ def generate_all_predictions():
     total_games = sum(len(g) for g in predictions.values())
     print(f"  Generated {total_games} predictions")
 
-    return predictions
+    # Return predictions and all loaded data sources (for power rankings)
+    data_sources = {
+        'jspr_rankings': jspr_rankings,
+        'nehj_rankings': nehj_rankings,
+        'performance_rankings': performance_rankings,
+        'mhr_rankings': mhr_rankings,
+        'team_stats': team_stats,
+        'roster_rankings': rankings,  # Age-adjusted roster rankings
+    }
+
+    return predictions, data_sources
 
 
 def save_predictions(predictions, filepath='nepsac_predictions.json'):
@@ -1258,15 +1268,226 @@ def print_sample_predictions(predictions, num_samples=10):
             count += 1
 
 
-if __name__ == '__main__':
-    # Generate predictions
-    predictions = generate_all_predictions()
+# =============================================================================
+# PRODIGY POWER RANKINGS
+# =============================================================================
 
-    # Save to file
+# Weights for Prodigy Power Rankings (performance-first approach)
+# Primary (70%): Performance-based factors
+# Secondary (30%): Roster strength
+POWER_RANKING_WEIGHTS = {
+    # Primary: Performance-based (70%)
+    'jspr_rpi': 0.20,           # Official NEPSIHA RPI
+    'nehj_expert': 0.15,        # Marinofsky's expert eye test
+    'performance_elo': 0.15,    # Our own ELO from game results
+    'mhr_rating': 0.10,         # MyHockeyRankings ELO
+    'win_pct': 0.05,            # Win percentage
+    'recent_form': 0.05,        # Last 5 games
+    # Secondary: Roster-based (30%)
+    'roster_avg': 0.15,         # Average ProdigyPoints per player
+    'top_player': 0.10,         # Best player on roster
+    'roster_depth': 0.05,       # Number of ranked players
+}
+
+
+def calculate_prodigy_power_rankings(jspr_rankings, nehj_rankings, performance_rankings,
+                                      mhr_rankings, team_stats, roster_rankings):
+    """
+    Calculate Prodigy Power Rankings for all NEPSAC teams.
+
+    Combines performance-based factors (70%) with roster strength (30%).
+    Returns dict with ranking, score, and component breakdowns.
+    """
+    # Collect all teams from all sources
+    all_teams = set()
+    for source in [jspr_rankings, nehj_rankings, performance_rankings,
+                   mhr_rankings, team_stats, roster_rankings]:
+        all_teams.update(source.keys())
+
+    team_scores = {}
+
+    for team in all_teams:
+        score = 0
+        components = {}
+
+        # 1. JSPR RPI (20%) - normalize 0.50-0.65 to 0-1
+        jspr = jspr_rankings.get(team, {})
+        rpi = jspr.get('rpi', 0.50)
+        rpi_norm = max(0, min(1, (rpi - 0.50) / 0.15))
+        score += POWER_RANKING_WEIGHTS['jspr_rpi'] * rpi_norm
+        components['jspr_rpi'] = round(rpi, 4)
+        components['jspr_rank'] = jspr.get('rank', 'NR')
+
+        # 2. NEHJ Expert (15%) - normalize rank 1-14 to 1-0
+        nehj = nehj_rankings.get(team, {})
+        nehj_rank = nehj.get('rank', 25)
+        nehj_norm = max(0, (14 - nehj_rank) / 13) if nehj_rank <= 14 else 0
+        score += POWER_RANKING_WEIGHTS['nehj_expert'] * nehj_norm
+        components['nehj_rank'] = nehj_rank if nehj_rank <= 14 else 'NR'
+
+        # 3. Performance ELO (15%) - normalize 1400-1650 to 0-1
+        perf = performance_rankings.get(team, {})
+        perf_rating = perf.get('rating', 1500)
+        perf_norm = max(0, min(1, (perf_rating - 1400) / 250))
+        score += POWER_RANKING_WEIGHTS['performance_elo'] * perf_norm
+        components['perf_elo'] = round(perf_rating, 1)
+        components['perf_rank'] = perf.get('rank', 'NR')
+
+        # 4. MHR Rating (10%) - normalize 89-100 to 0-1
+        mhr = mhr_rankings.get(team, {})
+        mhr_rating = mhr.get('rating', 94.0)
+        mhr_norm = max(0, min(1, (mhr_rating - 89) / 11))
+        score += POWER_RANKING_WEIGHTS['mhr_rating'] * mhr_norm
+        components['mhr_rating'] = round(mhr_rating, 2)
+        components['mhr_rank'] = mhr.get('rank', 'NR')
+
+        # 5. Win Percentage (5%)
+        stats = team_stats.get(team, {})
+        wins = stats.get('wins', 0)
+        losses = stats.get('losses', 0)
+        ties = stats.get('ties', 0)
+        total_games = wins + losses + ties
+        win_pct = (wins + 0.5 * ties) / total_games if total_games > 0 else 0.5
+        score += POWER_RANKING_WEIGHTS['win_pct'] * win_pct
+        components['record'] = f"{wins}-{losses}-{ties}" if total_games > 0 else '-'
+        components['win_pct'] = round(win_pct * 100, 1)
+
+        # 6. Recent Form (5%)
+        form_score = stats.get('form_score', 0.5)
+        score += POWER_RANKING_WEIGHTS['recent_form'] * form_score
+        components['recent_form'] = stats.get('last_5_record', '-')
+
+        # 7. Roster Average (15%) - normalize 0-5000 to 0-1
+        roster = roster_rankings.get(team, {})
+        avg_points = roster.get('avg_points', 0)
+        avg_norm = max(0, min(1, avg_points / 5000))
+        score += POWER_RANKING_WEIGHTS['roster_avg'] * avg_norm
+        components['roster_avg'] = round(avg_points, 1)
+
+        # 8. Top Player (10%) - normalize 0-8000 to 0-1
+        max_points = roster.get('max_points', 0)
+        max_norm = max(0, min(1, max_points / 8000))
+        score += POWER_RANKING_WEIGHTS['top_player'] * max_norm
+        components['top_player'] = round(max_points, 1)
+
+        # 9. Roster Depth (5%) - normalize 0-20 ranked players to 0-1
+        roster_size = roster.get('roster_size', 0)
+        depth_norm = max(0, min(1, roster_size / 20))
+        score += POWER_RANKING_WEIGHTS['roster_depth'] * depth_norm
+        components['roster_depth'] = roster_size
+
+        team_scores[team] = {
+            'score': round(score, 4),
+            'components': components
+        }
+
+    # Sort by score descending and assign ranks
+    sorted_teams = sorted(team_scores.items(), key=lambda x: x[1]['score'], reverse=True)
+
+    power_rankings = {}
+    for rank, (team, data) in enumerate(sorted_teams, 1):
+        power_rankings[team] = {
+            'rank': rank,
+            'score': data['score'],
+            **data['components']
+        }
+
+    return power_rankings
+
+
+def save_power_rankings(power_rankings, csv_path='nepsac_power_rankings.csv',
+                        json_path='nepsac_power_rankings.json', top_n=20):
+    """Save Prodigy Power Rankings to CSV and JSON files."""
+
+    # Sort by rank
+    sorted_rankings = sorted(power_rankings.items(), key=lambda x: x[1]['rank'])
+
+    # Save full JSON
+    with open(json_path, 'w', encoding='utf-8') as f:
+        json.dump({
+            'updated': datetime.now().strftime('%Y-%m-%d'),
+            'rankings': {team: data for team, data in sorted_rankings}
+        }, f, indent=2)
+    print(f"  Saved full rankings to {json_path}")
+
+    # Save top N to CSV for frontend
+    with open(csv_path, 'w', newline='', encoding='utf-8') as f:
+        writer = csv.writer(f)
+        writer.writerow(['rank', 'team', 'score', 'jspr_rank', 'nehj_rank', 'perf_rank',
+                        'mhr_rank', 'record', 'win_pct', 'recent_form', 'roster_avg', 'updated'])
+
+        for team, data in sorted_rankings[:top_n]:
+            writer.writerow([
+                data['rank'],
+                team.title(),  # Capitalize team name
+                round(data['score'] * 100, 1),  # Convert to 0-100 scale
+                data.get('jspr_rank', 'NR'),
+                data.get('nehj_rank', 'NR'),
+                data.get('perf_rank', 'NR'),
+                data.get('mhr_rank', 'NR'),
+                data.get('record', '-'),
+                data.get('win_pct', 0),
+                data.get('recent_form', '-'),
+                round(data.get('roster_avg', 0), 1),
+                datetime.now().strftime('%Y-%m-%d')
+            ])
+
+    print(f"  Saved top {top_n} rankings to {csv_path}")
+
+    return sorted_rankings[:top_n]
+
+
+def print_power_rankings(power_rankings, top_n=20):
+    """Print top N Prodigy Power Rankings."""
+    print("\n" + "=" * 80)
+    print("PRODIGY POWER RANKINGS - Top 20")
+    print("=" * 80)
+    print(f"{'Rank':<5} {'Team':<25} {'Score':<7} {'JSPR':<6} {'NEHJ':<6} {'Perf':<6} {'MHR':<6} {'Record':<10}")
+    print("-" * 80)
+
+    sorted_rankings = sorted(power_rankings.items(), key=lambda x: x[1]['rank'])
+
+    for team, data in sorted_rankings[:top_n]:
+        jspr = data.get('jspr_rank', 'NR')
+        jspr_str = f"#{jspr}" if isinstance(jspr, int) else jspr
+        nehj = data.get('nehj_rank', 'NR')
+        nehj_str = f"#{nehj}" if isinstance(nehj, int) else nehj
+        perf = data.get('perf_rank', 'NR')
+        perf_str = f"#{perf}" if isinstance(perf, int) else perf
+        mhr = data.get('mhr_rank', 'NR')
+        mhr_str = f"#{mhr}" if isinstance(mhr, int) else mhr
+
+        print(f"{data['rank']:<5} {team.title():<25} {data['score']*100:>5.1f}  "
+              f"{jspr_str:<6} {nehj_str:<6} {perf_str:<6} {mhr_str:<6} {data.get('record', '-'):<10}")
+
+
+if __name__ == '__main__':
+    # Generate predictions and get data sources
+    predictions, data_sources = generate_all_predictions()
+
+    # Save predictions to file
     save_predictions(predictions)
 
-    # Print samples
+    # Print sample predictions
     print_sample_predictions(predictions, num_samples=10)
+
+    # Generate Prodigy Power Rankings
+    print("\n" + "=" * 80)
+    print("GENERATING PRODIGY POWER RANKINGS")
+    print("=" * 80)
+
+    power_rankings = calculate_prodigy_power_rankings(
+        jspr_rankings=data_sources['jspr_rankings'],
+        nehj_rankings=data_sources['nehj_rankings'],
+        performance_rankings=data_sources['performance_rankings'],
+        mhr_rankings=data_sources['mhr_rankings'],
+        team_stats=data_sources['team_stats'],
+        roster_rankings=data_sources['roster_rankings']
+    )
+
+    # Save and print power rankings
+    save_power_rankings(power_rankings, top_n=20)
+    print_power_rankings(power_rankings, top_n=20)
 
     # Summary stats
     print("\n" + "=" * 70)

@@ -7,6 +7,7 @@
  * - getNepsacMatchup: Get full matchup data for a game
  * - getNepsacTeams: Get all teams with rankings
  * - getNepsacStandings: Get current standings
+ * - getNepsacPowerRankings: Get top 20 teams by Prodigy Power Rankings (NEW)
  * - getNepsacRoster: Get team roster with player stats
  * - getNepsacGameDates: Get all dates with scheduled games
  */
@@ -648,6 +649,112 @@ functions.http('getNepsacStandings', withCors(async (req, res) => {
 
   } catch (error) {
     console.error('getNepsacStandings error:', error);
+    return errorResponse(res, 500, error.message);
+  }
+}));
+
+/**
+ * GET /getNepsacPowerRankings
+ * Returns top 20 teams by Prodigy Power Rankings
+ *
+ * Power rankings combine:
+ * - Performance factors (70%): JSPR, NEHJ, Performance ELO, MHR, Win%, Form
+ * - Roster factors (30%): Avg ProdigyPoints, Top Player, Roster Depth
+ *
+ * Query params:
+ * - season: string (default: '2025-26')
+ * - limit: number (default: 20)
+ */
+functions.http('getNepsacPowerRankings', withCors(async (req, res) => {
+  try {
+    const { season = '2025-26', limit = 20 } = req.query;
+    const limitNum = Math.min(parseInt(limit) || 20, 50);
+
+    const query = `
+      SELECT
+        t.team_id,
+        t.team_name,
+        t.short_name,
+        t.division,
+        t.logo_url,
+        r.rank as power_rank,
+        r.team_ovr,
+        r.avg_prodigy_points,
+        r.total_prodigy_points,
+        r.max_prodigy_points,
+        r.roster_size,
+        r.matched_players,
+        r.match_rate,
+        r.top_player_name,
+        s.wins,
+        s.losses,
+        s.ties,
+        s.win_pct,
+        s.goals_for,
+        s.goals_against,
+        s.goal_differential,
+        s.streak,
+        s.games_played
+      FROM \`prodigy-ranking.algorithm_core.nepsac_teams\` t
+      LEFT JOIN \`prodigy-ranking.algorithm_core.nepsac_team_rankings\` r
+        ON t.team_id = r.team_id AND r.season = '${season}'
+      LEFT JOIN \`prodigy-ranking.algorithm_core.nepsac_standings\` s
+        ON t.team_id = s.team_id AND s.season = '${season}'
+      WHERE r.rank IS NOT NULL
+      ORDER BY r.rank ASC
+      LIMIT ${limitNum}
+    `;
+
+    const rows = await executeQuery(query);
+
+    const rankings = rows.map((row, index) => {
+      const wins = parseValue(row.wins, 0);
+      const losses = parseValue(row.losses, 0);
+      const ties = parseValue(row.ties, 0);
+      const gamesPlayed = wins + losses + ties;
+
+      return {
+        rank: row.power_rank || (index + 1),
+        teamId: row.team_id,
+        name: row.team_name,
+        shortName: row.short_name,
+        division: row.division,
+        logoUrl: row.logo_url,
+        ovr: row.team_ovr || calculateTeamOVR(parseValue(row.avg_prodigy_points, 1500)),
+        record: {
+          wins,
+          losses,
+          ties,
+          gamesPlayed,
+          winPct: gamesPlayed > 0 ? Math.round((wins + ties * 0.5) / gamesPlayed * 1000) / 10 : 0
+        },
+        stats: {
+          avgPoints: Math.round(parseValue(row.avg_prodigy_points, 0)),
+          totalPoints: Math.round(parseValue(row.total_prodigy_points, 0)),
+          maxPoints: Math.round(parseValue(row.max_prodigy_points, 0)),
+          rosterSize: parseValue(row.roster_size, 0),
+          matchedPlayers: parseValue(row.matched_players, 0),
+          matchRate: Math.round(parseValue(row.match_rate, 0) * 100),
+          topPlayer: row.top_player_name
+        },
+        performance: {
+          goalsFor: parseValue(row.goals_for, 0),
+          goalsAgainst: parseValue(row.goals_against, 0),
+          goalDiff: parseValue(row.goal_differential, 0),
+          streak: row.streak || '-'
+        }
+      };
+    });
+
+    return res.json({
+      rankings,
+      season,
+      count: rankings.length,
+      updated: new Date().toISOString().split('T')[0]
+    });
+
+  } catch (error) {
+    console.error('getNepsacPowerRankings error:', error);
     return errorResponse(res, 500, error.message);
   }
 }));
