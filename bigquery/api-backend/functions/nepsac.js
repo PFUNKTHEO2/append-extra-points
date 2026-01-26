@@ -1040,3 +1040,359 @@ functions.http('getNepsacGameDates', withCors(async (req, res) => {
     return errorResponse(res, 500, error.message);
   }
 }));
+
+/**
+ * GET /getNepsacTopPerformers
+ * Returns top performers for a specific game day based on actual game scoring
+ *
+ * Query params:
+ * - date: YYYY-MM-DD (required)
+ * - limit: number (default: 6, max: 20)
+ *
+ * Scoring Logic:
+ * - Skaters: Sort by points (G+A), then goals as tiebreaker
+ * - Goalies: Shutouts get priority, then by saves
+ *
+ * Returns empty array if no game-day scoring data is available for the date
+ */
+functions.http('getNepsacTopPerformers', withCors(async (req, res) => {
+  try {
+    const { date, limit = 6 } = req.query;
+
+    if (!date) {
+      return errorResponse(res, 400, 'date parameter is required (YYYY-MM-DD)');
+    }
+
+    // Validate date format
+    const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
+    if (!dateRegex.test(date)) {
+      return errorResponse(res, 400, 'Invalid date format. Use YYYY-MM-DD');
+    }
+
+    const maxLimit = Math.min(parseInt(limit) || 6, 20);
+
+    // Query game performers for the date
+    // Join with player_stats for EP image, player_cumulative_points for OVR, and teams for team info
+    const query = `
+      WITH performer_scores AS (
+        SELECT
+          gp.performer_id,
+          gp.game_id,
+          gp.player_id,
+          gp.roster_name,
+          gp.team_id,
+          gp.position,
+          gp.goals,
+          gp.assists,
+          gp.points,
+          gp.saves,
+          gp.is_shutout,
+          gp.is_win,
+          gp.star_rank,
+          -- Scoring: Skaters by points then goals; Goalies by shutout then saves
+          CASE
+            WHEN gp.position = 'G' THEN
+              CASE WHEN gp.is_shutout THEN 1000 ELSE 0 END + COALESCE(gp.saves, 0)
+            ELSE
+              COALESCE(gp.points, 0) * 100 + COALESCE(gp.goals, 0)
+          END as score_rank
+        FROM \`prodigy-ranking.algorithm_core.nepsac_game_performers\` gp
+        WHERE gp.game_date = '${date}'
+      ),
+      -- Match performers to player_stats by name for EP images
+      -- Use multiple matching strategies: exact name, nickname variations, last name + first letter
+      player_matches AS (
+        SELECT
+          ps.*,
+          ep.id as ep_player_id,
+          ep.imageUrl as ep_image_url,
+          -- Prioritize matches: 1=exact, 2=nickname, 3=last name + first letter
+          ROW_NUMBER() OVER (
+            PARTITION BY ps.performer_id
+            ORDER BY
+              CASE
+                WHEN LOWER(TRIM(ps.roster_name)) = LOWER(CONCAT(ep.firstName, ' ', ep.lastName)) THEN 1
+                WHEN LOWER(SPLIT(TRIM(ps.roster_name), ' ')[SAFE_OFFSET(1)]) = LOWER(ep.lastName)
+                     AND LEFT(LOWER(SPLIT(TRIM(ps.roster_name), ' ')[SAFE_OFFSET(0)]), 3) = LEFT(LOWER(ep.firstName), 3) THEN 2
+                ELSE 3
+              END,
+              ep.id
+          ) as rn
+        FROM performer_scores ps
+        LEFT JOIN \`prodigy-ranking.algorithm_core.player_stats\` ep
+          ON (
+            -- Exact match
+            LOWER(TRIM(ps.roster_name)) = LOWER(CONCAT(ep.firstName, ' ', ep.lastName))
+            -- OR last name matches AND first 3 chars of first name match (handles Alex/Alexander, Mike/Michael)
+            OR (
+              LOWER(SPLIT(TRIM(ps.roster_name), ' ')[SAFE_OFFSET(1)]) = LOWER(ep.lastName)
+              AND LEFT(LOWER(SPLIT(TRIM(ps.roster_name), ' ')[SAFE_OFFSET(0)]), 3) = LEFT(LOWER(ep.firstName), 3)
+            )
+          )
+      )
+      SELECT
+        pm.performer_id,
+        pm.game_id,
+        COALESCE(pm.player_id, pm.ep_player_id) as player_id,
+        pm.roster_name,
+        pm.team_id,
+        pm.position,
+        pm.goals,
+        pm.assists,
+        pm.points,
+        pm.saves,
+        pm.is_shutout,
+        pm.is_win,
+        pm.star_rank,
+        pm.score_rank,
+        -- Team info
+        t.team_name,
+        t.short_name as team_short_name,
+        t.logo_url as team_logo_url,
+        -- Player image from EP
+        pm.ep_image_url as image_url,
+        -- Player info from cumulative points (for OVR)
+        COALESCE(p.total_points, 0) as prodigy_points,
+        -- Game info for opponent
+        s.away_team_id,
+        s.home_team_id,
+        away_t.short_name as away_short_name,
+        home_t.short_name as home_short_name
+      FROM player_matches pm
+      LEFT JOIN \`prodigy-ranking.algorithm_core.nepsac_teams\` t
+        ON pm.team_id = t.team_id
+      LEFT JOIN \`prodigy-ranking.algorithm_core.player_cumulative_points\` p
+        ON COALESCE(pm.player_id, pm.ep_player_id) = p.player_id
+      LEFT JOIN \`prodigy-ranking.algorithm_core.nepsac_schedule\` s
+        ON pm.game_id = s.game_id
+      LEFT JOIN \`prodigy-ranking.algorithm_core.nepsac_teams\` away_t
+        ON s.away_team_id = away_t.team_id
+      LEFT JOIN \`prodigy-ranking.algorithm_core.nepsac_teams\` home_t
+        ON s.home_team_id = home_t.team_id
+      WHERE pm.rn = 1
+        AND COALESCE(pm.player_id, pm.ep_player_id) IS NOT NULL  -- Only include players in our database
+      ORDER BY pm.score_rank DESC, pm.star_rank ASC NULLS LAST
+      LIMIT ${maxLimit}
+    `;
+
+    let rows = [];
+    try {
+      rows = await executeQuery(query);
+    } catch (queryError) {
+      // If table doesn't exist yet, return empty array (graceful fallback)
+      if (queryError.message && queryError.message.includes('Not found')) {
+        console.log('nepsac_game_performers table not found, returning empty array');
+        rows = [];
+      } else {
+        throw queryError;
+      }
+    }
+
+    // If no data, return empty response with helpful message
+    if (rows.length === 0) {
+      return res.json({
+        date,
+        dataAvailable: false,
+        message: 'No performer data available for this date. Box scores may not have been entered yet.',
+        topPerformers: []
+      });
+    }
+
+    // Calculate max points for OVR calculation (among these performers)
+    const maxPoints = Math.max(...rows.map(r => parseValue(r.prodigy_points, 0)), 1);
+
+    // Format response
+    const topPerformers = rows.map(row => {
+      const points = parseValue(row.prodigy_points, 0);
+      const isGoalie = row.position === 'G';
+
+      // Determine opponent
+      let opponent = null;
+      if (row.away_team_id && row.home_team_id) {
+        opponent = row.team_id === row.away_team_id
+          ? row.home_short_name
+          : row.away_short_name;
+      }
+
+      // Construct EP image URL from player ID if available
+      // Format: https://files.eliteprospects.com/layout/players/{ep_id}.jpg
+      const imageUrl = row.player_id
+        ? `https://files.eliteprospects.com/layout/players/${row.player_id}.jpg`
+        : (row.image_url || null);
+
+      return {
+        playerId: row.player_id,
+        name: row.roster_name,
+        position: row.position,
+        imageUrl: imageUrl,
+        ovr: calculateOVR(points, maxPoints),
+        prodigyPoints: Math.round(points * 100) / 100,
+        teamId: row.team_id,
+        teamName: row.team_name,
+        teamShortName: row.team_short_name,
+        teamLogoUrl: row.team_logo_url,
+        gameId: row.game_id,
+        opponent,
+        starRank: row.star_rank,  // 1, 2, 3 for stars of the game
+        gameDayStats: isGoalie ? {
+          goals: null,
+          assists: null,
+          points: null,
+          saves: row.saves,
+          shutout: row.is_shutout || false,
+          win: row.is_win
+        } : {
+          goals: row.goals || 0,
+          assists: row.assists || 0,
+          points: row.points || 0,
+          saves: null,
+          shutout: false,
+          win: null
+        }
+      };
+    });
+
+    res.json({
+      date,
+      dataAvailable: true,
+      performerCount: topPerformers.length,
+      topPerformers
+    });
+
+  } catch (error) {
+    console.error('getNepsacTopPerformers error:', error);
+    return errorResponse(res, 500, error.message);
+  }
+}));
+
+/**
+ * POST /addNepsacGamePerformers
+ * Add or update game performers for a specific game (admin endpoint)
+ *
+ * Body: {
+ *   gameId: "game_0001",
+ *   gameDate: "2026-01-24",
+ *   performers: [
+ *     {
+ *       rosterName: "John Smith",
+ *       teamId: "salisbury-school",
+ *       position: "F",
+ *       goals: 2,
+ *       assists: 1,
+ *       playerId: 12345 (optional - for linking to database)
+ *     },
+ *     {
+ *       rosterName: "Mike Johnson",
+ *       teamId: "avon-old-farms",
+ *       position: "G",
+ *       saves: 32,
+ *       isShutout: true,
+ *       isWin: true
+ *     }
+ *   ],
+ *   source: "manual" // or "elite_prospects", "neutral_zone"
+ * }
+ *
+ * Note: This is an admin endpoint - add authentication in production
+ */
+functions.http('addNepsacGamePerformers', withCors(async (req, res) => {
+  try {
+    if (req.method !== 'POST') {
+      return errorResponse(res, 405, 'Method not allowed. Use POST.');
+    }
+
+    const { gameId, gameDate, performers, source = 'manual' } = req.body;
+
+    if (!gameId || !gameDate || !performers || !Array.isArray(performers)) {
+      return errorResponse(res, 400, 'gameId, gameDate, and performers array are required');
+    }
+
+    if (performers.length === 0) {
+      return errorResponse(res, 400, 'performers array cannot be empty');
+    }
+
+    // Validate date format
+    const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
+    if (!dateRegex.test(gameDate)) {
+      return errorResponse(res, 400, 'Invalid gameDate format. Use YYYY-MM-DD');
+    }
+
+    // Build insert values
+    const values = performers.map((p, idx) => {
+      const performerId = `${gameId}_${idx + 1}`;
+      const goals = p.goals || 0;
+      const assists = p.assists || 0;
+      const points = goals + assists;
+
+      return `(
+        '${performerId}',
+        '${gameId}',
+        '${gameDate}',
+        ${p.playerId ? p.playerId : 'NULL'},
+        '${(p.rosterName || '').replace(/'/g, "''")}',
+        '${p.teamId}',
+        ${p.position ? `'${p.position}'` : 'NULL'},
+        ${goals},
+        ${assists},
+        ${points},
+        ${p.plusMinus !== undefined ? p.plusMinus : 'NULL'},
+        ${p.pim !== undefined ? p.pim : 'NULL'},
+        ${p.shots !== undefined ? p.shots : 'NULL'},
+        ${p.saves !== undefined ? p.saves : 'NULL'},
+        ${p.goalsAgainst !== undefined ? p.goalsAgainst : 'NULL'},
+        ${p.shotsFaced !== undefined ? p.shotsFaced : 'NULL'},
+        ${p.savePct !== undefined ? p.savePct : 'NULL'},
+        ${p.isShutout ? 'TRUE' : 'FALSE'},
+        ${p.isWin === true ? 'TRUE' : p.isWin === false ? 'FALSE' : 'NULL'},
+        ${p.isLoss === true ? 'TRUE' : p.isLoss === false ? 'FALSE' : 'NULL'},
+        ${p.isOtl === true ? 'TRUE' : p.isOtl === false ? 'FALSE' : 'NULL'},
+        ${p.isStarOfGame ? 'TRUE' : 'FALSE'},
+        ${p.starRank !== undefined ? p.starRank : 'NULL'},
+        '${source}',
+        ${p.notes ? `'${(p.notes || '').replace(/'/g, "''")}'` : 'NULL'},
+        CURRENT_TIMESTAMP(),
+        CURRENT_TIMESTAMP()
+      )`;
+    });
+
+    // Delete existing performers for this game first (replace logic)
+    const deleteQuery = `
+      DELETE FROM \`prodigy-ranking.algorithm_core.nepsac_game_performers\`
+      WHERE game_id = '${gameId}'
+    `;
+
+    // Insert new performers
+    const insertQuery = `
+      INSERT INTO \`prodigy-ranking.algorithm_core.nepsac_game_performers\` (
+        performer_id, game_id, game_date, player_id, roster_name, team_id, position,
+        goals, assists, points, plus_minus, pim, shots,
+        saves, goals_against, shots_faced, save_pct, is_shutout, is_win, is_loss, is_otl,
+        is_star_of_game, star_rank, source, notes, created_at, updated_at
+      ) VALUES ${values.join(',\n')}
+    `;
+
+    // Execute queries
+    try {
+      await executeQuery(deleteQuery);
+    } catch (deleteError) {
+      // Ignore if table doesn't exist yet (first insert)
+      if (!deleteError.message || !deleteError.message.includes('Not found')) {
+        console.warn('Delete warning:', deleteError.message);
+      }
+    }
+
+    await executeQuery(insertQuery);
+
+    res.json({
+      success: true,
+      gameId,
+      gameDate,
+      performersAdded: performers.length,
+      message: `Successfully added ${performers.length} performers for game ${gameId}`
+    });
+
+  } catch (error) {
+    console.error('addNepsacGamePerformers error:', error);
+    return errorResponse(res, 500, error.message);
+  }
+}));
