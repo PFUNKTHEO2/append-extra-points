@@ -179,6 +179,46 @@ export interface NepsacTeamsResponse {
   teams: NepsacTeamWithStats[];
 }
 
+// Power Rankings Types
+export interface NepsacPowerRanking {
+  rank: number;
+  teamId: string;
+  name: string;
+  shortName: string;
+  division: string;
+  logoUrl: string | null;
+  ovr: number;
+  record: {
+    wins: number;
+    losses: number;
+    ties: number;
+    gamesPlayed: number;
+    winPct: number;
+  };
+  stats: {
+    avgPoints: number;
+    totalPoints: number;
+    maxPoints: number;
+    rosterSize: number;
+    matchedPlayers: number;
+    matchRate: number;
+    topPlayer: string | null;
+  };
+  performance: {
+    goalsFor: number;
+    goalsAgainst: number;
+    goalDiff: number;
+    streak: string;
+  };
+}
+
+export interface NepsacPowerRankingsResponse {
+  rankings: NepsacPowerRanking[];
+  season: string;
+  count: number;
+  updated: string;
+}
+
 // ============================================================================
 // API Functions
 // ============================================================================
@@ -287,6 +327,31 @@ export async function fetchNepsacTeams(
     return await response.json();
   } catch (error) {
     console.error('Error fetching NEPSAC teams:', error);
+    return null;
+  }
+}
+
+/**
+ * Fetch Prodigy Power Rankings
+ * Returns top teams ranked by performance-first methodology:
+ * - Primary (70%): JSPR, NEHJ Expert, Performance ELO, MHR, Win%, Form
+ * - Secondary (30%): Roster strength (Avg Points, Top Player, Depth)
+ */
+export async function fetchNepsacPowerRankings(
+  season: string = '2025-26',
+  limit: number = 20
+): Promise<NepsacPowerRankingsResponse | null> {
+  try {
+    const response = await fetch(
+      `${API_BASE}/getNepsacPowerRankings?season=${season}&limit=${limit}`
+    );
+    if (!response.ok) {
+      console.error('Failed to fetch NEPSAC power rankings:', response.status);
+      return null;
+    }
+    return await response.json();
+  } catch (error) {
+    console.error('Error fetching NEPSAC power rankings:', error);
     return null;
   }
 }

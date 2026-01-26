@@ -9,6 +9,7 @@ import {
   type NepsacPlayer,
 } from '@/lib/nepsac-api';
 import { GameComments } from '@/components/nepsac/GameComments';
+import { NepsacPowerRankings } from '@/components/nepsac';
 
 // Import Orbitron font
 const fontLink = document.createElement('link');
@@ -23,6 +24,7 @@ export default function NepsacGameDay() {
   const [selectedGameId, setSelectedGameId] = useState<string | null>(null);
   const [matchup, setMatchup] = useState<MatchupType | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [showRankings, setShowRankings] = useState(true);
 
   // Load game dates on mount
   useEffect(() => {
@@ -665,6 +667,65 @@ export default function NepsacGameDay() {
             gap: 8px;
           }
         }
+
+        /* Two-column layout with rankings sidebar */
+        .nepsac-main-layout {
+          display: grid;
+          grid-template-columns: 1fr 320px;
+          gap: 25px;
+        }
+
+        .nepsac-content-area {
+          min-width: 0;
+        }
+
+        .nepsac-rankings-sidebar {
+          position: sticky;
+          top: 20px;
+          align-self: start;
+        }
+
+        .rankings-toggle {
+          display: none;
+          width: 100%;
+          padding: 12px 20px;
+          margin-bottom: 15px;
+          background: linear-gradient(135deg, rgba(139, 92, 246, 0.3), rgba(217, 70, 239, 0.2));
+          border: 1px solid rgba(139, 92, 246, 0.4);
+          border-radius: 10px;
+          color: #d946ef;
+          font-family: 'Orbitron', sans-serif;
+          font-size: 0.9rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+
+        .rankings-toggle:hover {
+          background: linear-gradient(135deg, rgba(139, 92, 246, 0.4), rgba(217, 70, 239, 0.3));
+          border-color: #d946ef;
+        }
+
+        @media (max-width: 1200px) {
+          .nepsac-main-layout {
+            grid-template-columns: 1fr;
+          }
+
+          .rankings-toggle {
+            display: block;
+          }
+
+          .nepsac-rankings-sidebar {
+            position: static;
+            display: none;
+          }
+
+          .nepsac-rankings-sidebar.show {
+            display: block;
+          }
+        }
       `}</style>
 
       <div className="nepsac-page">
@@ -682,76 +743,94 @@ export default function NepsacGameDay() {
             <div className="loading">Loading...</div>
           ) : (
             <>
-              {/* Game Selector */}
-              <div className="glass-panel">
-                <h2 className="game-selector-title">Select Matchup</h2>
-                <div className="games-grid">
-                  {games.map((game) => (
-                    <div
-                      key={game.gameId}
-                      className={`game-card ${selectedGameId === game.gameId ? 'active' : ''}`}
-                      onClick={() => setSelectedGameId(game.gameId)}
-                    >
-                      {game.prediction.confidence && (
-                        <div className="game-card-prediction">
-                          {game.prediction.confidence}%
+              {/* Rankings Toggle (mobile only) */}
+              <button
+                className="rankings-toggle"
+                onClick={() => setShowRankings(!showRankings)}
+              >
+                {showRankings ? 'Hide' : 'Show'} Power Rankings
+              </button>
+
+              <div className="nepsac-main-layout">
+                {/* Main Content Area */}
+                <div className="nepsac-content-area">
+                  {/* Game Selector */}
+                  <div className="glass-panel">
+                    <h2 className="game-selector-title">Select Matchup</h2>
+                    <div className="games-grid">
+                      {games.map((game) => (
+                        <div
+                          key={game.gameId}
+                          className={`game-card ${selectedGameId === game.gameId ? 'active' : ''}`}
+                          onClick={() => setSelectedGameId(game.gameId)}
+                        >
+                          {game.prediction.confidence && (
+                            <div className="game-card-prediction">
+                              {game.prediction.confidence}%
+                            </div>
+                          )}
+                          <div className="game-card-teams">
+                            <span className="game-card-team">{game.awayTeam.shortName || game.awayTeam.name}</span>
+                            <span className="game-card-vs">VS</span>
+                            <span className="game-card-team">{game.homeTeam.shortName || game.homeTeam.name}</span>
+                          </div>
+                          <div className="game-card-time">{game.gameTime} • {game.venue || 'TBD'}</div>
                         </div>
-                      )}
-                      <div className="game-card-teams">
-                        <span className="game-card-team">{game.awayTeam.shortName || game.awayTeam.name}</span>
-                        <span className="game-card-vs">VS</span>
-                        <span className="game-card-team">{game.homeTeam.shortName || game.homeTeam.name}</span>
-                      </div>
-                      <div className="game-card-time">{game.gameTime} • {game.venue || 'TBD'}</div>
+                      ))}
                     </div>
-                  ))}
+                  </div>
+
+                  {/* Matchup Display */}
+                  {matchup && (
+                    <>
+                      <div className="glass-panel">
+                        {/* Team Comparison */}
+                        <div className="team-comparison">
+                          <TeamSide team={matchup.awayTeam} />
+                          <div className="vs-badge">VS</div>
+                          <TeamSide team={matchup.homeTeam} />
+                        </div>
+
+                        {/* Prediction */}
+                        <PredictionBanner matchup={matchup} />
+                      </div>
+
+                      {/* Stats */}
+                      <div className="glass-panel">
+                        <h3 className="stats-title">Head to Head</h3>
+                        <StatsComparison matchup={matchup} />
+                      </div>
+
+                      {/* Players */}
+                      <div className="glass-panel">
+                        <h3 className="players-title">Top 6 Players</h3>
+                        <div className="players-grid">
+                          <div className="team-players">
+                            <div className="team-players-header">{matchup.awayTeam.shortName || matchup.awayTeam.name}</div>
+                            {matchup.awayTeam.topPlayers.slice(0, 6).map((player, i) => (
+                              <PlayerCard key={i} player={player} maxPoints={matchup.maxPoints} />
+                            ))}
+                          </div>
+                          <div className="team-players">
+                            <div className="team-players-header">{matchup.homeTeam.shortName || matchup.homeTeam.name}</div>
+                            {matchup.homeTeam.topPlayers.slice(0, 6).map((player, i) => (
+                              <PlayerCard key={i} player={player} maxPoints={matchup.maxPoints} />
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Comments */}
+                      {selectedGameId && <GameComments gameId={selectedGameId} />}
+                    </>
+                  )}
+                </div>
+
+                {/* Power Rankings Sidebar */}
+                <div className={`nepsac-rankings-sidebar ${showRankings ? 'show' : ''}`}>
+                  <NepsacPowerRankings limit={20} />
                 </div>
               </div>
-
-              {/* Matchup Display */}
-              {matchup && (
-                <>
-                  <div className="glass-panel">
-                    {/* Team Comparison */}
-                    <div className="team-comparison">
-                      <TeamSide team={matchup.awayTeam} />
-                      <div className="vs-badge">VS</div>
-                      <TeamSide team={matchup.homeTeam} />
-                    </div>
-
-                    {/* Prediction */}
-                    <PredictionBanner matchup={matchup} />
-                  </div>
-
-                  {/* Stats */}
-                  <div className="glass-panel">
-                    <h3 className="stats-title">Head to Head</h3>
-                    <StatsComparison matchup={matchup} />
-                  </div>
-
-                  {/* Players */}
-                  <div className="glass-panel">
-                    <h3 className="players-title">Top 6 Players</h3>
-                    <div className="players-grid">
-                      <div className="team-players">
-                        <div className="team-players-header">{matchup.awayTeam.shortName || matchup.awayTeam.name}</div>
-                        {matchup.awayTeam.topPlayers.slice(0, 6).map((player, i) => (
-                          <PlayerCard key={i} player={player} maxPoints={matchup.maxPoints} />
-                        ))}
-                      </div>
-                      <div className="team-players">
-                        <div className="team-players-header">{matchup.homeTeam.shortName || matchup.homeTeam.name}</div>
-                        {matchup.homeTeam.topPlayers.slice(0, 6).map((player, i) => (
-                          <PlayerCard key={i} player={player} maxPoints={matchup.maxPoints} />
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Comments */}
-                  {selectedGameId && <GameComments gameId={selectedGameId} />}
-                </>
-              )}
 
               {/* Footer */}
               <footer className="footer">
