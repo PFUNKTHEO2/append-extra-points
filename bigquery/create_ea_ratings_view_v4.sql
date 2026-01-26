@@ -1,19 +1,37 @@
 -- =====================================================================
--- EA SPORTS-STYLE PLAYER RATINGS VIEW - VERSION 4.0
+-- ██████╗ ███████╗██████╗ ██████╗ ███████╗ ██████╗ █████╗ ████████╗███████╗██████╗
+-- ██╔══██╗██╔════╝██╔══██╗██╔══██╗██╔════╝██╔════╝██╔══██╗╚══██╔══╝██╔════╝██╔══██╗
+-- ██║  ██║█████╗  ██████╔╝██████╔╝█████╗  ██║     ███████║   ██║   █████╗  ██║  ██║
+-- ██║  ██║██╔══╝  ██╔═══╝ ██╔══██╗██╔══╝  ██║     ██╔══██║   ██║   ██╔══╝  ██║  ██║
+-- ██████╔╝███████╗██║     ██║  ██║███████╗╚██████╗██║  ██║   ██║   ███████╗██████╔╝
+-- ╚═════╝ ╚══════╝╚═╝     ╚═╝  ╚═╝╚══════╝ ╚═════╝╚═╝  ╚═╝   ╚═╝   ╚══════╝╚═════╝
+-- =====================================================================
+--
+-- THIS FILE IS DEPRECATED AS OF 2026-01-26
+--
+-- DO NOT USE THIS FILE. Use create_ea_ratings_view_v5.sql instead.
+--
+-- The canonical source for all rating calculations (F31-F37) is now:
+--   create_ea_ratings_view_v5.sql
+--
+-- This file is kept for historical reference only.
+--
+-- =====================================================================
+-- EA SPORTS-STYLE PLAYER RATINGS VIEW - VERSION 4.1 (DEPRECATED)
 -- =====================================================================
 -- Updated: 2026-01-08
 --
--- MAJOR CHANGE: Complete rewrite of PERFORMANCE rating calculation
+-- CHANGES in v4.2:
+--   - PHYSICAL: Changed to LINEAR scale
+--     Formula: (f02_height + f26_weight + f27_bmi) / 600 × 99
 --
--- OLD METHOD (v3.x):
---   - Used pre-calculated factor POINTS (f03, f04, f05, etc.)
---   - Summed points together
---   - Applied percentile-based curve to convert to 1-99
+-- CHANGES in v4.1:
+--   - VISIBILITY: Changed from percentile-based to LINEAR scale
+--     Formula: MIN(99, ep_views × 99 / 15000)
+--     0 views = 0 rating, 15,000+ views = 99 rating
 --
--- NEW METHOD (v4.0) - Per David's specification:
---   - Uses RAW per-game statistics from PT factor tables
---   - Applies 0.7/0.3 weighting (current season 70%, past season 30%)
---   - Position-specific threshold-based conversion to 0-99
+-- CHANGES in v4.0:
+--   - PERFORMANCE: Complete rewrite using raw per-game stats
 --
 -- PERFORMANCE FORMULAS (0-99 scale):
 --
@@ -38,11 +56,14 @@
 --
 --     performance = ROUND((gaa_rating + svp_rating) / 2)
 --
--- Other categories unchanged from v3.1:
+-- VISIBILITY FORMULA (0-99 scale):
+--   visibility_rating = MIN(99, ep_views × 99 / 15000)
+--   Linear scale: 0 views → 0, 15,000 views → 99
+--
+-- Other categories:
 --   - Level (70%)       - Direct league tier mapping
---   - Visibility (19%)  - EP views + ProdigyLikes
---   - Physical (5%)     - Height + Weight + BMI
---   - Achievements (3%) - International, draft, college, tournaments
+--   - Physical (5%)     - Height + Weight + BMI formula
+--   - Achievements (3%) - International, draft, college, tournaments (percentile)
 --   - Trending (0%)     - Weekly momentum (not used)
 -- =====================================================================
 
@@ -120,6 +141,12 @@ f12_raw AS (
   FROM `prodigy-ranking.algorithm_core.PT_F12_LSV`
 ),
 
+-- Raw EP views (for linear visibility calculation)
+f01_raw AS (
+  SELECT player_id, ep_views
+  FROM `prodigy-ranking.algorithm_core.PT_F01_EPV`
+),
+
 -- Step 4: Calculate raw category scores with NEW PERFORMANCE FORMULA
 raw_scores AS (
   SELECT
@@ -175,7 +202,9 @@ raw_scores AS (
     -- Keep level_raw for reference
     COALESCE(p.f13_league_points, 0) + COALESCE(p.f14_team_points, 0) AS level_raw,
 
-    -- VISIBILITY: Views + ProdigyLikes
+    -- VISIBILITY: Raw EP views for linear calculation
+    COALESCE(f01.ep_views, 0) AS ep_views_raw,
+    -- Keep visibility_raw for reference (points-based)
     COALESCE(p.f01_views, 0) + COALESCE(p.f23_prodigylikes_points, 0) AS visibility_raw,
 
     -- ACHIEVEMENTS: International (capped) + College + Draft + Tournaments
@@ -232,6 +261,7 @@ raw_scores AS (
   LEFT JOIN f10_raw f10 ON p.player_id = f10.player_id
   LEFT JOIN f11_raw f11 ON p.player_id = f11.player_id
   LEFT JOIN f12_raw f12 ON p.player_id = f12.player_id
+  LEFT JOIN f01_raw f01 ON p.player_id = f01.player_id
   WHERE p.total_points > 0
 ),
 
@@ -294,16 +324,9 @@ ea_ratings AS (
     -- Level Rating: DIRECT TIER MAPPING (unchanged)
     CAST(GREATEST(1, level_tier_rating) AS INT64) AS level_rating,
 
-    -- Visibility Rating (percentile-based curve, 1-99 scale)
-    CAST(GREATEST(1, CASE
-      WHEN visibility_pct >= 99.9 THEN 99
-      WHEN visibility_pct >= 99 THEN 95 + (visibility_pct - 99) * 4
-      WHEN visibility_pct >= 95 THEN 90 + (visibility_pct - 95) * 1.25
-      WHEN visibility_pct >= 80 THEN 75 + (visibility_pct - 80) * 1
-      WHEN visibility_pct >= 50 THEN 50 + (visibility_pct - 50) * 0.83
-      WHEN visibility_pct >= 20 THEN 25 + (visibility_pct - 20) * 0.83
-      ELSE 1 + visibility_pct * 1.2
-    END) AS INT64) AS visibility_rating,
+    -- Visibility Rating: LINEAR SCALE (0 views = 0, 15000 views = 99)
+    -- Formula: MIN(99, ep_views × 99 / 15000)
+    CAST(LEAST(99, GREATEST(0, ROUND(ep_views_raw * 99.0 / 15000))) AS INT64) AS visibility_rating,
 
     -- Achievements Rating (percentile-based curve, 1-99 scale)
     CAST(GREATEST(1, CASE
@@ -327,12 +350,9 @@ ea_ratings AS (
       ELSE 1 + trending_pct * 1.2
     END) AS INT64) AS trending_rating,
 
-    -- Physical Rating: FORMULA-BASED (1-99 scale)
-    CAST(
-      GREATEST(1, LEAST(99,
-        1 + (physical_raw / 600.0) * 98
-      ))
-    AS INT64) AS physical_rating
+    -- Physical Rating: LINEAR SCALE (max 600 points = 99 rating)
+    -- Formula: (f02_height + f26_weight + f27_bmi) / 600 × 99
+    CAST(LEAST(99, GREATEST(0, ROUND(physical_raw / 600.0 * 99))) AS INT64) AS physical_rating
 
   FROM percentile_ranks
 )
@@ -395,6 +415,7 @@ SELECT
 
   -- Other raw scores
   ROUND(level_raw, 2) AS level_raw,
+  ep_views_raw,  -- Actual EP views count (for linear visibility calc)
   ROUND(visibility_raw, 2) AS visibility_raw,
   ROUND(achievements_raw, 2) AS achievements_raw,
   ROUND(trending_raw, 2) AS trending_raw,
@@ -414,7 +435,7 @@ SELECT
   -- Metadata
   calculated_at,
   algorithm_version,
-  'v4.0-performance-formula' AS ratings_version,
+  'v4.2-linear-physical' AS ratings_version,
   CURRENT_TIMESTAMP() AS ratings_generated_at
 
 FROM ea_ratings

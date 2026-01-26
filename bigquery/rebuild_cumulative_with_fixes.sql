@@ -1,7 +1,12 @@
 -- ============================================================================
+-- DEPRECATED - DO NOT USE - SEE rebuild_cumulative_with_ratings.sql
+-- ============================================================================
+-- This file is DEPRECATED as of 2026-01-26.
+-- Use rebuild_cumulative_with_ratings.sql instead, which includes F31-F36.
+-- ============================================================================
 -- REBUILD player_cumulative_points WITH FULLY DEDUPLICATED JOINS
 -- ============================================================================
--- VERSION: v2.9-exclude-females
+-- VERSION: v2.9-exclude-females (DEPRECATED)
 --
 -- CRITICAL FIX (Dec 2025): Added GROUP BY + MAX() to ALL factor CTEs to prevent
 -- duplicate rows when source tables have duplicate player_ids.

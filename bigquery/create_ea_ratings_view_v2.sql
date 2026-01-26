@@ -1,5 +1,11 @@
 -- =====================================================================
--- EA SPORTS-STYLE PLAYER RATINGS VIEW - VERSION 2.0
+-- DEPRECATED - DO NOT USE - SEE create_ea_ratings_view_v5.sql
+-- =====================================================================
+-- This file is DEPRECATED as of 2026-01-26.
+-- The canonical source for all rating calculations (F31-F37) is now:
+--   create_ea_ratings_view_v5.sql
+-- =====================================================================
+-- EA SPORTS-STYLE PLAYER RATINGS VIEW - VERSION 2.0 (DEPRECATED)
 -- =====================================================================
 -- Updated: 2025-12-18
 -- Changes from v1:
