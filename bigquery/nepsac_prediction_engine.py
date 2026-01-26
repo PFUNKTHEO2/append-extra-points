@@ -115,9 +115,11 @@ def load_team_rankings(filepath='nepsac_team_rankings_full.csv'):
     return rankings
 
 
-def load_player_roster(filepath='nepsac_roster_matches.csv'):
+def load_player_roster(filepath='neutralzone_prep_boys_hockey_data_clean.csv'):
     """
     Load player roster with birth years for age adjustment
+
+    Uses NeutralZone data as the authoritative source.
 
     Returns dict keyed by team with list of players:
     {
@@ -133,23 +135,38 @@ def load_player_roster(filepath='nepsac_roster_matches.csv'):
     with open(filepath, 'r', encoding='utf-8') as f:
         reader = csv.DictReader(f)
         for row in reader:
-            team = normalize_team_name(row['roster_team'])
-            points = float(row['total_points']) if row['total_points'] else 0
+            team = normalize_team_name(row['team'])
 
-            # Only include players with points (matched to database)
+            # Convert rank to points-like value (lower rank = more points)
+            # Rank 1 = best player, we want higher points for better players
+            rank = row.get('rank', '')
+            if rank and rank.strip():
+                try:
+                    rank_val = float(rank)
+                    # Convert rank to inverted points (max ~10000 for rank 1)
+                    points = max(0, 10000 - rank_val * 5)
+                except (ValueError, TypeError):
+                    points = 0
+            else:
+                points = 0
+
+            # Only include players with points (ranked players)
             if points > 0:
+                # Derive birth year from graduation year (grad_year - 18 approx)
                 birth_year = None
-                if row.get('db_birth_year'):
+                grad_year = row.get('grad_year', '')
+                if grad_year and grad_year.strip():
                     try:
-                        birth_year = int(row['db_birth_year'])
-                    except ValueError:
+                        grad = float(grad_year)
+                        birth_year = int(grad - 18)  # Approximate birth year
+                    except (ValueError, TypeError):
                         pass
 
                 roster[team].append({
-                    'name': row['roster_name'],
+                    'name': row.get('player_name', ''),
                     'birth_year': birth_year,
                     'points': points,
-                    'position': row['roster_position']
+                    'position': row.get('position', '')
                 })
 
     return dict(roster)
@@ -321,6 +338,7 @@ TEAM_ALIASES = {
     'berkshire': 'berkshire school',
     'pomfret': 'pomfret',
     'pomfret school': 'pomfret',
+    'pomfret independent': 'pomfret',
     'frederick gunn': 'frederick gunn',
     'frederick gunn school': 'frederick gunn',
     'deerfield academy': 'deerfield academy',
@@ -353,6 +371,7 @@ TEAM_ALIASES = {
     'winchendon school': 'winchendon',
     'tabor': 'tabor',
     'tabor academy': 'tabor',
+    'tabor keller': 'tabor',
     'lawrence academy': 'lawrence academy',
     'lawrence': 'lawrence academy',
     'pingree': 'pingree',
@@ -565,22 +584,22 @@ def calculate_head_to_head(games, team1, team2):
 # =============================================================================
 
 # Weight factors (must sum to 1.0)
-# UPDATED 2026-01-24: Recalibrated using ML analysis on 35 completed games
-# Key findings from prediction_model_optimizer_v2.py:
-#   - 9 out of 10 errors were missed away upsets → reduce home advantage bias
-#   - Win % and Form were underweighted per logistic regression coefficients
-#   - LOO cross-validation shows 60% accuracy with optimized weights (sample too small for full ML)
-#   - Keeping MHR/TopPlayer/Form high as they showed strong predictive power
+# UPDATED 2026-01-26: Added JSPR (official NEPSIHA power rankings) as primary factor
+# Key changes:
+#   - JSPR added at 25% - official league rankings with RPI (updated weekly)
+#   - Performance ranking added at 15% - our own ELO-style ranking from game results
+#   - Reduced reliance on roster-based ProdigyPoints (now 5%)
+#   - MHR still strong but reduced to make room for JSPR
 PREDICTION_WEIGHTS = {
-    'mhr_rating': 0.30,         # MyHockeyRankings ELO - BEST PERFORMER (keep at 30%)
-    'top_player': 0.15,         # Best player on roster - strong predictor (keep at 15%)
-    'recent_form': 0.15,        # Last 5 games performance - strong per CV (keep at 15%)
-    'win_pct': 0.15,            # Overall win percentage - INCREASED (was 2%, now 15%) per ML analysis
-    'head_to_head': 0.08,       # Historical matchup - keep for rivalry games
-    'prodigy_points': 0.07,     # Team avg ProdigyPoints - slightly reduced (was 10%)
-    'home_advantage': 0.05,     # REDUCED from 12% → 5% (missed 9/10 away upsets)
-    'expert_rank': 0.03,        # USHR Expert rankings - reduced (was 5%)
-    'goal_diff': 0.02,          # Goals differential - reduced (was 3%)
+    'jspr_ranking': 0.25,       # NEPSIHA JSPR - Official league power rankings (NEW)
+    'mhr_rating': 0.20,         # MyHockeyRankings ELO - reduced from 30% to make room for JSPR
+    'performance_rank': 0.15,   # Our own performance-based ranking (NEW - replaces prodigy_points emphasis)
+    'recent_form': 0.12,        # Last 5 games performance
+    'win_pct': 0.10,            # Overall win percentage
+    'top_player': 0.08,         # Best player on roster (age-adjusted)
+    'head_to_head': 0.05,       # Historical matchup
+    'home_advantage': 0.03,     # Further reduced - away upsets common
+    'goal_diff': 0.02,          # Goals differential
 }
 
 # Home advantage factor - reduced from 0.58 to 0.55 to better predict away upsets
@@ -652,7 +671,113 @@ def load_mhr_rankings(filepath='nepsac_mhr_rankings_jan21.csv'):
     return mhr
 
 
-def predict_game(away_team, home_team, rankings, team_stats, games, expert_rankings=None, mhr_rankings=None):
+def load_jspr_rankings(filepath='nepsac_jspr_rankings.csv'):
+    """
+    Load NEPSIHA JSPR (Jeff Seaver Power Rankings)
+
+    Official prep school hockey power rankings from U.S. Hockey Report.
+    Updated weekly during the season.
+
+    JSPR uses:
+    - RPI (Rating Percentage Index) - accounts for opponent strength
+    - League points (wins/ties)
+    - Schedule strength
+
+    This is the OFFICIAL ranking system for NEPSIHA playoffs.
+    """
+    jspr = {}
+
+    try:
+        with open(filepath, 'r', encoding='utf-8') as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                team = normalize_team_name(row['team'])
+                jspr[team] = {
+                    'rank': int(row['rank']),
+                    'rpi_rank': int(row['rpi_rank']),
+                    'points': int(row['points']),
+                    'rpi': float(row['rpi']),
+                    'updated': row['updated']
+                }
+    except FileNotFoundError:
+        print("  Warning: JSPR rankings file not found")
+
+    return jspr
+
+
+def calculate_performance_rankings(games, as_of_date=None):
+    """
+    Calculate our own ELO-style performance rankings from game results.
+
+    This creates a pure performance-based ranking that:
+    - Rewards wins against strong opponents
+    - Penalizes losses to weak opponents
+    - Accounts for margin of victory (capped)
+    - Uses recent games more heavily
+
+    Returns dict with rank and rating for each team.
+    """
+    from collections import defaultdict
+
+    if as_of_date is None:
+        as_of_date = datetime.now()
+
+    # Initialize ratings (start at 1500 like chess ELO)
+    BASE_RATING = 1500
+    K_FACTOR = 32  # How much ratings change per game
+
+    ratings = defaultdict(lambda: BASE_RATING)
+    games_played = defaultdict(int)
+
+    # Sort games by date
+    sorted_games = sorted([g for g in games if g['date'] and g['date'] <= as_of_date],
+                          key=lambda g: g['date'])
+
+    # Process each game and update ratings
+    for game in sorted_games:
+        team = game['team']
+        opponent = game['opponent']
+
+        if not opponent:
+            continue
+
+        team_rating = ratings[team]
+        opp_rating = ratings[opponent]
+
+        # Expected score (ELO formula)
+        expected = 1 / (1 + 10 ** ((opp_rating - team_rating) / 400))
+
+        # Actual score (1 for win, 0.5 for tie, 0 for loss)
+        if game['outcome'] == 'Win':
+            actual = 1.0
+            # Bonus for margin of victory (capped at 3 goals)
+            margin = min(3, game['team_score'] - game['opp_score'])
+            actual += margin * 0.05
+        elif game['outcome'] == 'Loss':
+            actual = 0.0
+        else:
+            actual = 0.5
+
+        # Update rating
+        ratings[team] += K_FACTOR * (actual - expected)
+        games_played[team] += 1
+
+    # Convert to rankings
+    sorted_teams = sorted(ratings.items(), key=lambda x: x[1], reverse=True)
+
+    performance_rankings = {}
+    for i, (team, rating) in enumerate(sorted_teams, 1):
+        if games_played[team] >= 3:  # Minimum 3 games to be ranked
+            performance_rankings[team] = {
+                'rank': i,
+                'rating': round(rating, 1),
+                'games_played': games_played[team]
+            }
+
+    return performance_rankings
+
+
+def predict_game(away_team, home_team, rankings, team_stats, games, expert_rankings=None, mhr_rankings=None, jspr_rankings=None, performance_rankings=None):
     """
     Predict game outcome using multi-factor model
 
@@ -665,6 +790,10 @@ def predict_game(away_team, home_team, rankings, team_stats, games, expert_ranki
         expert_rankings = {}
     if mhr_rankings is None:
         mhr_rankings = {}
+    if jspr_rankings is None:
+        jspr_rankings = {}
+    if performance_rankings is None:
+        performance_rankings = {}
 
     # Normalize team names
     away_team = normalize_team_name(away_team)
@@ -682,8 +811,62 @@ def predict_game(away_team, home_team, rankings, team_stats, games, expert_ranki
     home_stats = team_stats.get(home_team, {})
     away_mhr = mhr_rankings.get(away_team, {})
     home_mhr = mhr_rankings.get(home_team, {})
+    away_jspr = jspr_rankings.get(away_team, {})
+    home_jspr = jspr_rankings.get(home_team, {})
+    away_perf = performance_rankings.get(away_team, {})
+    home_perf = performance_rankings.get(home_team, {})
 
-    # 1. MHR Rating (25%) - ELO-style rating adjusted for schedule strength
+    # ==========================================================================
+    # 1. JSPR Rankings (25%) - OFFICIAL NEPSIHA power rankings
+    # This is the most important factor - official league rankings with RPI
+    # ==========================================================================
+    away_jspr_rank = away_jspr.get('rank', 40)  # Default to #40 if not ranked
+    home_jspr_rank = home_jspr.get('rank', 40)
+    away_rpi = away_jspr.get('rpi', 0.50)
+    home_rpi = home_jspr.get('rpi', 0.50)
+
+    # Normalize RPI to 0-1 scale (range: 0.50 to 0.65)
+    rpi_min, rpi_max = 0.50, 0.65
+    away_rpi_norm = (away_rpi - rpi_min) / (rpi_max - rpi_min)
+    home_rpi_norm = (home_rpi - rpi_min) / (rpi_max - rpi_min)
+
+    away_score += PREDICTION_WEIGHTS['jspr_ranking'] * max(0, min(1, away_rpi_norm))
+    home_score += PREDICTION_WEIGHTS['jspr_ranking'] * max(0, min(1, home_rpi_norm))
+
+    factors['jspr_ranking'] = {
+        'away': f"#{away_jspr_rank}" if away_jspr_rank <= 16 else 'NR',
+        'away_rpi': round(away_rpi, 4),
+        'home': f"#{home_jspr_rank}" if home_jspr_rank <= 16 else 'NR',
+        'home_rpi': round(home_rpi, 4),
+        'favors': 'home' if home_rpi > away_rpi else 'away'
+    }
+
+    # ==========================================================================
+    # 2. Performance Rankings (15%) - Our own ELO-style ranking from game results
+    # ==========================================================================
+    away_perf_rank = away_perf.get('rank', 50)
+    home_perf_rank = home_perf.get('rank', 50)
+    away_perf_rating = away_perf.get('rating', 1500)
+    home_perf_rating = home_perf.get('rating', 1500)
+
+    # Normalize rating to 0-1 scale (range: 1400 to 1650)
+    perf_min, perf_max = 1400, 1650
+    away_perf_norm = (away_perf_rating - perf_min) / (perf_max - perf_min)
+    home_perf_norm = (home_perf_rating - perf_min) / (perf_max - perf_min)
+
+    away_score += PREDICTION_WEIGHTS['performance_rank'] * max(0, min(1, away_perf_norm))
+    home_score += PREDICTION_WEIGHTS['performance_rank'] * max(0, min(1, home_perf_norm))
+
+    factors['performance_rank'] = {
+        'away': f"#{away_perf_rank}",
+        'away_rating': round(away_perf_rating, 1),
+        'home': f"#{home_perf_rank}",
+        'home_rating': round(home_perf_rating, 1),
+        'favors': 'home' if home_perf_rating > away_perf_rating else 'away'
+    }
+
+    # ==========================================================================
+    # 3. MHR Rating (20%) - ELO-style rating adjusted for schedule strength
     # Rating range: ~89 (bottom) to ~100 (top)
     away_mhr_rating = away_mhr.get('rating', 94.0)  # Default to middle-tier
     home_mhr_rating = home_mhr.get('rating', 94.0)
@@ -706,71 +889,9 @@ def predict_game(away_team, home_team, rankings, team_stats, games, expert_ranki
         'favors': 'home' if home_mhr_rating > away_mhr_rating else 'away'
     }
 
-    # 2. ProdigyPoints with Age Adjustment (15%)
-    # Uses age-adjusted points (younger players get boost)
-    away_pp = away_ranking.get('avg_points', 2000)
-    home_pp = home_ranking.get('avg_points', 2000)
-    away_pp_raw = away_ranking.get('avg_points_raw', away_pp)
-    home_pp_raw = home_ranking.get('avg_points_raw', home_pp)
-
-    # Normalize to 0-1 scale (range roughly 750-3500 for age-adjusted)
-    pp_min, pp_max = 750, 3500
-    away_pp_norm = (away_pp - pp_min) / (pp_max - pp_min)
-    home_pp_norm = (home_pp - pp_min) / (pp_max - pp_min)
-
-    away_score += PREDICTION_WEIGHTS['prodigy_points'] * away_pp_norm
-    home_score += PREDICTION_WEIGHTS['prodigy_points'] * home_pp_norm
-
-    # Get average age multiplier for display
-    away_mult = away_ranking.get('avg_age_multiplier', 1.0)
-    home_mult = home_ranking.get('avg_age_multiplier', 1.0)
-
-    factors['prodigy_points'] = {
-        'away': round(away_pp, 0),
-        'away_raw': round(away_pp_raw, 0),
-        'away_age_mult': round(away_mult, 2),
-        'home': round(home_pp, 0),
-        'home_raw': round(home_pp_raw, 0),
-        'home_age_mult': round(home_mult, 2),
-        'favors': 'home' if home_pp > away_pp else 'away'
-    }
-
-    # 2. Expert Rankings (15%) - captures coaching, goaltending, chemistry
-    away_expert = expert_rankings.get(away_team, {})
-    home_expert = expert_rankings.get(home_team, {})
-
-    # Lower rank = better. Normalize: rank 1 -> 1.0, rank 10 -> 0.1, unranked -> 0.3
-    away_expert_rank = away_expert.get('rank', 30)  # Default to #30 if not in top 10
-    home_expert_rank = home_expert.get('rank', 30)
-
-    # Convert rank to score (1=best=1.0, 10=0.55, 30=0.3, 60=0.15)
-    away_expert_score = max(0.1, 1.0 - (away_expert_rank - 1) * 0.03)
-    home_expert_score = max(0.1, 1.0 - (home_expert_rank - 1) * 0.03)
-
-    away_score += PREDICTION_WEIGHTS['expert_rank'] * away_expert_score
-    home_score += PREDICTION_WEIGHTS['expert_rank'] * home_expert_score
-
-    # Bonus for elite goalie and hot streak
-    if away_expert.get('elite_goalie'):
-        away_score += 0.02
-    if home_expert.get('elite_goalie'):
-        home_score += 0.02
-    if away_expert.get('hot_streak'):
-        away_score += 0.01
-    if home_expert.get('hot_streak'):
-        home_score += 0.01
-
-    factors['expert_rank'] = {
-        'away': f"#{away_expert_rank}" if away_expert_rank <= 10 else 'NR',
-        'home': f"#{home_expert_rank}" if home_expert_rank <= 10 else 'NR',
-        'away_gpg': away_expert.get('gpg', '-'),
-        'home_gpg': home_expert.get('gpg', '-'),
-        'away_gaa': away_expert.get('gaa', '-'),
-        'home_gaa': home_expert.get('gaa', '-'),
-        'favors': 'home' if home_expert_rank < away_expert_rank else 'away'
-    }
-
-    # 3. Recent Form (20%)
+    # ==========================================================================
+    # 4. Recent Form (12%)
+    # ==========================================================================
     away_form = away_stats.get('form_score', 0.5)
     home_form = home_stats.get('form_score', 0.5)
 
@@ -962,6 +1083,26 @@ def generate_all_predictions():
     else:
         print("  No USHR expert rankings available")
 
+    # Load JSPR rankings (official NEPSIHA power rankings - highest weight)
+    print("\nLoading JSPR rankings...")
+    jspr_rankings = load_jspr_rankings()
+    if jspr_rankings:
+        print(f"  Loaded JSPR rankings for {len(jspr_rankings)} teams")
+        top_jspr = sorted(jspr_rankings.items(), key=lambda x: x[1]['rank'])[:5]
+        print(f"  JSPR Top 5: {', '.join([t.title() for t,_ in top_jspr])}")
+    else:
+        print("  No JSPR rankings available")
+
+    # Calculate performance rankings from game results (our own ELO-style ranking)
+    print("\nCalculating performance rankings...")
+    performance_rankings = calculate_performance_rankings(games)
+    if performance_rankings:
+        print(f"  Calculated performance rankings for {len(performance_rankings)} teams")
+        top_perf = sorted(performance_rankings.items(), key=lambda x: x[1]['rank'])[:5]
+        print(f"  Performance Top 5: {', '.join([t.title() for t,_ in top_perf])}")
+    else:
+        print("  No performance rankings available")
+
     print("\nGenerating predictions...")
     predictions = {}
 
@@ -972,7 +1113,7 @@ def generate_all_predictions():
             away_team = game['awayTeam']
             home_team = game['homeTeam']
 
-            prediction = predict_game(away_team, home_team, rankings, team_stats, games, expert_rankings, mhr_rankings)
+            prediction = predict_game(away_team, home_team, rankings, team_stats, games, expert_rankings, mhr_rankings, jspr_rankings, performance_rankings)
 
             predictions[date].append({
                 'gameId': game['gameId'],
@@ -1026,9 +1167,11 @@ def print_sample_predictions(predictions, num_samples=10):
 
             # Show key factors
             factors = pred['factors']
-            print(f"  ProdigyPts: Away {factors['prodigy_points']['away']} vs Home {factors['prodigy_points']['home']}")
+            jspr = factors.get('jspr_ranking', {'away': 'NR', 'home': 'NR', 'away_rpi': 0.5, 'home_rpi': 0.5})
+            perf = factors.get('performance_rank', {'away': 'N/A', 'home': 'N/A'})
+            print(f"  JSPR: Away {jspr['away']} (RPI {jspr.get('away_rpi', 0.5):.4f}) vs Home {jspr['home']} (RPI {jspr.get('home_rpi', 0.5):.4f})")
+            print(f"  Perf: Away {perf['away']} vs Home {perf['home']}")
             print(f"  Form (L5): Away {factors['recent_form']['away']} vs Home {factors['recent_form']['home']}")
-            print(f"  Goal Diff: Away {factors['goal_diff']['away']:+.2f} vs Home {factors['goal_diff']['home']:+.2f}")
 
             count += 1
 
