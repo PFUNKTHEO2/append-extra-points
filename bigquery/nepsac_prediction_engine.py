@@ -584,21 +584,23 @@ def calculate_head_to_head(games, team1, team2):
 # =============================================================================
 
 # Weight factors (must sum to 1.0)
-# UPDATED 2026-01-26: Added JSPR (official NEPSIHA power rankings) as primary factor
+# UPDATED 2026-01-26: Added NEHJ expert rankings alongside JSPR
 # Key changes:
-#   - JSPR added at 25% - official league rankings with RPI (updated weekly)
-#   - Performance ranking added at 15% - our own ELO-style ranking from game results
-#   - Reduced reliance on roster-based ProdigyPoints (now 5%)
-#   - MHR still strong but reduced to make room for JSPR
+#   - JSPR at 20% - official league rankings with RPI (updated weekly)
+#   - NEHJ Expert at 10% - Evan Marinofsky's expert rankings (captures intangibles)
+#   - Performance ranking at 15% - our own ELO-style ranking from game results
+#   - MHR at 18% - mathematical ELO with schedule strength
+#   - Reduced reliance on roster-based factors
 PREDICTION_WEIGHTS = {
-    'jspr_ranking': 0.25,       # NEPSIHA JSPR - Official league power rankings (NEW)
-    'mhr_rating': 0.20,         # MyHockeyRankings ELO - reduced from 30% to make room for JSPR
-    'performance_rank': 0.15,   # Our own performance-based ranking (NEW - replaces prodigy_points emphasis)
+    'jspr_ranking': 0.20,       # NEPSIHA JSPR - Official league power rankings
+    'nehj_expert': 0.10,        # NEHJ Expert Rankings - Marinofsky's eye test (NEW)
+    'mhr_rating': 0.18,         # MyHockeyRankings ELO with schedule strength
+    'performance_rank': 0.15,   # Our own ELO from game results
     'recent_form': 0.12,        # Last 5 games performance
-    'win_pct': 0.10,            # Overall win percentage
-    'top_player': 0.08,         # Best player on roster (age-adjusted)
+    'win_pct': 0.08,            # Overall win percentage
+    'top_player': 0.07,         # Best player on roster (age-adjusted)
     'head_to_head': 0.05,       # Historical matchup
-    'home_advantage': 0.03,     # Further reduced - away upsets common
+    'home_advantage': 0.03,     # Home ice advantage
     'goal_diff': 0.02,          # Goals differential
 }
 
@@ -705,6 +707,47 @@ def load_jspr_rankings(filepath='nepsac_jspr_rankings.csv'):
     return jspr
 
 
+def load_nehj_expert_rankings(filepath='nepsac_nehj_expert_rankings.csv'):
+    """
+    Load NEHJ (New England Hockey Journal) expert rankings by Evan Marinofsky.
+
+    Expert rankings capture intangibles that pure stats miss:
+    - Coaching quality and systems
+    - Team chemistry and momentum
+    - Goaltending depth
+    - Schedule difficulty ahead
+    - Eye test from watching games
+
+    Updated weekly during the season.
+    """
+    nehj = {}
+
+    try:
+        with open(filepath, 'r', encoding='utf-8') as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                team = normalize_team_name(row['team'])
+
+                # Parse wins/losses/ties if available
+                wins = int(row['wins']) if row.get('wins') and row['wins'].strip() else 0
+                losses = int(row['losses']) if row.get('losses') and row['losses'].strip() else 0
+                ties = int(row['ties']) if row.get('ties') and row['ties'].strip() else 0
+
+                nehj[team] = {
+                    'rank': int(row['rank']),
+                    'record': row.get('record', ''),
+                    'wins': wins,
+                    'losses': losses,
+                    'ties': ties,
+                    'notes': row.get('notes', ''),
+                    'updated': row.get('updated', '')
+                }
+    except FileNotFoundError:
+        print("  Warning: NEHJ expert rankings file not found")
+
+    return nehj
+
+
 def calculate_performance_rankings(games, as_of_date=None):
     """
     Calculate our own ELO-style performance rankings from game results.
@@ -777,7 +820,7 @@ def calculate_performance_rankings(games, as_of_date=None):
     return performance_rankings
 
 
-def predict_game(away_team, home_team, rankings, team_stats, games, expert_rankings=None, mhr_rankings=None, jspr_rankings=None, performance_rankings=None):
+def predict_game(away_team, home_team, rankings, team_stats, games, expert_rankings=None, mhr_rankings=None, jspr_rankings=None, performance_rankings=None, nehj_rankings=None):
     """
     Predict game outcome using multi-factor model
 
@@ -794,6 +837,8 @@ def predict_game(away_team, home_team, rankings, team_stats, games, expert_ranki
         jspr_rankings = {}
     if performance_rankings is None:
         performance_rankings = {}
+    if nehj_rankings is None:
+        nehj_rankings = {}
 
     # Normalize team names
     away_team = normalize_team_name(away_team)
@@ -815,6 +860,8 @@ def predict_game(away_team, home_team, rankings, team_stats, games, expert_ranki
     home_jspr = jspr_rankings.get(home_team, {})
     away_perf = performance_rankings.get(away_team, {})
     home_perf = performance_rankings.get(home_team, {})
+    away_nehj = nehj_rankings.get(away_team, {})
+    home_nehj = nehj_rankings.get(home_team, {})
 
     # ==========================================================================
     # 1. JSPR Rankings (25%) - OFFICIAL NEPSIHA power rankings
@@ -890,7 +937,31 @@ def predict_game(away_team, home_team, rankings, team_stats, games, expert_ranki
     }
 
     # ==========================================================================
-    # 4. Recent Form (12%)
+    # 4. NEHJ Expert Rankings (10%) - Marinofsky's expert eye test
+    # Captures intangibles: coaching, chemistry, goaltending, momentum
+    # ==========================================================================
+    away_nehj_rank = away_nehj.get('rank', 25)  # Default to #25 if not ranked
+    home_nehj_rank = home_nehj.get('rank', 25)
+
+    # Convert rank to score (lower rank = higher score)
+    # Rank 1 = 1.0, Rank 14 = 0.0 (bottom of ranked teams)
+    nehj_min, nehj_max = 1, 14
+    away_nehj_norm = max(0, (nehj_max - away_nehj_rank) / (nehj_max - nehj_min))
+    home_nehj_norm = max(0, (nehj_max - home_nehj_rank) / (nehj_max - nehj_min))
+
+    away_score += PREDICTION_WEIGHTS['nehj_expert'] * away_nehj_norm
+    home_score += PREDICTION_WEIGHTS['nehj_expert'] * home_nehj_norm
+
+    factors['nehj_expert'] = {
+        'away': f"#{away_nehj_rank}" if away_nehj_rank <= 14 else 'NR',
+        'home': f"#{home_nehj_rank}" if home_nehj_rank <= 14 else 'NR',
+        'away_notes': away_nehj.get('notes', '')[:50] if away_nehj.get('notes') else '',
+        'home_notes': home_nehj.get('notes', '')[:50] if home_nehj.get('notes') else '',
+        'favors': 'home' if home_nehj_rank < away_nehj_rank else 'away'
+    }
+
+    # ==========================================================================
+    # 5. Recent Form (12%)
     # ==========================================================================
     away_form = away_stats.get('form_score', 0.5)
     home_form = home_stats.get('form_score', 0.5)
@@ -1103,6 +1174,16 @@ def generate_all_predictions():
     else:
         print("  No performance rankings available")
 
+    # Load NEHJ expert rankings (Evan Marinofsky's eye test)
+    print("\nLoading NEHJ expert rankings...")
+    nehj_rankings = load_nehj_expert_rankings()
+    if nehj_rankings:
+        print(f"  Loaded NEHJ expert rankings for {len(nehj_rankings)} teams")
+        top_nehj = sorted(nehj_rankings.items(), key=lambda x: x[1]['rank'])[:5]
+        print(f"  NEHJ Top 5: {', '.join([t.title() for t,_ in top_nehj])}")
+    else:
+        print("  No NEHJ expert rankings available")
+
     print("\nGenerating predictions...")
     predictions = {}
 
@@ -1113,7 +1194,7 @@ def generate_all_predictions():
             away_team = game['awayTeam']
             home_team = game['homeTeam']
 
-            prediction = predict_game(away_team, home_team, rankings, team_stats, games, expert_rankings, mhr_rankings, jspr_rankings, performance_rankings)
+            prediction = predict_game(away_team, home_team, rankings, team_stats, games, expert_rankings, mhr_rankings, jspr_rankings, performance_rankings, nehj_rankings)
 
             predictions[date].append({
                 'gameId': game['gameId'],
@@ -1168,8 +1249,9 @@ def print_sample_predictions(predictions, num_samples=10):
             # Show key factors
             factors = pred['factors']
             jspr = factors.get('jspr_ranking', {'away': 'NR', 'home': 'NR', 'away_rpi': 0.5, 'home_rpi': 0.5})
+            nehj = factors.get('nehj_expert', {'away': 'NR', 'home': 'NR'})
             perf = factors.get('performance_rank', {'away': 'N/A', 'home': 'N/A'})
-            print(f"  JSPR: Away {jspr['away']} (RPI {jspr.get('away_rpi', 0.5):.4f}) vs Home {jspr['home']} (RPI {jspr.get('home_rpi', 0.5):.4f})")
+            print(f"  JSPR: Away {jspr['away']} vs Home {jspr['home']} | NEHJ: Away {nehj['away']} vs Home {nehj['home']}")
             print(f"  Perf: Away {perf['away']} vs Home {perf['home']}")
             print(f"  Form (L5): Away {factors['recent_form']['away']} vs Home {factors['recent_form']['home']}")
 
