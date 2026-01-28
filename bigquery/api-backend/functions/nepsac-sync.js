@@ -55,6 +55,8 @@ async function syncTeams(supabase) {
       classification,
       enrollment,
       logo_url,
+      card_home_url,
+      card_away_url,
       primary_color,
       secondary_color,
       venue,
@@ -75,6 +77,8 @@ async function syncTeams(supabase) {
     short_name: row.short_name,
     division: row.classification,  // Supabase uses 'division' for classification
     logo_url: row.logo_url,
+    card_home_url: row.card_home_url,
+    card_away_url: row.card_away_url,
     primary_color: row.primary_color,
     secondary_color: row.secondary_color,
     venue: row.venue,
