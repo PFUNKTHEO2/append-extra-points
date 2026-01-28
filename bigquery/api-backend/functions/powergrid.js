@@ -205,24 +205,41 @@ function calculateElite8BidProb(powerRank, totalTeams) {
 
 /**
  * Calculate probability of winning Elite 8 Championship
- * Uses softmax over OVR ratings of likely Elite 8 participants
+ * Based directly on power rank - higher ranked teams have higher win probability
+ *
+ * Logic: Win% = P(make) × P(win | make), where P(win | make) is rank-based
  */
-function calculateElite8ChampProb(team, allTeams) {
-  // Only teams likely to make Elite 8 can win it
-  const elite8Contenders = allTeams.filter(t => t.powerRank <= 12);
-
+function calculateElite8ChampProb(team, allTeams, elite8BidProb) {
   if (team.powerRank > 12) {
     return 0.1; // Very small chance if not a contender
   }
 
-  // Softmax based on OVR
-  const ovrs = elite8Contenders.map(t => t.ovr);
-  const expOvrs = ovrs.map(o => Math.exp(o / 10));
-  const totalExp = expOvrs.reduce((a, b) => a + b, 0);
-  const myExp = Math.exp(team.ovr / 10);
+  // Conditional win probability based on rank (if they make the tournament)
+  // Top teams are favored; probability decreases with rank
+  let conditionalWinProb;
 
-  const prob = (myExp / totalExp) * 100;
-  return Math.round(Math.min(35, Math.max(0.1, prob)) * 10) / 10;
+  if (team.powerRank === 1) {
+    conditionalWinProb = 25; // #1 seed has ~25% chance to win if they make it
+  } else if (team.powerRank === 2) {
+    conditionalWinProb = 20;
+  } else if (team.powerRank === 3) {
+    conditionalWinProb = 16;
+  } else if (team.powerRank === 4) {
+    conditionalWinProb = 13;
+  } else if (team.powerRank <= 6) {
+    conditionalWinProb = 10 - (team.powerRank - 5) * 2; // 10%, 8%
+  } else if (team.powerRank <= 8) {
+    conditionalWinProb = 6 - (team.powerRank - 7) * 1.5; // 6%, 4.5%
+  } else if (team.powerRank <= 10) {
+    conditionalWinProb = 3 - (team.powerRank - 9) * 0.5; // 3%, 2.5%
+  } else {
+    conditionalWinProb = 2 - (team.powerRank - 11) * 0.5; // 2%, 1.5%
+  }
+
+  // Final probability = P(make) × P(win | make)
+  const prob = (elite8BidProb / 100) * conditionalWinProb;
+
+  return Math.round(Math.max(0.1, prob) * 10) / 10;
 }
 
 /**
@@ -287,13 +304,10 @@ function calculateDivisionBidProb(team, sameClassTeams, allTeams, elite8BidProb)
 
 /**
  * Calculate probability of winning Division Championship
+ * Based directly on class rank - higher ranked teams in their class have higher win probability
  *
- * IMPORTANT: This is conditional on:
- * 1. Missing Elite 8
- * 2. Making the division tournament
- * 3. Winning the division tournament
- *
- * Formula: P(division champ) = P(miss Elite 8) × P(make division | missed) × P(win | in division)
+ * Formula: P(division champ) = P(make division) × P(win | in division)
+ * where P(win | in division) is based on class rank among division contenders
  */
 function calculateDivisionChampProb(team, sameClassTeams, elite8BidProb, divisionBidProb) {
   // If very low chance of being in division tournament, very low chance of winning it
@@ -312,25 +326,36 @@ function calculateDivisionChampProb(team, sameClassTeams, elite8BidProb, divisio
   const isContender = divisionContenders.some(t => t.teamId === team.teamId);
 
   if (!isContender) {
-    // Team is in Elite 8 range - if they somehow end up in division, factor that in
-    // Their championship prob is already reduced by low divisionBidProb
-    const conditionalWinProb = 25; // If they somehow fall to division, they'd be favored
+    // Team is in Elite 8 range - if they somehow end up in division, they'd be favored
+    const conditionalWinProb = 30;
     return Math.round((divisionBidProb / 100) * conditionalWinProb * 10) / 10;
   }
 
-  // Softmax based on OVR among division contenders
-  const ovrs = divisionContenders.map(t => t.ovr);
-  const expOvrs = ovrs.map(o => Math.exp(o / 10));
-  const totalExp = expOvrs.reduce((a, b) => a + b, 0);
-  const myExp = Math.exp(team.ovr / 10);
+  // Find this team's rank among division contenders (1-based)
+  const rankAmongContenders = divisionContenders.findIndex(t => t.teamId === team.teamId) + 1;
 
-  // Conditional probability of winning given they're in the tournament
-  const conditionalWinProb = (myExp / totalExp) * 100;
+  // Conditional win probability based on rank among contenders
+  let conditionalWinProb;
+  if (rankAmongContenders === 1) {
+    conditionalWinProb = 30; // Top division contender
+  } else if (rankAmongContenders === 2) {
+    conditionalWinProb = 22;
+  } else if (rankAmongContenders === 3) {
+    conditionalWinProb = 16;
+  } else if (rankAmongContenders === 4) {
+    conditionalWinProb = 12;
+  } else if (rankAmongContenders <= 6) {
+    conditionalWinProb = 8 - (rankAmongContenders - 5) * 2;
+  } else if (rankAmongContenders <= 8) {
+    conditionalWinProb = 4 - (rankAmongContenders - 7) * 1;
+  } else {
+    conditionalWinProb = Math.max(1, 3 - (rankAmongContenders - 8) * 0.5);
+  }
 
-  // Scale by probability of being in the tournament
+  // Final probability = P(make division) × P(win | in division)
   const finalProb = (divisionBidProb / 100) * conditionalWinProb;
 
-  return Math.round(Math.min(25, Math.max(0.1, finalProb)) * 10) / 10;
+  return Math.round(Math.max(0.1, finalProb) * 10) / 10;
 }
 
 /**
@@ -458,7 +483,7 @@ functions.http('getNepsacPowerGrid', withCors(async (req, res) => {
     teams.forEach(team => {
       // Elite 8 probabilities (available to all teams)
       team.elite8Bid = calculateElite8BidProb(team.powerRank, teams.length);
-      team.elite8Champ = calculateElite8ChampProb(team, teams);
+      team.elite8Champ = calculateElite8ChampProb(team, teams, team.elite8Bid);
 
       // Division probabilities (depends on classification)
       // These are CONDITIONAL on missing Elite 8
