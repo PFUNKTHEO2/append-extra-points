@@ -397,39 +397,163 @@ https://getnepsacpowergrid-u4ztvt4wva-uc.a.run.app?season=2025-26
 
 ---
 
-### 14. Get NEPSAC Schedule
+### 14. Get NEPSAC Schedule (with American Odds)
 **Endpoint:** `https://getnepsacschedule-u4ztvt4wva-uc.a.run.app`
 **Method:** GET
-**Query Params:** `?date=2026-01-28` or `?week=current`
+**Query Params:** `?date=2026-01-28`
 
 **Example:**
 ```
 https://getnepsacschedule-u4ztvt4wva-uc.a.run.app?date=2026-01-28
 ```
 
-**Response includes predictions with status:**
+**Response includes predictions with American odds:**
 ```json
 {
+  "date": "2026-01-28",
+  "season": "2025-26",
+  "gameCount": 26,
   "games": [
     {
-      "gameId": "game-123",
+      "gameId": "9d5ed3da-f76f-4089-bf30-8975a5460e8d",
       "gameDate": "2026-01-28",
-      "awayTeam": {...},
-      "homeTeam": {...},
+      "gameTime": "2:00 PM",
+      "awayTeam": {
+        "teamId": "kent",
+        "name": "Kent School",
+        "shortName": "Kent",
+        "rank": 16,
+        "ovr": 95,
+        "record": {"wins": 8, "losses": 5, "ties": 0}
+      },
+      "homeTeam": {
+        "teamId": "taft",
+        "name": "Taft School",
+        "shortName": "Taft",
+        "rank": 50,
+        "ovr": 94,
+        "record": {"wins": 2, "losses": 8, "ties": 0}
+      },
       "prediction": {
-        "winnerId": "salisbury",
-        "confidence": 65,
+        "winnerId": "kent",
+        "confidence": 53,
+        "confidenceOdds": "-113",
         "status": "available"
       }
-    },
+    }
+  ],
+  "_metadata": {
+    "oddsFormat": "American odds included for predictions. Negative = favorite, Positive = underdog."
+  }
+}
+```
+
+**Prediction Odds Examples:**
+
+| Confidence | Odds | Interpretation |
+|------------|------|----------------|
+| 50% | +100 | Even money (toss-up) |
+| 53% | -113 | Slight favorite |
+| 56% | -127 | Moderate favorite |
+| 65% | -186 | Strong favorite |
+| 75% | -300 | Heavy favorite |
+
+**Missing Data Handling:**
+```json
+{
+  "prediction": {
+    "winnerId": null,
+    "confidence": null,
+    "confidenceOdds": null,
+    "status": "Missing Data",
+    "reason": "Both teams lack ranking data"
+  }
+}
+```
+
+---
+
+### 15. Get NEPSAC Matchup (with American Odds)
+**Endpoint:** `https://getnepsacmatchup-u4ztvt4wva-uc.a.run.app`
+**Method:** GET
+**Query Params:** `?gameId=<game_id>`
+
+**Example:**
+```
+https://getnepsacmatchup-u4ztvt4wva-uc.a.run.app?gameId=9d5ed3da-f76f-4089-bf30-8975a5460e8d
+```
+
+**Response includes full matchup data with prediction odds:**
+```json
+{
+  "game": {
+    "gameId": "9d5ed3da-f76f-4089-bf30-8975a5460e8d",
+    "date": "2026-01-28",
+    "time": "2:00 PM",
+    "venue": "Watertown CT",
+    "prediction": {
+      "winnerId": "kent",
+      "confidence": 53,
+      "confidenceOdds": "-113",
+      "status": "available"
+    }
+  },
+  "awayTeam": {
+    "teamId": "kent",
+    "name": "Kent School",
+    "rank": 16,
+    "ovr": 95,
+    "topPlayers": [...]
+  },
+  "homeTeam": {
+    "teamId": "taft",
+    "name": "Taft School",
+    "rank": 50,
+    "ovr": 94,
+    "topPlayers": [...]
+  }
+}
+```
+
+---
+
+### 16. Get NEPSAC Past Results (with American Odds)
+**Endpoint:** `https://getnepsacpastresults-u4ztvt4wva-uc.a.run.app`
+**Method:** GET
+**Query Params:** `?season=2025-26&limit=100`
+
+**Example:**
+```
+https://getnepsacpastresults-u4ztvt4wva-uc.a.run.app?season=2025-26
+```
+
+**Response includes prediction accuracy with odds:**
+```json
+{
+  "season": "2025-26",
+  "summary": {
+    "totalGames": 150,
+    "correct": 98,
+    "incorrect": 45,
+    "ties": 7,
+    "accuracy": 68.5,
+    "record": "98-45-7"
+  },
+  "dates": [
     {
-      "gameId": "game-456",
-      "prediction": {
-        "winnerId": null,
-        "confidence": null,
-        "status": "Missing Data",
-        "reason": "Both teams lack ranking data"
-      }
+      "date": "2026-01-27",
+      "games": [
+        {
+          "awayTeam": {"shortName": "Salisbury", "score": 4, "isWinner": true},
+          "homeTeam": {"shortName": "Avon", "score": 2, "isWinner": false},
+          "prediction": {
+            "winnerId": "salisbury",
+            "confidence": 62,
+            "confidenceOdds": "-163"
+          },
+          "result": "correct"
+        }
+      ]
     }
   ]
 }
@@ -437,14 +561,28 @@ https://getnepsacschedule-u4ztvt4wva-uc.a.run.app?date=2026-01-28
 
 ---
 
-### 15. Get NEPSAC Team
-**Endpoint:** `https://getnepsacteam-u4ztvt4wva-uc.a.run.app`
+### 17. Get NEPSAC Teams
+**Endpoint:** `https://getnepsacteams-u4ztvt4wva-uc.a.run.app`
 **Method:** GET
-**Query Params:** `?team_id=salisbury`
+**Query Params:** `?season=2025-26&division=Large`
 
 ---
 
-### 16. Sync NEPSAC Data
+### 18. Get NEPSAC Roster
+**Endpoint:** `https://getnepsacroster-u4ztvt4wva-uc.a.run.app`
+**Method:** GET
+**Query Params:** `?teamId=salisbury&season=2025-26`
+
+---
+
+### 19. Get NEPSAC Power Rankings
+**Endpoint:** `https://getnepsacpowerrankings-u4ztvt4wva-uc.a.run.app`
+**Method:** GET
+**Query Params:** `?season=2025-26&limit=20`
+
+---
+
+### 20. Sync NEPSAC Data
 **Endpoint:** `https://syncnepsacdata-u4ztvt4wva-uc.a.run.app`
 **Method:** GET
 **Description:** Syncs all NEPSAC data from BigQuery to Supabase
@@ -475,10 +613,15 @@ export const API_CONFIG = {
   getTrendingCards: 'https://gettrendingcards-u4ztvt4wva-uc.a.run.app',
   searchMarketplace: 'https://searchmarketplace-u4ztvt4wva-uc.a.run.app',
 
-  // NEPSAC GameDay & PowerGrid API
+  // NEPSAC GameDay & PowerGrid API (with American Odds)
   getNepsacPowerGrid: 'https://getnepsacpowergrid-u4ztvt4wva-uc.a.run.app',
   getNepsacSchedule: 'https://getnepsacschedule-u4ztvt4wva-uc.a.run.app',
-  getNepsacTeam: 'https://getnepsacteam-u4ztvt4wva-uc.a.run.app',
+  getNepsacMatchup: 'https://getnepsacmatchup-u4ztvt4wva-uc.a.run.app',
+  getNepsacPastResults: 'https://getnepsacpastresults-u4ztvt4wva-uc.a.run.app',
+  getNepsacTeams: 'https://getnepsacteams-u4ztvt4wva-uc.a.run.app',
+  getNepsacRoster: 'https://getnepsacroster-u4ztvt4wva-uc.a.run.app',
+  getNepsacPowerRankings: 'https://getnepsacpowerrankings-u4ztvt4wva-uc.a.run.app',
+  getNepsacStandings: 'https://getnepsacstandings-u4ztvt4wva-uc.a.run.app',
   syncNepsacData: 'https://syncnepsacdata-u4ztvt4wva-uc.a.run.app',
 };
 ```
