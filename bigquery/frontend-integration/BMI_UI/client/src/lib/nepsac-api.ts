@@ -179,6 +179,54 @@ export interface NepsacTeamsResponse {
   teams: NepsacTeamWithStats[];
 }
 
+// PowerGrid Types (Tournament Probabilities)
+export interface PowerGridTeam {
+  powerRank: number;
+  classRank: number;
+  teamId: string;
+  name: string;
+  shortName: string;
+  logoUrl: string | null;
+  classification: 'Large' | 'Small';
+  divisionName: string;
+  enrollment: number;
+  ovr: number;
+  record: {
+    wins: number;
+    losses: number;
+    ties: number;
+    gamesPlayed: number;
+    winPct: number;
+  };
+  // MUTUALLY EXCLUSIVE probabilities
+  // High elite8Bid = Low division bid (teams can only be in ONE tournament)
+  elite8Bid: number;        // % chance for Elite 8
+  elite8Champ: number;      // % chance to WIN Elite 8
+  largeSchoolBid: number;   // % chance for Large tournament (if MISS Elite 8)
+  largeSchoolChamp: number;
+  smallSchoolBid: number;   // % chance for Small tournament (if MISS Elite 8)
+  smallSchoolChamp: number;
+}
+
+export interface PowerGridResponse {
+  season: string;
+  generated: string;
+  teams: PowerGridTeam[];
+  currentElite8: PowerGridTeam[];
+  largeSchoolContenders: PowerGridTeam[];
+  smallSchoolContenders: PowerGridTeam[];
+  bubbleTeams: PowerGridTeam[];
+  summary: {
+    totalTeams: number;
+    largeSchools: number;
+    smallSchools: number;
+    currentElite8Composition: {
+      large: number;
+      small: number;
+    };
+  };
+}
+
 // Power Rankings Types
 export interface NepsacPowerRanking {
   rank: number;
@@ -353,6 +401,90 @@ export async function fetchNepsacPowerRankings(
   } catch (error) {
     console.error('Error fetching NEPSAC power rankings:', error);
     return null;
+  }
+}
+
+/**
+ * Fetch PowerGrid - Tournament Probabilities
+ *
+ * Returns teams with MUTUALLY EXCLUSIVE tournament probabilities:
+ * - Elite 8: Top 8 teams overall make this tournament
+ * - Large School: Large schools who MISSED Elite 8
+ * - Small School: Small schools who MISSED Elite 8
+ *
+ * A team can only be in ONE tournament!
+ * Example: Dexter #1 has 99% Elite 8, 1% Large School (not both high)
+ *
+ * Data source: BigQuery algorithm_core.nepsac_team_rankings
+ */
+export async function fetchPowerGrid(
+  season: string = '2025-26'
+): Promise<PowerGridResponse | null> {
+  try {
+    const response = await fetch(
+      `${API_BASE}/getNepsacPowerGrid?season=${season}`
+    );
+    if (!response.ok) {
+      console.error('Failed to fetch PowerGrid:', response.status);
+      return null;
+    }
+
+    const data = await response.json();
+
+    // Transform API response - use FLAT fields directly (not nested probabilities)
+    // API returns: team.elite8Bid, team.largeSchoolBid, etc. at root level
+    const transformTeam = (team: any): PowerGridTeam => ({
+      powerRank: team.powerRank,
+      classRank: team.classRank,
+      teamId: team.teamId,
+      name: team.name,
+      shortName: team.shortName,
+      logoUrl: team.logoUrl,
+      classification: team.classification,
+      divisionName: team.divisionName,
+      enrollment: team.enrollment,
+      ovr: team.ovr,
+      record: team.record,
+      // Use flat fields directly (NOT team.probabilities.*)
+      elite8Bid: team.elite8Bid ?? 0,
+      elite8Champ: team.elite8Champ ?? 0,
+      largeSchoolBid: team.largeSchoolBid ?? 0,
+      largeSchoolChamp: team.largeSchoolChamp ?? 0,
+      smallSchoolBid: team.smallSchoolBid ?? 0,
+      smallSchoolChamp: team.smallSchoolChamp ?? 0,
+    });
+
+    return {
+      season: data.season,
+      generated: data.generated,
+      teams: data.teams.map(transformTeam),
+      currentElite8: data.currentElite8?.map(transformTeam) ?? [],
+      largeSchoolContenders: data.largeSchoolContenders?.map(transformTeam) ?? [],
+      smallSchoolContenders: data.smallSchoolContenders?.map(transformTeam) ?? [],
+      bubbleTeams: data.bubbleTeams?.map(transformTeam) ?? [],
+      summary: data.summary,
+    };
+  } catch (error) {
+    console.error('Error fetching PowerGrid:', error);
+    return null;
+  }
+}
+
+/**
+ * Get team's primary tournament path based on probabilities
+ * Returns the tournament they're most likely to compete in
+ */
+export function getMainTournament(team: PowerGridTeam): {
+  name: string;
+  bid: number;
+  champ: number;
+} {
+  if (team.elite8Bid >= 50) {
+    return { name: 'Elite 8', bid: team.elite8Bid, champ: team.elite8Champ };
+  } else if (team.classification === 'Large') {
+    return { name: 'Large School', bid: team.largeSchoolBid, champ: team.largeSchoolChamp };
+  } else {
+    return { name: 'Small School', bid: team.smallSchoolBid, champ: team.smallSchoolChamp };
   }
 }
 
