@@ -61,6 +61,32 @@ function parseValue(val, defaultVal = 0) {
 }
 
 /**
+ * Convert probability percentage to American odds format
+ *
+ * American Odds:
+ * - Negative (-300): Favorite. Bet $300 to win $100
+ * - Positive (+300): Underdog. Bet $100 to win $300
+ */
+function probabilityToAmericanOdds(probability) {
+  if (probability >= 99.9) return -10000;
+  if (probability <= 0.1) return 10000;
+  if (probability === 50) return 100;
+
+  if (probability > 50) {
+    const odds = -Math.round((probability / (100 - probability)) * 100);
+    return Math.max(-10000, odds);
+  }
+
+  const odds = Math.round(((100 - probability) / probability) * 100);
+  return Math.min(10000, odds);
+}
+
+function formatAmericanOdds(odds) {
+  if (odds >= 0) return `+${odds}`;
+  return `${odds}`;
+}
+
+/**
  * GET /getNepsacSchedule
  * Returns all games for a specific date with team info and predictions
  *
@@ -186,10 +212,12 @@ functions.http('getNepsacSchedule', withCors(async (req, res) => {
         prediction: hasSufficientData ? {
           winnerId: row.predicted_winner_id,
           confidence: row.prediction_confidence,
+          confidenceOdds: formatAmericanOdds(probabilityToAmericanOdds(row.prediction_confidence || 50)),
           status: 'available'
         } : {
           winnerId: null,
           confidence: null,
+          confidenceOdds: null,
           status: 'Missing Data',
           reason: !awayHasData && !homeHasData ? 'Both teams lack ranking data' :
                   !awayHasData ? `${row.away_short_name || row.away_team_id} lacks ranking data` :
@@ -202,7 +230,10 @@ functions.http('getNepsacSchedule', withCors(async (req, res) => {
       date,
       season,
       gameCount: games.length,
-      games
+      games,
+      _metadata: {
+        oddsFormat: 'American odds included for predictions. Negative = favorite, Positive = underdog.'
+      }
     });
 
   } catch (error) {
@@ -417,10 +448,12 @@ functions.http('getNepsacMatchup', withCors(async (req, res) => {
         prediction: hasSufficientData ? {
           winnerId: game.predicted_winner_id,
           confidence: game.prediction_confidence,
+          confidenceOdds: formatAmericanOdds(probabilityToAmericanOdds(game.prediction_confidence || 50)),
           status: 'available'
         } : {
           winnerId: null,
           confidence: null,
+          confidenceOdds: null,
           status: 'Missing Data',
           reason: !awayHasData && !homeHasData ? 'Both teams lack ranking data' :
                   !awayHasData ? `${game.away_team_name || game.away_team_id} lacks ranking data` :
@@ -1096,7 +1129,8 @@ functions.http('getNepsacPastResults', withCors(async (req, res) => {
         },
         prediction: {
           winnerId: predictedWinnerId,
-          confidence: row.prediction_confidence
+          confidence: row.prediction_confidence,
+          confidenceOdds: formatAmericanOdds(probabilityToAmericanOdds(row.prediction_confidence || 50))
         },
         result: predictionResult,
         isTie
