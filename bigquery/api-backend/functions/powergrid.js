@@ -68,14 +68,23 @@ function errorResponse(res, statusCode, message) {
 }
 
 // ============================================================================
-// SCHOOL CLASSIFICATION DATA - DEFINITIVE LIST
-// Source: NEPSAC Boys Ice Hockey Classification 2025-26
-// Large School = enrollment >= 225 (28 schools)
-// Small School = enrollment < 225 (29 schools)
+// SCHOOL CLASSIFICATION DATA
+// ============================================================================
 //
-// THIS IS THE OFFICIAL LIST. Only these 57 schools are in NEPSAC Boys Hockey.
-// Teams not on this list (e.g., Hill School, Lawrenceville, Mount St. Charles,
-// North Yarmouth) are NOT NEPSAC members and should be excluded from rankings.
+// SOURCE OF TRUTH: BigQuery `algorithm_core.nepsac_teams` table
+//   - classification: 'Large' or 'Small'
+//   - enrollment: School enrollment number
+//
+// ORIGINAL SOURCE: NEPSAC-Boys-Ice-Hockey-Classification-BIH-25-26-2.pdf
+//   - Large School = enrollment >= 225 (28 schools)
+//   - Small School = enrollment < 225 (29 schools)
+//   - Total: 57 NEPSAC member schools
+//
+// The hardcoded maps below are kept as FALLBACK only.
+// Primary classification comes from BigQuery.
+//
+// Teams not in nepsac_teams (e.g., Hill School, Lawrenceville, Mount St. Charles,
+// North Yarmouth) are NOT NEPSAC members and are excluded from PowerGrid.
 // ============================================================================
 
 const LARGE_SCHOOLS = {
@@ -330,18 +339,25 @@ function calculateDivisionChampProb(team, sameClassTeams, elite8BidProb, divisio
  *
  * IMPORTANT: Uses actual power rankings from nepsac_team_rankings.rank
  * DO NOT recalculate or re-sort rankings!
+ *
+ * DATA SOURCE (Single Source of Truth):
+ * - nepsac_teams.classification: 'Large' or 'Small' (from official NEPSAC PDF)
+ * - nepsac_teams.enrollment: School enrollment number
+ * - nepsac_team_rankings.rank: Official power ranking
  */
 functions.http('getNepsacPowerGrid', withCors(async (req, res) => {
   try {
     const { season = '2025-26' } = req.query;
 
     // Query teams ORDERED BY ACTUAL RANK (r.rank is source of truth)
+    // Classification and enrollment come FROM BigQuery (single source of truth)
     const query = `
       SELECT
         t.team_id,
         t.team_name,
         t.short_name,
-        t.division,
+        t.classification,
+        t.enrollment,
         t.logo_url,
         r.rank,
         r.team_ovr,
@@ -366,22 +382,31 @@ functions.http('getNepsacPowerGrid', withCors(async (req, res) => {
       LEFT JOIN \`prodigy-ranking.algorithm_core.nepsac_standings\` s
         ON t.team_id = s.team_id AND s.season = '${season}'
       WHERE r.rank IS NOT NULL
+        AND t.classification IN ('Large', 'Small')
       ORDER BY r.rank ASC
       LIMIT 60
     `;
 
     const rows = await executeQuery(query);
 
-    // Process teams - USE THE ACTUAL RANK FROM DATABASE
+    // Process teams - USE CLASSIFICATION FROM DATABASE (single source of truth)
     const teams = rows.map(row => {
-      const { classification, enrollment } = classifySchool(row.team_name);
+      // Get classification from BigQuery, fallback to name-based lookup
+      let classification = row.classification;
+      let enrollment = row.enrollment || 0;
+
+      // Fallback: if classification not in DB, use name-based lookup
+      if (!classification || classification === 'Unknown') {
+        const fallback = classifySchool(row.team_name);
+        classification = fallback.classification;
+        enrollment = fallback.enrollment;
+      }
 
       return {
         teamId: row.team_id,
         name: row.team_name,
         shortName: row.short_name,
         logoUrl: row.logo_url,
-        division: row.division,
         classification,
         enrollment,
         // CRITICAL: Use actual rank from database, not recalculated
@@ -470,12 +495,16 @@ functions.http('getNepsacPowerGrid', withCors(async (req, res) => {
       season,
       generated: new Date().toISOString().split('T')[0],
 
-      // Data source documentation
+      // Data source documentation (SINGLE SOURCE OF TRUTH)
       _metadata: {
-        dataSource: 'algorithm_core.nepsac_team_rankings',
-        rankField: 'rank',
-        note: 'Rankings are from official power rankings. DO NOT recalculate.',
-        version: 'v3',
+        dataSources: {
+          rankings: 'algorithm_core.nepsac_team_rankings',
+          teams: 'algorithm_core.nepsac_teams',
+          standings: 'algorithm_core.nepsac_standings',
+        },
+        classificationSource: 'NEPSAC-Boys-Ice-Hockey-Classification-BIH-25-26-2.pdf',
+        note: 'All data from BigQuery. Classifications and rankings are official.',
+        version: 'v4',
       },
 
       // All teams sorted by ACTUAL power rank
