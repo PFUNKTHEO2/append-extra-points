@@ -766,7 +766,7 @@ export default function NepsacGameDay() {
                         >
                           {game.prediction.confidence && (
                             <div className="game-card-prediction">
-                              {game.prediction.confidence}%
+                              {game.prediction.confidence}%{game.prediction.confidenceOdds && ` (${game.prediction.confidenceOdds})`}
                             </div>
                           )}
                           <div className="game-card-teams">
@@ -880,6 +880,7 @@ function TeamSide({ team }: { team: MatchupType['awayTeam'] }) {
 function PredictionBanner({ matchup }: { matchup: MatchupType }) {
   const { game, awayTeam, homeTeam } = matchup;
   const confidence = game.prediction.confidence || 50;
+  const confidenceOdds = game.prediction.confidenceOdds;
   const predictedWinner = game.prediction.winnerId;
   const awayFavored = predictedWinner === awayTeam.teamId;
 
@@ -907,6 +908,13 @@ function PredictionBanner({ matchup }: { matchup: MatchupType }) {
             {homeTeam.shortName || homeTeam.name}
           </span>
         </div>
+        {confidenceOdds && (
+          <div style={{ textAlign: 'center', marginTop: '8px' }}>
+            <span style={{ fontFamily: 'Orbitron', fontSize: '1.1rem', color: '#a0a0b0' }}>
+              {confidenceOdds}
+            </span>
+          </div>
+        )}
       </div>
     </div>
   );

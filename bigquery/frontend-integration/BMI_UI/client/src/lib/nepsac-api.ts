@@ -57,6 +57,7 @@ export interface NepsacGame {
   prediction: {
     winnerId: string | null;
     confidence: number | null;
+    confidenceOdds: string | null;  // American odds format (-300 or +150)
   };
 }
 
@@ -90,6 +91,7 @@ export interface NepsacMatchup {
     prediction: {
       winnerId: string | null;
       confidence: number | null;
+      confidenceOdds: string | null;  // American odds format (-300 or +150)
     };
   };
   awayTeam: NepsacMatchupTeam;
@@ -135,6 +137,7 @@ export interface NepsacPastResultGame {
   prediction: {
     winnerId: string;
     confidence: number;
+    confidenceOdds: string | null;  // American odds format (-300 or +150)
   };
   result: 'correct' | 'incorrect' | 'tie';
   isTie: boolean;
@@ -201,11 +204,17 @@ export interface PowerGridTeam {
   // MUTUALLY EXCLUSIVE probabilities
   // High elite8Bid = Low division bid (teams can only be in ONE tournament)
   elite8Bid: number;        // % chance for Elite 8
+  elite8BidOdds?: string;   // American odds format
   elite8Champ: number;      // % chance to WIN Elite 8
+  elite8ChampOdds?: string;
   largeSchoolBid: number;   // % chance for Large tournament (if MISS Elite 8)
+  largeSchoolBidOdds?: string;
   largeSchoolChamp: number;
+  largeSchoolChampOdds?: string;
   smallSchoolBid: number;   // % chance for Small tournament (if MISS Elite 8)
+  smallSchoolBidOdds?: string;
   smallSchoolChamp: number;
+  smallSchoolChampOdds?: string;
 }
 
 export interface PowerGridResponse {
@@ -447,11 +456,17 @@ export async function fetchPowerGrid(
       record: team.record,
       // Use flat fields directly (NOT team.probabilities.*)
       elite8Bid: team.elite8Bid ?? 0,
+      elite8BidOdds: team.elite8BidOdds,
       elite8Champ: team.elite8Champ ?? 0,
+      elite8ChampOdds: team.elite8ChampOdds,
       largeSchoolBid: team.largeSchoolBid ?? 0,
+      largeSchoolBidOdds: team.largeSchoolBidOdds,
       largeSchoolChamp: team.largeSchoolChamp ?? 0,
+      largeSchoolChampOdds: team.largeSchoolChampOdds,
       smallSchoolBid: team.smallSchoolBid ?? 0,
+      smallSchoolBidOdds: team.smallSchoolBidOdds,
       smallSchoolChamp: team.smallSchoolChamp ?? 0,
+      smallSchoolChampOdds: team.smallSchoolChampOdds,
     });
 
     return {

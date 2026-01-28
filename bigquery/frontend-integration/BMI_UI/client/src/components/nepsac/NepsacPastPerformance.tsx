@@ -289,7 +289,7 @@ function GameResultRow({ game, delay }: { game: NepsacPastResultGame; delay: num
             getConfidenceClass(game.prediction.confidence)
           )}
         >
-          {game.prediction.confidence}%
+          {game.prediction.confidence}%{game.prediction.confidenceOdds && ` (${game.prediction.confidenceOdds})`}
         </span>
         {getResultIcon()}
       </div>
