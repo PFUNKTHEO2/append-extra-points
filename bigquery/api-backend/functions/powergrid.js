@@ -1,5 +1,5 @@
 /**
- * Prodigy PowerGrid API v3
+ * Prodigy PowerGrid API v5
  *
  * ============================================================================
  * CRITICAL: DATA SOURCE DOCUMENTATION
@@ -32,15 +32,21 @@
  *    - Compete for Small School Championship
  *
  * ============================================================================
- * 6 PROBABILITIES PER TEAM
+ * 6 PROBABILITIES PER TEAM (with American Odds)
  * ============================================================================
  *
- * 1. elite8Bid      - Chance of being top 8 overall
- * 2. elite8Champ    - Chance of winning Elite 8 Championship
- * 3. largeSchoolBid - Chance of making Large tournament (if missed Elite 8)
- * 4. largeSchoolChamp - Chance of winning Large School Championship
- * 5. smallSchoolBid - Chance of making Small tournament (if missed Elite 8)
- * 6. smallSchoolChamp - Chance of winning Small School Championship
+ * Each probability includes a companion American odds field:
+ *
+ * 1. elite8Bid / elite8BidOdds         - Chance of being top 8 overall
+ * 2. elite8Champ / elite8ChampOdds     - Chance of winning Elite 8 Championship
+ * 3. largeSchoolBid / largeSchoolBidOdds - Chance of making Large tournament
+ * 4. largeSchoolChamp / largeSchoolChampOdds - Chance of winning Large School
+ * 5. smallSchoolBid / smallSchoolBidOdds - Chance of making Small tournament
+ * 6. smallSchoolChamp / smallSchoolChampOdds - Chance of winning Small School
+ *
+ * American Odds Format:
+ * - Negative (-300): Favorite. Bet $300 to win $100
+ * - Positive (+300): Underdog. Bet $100 to win $300
  *
  * Note: A team will have values in EITHER Elite 8 columns OR their division
  * columns, since making Elite 8 means they don't play in division tournament.
@@ -174,6 +180,56 @@ function classifySchool(teamName) {
   }
 
   return { classification: 'Unknown', enrollment: 0 };
+}
+
+// ============================================================================
+// AMERICAN ODDS CONVERSION
+// ============================================================================
+
+/**
+ * Convert probability percentage to American odds format
+ *
+ * American Odds System:
+ * - Favorites (prob > 50%): Negative odds show how much to bet to win $100
+ *   Formula: -(prob / (100 - prob)) * 100
+ *   Example: 75% → -300 (bet $300 to win $100)
+ *
+ * - Underdogs (prob < 50%): Positive odds show profit on $100 bet
+ *   Formula: ((100 - prob) / prob) * 100
+ *   Example: 25% → +300 (bet $100 to win $300)
+ *
+ * - Even money (prob = 50%): +100 or -100 (convention: use +100)
+ *
+ * Edge cases:
+ * - Very high probability (>99%): Cap at -10000
+ * - Very low probability (<1%): Cap at +10000
+ */
+function probabilityToAmericanOdds(probability) {
+  // Handle edge cases
+  if (probability >= 99.9) return -10000;
+  if (probability <= 0.1) return 10000;
+
+  // Even money
+  if (probability === 50) return 100;
+
+  // Favorites (negative odds)
+  if (probability > 50) {
+    const odds = -Math.round((probability / (100 - probability)) * 100);
+    return Math.max(-10000, odds);
+  }
+
+  // Underdogs (positive odds)
+  const odds = Math.round(((100 - probability) / probability) * 100);
+  return Math.min(10000, odds);
+}
+
+/**
+ * Format American odds with proper sign
+ * Returns string like "-300" or "+450"
+ */
+function formatAmericanOdds(odds) {
+  if (odds >= 0) return `+${odds}`;
+  return `${odds}`;
 }
 
 // ============================================================================
@@ -533,7 +589,20 @@ functions.http('getNepsacPowerGrid', withCors(async (req, res) => {
         },
         classificationSource: 'NEPSAC-Boys-Ice-Hockey-Classification-BIH-25-26-2.pdf',
         note: 'All data from BigQuery. Classifications and rankings are official.',
-        version: 'v4',
+        version: 'v5',
+        oddsFormat: {
+          description: 'American odds format included for all probabilities',
+          example: {
+            probability: 75,
+            odds: '-300',
+            meaning: 'Bet $300 to win $100 (favorite)',
+          },
+          example2: {
+            probability: 25,
+            odds: '+300',
+            meaning: 'Bet $100 to win $300 (underdog)',
+          },
+        },
       },
 
       // All teams sorted by ACTUAL power rank
@@ -554,11 +623,17 @@ functions.http('getNepsacPowerGrid', withCors(async (req, res) => {
         // 6 probabilities - Elite 8 vs Division are MUTUALLY EXCLUSIVE
         // High elite8Bid means LOW division bid (and vice versa)
         elite8Bid: t.elite8Bid,
+        elite8BidOdds: formatAmericanOdds(probabilityToAmericanOdds(t.elite8Bid)),
         elite8Champ: t.elite8Champ,
+        elite8ChampOdds: formatAmericanOdds(probabilityToAmericanOdds(t.elite8Champ)),
         largeSchoolBid: t.largeSchoolBid || 0,
+        largeSchoolBidOdds: formatAmericanOdds(probabilityToAmericanOdds(t.largeSchoolBid || 0)),
         largeSchoolChamp: t.largeSchoolChamp || 0,
+        largeSchoolChampOdds: formatAmericanOdds(probabilityToAmericanOdds(t.largeSchoolChamp || 0)),
         smallSchoolBid: t.smallSchoolBid || 0,
+        smallSchoolBidOdds: formatAmericanOdds(probabilityToAmericanOdds(t.smallSchoolBid || 0)),
         smallSchoolChamp: t.smallSchoolChamp || 0,
+        smallSchoolChampOdds: formatAmericanOdds(probabilityToAmericanOdds(t.smallSchoolChamp || 0)),
         // Legacy probabilities object for backwards compatibility
         probabilities: {
           makeElite8: t.elite8Bid,
@@ -581,7 +656,9 @@ functions.http('getNepsacPowerGrid', withCors(async (req, res) => {
         ovr: t.ovr,
         record: t.record,
         elite8Bid: t.elite8Bid,
+        elite8BidOdds: formatAmericanOdds(probabilityToAmericanOdds(t.elite8Bid)),
         elite8Champ: t.elite8Champ,
+        elite8ChampOdds: formatAmericanOdds(probabilityToAmericanOdds(t.elite8Champ)),
       })),
 
       // Large School Tournament contenders (teams who would play if they miss Elite 8)
@@ -597,7 +674,9 @@ functions.http('getNepsacPowerGrid', withCors(async (req, res) => {
         ovr: t.ovr,
         record: t.record,
         largeSchoolBid: t.largeSchoolBid,
+        largeSchoolBidOdds: formatAmericanOdds(probabilityToAmericanOdds(t.largeSchoolBid)),
         largeSchoolChamp: t.largeSchoolChamp,
+        largeSchoolChampOdds: formatAmericanOdds(probabilityToAmericanOdds(t.largeSchoolChamp)),
       })),
 
       // Small School Tournament contenders
@@ -613,7 +692,9 @@ functions.http('getNepsacPowerGrid', withCors(async (req, res) => {
         ovr: t.ovr,
         record: t.record,
         smallSchoolBid: t.smallSchoolBid,
+        smallSchoolBidOdds: formatAmericanOdds(probabilityToAmericanOdds(t.smallSchoolBid)),
         smallSchoolChamp: t.smallSchoolChamp,
+        smallSchoolChampOdds: formatAmericanOdds(probabilityToAmericanOdds(t.smallSchoolChamp)),
       })),
 
       // Bubble teams (ranks 7-12, could go either way)
@@ -625,6 +706,7 @@ functions.http('getNepsacPowerGrid', withCors(async (req, res) => {
         ovr: t.ovr,
         record: t.record,
         elite8Bid: t.elite8Bid,
+        elite8BidOdds: formatAmericanOdds(probabilityToAmericanOdds(t.elite8Bid)),
       })),
 
       summary: {
