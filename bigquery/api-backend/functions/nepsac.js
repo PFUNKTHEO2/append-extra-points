@@ -185,10 +185,15 @@ functions.http('getNepsacSchedule', withCors(async (req, res) => {
         // Only show prediction if both teams have ranking data
         prediction: hasSufficientData ? {
           winnerId: row.predicted_winner_id,
-          confidence: row.prediction_confidence
+          confidence: row.prediction_confidence,
+          status: 'available'
         } : {
           winnerId: null,
-          confidence: null
+          confidence: null,
+          status: 'Missing Data',
+          reason: !awayHasData && !homeHasData ? 'Both teams lack ranking data' :
+                  !awayHasData ? `${row.away_short_name || row.away_team_id} lacks ranking data` :
+                  `${row.home_short_name || row.home_team_id} lacks ranking data`
         }
       };
     });
@@ -411,10 +416,15 @@ functions.http('getNepsacMatchup', withCors(async (req, res) => {
         // Only show prediction if both teams have ranking data
         prediction: hasSufficientData ? {
           winnerId: game.predicted_winner_id,
-          confidence: game.prediction_confidence
+          confidence: game.prediction_confidence,
+          status: 'available'
         } : {
           winnerId: null,
-          confidence: null
+          confidence: null,
+          status: 'Missing Data',
+          reason: !awayHasData && !homeHasData ? 'Both teams lack ranking data' :
+                  !awayHasData ? `${game.away_team_name || game.away_team_id} lacks ranking data` :
+                  `${game.home_team_name || game.home_team_id} lacks ranking data`
         }
       },
       awayTeam: {
