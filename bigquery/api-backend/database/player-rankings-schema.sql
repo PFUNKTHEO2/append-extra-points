@@ -23,25 +23,75 @@ CREATE TABLE IF NOT EXISTS player_rankings (
     current_team TEXT,
     current_league TEXT,
     team_country TEXT,
+    current_season TEXT,
 
     -- Points (main ranking factors)
     total_points NUMERIC(10,2) DEFAULT 0,
     performance_total NUMERIC(10,2) DEFAULT 0,
     direct_load_total NUMERIC(10,2) DEFAULT 0,
 
-    -- Key factors for display
+    -- All factor columns (f01-f28)
     f01_views NUMERIC(10,2) DEFAULT 0,
     f02_height NUMERIC(10,2) DEFAULT 0,
+    f03_current_goals_f NUMERIC(10,2) DEFAULT 0,
+    f04_current_goals_d NUMERIC(10,2) DEFAULT 0,
+    f05_current_assists NUMERIC(10,2) DEFAULT 0,
+    f06_current_gaa NUMERIC(10,2) DEFAULT 0,
+    f07_current_svp NUMERIC(10,2) DEFAULT 0,
+    f08_last_goals_f NUMERIC(10,2) DEFAULT 0,
+    f09_last_goals_d NUMERIC(10,2) DEFAULT 0,
+    f10_last_assists NUMERIC(10,2) DEFAULT 0,
+    f11_last_gaa NUMERIC(10,2) DEFAULT 0,
+    f12_last_svp NUMERIC(10,2) DEFAULT 0,
     f13_league_points NUMERIC(10,2) DEFAULT 0,
     f14_team_points NUMERIC(10,2) DEFAULT 0,
     f15_international_points NUMERIC(10,2) DEFAULT 0,
     f16_commitment_points NUMERIC(10,2) DEFAULT 0,
     f17_draft_points NUMERIC(10,2) DEFAULT 0,
+    f18_weekly_points_delta NUMERIC(10,2) DEFAULT 0,
+    f19_weekly_assists_delta NUMERIC(10,2) DEFAULT 0,
+    f20_playing_up_points NUMERIC(10,2) DEFAULT 0,
+    f21_tournament_points NUMERIC(10,2) DEFAULT 0,
     f22_manual_points NUMERIC(10,2) DEFAULT 0,
+    f23_prodigylikes_points NUMERIC(10,2) DEFAULT 0,
+    f24_card_sales_points NUMERIC(10,2) DEFAULT 0,
+    f25_weekly_views NUMERIC(10,2) DEFAULT 0,
+    f26_weight_points NUMERIC(10,2) DEFAULT 0,
+    f27_bmi_points NUMERIC(10,2) DEFAULT 0,
+    f28_nhl_scouting_points NUMERIC(10,2) DEFAULT 0,
 
     -- Physical measurements (raw values for BMI tool)
     height_cm INTEGER,
     weight_kg INTEGER,
+
+    -- NHL Central Scouting (only populated for ~400 players on their lists)
+    nhl_scouting_rank INTEGER,         -- Rank on Central Scouting list
+    nhl_scouting_list TEXT,            -- NA_SKATERS, NA_GOALIES, INTL_SKATERS, INTL_GOALIES
+
+    -- Rating columns (0-99 scale, EA Sports style)
+    overall_rating INTEGER DEFAULT 0,
+    performance_rating INTEGER DEFAULT 0,
+    level_rating INTEGER DEFAULT 0,
+    visibility_rating INTEGER DEFAULT 0,
+    achievements_rating INTEGER DEFAULT 0,
+    trending_rating INTEGER DEFAULT 0,
+    physical_rating INTEGER DEFAULT 0,
+    -- Compact rating aliases
+    perf INTEGER DEFAULT 0,
+    lvl INTEGER DEFAULT 0,
+    vis INTEGER DEFAULT 0,
+    ach INTEGER DEFAULT 0,
+    trd INTEGER DEFAULT 0,
+    phy INTEGER DEFAULT 0,
+
+    -- Percentile columns (0-100 scale)
+    performance_percentile NUMERIC(5,2) DEFAULT 0,
+    level_percentile NUMERIC(5,2) DEFAULT 0,
+    visibility_percentile NUMERIC(5,2) DEFAULT 0,
+    achievements_percentile NUMERIC(5,2) DEFAULT 0,
+    physical_percentile NUMERIC(5,2) DEFAULT 0,
+    trending_percentile NUMERIC(5,2) DEFAULT 0,
+    overall_percentile NUMERIC(5,2) DEFAULT 0,
 
     -- Pre-computed ranks (computed in BigQuery during sync for performance)
     world_rank INTEGER,       -- Rank within birth_year + position

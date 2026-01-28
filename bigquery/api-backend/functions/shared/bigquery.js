@@ -153,6 +153,10 @@ async function getPlayerById(playerId) {
       height_cm,
       weight_kg,
 
+      -- NHL Central Scouting
+      nhl_scouting_rank,
+      nhl_scouting_list,
+
       calculated_at,
       algorithm_version
 

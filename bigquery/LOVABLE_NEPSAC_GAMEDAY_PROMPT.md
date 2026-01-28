@@ -26,12 +26,29 @@ Build a NEPSAC prep school hockey GameDay application with a carousel-based game
 - Body: System font stack
 - Numbers/Stats: Tabular numerals
 
+## Navigation (Shared with Past Performance)
+
+The app has two main pages accessible via tab navigation:
+
+| Route | Page | Description |
+|-------|------|-------------|
+| `/` or `/gameday` | GameDay | Predictions for upcoming games |
+| `/past-performance` | Past Performance | Historical results & accuracy |
+
+**Tab buttons in header:**
+- "GAMEDAY" - active when on predictions page
+- "PAST PERFORMANCE" - active when viewing results
+
+Both pages share a common Layout component with the Ace & Scouty logo and tab navigation.
+
+---
+
 ## Page Layout
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                    ACE & SCOUTY GAMEDAY                         │
-│                    [GameDay] [Past Predictions]                 │
+│  [Ace & Scouty Logo]    ACE & SCOUTY                            │
+│         [GAMEDAY]  [PAST PERFORMANCE]   ← Tab Navigation        │
 ├─────────────────────────────────────────────────────────────────┤
 │         ◀ Jan 20  [JAN 21 - 27 GAMES]  Jan 22 ▶                │
 ├─────────────────────────────────────────────────────────────────┤

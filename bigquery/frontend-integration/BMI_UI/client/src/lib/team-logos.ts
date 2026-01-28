@@ -68,6 +68,16 @@ export const TEAM_ID_TO_IMAGE_SLUG: Record<string, string> = {
   "worcester-academy": "worcester-academy",
 };
 
+/**
+ * Get the image slug for a team ID (for display purposes)
+ * @param teamId - The team_id from the API
+ * @returns The image slug or the teamId if not found
+ */
+export function getImageSlug(teamId: string): string {
+  if (!teamId) return '';
+  return TEAM_ID_TO_IMAGE_SLUG[teamId.toLowerCase()] || teamId;
+}
+
 const BASE_URL = "https://raw.githubusercontent.com/PFUNKTHEO2/append-extra-points/main/bigquery/nepsac-cards";
 
 /**

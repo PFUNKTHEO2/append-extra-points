@@ -13,12 +13,20 @@ interface NepsacPowerRankingsProps {
 export function NepsacPowerRankings({ limit = 20, onTeamClick }: NepsacPowerRankingsProps) {
   const [rankings, setRankings] = useState<NepsacPowerRanking[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     async function loadRankings() {
-      const data = await fetchNepsacPowerRankings('2025-26', limit);
-      if (data) {
-        setRankings(data.rankings);
+      try {
+        const data = await fetchNepsacPowerRankings('2025-26', limit);
+        if (data && data.rankings) {
+          setRankings(data.rankings);
+        } else {
+          setError('No rankings data returned');
+        }
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'Failed to load rankings');
+        console.error('Power rankings error:', err);
       }
       setIsLoading(false);
     }
@@ -29,6 +37,22 @@ export function NepsacPowerRankings({ limit = 20, onTeamClick }: NepsacPowerRank
     return (
       <div className="power-rankings-loading">
         Loading Power Rankings...
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="power-rankings-loading" style={{ color: '#ef4444' }}>
+        Error: {error}
+      </div>
+    );
+  }
+
+  if (rankings.length === 0) {
+    return (
+      <div className="power-rankings-loading">
+        No rankings available
       </div>
     );
   }

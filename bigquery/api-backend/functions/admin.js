@@ -74,8 +74,8 @@ functions.http('adminGetFactors', withCors(async (req, res) => {
     const query = `
       WITH factor_stats AS (
         -- F01: EP Views (max 2000)
-        SELECT 'PT_F01_EPV' as table_name, 'F01' as factor_id, 'Elite Prospects Views' as factor_name,
-          'EP Views: 2000 pts linear from 100-29900 views' as description,
+        SELECT 'PT_F01_EPV' as table_name, 'F01' as factor_id, 'elite prospects views' as factor_name,
+          'F01 EPV: 2000 pts linear from 100-29900 views' as description,
           2000 as max_points,
           (SELECT COUNT(*) FROM \`prodigy-ranking.algorithm_core.PT_F01_EPV\`) as row_count,
           (SELECT MAX(calculated_at) FROM \`prodigy-ranking.algorithm_core.PT_F01_EPV\`) as last_calculated,
@@ -84,7 +84,7 @@ functions.http('adminGetFactors', withCors(async (req, res) => {
           (SELECT AVG(factor_1_epv_points) FROM \`prodigy-ranking.algorithm_core.PT_F01_EPV\`) as avg_points
         UNION ALL
         -- F02: Height (max 200)
-        SELECT 'PT_F02_H', 'F02', 'Height', 'Height: 200 pts by position/birth year standards',
+        SELECT 'PT_F02_H', 'F02', 'height', 'F02 H: 200 pts by position/birth year standards',
           200,
           (SELECT COUNT(*) FROM \`prodigy-ranking.algorithm_core.PT_F02_H\`),
           (SELECT MAX(calculated_at) FROM \`prodigy-ranking.algorithm_core.PT_F02_H\`),
@@ -93,7 +93,7 @@ functions.http('adminGetFactors', withCors(async (req, res) => {
           (SELECT AVG(factor_2_h_points) FROM \`prodigy-ranking.algorithm_core.PT_F02_H\`)
         UNION ALL
         -- F03: Current Season GPG Forwards (max 500)
-        SELECT 'PT_F03_CGPGF', 'F03', 'Current Season GPG (F)', 'Forwards: 500 pts linear 0-2.0 GPG',
+        SELECT 'PT_F03_CGPGF', 'F03', 'current season goals per game forwards', 'F03 CSGPGF: 500 pts linear 0-2.0 GPG',
           500,
           (SELECT COUNT(*) FROM \`prodigy-ranking.algorithm_core.PT_F03_CGPGF\`),
           (SELECT MAX(calculated_at) FROM \`prodigy-ranking.algorithm_core.PT_F03_CGPGF\`),
@@ -102,7 +102,7 @@ functions.http('adminGetFactors', withCors(async (req, res) => {
           (SELECT AVG(factor_3_current_goals_points) FROM \`prodigy-ranking.algorithm_core.PT_F03_CGPGF\`)
         UNION ALL
         -- F04: Current Season GPG Defenders (max 500)
-        SELECT 'PT_F04_CGPGD', 'F04', 'Current Season GPG (D)', 'Defenders: 500 pts linear 0-1.5 GPG',
+        SELECT 'PT_F04_CGPGD', 'F04', 'current season goals per game defenders', 'F04 CSGPGD: 500 pts linear 0-1.5 GPG',
           500,
           (SELECT COUNT(*) FROM \`prodigy-ranking.algorithm_core.PT_F04_CGPGD\`),
           (SELECT MAX(calculated_at) FROM \`prodigy-ranking.algorithm_core.PT_F04_CGPGD\`),
@@ -111,7 +111,7 @@ functions.http('adminGetFactors', withCors(async (req, res) => {
           (SELECT AVG(factor_4_current_goals_points) FROM \`prodigy-ranking.algorithm_core.PT_F04_CGPGD\`)
         UNION ALL
         -- F05: Current Season APG (max 500)
-        SELECT 'PT_F05_CAPG', 'F05', 'Current Season APG', 'All skaters: 500 pts linear 0-2.5 APG',
+        SELECT 'PT_F05_CAPG', 'F05', 'current season assists per game', 'F05 CSAPG: 500 pts linear 0-2.5 APG',
           500,
           (SELECT COUNT(*) FROM \`prodigy-ranking.algorithm_core.PT_F05_CAPG\`),
           (SELECT MAX(calculated_at) FROM \`prodigy-ranking.algorithm_core.PT_F05_CAPG\`),
@@ -120,7 +120,7 @@ functions.http('adminGetFactors', withCors(async (req, res) => {
           (SELECT AVG(factor_5_current_assists_points) FROM \`prodigy-ranking.algorithm_core.PT_F05_CAPG\`)
         UNION ALL
         -- F06: Current Season GAA (max 500)
-        SELECT 'PT_F06_CGAA', 'F06', 'Current Season GAA', 'Goalies: 500 pts inverse linear 0-3.5 GAA',
+        SELECT 'PT_F06_CGAA', 'F06', 'current season goals against average', 'F06 CSGAA: 500 pts inverse linear 0-3.5 GAA',
           500,
           (SELECT COUNT(*) FROM \`prodigy-ranking.algorithm_core.PT_F06_CGAA\`),
           (SELECT MAX(calculated_at) FROM \`prodigy-ranking.algorithm_core.PT_F06_CGAA\`),
@@ -129,7 +129,7 @@ functions.http('adminGetFactors', withCors(async (req, res) => {
           (SELECT AVG(factor_6_cgaa_points) FROM \`prodigy-ranking.algorithm_core.PT_F06_CGAA\`)
         UNION ALL
         -- F07: Current Season Save % (max 300)
-        SELECT 'PT_F07_CSV', 'F07', 'Current Season SV%', 'Goalies: 300 pts linear .699-1.000 SV%',
+        SELECT 'PT_F07_CSV', 'F07', 'current season save percentage', 'F07 CSSP: 300 pts linear .699-1.000 SV%',
           300,
           (SELECT COUNT(*) FROM \`prodigy-ranking.algorithm_core.PT_F07_CSV\`),
           (SELECT MAX(calculated_at) FROM \`prodigy-ranking.algorithm_core.PT_F07_CSV\`),
@@ -138,7 +138,7 @@ functions.http('adminGetFactors', withCors(async (req, res) => {
           (SELECT AVG(factor_7_csv_points) FROM \`prodigy-ranking.algorithm_core.PT_F07_CSV\`)
         UNION ALL
         -- F08: Past Season GPG Forwards (max 300)
-        SELECT 'PT_F08_LGPGF', 'F08', 'Past Season GPG (F)', 'Forwards: 300 pts linear 0-2.0 GPG',
+        SELECT 'PT_F08_LGPGF', 'F08', 'past season goals per game forwards', 'F08 PSGPGF: 300 pts linear 0-2.0 GPG',
           300,
           (SELECT COUNT(*) FROM \`prodigy-ranking.algorithm_core.PT_F08_LGPGF\`),
           (SELECT MAX(calculated_at) FROM \`prodigy-ranking.algorithm_core.PT_F08_LGPGF\`),
@@ -147,7 +147,7 @@ functions.http('adminGetFactors', withCors(async (req, res) => {
           (SELECT AVG(factor_8_lgpgf_points) FROM \`prodigy-ranking.algorithm_core.PT_F08_LGPGF\`)
         UNION ALL
         -- F09: Past Season GPG Defenders (max 300)
-        SELECT 'PT_F09_LGPGD', 'F09', 'Past Season GPG (D)', 'Defenders: 300 pts linear 0-1.5 GPG',
+        SELECT 'PT_F09_LGPGD', 'F09', 'past season goals per game defenders', 'F09 PSGPGD: 300 pts linear 0-1.5 GPG',
           300,
           (SELECT COUNT(*) FROM \`prodigy-ranking.algorithm_core.PT_F09_LGPGD\`),
           (SELECT MAX(calculated_at) FROM \`prodigy-ranking.algorithm_core.PT_F09_LGPGD\`),
@@ -156,7 +156,7 @@ functions.http('adminGetFactors', withCors(async (req, res) => {
           (SELECT AVG(factor_9_lgpgd_points) FROM \`prodigy-ranking.algorithm_core.PT_F09_LGPGD\`)
         UNION ALL
         -- F10: Past Season APG (max 300)
-        SELECT 'PT_F10_LAPG', 'F10', 'Past Season APG', 'All skaters: 300 pts linear 0-2.5 APG',
+        SELECT 'PT_F10_LAPG', 'F10', 'past season assists per game', 'F10 PSAPG: 300 pts linear 0-2.5 APG',
           300,
           (SELECT COUNT(*) FROM \`prodigy-ranking.algorithm_core.PT_F10_LAPG\`),
           (SELECT MAX(calculated_at) FROM \`prodigy-ranking.algorithm_core.PT_F10_LAPG\`),
@@ -165,7 +165,7 @@ functions.http('adminGetFactors', withCors(async (req, res) => {
           (SELECT AVG(factor_10_lapg_points) FROM \`prodigy-ranking.algorithm_core.PT_F10_LAPG\`)
         UNION ALL
         -- F11: Past Season GAA (max 300)
-        SELECT 'PT_F11_LGAA', 'F11', 'Past Season GAA', 'Goalies: 300 pts inverse linear 0-3.5 GAA',
+        SELECT 'PT_F11_LGAA', 'F11', 'past season goals against average', 'F11 PSGAA: 300 pts inverse linear 0-3.5 GAA',
           300,
           (SELECT COUNT(*) FROM \`prodigy-ranking.algorithm_core.PT_F11_LGAA\`),
           (SELECT MAX(calculated_at) FROM \`prodigy-ranking.algorithm_core.PT_F11_LGAA\`),
@@ -174,7 +174,7 @@ functions.http('adminGetFactors', withCors(async (req, res) => {
           (SELECT AVG(factor_11_lgaa_points) FROM \`prodigy-ranking.algorithm_core.PT_F11_LGAA\`)
         UNION ALL
         -- F12: Past Season Save % (max 200)
-        SELECT 'PT_F12_LSV', 'F12', 'Past Season SV%', 'Goalies: 200 pts linear .699-1.000 SV%',
+        SELECT 'PT_F12_LSV', 'F12', 'past season save percentage', 'F12 PSSP: 200 pts linear .699-1.000 SV%',
           200,
           (SELECT COUNT(*) FROM \`prodigy-ranking.algorithm_core.PT_F12_LSV\`),
           (SELECT MAX(calculated_at) FROM \`prodigy-ranking.algorithm_core.PT_F12_LSV\`),
@@ -183,7 +183,7 @@ functions.http('adminGetFactors', withCors(async (req, res) => {
           (SELECT AVG(factor_12_lsv_points) FROM \`prodigy-ranking.algorithm_core.PT_F12_LSV\`)
         UNION ALL
         -- F13: League Points (max 4500) - Uses DL_all_leagues table
-        SELECT 'DL_all_leagues', 'F13', 'League Points', 'League tier points: max 4500 by tier',
+        SELECT 'DL_all_leagues', 'F13', 'league points', 'F13 LP: max 4500 by tier',
           4500,
           (SELECT COUNT(*) FROM \`prodigy-ranking.algorithm_core.DL_all_leagues\`),
           CURRENT_TIMESTAMP(),
@@ -192,7 +192,7 @@ functions.http('adminGetFactors', withCors(async (req, res) => {
           (SELECT AVG(league_points) FROM \`prodigy-ranking.algorithm_core.DL_all_leagues\`)
         UNION ALL
         -- F14: Team Points (max 700) - INACTIVE
-        SELECT 'DL_F14_team_points', 'F14', 'Team Points', 'Team ranking points: max 700 (INACTIVE - no teams table)',
+        SELECT 'DL_F14_team_points', 'F14', 'team points', 'F14 TP: max 700 (INACTIVE - no teams table)',
           700,
           (SELECT COUNT(*) FROM \`prodigy-ranking.algorithm_core.DL_F14_team_points\`),
           (SELECT MAX(imported_at) FROM \`prodigy-ranking.algorithm_core.DL_F14_team_points\`),
@@ -201,7 +201,7 @@ functions.http('adminGetFactors', withCors(async (req, res) => {
           (SELECT AVG(points) FROM \`prodigy-ranking.algorithm_core.DL_F14_team_points\`)
         UNION ALL
         -- F15: International Selection Points (max 1000)
-        SELECT 'DL_F15_international_points_final', 'F15', 'International Selection Points', 'International tournament points: max 1000',
+        SELECT 'DL_F15_international_points_final', 'F15', 'international selection points', 'F15 IP: max 1000',
           1000,
           (SELECT COUNT(*) FROM \`prodigy-ranking.algorithm_core.DL_F15_international_points_final\`),
           CURRENT_TIMESTAMP(),
@@ -210,7 +210,7 @@ functions.http('adminGetFactors', withCors(async (req, res) => {
           (SELECT AVG(total_international_points) FROM \`prodigy-ranking.algorithm_core.DL_F15_international_points_final\`)
         UNION ALL
         -- F16: Commitment Points (max 500)
-        SELECT 'PT_F16_CP', 'F16', 'Commitment Points', 'College/junior commitment: max 500',
+        SELECT 'PT_F16_CP', 'F16', 'commitment points', 'F16 CP: max 500',
           500,
           (SELECT COUNT(*) FROM \`prodigy-ranking.algorithm_core.PT_F16_CP\`),
           CURRENT_TIMESTAMP(),
@@ -219,7 +219,7 @@ functions.http('adminGetFactors', withCors(async (req, res) => {
           (SELECT AVG(factor_16_commitment_points) FROM \`prodigy-ranking.algorithm_core.PT_F16_CP\`)
         UNION ALL
         -- F17: Draft Points (max 300)
-        SELECT 'DL_F17_draft_points', 'F17', 'Draft Points', 'NHL/CHL draft position: max 300',
+        SELECT 'DL_F17_draft_points', 'F17', 'draft points', 'F17 DP: max 300',
           300,
           (SELECT COUNT(*) FROM \`prodigy-ranking.algorithm_core.DL_F17_draft_points\`),
           CURRENT_TIMESTAMP(),
@@ -228,7 +228,7 @@ functions.http('adminGetFactors', withCors(async (req, res) => {
           (SELECT AVG(points) FROM \`prodigy-ranking.algorithm_core.DL_F17_draft_points\`)
         UNION ALL
         -- F18: Weekly Points Goals (max 200 cap, 40 per goal)
-        SELECT 'PT_F18_weekly_points_delta', 'F18', 'Weekly Points - Goals', 'Weekly goal delta: 40pts/goal, max 200',
+        SELECT 'PT_F18_weekly_points_delta', 'F18', 'weekly points - goal', 'F18 WPG: 40pts/goal, max 200',
           200,
           (SELECT COUNT(*) FROM \`prodigy-ranking.algorithm_core.PT_F18_weekly_points_delta\`),
           CURRENT_TIMESTAMP(),
@@ -237,7 +237,7 @@ functions.http('adminGetFactors', withCors(async (req, res) => {
           (SELECT AVG(factor_18_points) FROM \`prodigy-ranking.algorithm_core.PT_F18_weekly_points_delta\`)
         UNION ALL
         -- F19: Weekly Points Assists (max 125 cap, 25 per assist)
-        SELECT 'PT_F19_weekly_assists_delta', 'F19', 'Weekly Points - Assists', 'Weekly assist delta: 25pts/assist, max 125',
+        SELECT 'PT_F19_weekly_assists_delta', 'F19', 'weekly points - assist', 'F19 WPA: 25pts/assist, max 125',
           125,
           (SELECT COUNT(*) FROM \`prodigy-ranking.algorithm_core.PT_F19_weekly_assists_delta\`),
           CURRENT_TIMESTAMP(),
@@ -246,7 +246,7 @@ functions.http('adminGetFactors', withCors(async (req, res) => {
           (SELECT AVG(factor_19_points) FROM \`prodigy-ranking.algorithm_core.PT_F19_weekly_assists_delta\`)
         UNION ALL
         -- F20: Playing Up Category (max 300) - INACTIVE
-        SELECT 'DL_F20_playing_up_points', 'F20', 'Playing Up Category', 'Playing up bonus: max 300 (INACTIVE - league pts help)',
+        SELECT 'DL_F20_playing_up_points', 'F20', 'playing up category', 'F20 PUC: max 300 (INACTIVE)',
           300,
           (SELECT COUNT(*) FROM \`prodigy-ranking.algorithm_core.DL_F20_playing_up_points\`),
           CURRENT_TIMESTAMP(),
@@ -255,7 +255,7 @@ functions.http('adminGetFactors', withCors(async (req, res) => {
           (SELECT AVG(points) FROM \`prodigy-ranking.algorithm_core.DL_F20_playing_up_points\`)
         UNION ALL
         -- F21: Tournament Accolades - INACTIVE
-        SELECT 'DL_F21_tournament_points', 'F21', 'Tournament Accolades', 'Tournament points (INACTIVE - no table)',
+        SELECT 'DL_F21_tournament_points', 'F21', 'tournament accolades', 'F21 TA: (INACTIVE)',
           500,
           (SELECT COUNT(*) FROM \`prodigy-ranking.algorithm_core.DL_F21_tournament_points\`),
           CURRENT_TIMESTAMP(),
@@ -264,7 +264,7 @@ functions.http('adminGetFactors', withCors(async (req, res) => {
           (SELECT AVG(points) FROM \`prodigy-ranking.algorithm_core.DL_F21_tournament_points\`)
         UNION ALL
         -- F22: Extra Manual Points - INACTIVE
-        SELECT 'DL_F22_manual_points', 'F22', 'Extra Manual Points', 'Admin manual adjustments (INACTIVE)',
+        SELECT 'DL_F22_manual_points', 'F22', 'extra manual points', 'F22 EMP: (INACTIVE)',
           0,
           (SELECT COUNT(*) FROM \`prodigy-ranking.algorithm_core.DL_F22_manual_points\`),
           CURRENT_TIMESTAMP(),
@@ -273,7 +273,7 @@ functions.http('adminGetFactors', withCors(async (req, res) => {
           (SELECT AVG(points) FROM \`prodigy-ranking.algorithm_core.DL_F22_manual_points\`)
         UNION ALL
         -- F23: ProdigyChain Likes/Views - INACTIVE
-        SELECT 'DL_F23_prodigylikes_points', 'F23', 'ProdigyChain Likes/Views', 'Social engagement: max 500 (INACTIVE - future)',
+        SELECT 'DL_F23_prodigylikes_points', 'F23', 'prodigychain likes / views', 'F23 PCL: max 500 (INACTIVE)',
           500,
           (SELECT COUNT(*) FROM \`prodigy-ranking.algorithm_core.DL_F23_prodigylikes_points\`),
           CURRENT_TIMESTAMP(),
@@ -282,7 +282,7 @@ functions.http('adminGetFactors', withCors(async (req, res) => {
           (SELECT AVG(points) FROM \`prodigy-ranking.algorithm_core.DL_F23_prodigylikes_points\`)
         UNION ALL
         -- F24: ProdigyChain Card Sales - INACTIVE
-        SELECT 'DL_F24_card_sales_points', 'F24', 'ProdigyChain Card Sales', 'Card market value: max 500 (INACTIVE - future)',
+        SELECT 'DL_F24_card_sales_points', 'F24', 'prodigychain card sales', 'F24 PCCS: max 500 (INACTIVE)',
           500,
           (SELECT COUNT(*) FROM \`prodigy-ranking.algorithm_core.DL_F24_card_sales_points\`),
           CURRENT_TIMESTAMP(),
@@ -291,7 +291,7 @@ functions.http('adminGetFactors', withCors(async (req, res) => {
           (SELECT AVG(points) FROM \`prodigy-ranking.algorithm_core.DL_F24_card_sales_points\`)
         UNION ALL
         -- F25: Weekly Points EP Views (max 200)
-        SELECT 'PT_F25_weekly_views_delta', 'F25', 'Weekly Points - EP Views', 'Weekly EP views delta: max 200',
+        SELECT 'PT_F25_weekly_views_delta', 'F25', 'weekly points - EP views', 'F25 WPEPV: max 200',
           200,
           (SELECT COUNT(*) FROM \`prodigy-ranking.algorithm_core.PT_F25_weekly_views_delta\`),
           CURRENT_TIMESTAMP(),
@@ -300,7 +300,7 @@ functions.http('adminGetFactors', withCors(async (req, res) => {
           (SELECT AVG(factor_25_points) FROM \`prodigy-ranking.algorithm_core.PT_F25_weekly_views_delta\`)
         UNION ALL
         -- F26: Weight (max 150)
-        SELECT 'PT_F26_weight', 'F26', 'Weight', 'Weight points: max 150 by position/birth year',
+        SELECT 'PT_F26_weight', 'F26', 'weight', 'F26 W: max 150 by position/birth year',
           150,
           (SELECT COUNT(*) FROM \`prodigy-ranking.algorithm_core.PT_F26_weight\`),
           CURRENT_TIMESTAMP(),
@@ -309,7 +309,7 @@ functions.http('adminGetFactors', withCors(async (req, res) => {
           (SELECT AVG(factor_26_weight_points) FROM \`prodigy-ranking.algorithm_core.PT_F26_weight\`)
         UNION ALL
         -- F27: BMI (max 250)
-        SELECT 'PT_F27_bmi', 'F27', 'BMI', 'BMI points: max 250 by position/birth year',
+        SELECT 'PT_F27_bmi', 'F27', 'BMI', 'F27 BMI: max 250 by position/birth year',
           250,
           (SELECT COUNT(*) FROM \`prodigy-ranking.algorithm_core.PT_F27_bmi\`),
           CURRENT_TIMESTAMP(),
@@ -374,131 +374,171 @@ functions.http('adminGetFactors', withCors(async (req, res) => {
       factorType: 'ranking'
     }));
 
-    // Add Rating Factors (F31-F37) - these are calculated, not stored in tables
+    // Query actual statistics for Rating Factors (F31-F37) from player_card_ratings view
+    const ratingStatsQuery = `
+      SELECT
+        COUNT(*) as total_count,
+        MIN(performance_rating) as min_f31, MAX(performance_rating) as max_f31, AVG(performance_rating) as avg_f31,
+        COUNTIF(performance_rating IS NOT NULL AND performance_rating > 0) as count_f31,
+        MIN(level_rating) as min_f32, MAX(level_rating) as max_f32, AVG(level_rating) as avg_f32,
+        COUNTIF(level_rating IS NOT NULL AND level_rating > 0) as count_f32,
+        MIN(visibility_rating) as min_f33, MAX(visibility_rating) as max_f33, AVG(visibility_rating) as avg_f33,
+        COUNTIF(visibility_rating IS NOT NULL AND visibility_rating > 0) as count_f33,
+        MIN(physical_rating) as min_f34, MAX(physical_rating) as max_f34, AVG(physical_rating) as avg_f34,
+        COUNTIF(physical_rating IS NOT NULL AND physical_rating > 0) as count_f34,
+        MIN(achievements_rating) as min_f35, MAX(achievements_rating) as max_f35, AVG(achievements_rating) as avg_f35,
+        COUNTIF(achievements_rating IS NOT NULL AND achievements_rating > 0) as count_f35,
+        MIN(trending_rating) as min_f36, MAX(trending_rating) as max_f36, AVG(trending_rating) as avg_f36,
+        COUNTIF(trending_rating IS NOT NULL AND trending_rating > 0) as count_f36,
+        MIN(overall_rating) as min_f37, MAX(overall_rating) as max_f37, AVG(overall_rating) as avg_f37,
+        COUNTIF(overall_rating IS NOT NULL AND overall_rating > 0) as count_f37
+      FROM \`prodigy-ranking.algorithm_core.player_card_ratings\`
+    `;
+
+    let ratingStats = {
+      total_count: totalPlayers,
+      min_f31: 0, max_f31: 99, avg_f31: 50, count_f31: totalPlayers,
+      min_f32: 0, max_f32: 99, avg_f32: 50, count_f32: totalPlayers,
+      min_f33: 0, max_f33: 99, avg_f33: 50, count_f33: totalPlayers,
+      min_f34: 0, max_f34: 99, avg_f34: 50, count_f34: totalPlayers,
+      min_f35: 0, max_f35: 99, avg_f35: 50, count_f35: totalPlayers,
+      min_f36: 0, max_f36: 99, avg_f36: 50, count_f36: totalPlayers,
+      min_f37: 0, max_f37: 99, avg_f37: 50, count_f37: totalPlayers
+    };
+
+    try {
+      const ratingStatsRows = await executeQuery(ratingStatsQuery);
+      if (ratingStatsRows && ratingStatsRows.length > 0) {
+        ratingStats = ratingStatsRows[0];
+      }
+    } catch (ratingErr) {
+      console.warn('Could not fetch rating factor stats, using defaults:', ratingErr.message);
+    }
+
     const ratingFactors = [
       {
-        tableName: 'calculated',
+        tableName: 'player_card_ratings',
         factorId: 'F31',
-        factorName: 'Performance Rating',
-        description: 'F31 PER: Calculated from stats factors. FWD: 0.7*(F03+F05)+0.3*(F08+F10), DEF: similar with F04/F09, Goalies: GAA+SV%',
+        factorName: 'Performance',
+        description: 'F31 PER: FWD: 0.7*(F03+F05)+0.3*(F08+F10), DEF: similar with F04/F09, Goalies: GAA+SV%',
         maxPointsConfig: 99,
-        rowCount: totalPlayers,
+        rowCount: parseInt(ratingStats.count_f31) || 0,
         lastCalculated: new Date().toISOString(),
         hoursSinceCalc: 0,
         status: 'fresh',
         isActive: true,
-        coverage: 100,
-        minPoints: 0,
-        maxPoints: 99,
-        avgPoints: 50,
+        coverage: Math.round((parseInt(ratingStats.count_f31) / totalPlayers) * 1000) / 10,
+        minPoints: parseFloat(ratingStats.min_f31) || 0,
+        maxPoints: parseFloat(ratingStats.max_f31) || 0,
+        avgPoints: parseFloat(ratingStats.avg_f31) || 0,
         factorType: 'rating',
         formula: 'FWD: IF(0.7*(F03+F05)+0.3*(F08+F10)>=1, 99, ROUND(98*(0.7*(F03+F05)+0.3*(F08+F10))))'
       },
       {
-        tableName: 'calculated',
+        tableName: 'player_card_ratings',
         factorId: 'F32',
         factorName: 'Level Rating',
         description: 'F32 LEV: League tier rating from league table (70% of overall)',
         maxPointsConfig: 99,
-        rowCount: totalPlayers,
+        rowCount: parseInt(ratingStats.count_f32) || 0,
         lastCalculated: new Date().toISOString(),
         hoursSinceCalc: 0,
         status: 'fresh',
         isActive: true,
-        coverage: 100,
-        minPoints: 0,
-        maxPoints: 99,
-        avgPoints: 50,
+        coverage: Math.round((parseInt(ratingStats.count_f32) / totalPlayers) * 1000) / 10,
+        minPoints: parseFloat(ratingStats.min_f32) || 0,
+        maxPoints: parseFloat(ratingStats.max_f32) || 0,
+        avgPoints: parseFloat(ratingStats.avg_f32) || 0,
         factorType: 'rating',
         formula: 'From league tier lookup table'
       },
       {
-        tableName: 'calculated',
+        tableName: 'player_card_ratings',
         factorId: 'F33',
         factorName: 'Visibility Rating',
         description: 'F33 VIS: Linear 0-99 from EP Views (100-15000 range)',
         maxPointsConfig: 99,
-        rowCount: totalPlayers,
+        rowCount: parseInt(ratingStats.count_f33) || 0,
         lastCalculated: new Date().toISOString(),
         hoursSinceCalc: 0,
         status: 'fresh',
         isActive: true,
-        coverage: 100,
-        minPoints: 0,
-        maxPoints: 99,
-        avgPoints: 50,
+        coverage: Math.round((parseInt(ratingStats.count_f33) / totalPlayers) * 1000) / 10,
+        minPoints: parseFloat(ratingStats.min_f33) || 0,
+        maxPoints: parseFloat(ratingStats.max_f33) || 0,
+        avgPoints: parseFloat(ratingStats.avg_f33) || 0,
         factorType: 'rating',
         formula: 'Linear: 0-99 for 100-15000 EP views'
       },
       {
-        tableName: 'calculated',
+        tableName: 'player_card_ratings',
         factorId: 'F34',
         factorName: 'Physical Rating',
         description: 'F34 PHY: (F02+F26+F27)/600*99',
         maxPointsConfig: 99,
-        rowCount: totalPlayers,
+        rowCount: parseInt(ratingStats.count_f34) || 0,
         lastCalculated: new Date().toISOString(),
         hoursSinceCalc: 0,
         status: 'fresh',
         isActive: true,
-        coverage: 100,
-        minPoints: 0,
-        maxPoints: 99,
-        avgPoints: 50,
+        coverage: Math.round((parseInt(ratingStats.count_f34) / totalPlayers) * 1000) / 10,
+        minPoints: parseFloat(ratingStats.min_f34) || 0,
+        maxPoints: parseFloat(ratingStats.max_f34) || 0,
+        avgPoints: parseFloat(ratingStats.avg_f34) || 0,
         factorType: 'rating',
         formula: '(F02 + F26 + F27) / 600 * 99'
       },
       {
-        tableName: 'calculated',
+        tableName: 'player_card_ratings',
         factorId: 'F35',
         factorName: 'Achievements Rating',
         description: 'F35 ACH: (F15+F16+F17+F21+F22)/1500*99, capped at 99',
         maxPointsConfig: 99,
-        rowCount: totalPlayers,
+        rowCount: parseInt(ratingStats.count_f35) || 0,
         lastCalculated: new Date().toISOString(),
         hoursSinceCalc: 0,
         status: 'fresh',
         isActive: true,
-        coverage: 100,
-        minPoints: 0,
-        maxPoints: 99,
-        avgPoints: 50,
+        coverage: Math.round((parseInt(ratingStats.count_f35) / totalPlayers) * 1000) / 10,
+        minPoints: parseFloat(ratingStats.min_f35) || 0,
+        maxPoints: parseFloat(ratingStats.max_f35) || 0,
+        avgPoints: parseFloat(ratingStats.avg_f35) || 0,
         factorType: 'rating',
         formula: 'IF((F15+F16+F17+F21+F22)>=1500, 99, ROUND(99*(F15+F16+F17+F21+F22)/1500))'
       },
       {
-        tableName: 'calculated',
+        tableName: 'player_card_ratings',
         factorId: 'F36',
         factorName: 'Trending Rating',
         description: 'F36 T: Skaters: (F18+F19+F25)/250*99, Goalies: F25/50*99',
         maxPointsConfig: 99,
-        rowCount: totalPlayers,
+        rowCount: parseInt(ratingStats.count_f36) || 0,
         lastCalculated: new Date().toISOString(),
         hoursSinceCalc: 0,
         status: 'fresh',
         isActive: true,
-        coverage: 100,
-        minPoints: 0,
-        maxPoints: 99,
-        avgPoints: 50,
+        coverage: Math.round((parseInt(ratingStats.count_f36) / totalPlayers) * 1000) / 10,
+        minPoints: parseFloat(ratingStats.min_f36) || 0,
+        maxPoints: parseFloat(ratingStats.max_f36) || 0,
+        avgPoints: parseFloat(ratingStats.avg_f36) || 0,
         factorType: 'rating',
         formula: 'Skaters: IF((F18+F19+F25)>=250, 99, ROUND(99*(F18+F19+F25)/250)), Goalies: IF(F25>=50, 99, ROUND(99*F25/50))'
       },
       {
-        tableName: 'calculated',
+        tableName: 'player_card_ratings',
         factorId: 'F37',
         factorName: 'Overall Rating',
         description: 'F37 OVR: F31*0.03 + F32*0.70 + F33*0.19 + F34*0.05 + F35*0.03',
         maxPointsConfig: 99,
-        rowCount: totalPlayers,
+        rowCount: parseInt(ratingStats.count_f37) || 0,
         lastCalculated: new Date().toISOString(),
         hoursSinceCalc: 0,
         status: 'fresh',
         isActive: true,
-        coverage: 100,
-        minPoints: 0,
-        maxPoints: 99,
-        avgPoints: 50,
+        coverage: Math.round((parseInt(ratingStats.count_f37) / totalPlayers) * 1000) / 10,
+        minPoints: parseFloat(ratingStats.min_f37) || 0,
+        maxPoints: parseFloat(ratingStats.max_f37) || 0,
+        avgPoints: parseFloat(ratingStats.avg_f37) || 0,
         factorType: 'rating',
         formula: 'F31*0.03 + F32*0.70 + F33*0.19 + F34*0.05 + F35*0.03'
       }
@@ -751,27 +791,43 @@ functions.http('adminGetPlayers', withCors(async (req, res) => {
         COALESCE(pcp.f22_manual_points, 0) as f22_manual_points,
         COALESCE(pcp.f23_prodigylikes_points, 0) as f23_prodigylikes_points,
         COALESCE(pcp.f24_card_sales_points, 0) as f24_card_sales_points,
+        -- F25 Weekly Views Delta
+        ROUND(COALESCE(f25.factor_25_points, 0), 2) as f25_weekly_views_delta,
         -- F26 Weight and F27 BMI
-        ROUND(COALESCE(f26.factor_26_weight_points, pcp.f26_weight_points, 0), 2) as f26_weight_points,
-        ROUND(COALESCE(f27.factor_27_bmi_points, pcp.f27_bmi_points, 0), 2) as f27_bmi_points,
-        -- Physical Rating: ((F02 + F26 + F27) / 600) * 100, capped 1-99
-        CAST(GREATEST(1, LEAST(99, ROUND((
-          COALESCE(f02.factor_2_h_points, 0) +
-          COALESCE(f26.factor_26_weight_points, 0) +
-          COALESCE(f27.factor_27_bmi_points, 0)
-        ) / 600.0 * 100))) AS INT64) as physicalRating,
-        -- Visibility Rating: Linear 1-99 from F01 views (100 to 15k range)
-        CAST(CASE
-          WHEN pcp.f01_views <= 100 THEN 1
-          WHEN pcp.f01_views >= 15000 THEN 99
-          ELSE GREATEST(1, LEAST(99, 1 + ((pcp.f01_views - 100) / (15000.0 - 100.0)) * 98))
-        END AS INT64) as visibilityRating,
+        ROUND(COALESCE(f26.factor_26_weight_points, 0), 2) as f26_weight,
+        ROUND(COALESCE(f27.factor_27_bmi_points, 0), 2) as f27_bmi,
+        -- F28 NHL Scouting
+        ROUND(COALESCE(f28.factor_28_nhl_scouting_points, 0), 2) as f28_nhl_scouting,
+        -- =========================================================================
+        -- Rating Factors F31-F37: READ PRE-COMPUTED VALUES FROM TABLE
+        -- These are calculated by rebuild_cumulative_with_ratings.sql
+        -- Using pre-computed values ensures consistency with profile pages
+        -- =========================================================================
+        COALESCE(pcp.f31_performance_rating, 0) as f31_performance,
+        COALESCE(pcp.f32_level_rating, 1) as f32_level,
+        COALESCE(pcp.f33_visibility_rating, 0) as f33_visibility,
+        COALESCE(pcp.f34_physical_rating, 0) as f34_physical,
+        COALESCE(pcp.f35_achievements_rating, 0) as f35_achievements,
+        COALESCE(pcp.f36_trending_rating, 0) as f36_trending,
+        -- F37 Overall: Computed from F31-F35 with canonical weights
+        -- 3% Performance + 70% Level + 19% Visibility + 5% Physical + 3% Achievements
+        CAST(LEAST(99, GREATEST(1, ROUND(
+          COALESCE(pcp.f31_performance_rating, 0) * 0.03 +
+          COALESCE(pcp.f32_level_rating, 1) * 0.70 +
+          COALESCE(pcp.f33_visibility_rating, 0) * 0.19 +
+          COALESCE(pcp.f34_physical_rating, 0) * 0.05 +
+          COALESCE(pcp.f35_achievements_rating, 0) * 0.03
+        ))) AS INT64) as f37_overall,
         pcp.calculated_at as calculatedAt,
         pcp.algorithm_version as algorithmVersion
-      FROM \`prodigy-ranking.algorithm_core.player_rankings\` pcp
+      -- Use player_cumulative_points which has pre-computed F31-F36 ratings
+      FROM \`prodigy-ranking.algorithm_core.player_cumulative_points\` pcp
+      LEFT JOIN \`prodigy-ranking.algorithm_core.PT_F01_EPV\` f01 ON pcp.player_id = f01.player_id
       LEFT JOIN \`prodigy-ranking.algorithm_core.PT_F02_H\` f02 ON pcp.player_id = f02.player_id
+      LEFT JOIN \`prodigy-ranking.algorithm_core.PT_F25_weekly_views_delta\` f25 ON pcp.player_id = f25.player_id
       LEFT JOIN \`prodigy-ranking.algorithm_core.PT_F26_weight\` f26 ON pcp.player_id = f26.player_id
       LEFT JOIN \`prodigy-ranking.algorithm_core.PT_F27_bmi\` f27 ON pcp.player_id = f27.player_id
+      LEFT JOIN \`prodigy-ranking.algorithm_core.PT_F28_NHLSR\` f28 ON pcp.player_id = f28.player_id
       ${whereClauseMain}
       ORDER BY pcp.total_points DESC
       LIMIT @limit
@@ -780,7 +836,7 @@ functions.http('adminGetPlayers', withCors(async (req, res) => {
 
     const countQuery = `
       SELECT COUNT(*) as total
-      FROM \`prodigy-ranking.algorithm_core.player_rankings\`
+      FROM \`prodigy-ranking.algorithm_core.player_cumulative_points\`
       ${whereClauseCount}
     `;
 
@@ -828,12 +884,19 @@ functions.http('adminGetPlayers', withCors(async (req, res) => {
       f22_manual_points: parseFloat(row.f22_manual_points) || 0,
       f23_prodigylikes_points: parseFloat(row.f23_prodigylikes_points) || 0,
       f24_card_sales_points: parseFloat(row.f24_card_sales_points) || 0,
-      // New physical factors
-      f26_weight_points: parseFloat(row.f26_weight_points) || 0,
-      f27_bmi_points: parseFloat(row.f27_bmi_points) || 0,
-      // EA-style ratings
-      physicalRating: parseInt(row.physicalRating) || 1,
-      visibilityRating: parseInt(row.visibilityRating) || 1,
+      f25_weekly_views_delta: parseFloat(row.f25_weekly_views_delta) || 0,
+      // Physical factors F26-F28
+      f26_weight: parseFloat(row.f26_weight) || 0,
+      f27_bmi: parseFloat(row.f27_bmi) || 0,
+      f28_nhl_scouting: parseFloat(row.f28_nhl_scouting) || 0,
+      // Rating factors F31-F37
+      f31_performance: parseInt(row.f31_performance) || 0,
+      f32_level: parseInt(row.f32_level) || 0,
+      f33_visibility: parseInt(row.f33_visibility) || 0,
+      f34_physical: parseInt(row.f34_physical) || 0,
+      f35_achievements: parseInt(row.f35_achievements) || 0,
+      f36_trending: parseInt(row.f36_trending) || 0,
+      f37_overall: parseInt(row.f37_overall) || 0,
       calculatedAt: row.calculatedAt ? row.calculatedAt.value : new Date().toISOString(),
       algorithmVersion: row.algorithmVersion || 'v2.4'
     }));

@@ -811,3 +811,12 @@ functions.http('syncRankings', syncRankings);
 
 // Import Stripe payment functions
 require('./stripe');
+
+// Import NEPSAC functions (GameDay, matchups, schedules)
+require('./nepsac');
+
+// Import refresh function (for scheduled ratings updates)
+require('./refresh');
+
+// Import PowerGrid functions (NEPSAC playoff probabilities)
+require('./powergrid');
