@@ -95,7 +95,7 @@ functions.http('getNepsacSchedule', withCors(async (req, res) => {
         away.logo_url as away_logo_url,
         away.card_home_url as away_card_home_url,
         away.card_away_url as away_card_away_url,
-        away.division as away_division,
+        away.classification as away_division,
         away_rank.rank as away_rank,
         away_rank.avg_prodigy_points as away_avg_points,
         away_rank.team_ovr as away_ovr,
@@ -108,7 +108,7 @@ functions.http('getNepsacSchedule', withCors(async (req, res) => {
         home.logo_url as home_logo_url,
         home.card_home_url as home_card_home_url,
         home.card_away_url as home_card_away_url,
-        home.division as home_division,
+        home.classification as home_division,
         home_rank.rank as home_rank,
         home_rank.avg_prodigy_points as home_avg_points,
         home_rank.team_ovr as home_ovr,
@@ -229,12 +229,12 @@ functions.http('getNepsacMatchup', withCors(async (req, res) => {
         away.logo_url as away_logo_url,
         away.card_home_url as away_card_home_url,
         away.card_away_url as away_card_away_url,
-        away.division as away_division,
+        away.classification as away_division,
         home.team_name as home_team_name,
         home.logo_url as home_logo_url,
         home.card_home_url as home_card_home_url,
         home.card_away_url as home_card_away_url,
-        home.division as home_division
+        home.classification as home_division
       FROM \`prodigy-ranking.algorithm_core.nepsac_schedule\` s
       LEFT JOIN \`prodigy-ranking.algorithm_core.nepsac_teams\` away ON s.away_team_id = away.team_id
       LEFT JOIN \`prodigy-ranking.algorithm_core.nepsac_teams\` home ON s.home_team_id = home.team_id
@@ -497,7 +497,7 @@ functions.http('getNepsacTeams', withCors(async (req, res) => {
         t.team_id,
         t.team_name,
         t.short_name,
-        t.division,
+        t.classification AS division,
         t.logo_url,
         t.card_home_url,
         t.card_away_url,
@@ -526,7 +526,7 @@ functions.http('getNepsacTeams', withCors(async (req, res) => {
     `;
 
     if (division) {
-      query += ` WHERE t.division = '${division}'`;
+      query += ` WHERE t.classification = '${division}'`;
     }
 
     query += ` ORDER BY r.rank ASC NULLS LAST, r.avg_prodigy_points DESC`;
@@ -594,7 +594,7 @@ functions.http('getNepsacStandings', withCors(async (req, res) => {
         t.team_name,
         t.short_name,
         t.logo_url,
-        s.division,
+        t.classification AS division,
         s.wins,
         s.losses,
         s.ties,
@@ -619,10 +619,10 @@ functions.http('getNepsacStandings', withCors(async (req, res) => {
     `;
 
     if (division && division !== 'all') {
-      query += ` AND s.division = '${division}'`;
+      query += ` AND t.classification = '${division}'`;
     }
 
-    query += ` ORDER BY s.division, s.points DESC, s.win_pct DESC, s.goal_differential DESC`;
+    query += ` ORDER BY t.classification, s.points DESC, s.win_pct DESC, s.goal_differential DESC`;
 
     const rows = await executeQuery(query);
 
@@ -691,7 +691,7 @@ functions.http('getNepsacPowerRankings', withCors(async (req, res) => {
         t.team_id,
         t.team_name,
         t.short_name,
-        t.division,
+        t.classification AS division,
         t.logo_url,
         t.card_home_url,
         t.card_away_url,
@@ -804,7 +804,7 @@ functions.http('getNepsacRoster', withCors(async (req, res) => {
         t.logo_url,
         t.card_home_url,
         t.card_away_url,
-        t.division,
+        t.classification AS division,
         t.venue,
         r.rank,
         r.team_ovr,
