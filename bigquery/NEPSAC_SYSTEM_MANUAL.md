@@ -752,6 +752,91 @@ for (let i = 0; i < games.length; i += BATCH_SIZE) {
 - Supabase is a read-only replica for frontend
 - Never write to BigQuery from frontend
 
+### 11.4 Daily Results Entry (Scores + Box Scores)
+
+**Script:** `add_daily_results.py`
+
+This is the primary tool for entering game results and notable performers daily.
+
+#### Usage
+
+```bash
+# Interactive mode - paste results
+python add_daily_results.py
+
+# From file
+python add_daily_results.py --file results_jan28.txt
+
+# With default date
+python add_daily_results.py --date 2026-01-28
+```
+
+#### Copy/Paste Format
+
+```
+DATE: 2026-01-28
+
+Salisbury 6 - Kent 2
+  J. Smith 2G 1A
+  M. Johnson 1G 2A
+  T. Williams 2G
+  GK: D. Brown 28sv W
+
+Taft 3 - Canterbury 1
+  A. Lee 1G 1A
+  B. Chen 2G
+  GK: C. Davis 22sv W
+
+Avon 2 - Choate 2
+  R. Wilson 1G
+  K. Park 1G 1A
+  GK: S. Miller 31sv T
+```
+
+#### Format Rules
+
+| Element | Format | Example |
+|---------|--------|---------|
+| Date | `DATE: YYYY-MM-DD` | `DATE: 2026-01-28` |
+| Score | `Team1 # - Team2 #` | `Salisbury 6 - Kent 2` |
+| Skater | `Name #G #A` | `J. Smith 2G 1A` |
+| Goalie | `GK: Name #sv W/L/T` | `GK: D. Brown 28sv W` |
+| Shutout | Add `SO` | `GK: D. Brown 28sv W SO` |
+
+#### What the Script Does
+
+1. **Parses** text input into structured game data
+2. **Matches** team names to BigQuery `nepsac_schedule` games
+3. **Updates** BigQuery:
+   - `nepsac_schedule.away_score/home_score`
+   - `nepsac_schedule.status = 'final'`
+   - `nepsac_game_performers` table
+4. **Syncs** to Supabase:
+   - `nepsac_games` table
+   - Calculates `prediction_correct` field
+5. **Updates** summaries:
+   - `nepsac_daily_summary` (daily accuracy)
+   - `nepsac_overall_stats` (season accuracy)
+
+#### Team Name Matching
+
+The script has built-in aliases for all 57 NEPSAC teams:
+
+| Input | Matches |
+|-------|---------|
+| `Salisbury` | `salisbury-school` |
+| `Kent` | `kent-school` |
+| `Nobles` or `Noble` | `noble-greenough` |
+| `BB&N` or `BBN` | `bb-n` |
+| `Exeter` | `phillips-exeter` |
+| `Gunnery` or `Gunn` | `the-gunnery` |
+
+#### Data Sources for Backfill
+
+- **NeutralZone:** https://www.neutralzone.net/NEPSAC
+- **Elite Prospects:** Search by team for box scores
+- **Team websites:** Many schools post game recaps
+
 ---
 
 ## 12. Team Classifications
