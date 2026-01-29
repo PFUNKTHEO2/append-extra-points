@@ -18,18 +18,106 @@ Format:
   Taft 3 - Canterbury 1
     A. Lee 1G 1A
     GK: C. Davis 22sv W
+
+Features:
+  - Updates game scores in BigQuery and Supabase
+  - Adds performer data (scorers, goalies) to BigQuery
+  - Tracks prediction accuracy
+  - Auto-fetches player images from Elite Prospects for story generation
 """
 
 import os
 import re
 import sys
 import argparse
+import time
+import urllib.request
 from datetime import datetime, date
 from google.cloud import bigquery
 from supabase import create_client, Client
 
 # BigQuery client
 bq_client = bigquery.Client(project='prodigy-ranking')
+
+
+def fetch_ep_image_url(player_id, player_name):
+    """Fetch player image URL from Elite Prospects website"""
+    # Create URL slug from name
+    slug = player_name.lower().replace(' ', '-').replace("'", "").replace(".", "")
+    url = f'https://www.eliteprospects.com/player/{player_id}/{slug}'
+
+    try:
+        req = urllib.request.Request(url, headers={
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+        })
+        with urllib.request.urlopen(req, timeout=15) as response:
+            html = response.read().decode('utf-8', errors='ignore')
+            # Look for player image URL
+            img_matches = re.findall(
+                r'https://files\.eliteprospects\.com/layout/players/[^"]+\.(?:jpg|png|webp)',
+                html
+            )
+            if img_matches:
+                return img_matches[0]
+    except Exception as e:
+        pass  # Silently fail - image is optional
+    return None
+
+
+def update_player_image(player_id, image_url):
+    """Update imageUrl in player_stats table"""
+    # Escape single quotes in URL
+    safe_url = image_url.replace("'", "''")
+    query = f"""
+    UPDATE `prodigy-ranking.algorithm_core.player_stats`
+    SET imageUrl = '{safe_url}'
+    WHERE id = {player_id}
+    """
+    bq_client.query(query).result()
+
+
+def update_performer_images(game_date):
+    """Update images for all performers on a given date who don't have images"""
+    print("\nUpdating player images...")
+
+    # Find performers without images
+    query = f"""
+    SELECT DISTINCT
+        ps.id as player_id,
+        CONCAT(ps.firstName, ' ', ps.lastName) as name
+    FROM `prodigy-ranking.algorithm_core.nepsac_game_performers` gp
+    JOIN `prodigy-ranking.algorithm_core.player_stats` ps
+        ON (
+            LOWER(TRIM(gp.roster_name)) = LOWER(CONCAT(ps.firstName, ' ', ps.lastName))
+            OR (
+                LOWER(SPLIT(TRIM(gp.roster_name), ' ')[SAFE_OFFSET(1)]) = LOWER(ps.lastName)
+                AND LEFT(LOWER(SPLIT(TRIM(gp.roster_name), ' ')[SAFE_OFFSET(0)]), 3) = LEFT(LOWER(ps.firstName), 3)
+            )
+        )
+    WHERE gp.game_date = '{game_date}'
+        AND (ps.imageUrl IS NULL OR ps.imageUrl = '')
+    """
+
+    rows = list(bq_client.query(query).result())
+
+    if not rows:
+        print("  All performers already have images")
+        return 0
+
+    print(f"  Found {len(rows)} performers without images")
+    updated = 0
+
+    for row in rows:
+        image_url = fetch_ep_image_url(row.player_id, row.name)
+        if image_url:
+            update_player_image(row.player_id, image_url)
+            updated += 1
+            print(f"    + {row.name}")
+        time.sleep(0.3)  # Be nice to EP servers
+
+    print(f"  Updated {updated} player images")
+    return updated
+
 
 # Supabase client
 SUPABASE_URL = os.environ.get('SUPABASE_URL', 'https://xqkwvywcxmnfimkubtyo.supabase.co')
@@ -632,6 +720,11 @@ def process_games(games):
         correct, incorrect, ties, accuracy = update_supabase_summaries(d)
         if accuracy is not None:
             print(f"  {d}: {correct}-{incorrect}-{ties} ({accuracy}%)")
+
+    # Update player images for performers
+    print("\n" + "=" * 60)
+    for d in dates_processed:
+        update_performer_images(d)
 
     return results
 
