@@ -262,11 +262,13 @@ functions.http('getNepsacMatchup', withCors(async (req, res) => {
       SELECT
         s.*,
         away.team_name as away_team_name,
+        away.short_name as away_short_name,
         away.logo_url as away_logo_url,
         away.card_home_url as away_card_home_url,
         away.card_away_url as away_card_away_url,
         away.classification as away_division,
         home.team_name as home_team_name,
+        home.short_name as home_short_name,
         home.logo_url as home_logo_url,
         home.card_home_url as home_card_home_url,
         home.card_away_url as home_card_away_url,
@@ -463,6 +465,7 @@ functions.http('getNepsacMatchup', withCors(async (req, res) => {
       awayTeam: {
         teamId: game.away_team_id,
         name: game.away_team_name,
+        shortName: game.away_short_name,
         logoUrl: game.away_logo_url,
         cardUrl: game.away_card_away_url,  // Away team uses away card
         division: game.away_division,
@@ -489,6 +492,7 @@ functions.http('getNepsacMatchup', withCors(async (req, res) => {
       homeTeam: {
         teamId: game.home_team_id,
         name: game.home_team_name,
+        shortName: game.home_short_name,
         logoUrl: game.home_logo_url,
         cardUrl: game.home_card_home_url,  // Home team uses home card
         division: game.home_division,
