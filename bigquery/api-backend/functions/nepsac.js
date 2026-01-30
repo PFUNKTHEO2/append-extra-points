@@ -45,12 +45,50 @@ function calculateOVR(points, maxPoints) {
   return Math.round(70 + normalized * 29);
 }
 
-// Calculate team OVR from avg points
-function calculateTeamOVR(avgPoints) {
+// Calculate team OVR from performance metrics (primary) and roster strength (tiebreaker)
+// New formula: Performance (80%) + Roster Strength (20%)
+function calculateTeamOVR(avgPoints, performanceData = null) {
   const minAvg = 750;
   const maxAvg = 2950;
-  const normalized = Math.max(0, Math.min((avgPoints - minAvg) / (maxAvg - minAvg), 1));
-  return Math.round(70 + normalized * 29);
+
+  // Roster strength score (0-1)
+  const rosterScore = Math.max(0, Math.min((avgPoints - minAvg) / (maxAvg - minAvg), 1));
+
+  // If no performance data, fall back to roster-only (for backwards compatibility)
+  if (!performanceData || performanceData.gamesPlayed === 0) {
+    return Math.round(70 + rosterScore * 29);
+  }
+
+  const { wins = 0, losses = 0, ties = 0, goalDiff = 0, gamesPlayed = 0 } = performanceData;
+
+  // Performance score components (0-1 each)
+  // 1. Win percentage (most important - 50% of performance)
+  const winPct = gamesPlayed > 0 ? (wins + ties * 0.5) / gamesPlayed : 0;
+
+  // 2. Goal differential per game (normalized, 20% of performance)
+  // Range: -3 to +3 per game is typical, normalize to 0-1
+  const gdPerGame = gamesPlayed > 0 ? goalDiff / gamesPlayed : 0;
+  const gdNormalized = Math.max(0, Math.min((gdPerGame + 3) / 6, 1)); // -3 to +3 -> 0 to 1
+
+  // 3. Win-loss balance (30% of performance)
+  // Rewards teams with more wins than losses
+  const totalDecisions = wins + losses;
+  const winLossBalance = totalDecisions > 0 ? wins / totalDecisions : 0.5;
+
+  // Combined performance score (weighted)
+  const performanceScore = (winPct * 0.50) + (gdNormalized * 0.20) + (winLossBalance * 0.30);
+
+  // Games played factor - teams with < 5 games get reduced performance weight
+  const gamesPlayedFactor = Math.min(gamesPlayed / 5, 1);
+
+  // Final combined score: Performance (80%) + Roster (20%)
+  // If few games played, lean more on roster strength
+  const performanceWeight = 0.80 * gamesPlayedFactor;
+  const rosterWeight = 1 - performanceWeight;
+
+  const finalScore = (performanceScore * performanceWeight) + (rosterScore * rosterWeight);
+
+  return Math.round(70 + finalScore * 29);
 }
 
 // Parse BigQuery value (handles {value: x} objects)
@@ -128,6 +166,8 @@ functions.http('getNepsacSchedule', withCors(async (req, res) => {
         away_st.wins as away_wins,
         away_st.losses as away_losses,
         away_st.ties as away_ties,
+        away_st.goal_differential as away_goal_diff,
+        away_st.games_played as away_games_played,
         s.home_team_id,
         home.team_name as home_team_name,
         home.short_name as home_short_name,
@@ -140,7 +180,9 @@ functions.http('getNepsacSchedule', withCors(async (req, res) => {
         home_rank.team_ovr as home_ovr,
         home_st.wins as home_wins,
         home_st.losses as home_losses,
-        home_st.ties as home_ties
+        home_st.ties as home_ties,
+        home_st.goal_differential as home_goal_diff,
+        home_st.games_played as home_games_played
       FROM \`prodigy-ranking.algorithm_core.nepsac_schedule\` s
       LEFT JOIN \`prodigy-ranking.algorithm_core.nepsac_teams\` away
         ON s.away_team_id = away.team_id
@@ -186,7 +228,13 @@ functions.http('getNepsacSchedule', withCors(async (req, res) => {
           cardUrl: row.away_card_away_url,  // Away team uses away card
           division: row.away_division,
           rank: row.away_rank,
-          ovr: row.away_ovr || calculateTeamOVR(parseValue(row.away_avg_points, 1500)),
+          ovr: row.away_ovr || calculateTeamOVR(parseValue(row.away_avg_points, 1500), {
+            wins: row.away_wins || 0,
+            losses: row.away_losses || 0,
+            ties: row.away_ties || 0,
+            goalDiff: row.away_goal_diff || 0,
+            gamesPlayed: row.away_games_played || 0
+          }),
           record: {
             wins: row.away_wins || 0,
             losses: row.away_losses || 0,
@@ -201,7 +249,13 @@ functions.http('getNepsacSchedule', withCors(async (req, res) => {
           cardUrl: row.home_card_home_url,  // Home team uses home card
           division: row.home_division,
           rank: row.home_rank,
-          ovr: row.home_ovr || calculateTeamOVR(parseValue(row.home_avg_points, 1500)),
+          ovr: row.home_ovr || calculateTeamOVR(parseValue(row.home_avg_points, 1500), {
+            wins: row.home_wins || 0,
+            losses: row.home_losses || 0,
+            ties: row.home_ties || 0,
+            goalDiff: row.home_goal_diff || 0,
+            gamesPlayed: row.home_games_played || 0
+          }),
           record: {
             wins: row.home_wins || 0,
             losses: row.home_losses || 0,
@@ -299,7 +353,7 @@ functions.http('getNepsacMatchup', withCors(async (req, res) => {
 
     // Get standings
     const standingsQuery = `
-      SELECT team_id, wins, losses, ties, goals_for, goals_against, streak
+      SELECT team_id, wins, losses, ties, goals_for, goals_against, streak, goal_differential, games_played
       FROM \`prodigy-ranking.algorithm_core.nepsac_standings\`
       WHERE team_id IN ('${game.away_team_id}', '${game.home_team_id}') AND season = '${season}'
     `;
@@ -470,7 +524,13 @@ functions.http('getNepsacMatchup', withCors(async (req, res) => {
         cardUrl: game.away_card_away_url,  // Away team uses away card
         division: game.away_division,
         rank: awayRank.rank,
-        ovr: awayRank.team_ovr || calculateTeamOVR(parseValue(awayRank.avg_prodigy_points, 1500)),
+        ovr: awayRank.team_ovr || calculateTeamOVR(parseValue(awayRank.avg_prodigy_points, 1500), {
+          wins: awayStandings.wins || 0,
+          losses: awayStandings.losses || 0,
+          ties: awayStandings.ties || 0,
+          goalDiff: awayStandings.goal_differential || 0,
+          gamesPlayed: awayStandings.games_played || 0
+        }),
         record: {
           wins: awayStandings.wins || 0,
           losses: awayStandings.losses || 0,
@@ -497,7 +557,13 @@ functions.http('getNepsacMatchup', withCors(async (req, res) => {
         cardUrl: game.home_card_home_url,  // Home team uses home card
         division: game.home_division,
         rank: homeRank.rank,
-        ovr: homeRank.team_ovr || calculateTeamOVR(parseValue(homeRank.avg_prodigy_points, 1500)),
+        ovr: homeRank.team_ovr || calculateTeamOVR(parseValue(homeRank.avg_prodigy_points, 1500), {
+          wins: homeStandings.wins || 0,
+          losses: homeStandings.losses || 0,
+          ties: homeStandings.ties || 0,
+          goalDiff: homeStandings.goal_differential || 0,
+          gamesPlayed: homeStandings.games_played || 0
+        }),
         record: {
           wins: homeStandings.wins || 0,
           losses: homeStandings.losses || 0,
@@ -564,7 +630,9 @@ functions.http('getNepsacTeams', withCors(async (req, res) => {
         s.losses,
         s.ties,
         s.win_pct,
-        s.streak
+        s.streak,
+        s.goal_differential,
+        s.games_played
       FROM \`prodigy-ranking.algorithm_core.nepsac_teams\` t
       LEFT JOIN \`prodigy-ranking.algorithm_core.nepsac_team_rankings\` r
         ON t.team_id = r.team_id AND r.season = '${season}'
@@ -592,7 +660,13 @@ functions.http('getNepsacTeams', withCors(async (req, res) => {
       city: row.city,
       state: row.state,
       rank: row.rank,
-      ovr: row.team_ovr || calculateTeamOVR(parseValue(row.avg_prodigy_points, 1500)),
+      ovr: row.team_ovr || calculateTeamOVR(parseValue(row.avg_prodigy_points, 1500), {
+        wins: row.wins || 0,
+        losses: row.losses || 0,
+        ties: row.ties || 0,
+        goalDiff: row.goal_differential || 0,
+        gamesPlayed: row.games_played || 0
+      }),
       record: {
         wins: row.wins || 0,
         losses: row.losses || 0,
@@ -776,7 +850,8 @@ functions.http('getNepsacPowerRankings', withCors(async (req, res) => {
       const wins = parseValue(row.wins, 0);
       const losses = parseValue(row.losses, 0);
       const ties = parseValue(row.ties, 0);
-      const gamesPlayed = wins + losses + ties;
+      const gamesPlayed = parseValue(row.games_played, 0) || (wins + losses + ties);
+      const goalDiff = parseValue(row.goal_differential, 0);
 
       return {
         rank: row.power_rank || (index + 1),
@@ -787,7 +862,13 @@ functions.http('getNepsacPowerRankings', withCors(async (req, res) => {
         logoUrl: row.logo_url,
         cardHomeUrl: row.card_home_url,
         cardAwayUrl: row.card_away_url,
-        ovr: row.team_ovr || calculateTeamOVR(parseValue(row.avg_prodigy_points, 1500)),
+        ovr: row.team_ovr || calculateTeamOVR(parseValue(row.avg_prodigy_points, 1500), {
+          wins,
+          losses,
+          ties,
+          goalDiff,
+          gamesPlayed
+        }),
         record: {
           wins,
           losses,
@@ -862,7 +943,9 @@ functions.http('getNepsacRoster', withCors(async (req, res) => {
         r.matched_players,
         s.wins,
         s.losses,
-        s.ties
+        s.ties,
+        s.goal_differential,
+        s.games_played
       FROM \`prodigy-ranking.algorithm_core.nepsac_teams\` t
       LEFT JOIN \`prodigy-ranking.algorithm_core.nepsac_team_rankings\` r
         ON t.team_id = r.team_id AND r.season = '${season}'
@@ -980,7 +1063,13 @@ functions.http('getNepsacRoster', withCors(async (req, res) => {
         division: team.division,
         venue: team.venue,
         rank: team.rank,
-        ovr: team.team_ovr || calculateTeamOVR(parseValue(team.avg_prodigy_points, 1500)),
+        ovr: team.team_ovr || calculateTeamOVR(parseValue(team.avg_prodigy_points, 1500), {
+          wins: team.wins || 0,
+          losses: team.losses || 0,
+          ties: team.ties || 0,
+          goalDiff: team.goal_differential || 0,
+          gamesPlayed: team.games_played || 0
+        }),
         record: {
           wins: team.wins || 0,
           losses: team.losses || 0,
